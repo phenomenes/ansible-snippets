@@ -15,6 +15,7 @@ snippet ec2_ami_search
     #arch: ${12:amd64}
     #store: ${13:ebs}
 endsnippet
+
 snippet ec2_vpc
 - name: ${1:task_description}
   ec2_vpc: 
@@ -38,6 +39,7 @@ snippet ec2_vpc
     #region: ${36}
     #wait: ${37:no}
 endsnippet
+
 snippet kms
 - name: ${1:task_description}
   kms: 
@@ -56,6 +58,7 @@ snippet kms
     #validate_certs: ${27:yes}
     #key_alias: ${28}
 endsnippet
+
 snippet cloudformation
 - name: ${1:task_description}
   cloudformation: 
@@ -78,6 +81,7 @@ snippet cloudformation
     #ec2_url: ${34}
     #validate_certs: ${35:yes}
 endsnippet
+
 snippet cloudformation_facts
 - name: ${1:task_description}
   cloudformation_facts: 
@@ -95,6 +99,7 @@ snippet cloudformation_facts
     #stack_resources: ${25}
     #validate_certs: ${26:yes}
 endsnippet
+
 snippet cloudfront_facts
 - name: ${1:task_description}
   cloudfront_facts: 
@@ -124,6 +129,7 @@ snippet cloudfront_facts
     #validate_certs: ${50:yes}
     #list_origin_access_identities: ${51}
 endsnippet
+
 snippet cloudtrail
 - name: ${1:task_description}
   cloudtrail: 
@@ -140,6 +146,7 @@ snippet cloudtrail
     #ec2_url: ${23}
     #s3_key_prefix: ${24}
 endsnippet
+
 snippet cloudwatchevent_rule
 - name: ${1:task_description}
   cloudwatchevent_rule: 
@@ -157,6 +164,7 @@ snippet cloudwatchevent_rule
     #validate_certs: ${25:yes}
     #targets: ${26}
 endsnippet
+
 snippet dynamodb_table
 - name: ${1:task_description}
   dynamodb_table: 
@@ -177,6 +185,7 @@ snippet dynamodb_table
     #validate_certs: ${31:yes}
     #hash_key_type: ${32:STRING}
 endsnippet
+
 snippet ec2
 - name: ${1:task_description}
   ec2: 
@@ -223,6 +232,7 @@ snippet ec2
     #group_id: ${82}
     #validate_certs: ${83:yes}
 endsnippet
+
 snippet ec2_ami
 - name: ${1:task_description}
   ec2_ami: 
@@ -250,6 +260,7 @@ snippet ec2_ami
     #virtualization_type: ${46}
     #device_mapping: ${47}
 endsnippet
+
 snippet ec2_ami_copy
 - name: ${1:task_description}
   ec2_ami_copy: 
@@ -270,6 +281,7 @@ snippet ec2_ami_copy
     #region: ${30}
     #wait: ${31:no}
 endsnippet
+
 snippet ec2_ami_find
 - name: ${1:task_description}
   ec2_ami_find: 
@@ -291,6 +303,7 @@ snippet ec2_ami_find
     #architecture: ${33}
     #virtualization_type: ${34}
 endsnippet
+
 snippet ec2_asg
 - name: ${1:task_description}
   ec2_asg: 
@@ -326,6 +339,7 @@ snippet ec2_asg
     #notification_types: ${60:[u'autoscaling:EC2_INSTANCE_LAUNCH', u'autoscaling:EC2_INSTANCE_LAUNCH_ERROR', u'autoscaling:EC2_INSTANCE_TERMINATE', u'autoscaling:EC2_INSTANCE_TERMINATE_ERROR']}
     #wait_for_instances: ${61:True}
 endsnippet
+
 snippet ec2_asg_facts
 - name: ${1:task_description}
   ec2_asg_facts: 
@@ -339,6 +353,7 @@ snippet ec2_asg_facts
     #ec2_url: ${18}
     #validate_certs: ${19:yes}
 endsnippet
+
 snippet ec2_customer_gateway
 - name: ${1:task_description}
   ec2_customer_gateway: 
@@ -354,6 +369,7 @@ snippet ec2_customer_gateway
     #state: ${20:present}
     #bgp_asn: ${21}
 endsnippet
+
 snippet ec2_eip
 - name: ${1:task_description}
   ec2_eip: 
@@ -372,6 +388,7 @@ snippet ec2_eip
     #validate_certs: ${28:yes}
     #device_id: ${29}
 endsnippet
+
 snippet ec2_elb
 - name: ${1:task_description}
   ec2_elb: 
@@ -389,6 +406,7 @@ snippet ec2_elb
     #enable_availability_zone: ${24:True}
     #wait: ${25:True}
 endsnippet
+
 snippet ec2_elb_facts
 - name: ${1:task_description}
   ec2_elb_facts: 
@@ -401,6 +419,7 @@ snippet ec2_elb_facts
     #region: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet ec2_elb_lb
 - name: ${1:task_description}
   ec2_elb_lb: 
@@ -434,6 +453,7 @@ snippet ec2_elb_lb
     #validate_certs: ${56:yes}
     #stickiness: ${57}
 endsnippet
+
 snippet ec2_eni
 - name: ${1:task_description}
   ec2_eni: 
@@ -459,6 +479,7 @@ snippet ec2_eni
     #delete_on_termination: ${41}
     #source_dest_check: ${42}
 endsnippet
+
 snippet ec2_eni_facts
 - name: ${1:task_description}
   ec2_eni_facts: 
@@ -471,11 +492,13 @@ snippet ec2_eni_facts
     #region: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet ec2_facts
 - name: ${1:task_description}
   ec2_facts: 
     #validate_certs: ${3:yes}
 endsnippet
+
 snippet ec2_group
 - name: ${1:task_description}
   ec2_group: 
@@ -495,6 +518,7 @@ snippet ec2_group
     #region: ${28}
     #purge_rules_egress: ${29:true}
 endsnippet
+
 snippet ec2_group_facts
 - name: ${1:task_description}
   ec2_group_facts: 
@@ -507,6 +531,7 @@ snippet ec2_group_facts
     #region: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet ec2_key
 - name: ${1:task_description}
   ec2_key: 
@@ -523,6 +548,7 @@ snippet ec2_key
     #validate_certs: ${23:yes}
     #wait: ${24}
 endsnippet
+
 snippet ec2_lc
 - name: ${1:task_description}
   ec2_lc: 
@@ -551,6 +577,7 @@ snippet ec2_lc
     #volumes: ${45}
     #validate_certs: ${46:yes}
 endsnippet
+
 snippet ec2_lc_facts
 - name: ${1:task_description}
   ec2_lc_facts: 
@@ -567,6 +594,7 @@ snippet ec2_lc_facts
     #ec2_url: ${24}
     #validate_certs: ${25:yes}
 endsnippet
+
 snippet ec2_lc_find
 - name: ${1:task_description}
   ec2_lc_find: 
@@ -575,6 +603,7 @@ snippet ec2_lc_find
     #sort_order: ${6:ascending}
     #limit: ${7}
 endsnippet
+
 snippet ec2_metric_alarm
 - name: ${1:task_description}
   ec2_metric_alarm: 
@@ -601,6 +630,7 @@ snippet ec2_metric_alarm
     #aws_access_key: ${42}
     #validate_certs: ${43:yes}
 endsnippet
+
 snippet ec2_remote_facts
 - name: ${1:task_description}
   ec2_remote_facts: 
@@ -613,6 +643,7 @@ snippet ec2_remote_facts
     #region: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet ec2_scaling_policy
 - name: ${1:task_description}
   ec2_scaling_policy: 
@@ -631,6 +662,7 @@ snippet ec2_scaling_policy
     #ec2_url: ${25}
     #validate_certs: ${26:yes}
 endsnippet
+
 snippet ec2_snapshot
 - name: ${1:task_description}
   ec2_snapshot: 
@@ -652,6 +684,7 @@ snippet ec2_snapshot
     #validate_certs: ${34:yes}
     #wait: ${35:True}
 endsnippet
+
 snippet ec2_snapshot_facts
 - name: ${1:task_description}
   ec2_snapshot_facts: 
@@ -667,6 +700,7 @@ snippet ec2_snapshot_facts
     #validate_certs: ${22:yes}
     #owner_ids: ${23}
 endsnippet
+
 snippet ec2_tag
 - name: ${1:task_description}
   ec2_tag: 
@@ -681,6 +715,7 @@ snippet ec2_tag
     #ec2_url: ${18}
     #validate_certs: ${19:yes}
 endsnippet
+
 snippet ec2_vol
 - name: ${1:task_description}
   ec2_vol: 
@@ -705,6 +740,7 @@ snippet ec2_vol
     #validate_certs: ${40:yes}
     #delete_on_termination: ${41:no}
 endsnippet
+
 snippet ec2_vol_facts
 - name: ${1:task_description}
   ec2_vol_facts: 
@@ -717,6 +753,7 @@ snippet ec2_vol_facts
     #region: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet ec2_vpc_dhcp_options
 - name: ${1:task_description}
   ec2_vpc_dhcp_options: 
@@ -738,6 +775,7 @@ snippet ec2_vpc_dhcp_options
     #dhcp_options_id: ${34:None}
     #netbios_name_servers: ${35:None}
 endsnippet
+
 snippet ec2_vpc_dhcp_options_facts
 - name: ${1:task_description}
   ec2_vpc_dhcp_options_facts: 
@@ -751,6 +789,7 @@ snippet ec2_vpc_dhcp_options_facts
     #ec2_url: ${18}
     #validate_certs: ${19:yes}
 endsnippet
+
 snippet ec2_vpc_igw
 - name: ${1:task_description}
   ec2_vpc_igw: 
@@ -764,6 +803,7 @@ snippet ec2_vpc_igw
     #ec2_url: ${17}
     #validate_certs: ${18:yes}
 endsnippet
+
 snippet ec2_vpc_nacl
 - name: ${1:task_description}
   ec2_vpc_nacl: 
@@ -781,6 +821,7 @@ snippet ec2_vpc_nacl
     #ec2_url: ${24}
     #validate_certs: ${25:yes}
 endsnippet
+
 snippet ec2_vpc_nacl_facts
 - name: ${1:task_description}
   ec2_vpc_nacl_facts: 
@@ -794,6 +835,7 @@ snippet ec2_vpc_nacl_facts
     #ec2_url: ${18}
     #validate_certs: ${19:yes}
 endsnippet
+
 snippet ec2_vpc_nat_gateway
 - name: ${1:task_description}
   ec2_vpc_nat_gateway: 
@@ -815,6 +857,7 @@ snippet ec2_vpc_nat_gateway
     #validate_certs: ${34:yes}
     #wait: ${35}
 endsnippet
+
 snippet ec2_vpc_net
 - name: ${1:task_description}
   ec2_vpc_net: 
@@ -835,6 +878,7 @@ snippet ec2_vpc_net
     #region: ${30}
     #dhcp_opts_id: ${31}
 endsnippet
+
 snippet ec2_vpc_net_facts
 - name: ${1:task_description}
   ec2_vpc_net_facts: 
@@ -847,6 +891,7 @@ snippet ec2_vpc_net_facts
     #region: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet ec2_vpc_peer
 - name: ${1:task_description}
   ec2_vpc_peer: 
@@ -863,6 +908,7 @@ snippet ec2_vpc_peer
     #vpc_id: ${24}
     #validate_certs: ${25:yes}
 endsnippet
+
 snippet ec2_vpc_route_table
 - name: ${1:task_description}
   ec2_vpc_route_table: 
@@ -882,6 +928,7 @@ snippet ec2_vpc_route_table
     #validate_certs: ${28:yes}
     #propagating_vgw_ids: ${29:None}
 endsnippet
+
 snippet ec2_vpc_route_table_facts
 - name: ${1:task_description}
   ec2_vpc_route_table_facts: 
@@ -894,6 +941,7 @@ snippet ec2_vpc_route_table_facts
     #region: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet ec2_vpc_subnet
 - name: ${1:task_description}
   ec2_vpc_subnet: 
@@ -910,6 +958,7 @@ snippet ec2_vpc_subnet
     #az: ${24}
     #validate_certs: ${25:yes}
 endsnippet
+
 snippet ec2_vpc_subnet_facts
 - name: ${1:task_description}
   ec2_vpc_subnet_facts: 
@@ -922,6 +971,7 @@ snippet ec2_vpc_subnet_facts
     #region: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet ec2_vpc_vgw
 - name: ${1:task_description}
   ec2_vpc_vgw: 
@@ -940,6 +990,7 @@ snippet ec2_vpc_vgw
     #vpn_gateway_id: ${28}
     #type: ${29}
 endsnippet
+
 snippet ec2_win_password
 - name: ${1:task_description}
   ec2_win_password: 
@@ -956,6 +1007,7 @@ snippet ec2_win_password
     #validate_certs: ${22:yes}
     #wait: ${23:no}
 endsnippet
+
 snippet ecs_cluster
 - name: ${1:task_description}
   ecs_cluster: 
@@ -971,6 +1023,7 @@ snippet ecs_cluster
     #ec2_url: ${20}
     #validate_certs: ${21:yes}
 endsnippet
+
 snippet ecs_ecr
 - name: ${1:task_description}
   ecs_ecr: 
@@ -987,6 +1040,7 @@ snippet ecs_ecr
     #policy: ${23}
     #registry_id: ${24}
 endsnippet
+
 snippet ecs_service
 - name: ${1:task_description}
   ecs_service: 
@@ -1008,6 +1062,7 @@ snippet ecs_service
     #client_token: ${32}
     #validate_certs: ${33:yes}
 endsnippet
+
 snippet ecs_service_facts
 - name: ${1:task_description}
   ecs_service_facts: 
@@ -1022,6 +1077,7 @@ snippet ecs_service_facts
     #ec2_url: ${20}
     #validate_certs: ${21:yes}
 endsnippet
+
 snippet ecs_task
 - name: ${1:task_description}
   ecs_task: 
@@ -1041,6 +1097,7 @@ snippet ecs_task
     #validate_certs: ${29:yes}
     #region: ${30}
 endsnippet
+
 snippet ecs_taskdefinition
 - name: ${1:task_description}
   ecs_taskdefinition: 
@@ -1060,6 +1117,7 @@ snippet ecs_taskdefinition
     #arn: ${29}
     #revision: ${30}
 endsnippet
+
 snippet efs
 - name: ${1:task_description}
   efs: 
@@ -1078,6 +1136,7 @@ snippet efs
     #id: ${28:None}
     #wait: ${29:no}
 endsnippet
+
 snippet efs_facts
 - name: ${1:task_description}
   efs_facts: 
@@ -1092,6 +1151,7 @@ snippet efs_facts
     #validate_certs: ${20:yes}
     #id: ${21:None}
 endsnippet
+
 snippet elasticache
 - name: ${1:task_description}
   elasticache: 
@@ -1117,6 +1177,7 @@ snippet elasticache
     #validate_certs: ${40:yes}
     #wait: ${41:True}
 endsnippet
+
 snippet elasticache_subnet_group
 - name: ${1:task_description}
   elasticache_subnet_group: 
@@ -1132,6 +1193,7 @@ snippet elasticache_subnet_group
     #validate_certs: ${20:yes}
     #description: ${21}
 endsnippet
+
 snippet execute_lambda
 - name: ${1:task_description}
   execute_lambda: 
@@ -1149,6 +1211,7 @@ snippet execute_lambda
     #payload: ${26}
     #wait: ${27:True}
 endsnippet
+
 snippet iam
 - name: ${1:task_description}
   iam: 
@@ -1173,6 +1236,7 @@ snippet iam
     #password: ${37}
     #trust_policy_filepath: ${38}
 endsnippet
+
 snippet iam_cert
 - name: ${1:task_description}
   iam_cert: 
@@ -1193,6 +1257,7 @@ snippet iam_cert
     #validate_certs: ${30:yes}
     #cert_chain: ${31}
 endsnippet
+
 snippet iam_mfa_device_facts
 - name: ${1:task_description}
   iam_mfa_device_facts: 
@@ -1205,6 +1270,7 @@ snippet iam_mfa_device_facts
     #region: ${16}
     #user_name: ${17}
 endsnippet
+
 snippet iam_policy
 - name: ${1:task_description}
   iam_policy: 
@@ -1223,6 +1289,7 @@ snippet iam_policy
     #profile: ${24}
     #validate_certs: ${25:yes}
 endsnippet
+
 snippet iam_role
 - name: ${1:task_description}
   iam_role: 
@@ -1238,6 +1305,7 @@ snippet iam_role
     #path: ${19:/}
     #validate_certs: ${20:yes}
 endsnippet
+
 snippet iam_server_certificate_facts
 - name: ${1:task_description}
   iam_server_certificate_facts: 
@@ -1250,6 +1318,7 @@ snippet iam_server_certificate_facts
     #region: ${15}
     #validate_certs: ${16:yes}
 endsnippet
+
 snippet kinesis_stream
 - name: ${1:task_description}
   kinesis_stream: 
@@ -1268,6 +1337,7 @@ snippet kinesis_stream
     #validate_certs: ${27:yes}
     #wait: ${28:True}
 endsnippet
+
 snippet lambda
 - name: ${1:task_description}
   lambda: 
@@ -1293,6 +1363,7 @@ snippet lambda
     #vpc_subnet_ids: ${40:None}
     #vpc_security_group_ids: ${41:None}
 endsnippet
+
 snippet lambda_alias
 - name: ${1:task_description}
   lambda_alias: 
@@ -1308,6 +1379,7 @@ snippet lambda_alias
     #ec2_url: ${19}
     #validate_certs: ${20:yes}
 endsnippet
+
 snippet lambda_event
 - name: ${1:task_description}
   lambda_event: 
@@ -1324,6 +1396,7 @@ snippet lambda_event
     #ec2_url: ${20}
     #validate_certs: ${21:yes}
 endsnippet
+
 snippet lambda_facts
 - name: ${1:task_description}
   lambda_facts: 
@@ -1337,6 +1410,7 @@ snippet lambda_facts
     #validate_certs: ${17:yes}
     #function_name: ${18}
 endsnippet
+
 snippet rds
 - name: ${1:task_description}
   rds: 
@@ -1381,6 +1455,7 @@ snippet rds
     #publicly_accessible: ${79}
     #maint_window: ${80}
 endsnippet
+
 snippet rds_param_group
 - name: ${1:task_description}
   rds_param_group: 
@@ -1398,6 +1473,7 @@ snippet rds_param_group
     #validate_certs: ${24:yes}
     #description: ${25}
 endsnippet
+
 snippet rds_subnet_group
 - name: ${1:task_description}
   rds_subnet_group: 
@@ -1413,6 +1489,7 @@ snippet rds_subnet_group
     #validate_certs: ${20:yes}
     #description: ${21}
 endsnippet
+
 snippet redshift
 - name: ${1:task_description}
   redshift: 
@@ -1447,6 +1524,7 @@ snippet redshift
     #preferred_maintenance_window: ${58}
     #vpc_security_group_ids: ${59}
 endsnippet
+
 snippet redshift_subnet_group
 - name: ${1:task_description}
   redshift_subnet_group: 
@@ -1461,6 +1539,7 @@ snippet redshift_subnet_group
     #group_description: ${19}
     #validate_certs: ${20:yes}
 endsnippet
+
 snippet route53
 - name: ${1:task_description}
   route53: 
@@ -1492,6 +1571,7 @@ snippet route53
     #identifier: ${50}
     #failover: ${51}
 endsnippet
+
 snippet route53_facts
 - name: ${1:task_description}
   route53_facts: 
@@ -1515,6 +1595,7 @@ snippet route53_facts
     #next_marker: ${37}
     #type: ${38}
 endsnippet
+
 snippet route53_health_check
 - name: ${1:task_description}
   route53_health_check: 
@@ -1535,6 +1616,7 @@ snippet route53_health_check
     #ip_address: ${28}
     #string_match: ${29}
 endsnippet
+
 snippet route53_zone
 - name: ${1:task_description}
   route53_zone: 
@@ -1551,6 +1633,7 @@ snippet route53_zone
     #security_token: ${23}
     #validate_certs: ${24:yes}
 endsnippet
+
 snippet s3
 - name: ${1:task_description}
   s3: 
@@ -1580,6 +1663,7 @@ snippet s3
     #validate_certs: ${48:yes}
     #expiration: ${49:600}
 endsnippet
+
 snippet s3_bucket
 - name: ${1:task_description}
   s3_bucket: 
@@ -1600,6 +1684,7 @@ snippet s3_bucket
     #requester_pays: ${31}
     #versioning: ${32}
 endsnippet
+
 snippet s3_lifecycle
 - name: ${1:task_description}
   s3_lifecycle: 
@@ -1621,6 +1706,7 @@ snippet s3_lifecycle
     #rule_id: ${33}
     #transition_date: ${34}
 endsnippet
+
 snippet s3_logging
 - name: ${1:task_description}
   s3_logging: 
@@ -1636,6 +1722,7 @@ snippet s3_logging
     #ec2_url: ${21}
     #validate_certs: ${22:yes}
 endsnippet
+
 snippet s3_sync
 - name: ${1:task_description}
   s3_sync: 
@@ -1656,6 +1743,7 @@ snippet s3_sync
     #validate_certs: ${29:yes}
     #key_prefix: ${30}
 endsnippet
+
 snippet s3_website
 - name: ${1:task_description}
   s3_website: 
@@ -1672,6 +1760,7 @@ snippet s3_website
     #ec2_url: ${23}
     #validate_certs: ${24:yes}
 endsnippet
+
 snippet sns_topic
 - name: ${1:task_description}
   sns_topic: 
@@ -1689,6 +1778,7 @@ snippet sns_topic
     #purge_subscriptions: ${25:True}
     #validate_certs: ${26:yes}
 endsnippet
+
 snippet sqs_queue
 - name: ${1:task_description}
   sqs_queue: 
@@ -1709,6 +1799,7 @@ snippet sqs_queue
     #redrive_policy: ${31}
     #receive_message_wait_time: ${32}
 endsnippet
+
 snippet sts_assume_role
 - name: ${1:task_description}
   sts_assume_role: 
@@ -1727,6 +1818,7 @@ snippet sts_assume_role
     #external_id: ${26}
     #region: ${27}
 endsnippet
+
 snippet sts_session_token
 - name: ${1:task_description}
   sts_session_token: 
@@ -1741,11 +1833,13 @@ snippet sts_session_token
     #validate_certs: ${20:yes}
     #region: ${21}
 endsnippet
+
 snippet atomic_host
 - name: ${1:task_description}
   atomic_host: 
     #revision: ${3:latest}
 endsnippet
+
 snippet atomic_image
 - name: ${1:task_description}
   atomic_image: 
@@ -1753,6 +1847,7 @@ snippet atomic_image
     #started: ${5:True}
     #state: ${6:latest}
 endsnippet
+
 snippet azure
 - name: ${1:task_description}
   azure: 
@@ -1777,6 +1872,7 @@ snippet azure
     #endpoints: ${36:22}
     #enable_winrm: ${37:yes}
 endsnippet
+
 snippet azure_rm_deployment
 - name: ${1:task_description}
   azure_rm_deployment: 
@@ -1799,6 +1895,7 @@ snippet azure_rm_deployment
     #deployment_mode: ${35:incremental}
     #tenant: ${36}
 endsnippet
+
 snippet azure_rm_networkinterface
 - name: ${1:task_description}
   azure_rm_networkinterface: 
@@ -1826,6 +1923,7 @@ snippet azure_rm_networkinterface
     #private_ip_address: ${44}
     #os_type: ${45:Linux}
 endsnippet
+
 snippet azure_rm_networkinterface_facts
 - name: ${1:task_description}
   azure_rm_networkinterface_facts: 
@@ -1840,6 +1938,7 @@ snippet azure_rm_networkinterface_facts
     #password: ${20}
     #tenant: ${21}
 endsnippet
+
 snippet azure_rm_publicipaddress
 - name: ${1:task_description}
   azure_rm_publicipaddress: 
@@ -1859,6 +1958,7 @@ snippet azure_rm_publicipaddress
     #password: ${28}
     #tenant: ${29}
 endsnippet
+
 snippet azure_rm_publicipaddress_facts
 - name: ${1:task_description}
   azure_rm_publicipaddress_facts: 
@@ -1873,6 +1973,7 @@ snippet azure_rm_publicipaddress_facts
     #password: ${20}
     #tenant: ${21}
 endsnippet
+
 snippet azure_rm_resourcegroup
 - name: ${1:task_description}
   azure_rm_resourcegroup: 
@@ -1890,6 +1991,7 @@ snippet azure_rm_resourcegroup
     #password: ${25}
     #tenant: ${26}
 endsnippet
+
 snippet azure_rm_resourcegroup_facts
 - name: ${1:task_description}
   azure_rm_resourcegroup_facts: 
@@ -1903,6 +2005,7 @@ snippet azure_rm_resourcegroup_facts
     #password: ${18}
     #tenant: ${19}
 endsnippet
+
 snippet azure_rm_securitygroup
 - name: ${1:task_description}
   azure_rm_securitygroup: 
@@ -1924,6 +2027,7 @@ snippet azure_rm_securitygroup
     #tenant: ${33}
     #name: ${34}
 endsnippet
+
 snippet azure_rm_securitygroup_facts
 - name: ${1:task_description}
   azure_rm_securitygroup_facts: 
@@ -1938,6 +2042,7 @@ snippet azure_rm_securitygroup_facts
     #password: ${19}
     #tenant: ${20}
 endsnippet
+
 snippet azure_rm_storageaccount
 - name: ${1:task_description}
   azure_rm_storageaccount: 
@@ -1958,6 +2063,7 @@ snippet azure_rm_storageaccount
     #tenant: ${31}
     #name: ${32}
 endsnippet
+
 snippet azure_rm_storageaccount_facts
 - name: ${1:task_description}
   azure_rm_storageaccount_facts: 
@@ -1972,6 +2078,7 @@ snippet azure_rm_storageaccount_facts
     #password: ${20}
     #tenant: ${21}
 endsnippet
+
 snippet azure_rm_storageblob
 - name: ${1:task_description}
   azure_rm_storageblob: 
@@ -2000,6 +2107,7 @@ snippet azure_rm_storageblob
     #cache_control: ${45}
     #content_encoding: ${46}
 endsnippet
+
 snippet azure_rm_subnet
 - name: ${1:task_description}
   azure_rm_subnet: 
@@ -2017,6 +2125,7 @@ snippet azure_rm_subnet
     #password: ${21}
     #tenant: ${22}
 endsnippet
+
 snippet azure_rm_virtualmachine
 - name: ${1:task_description}
   azure_rm_virtualmachine: 
@@ -2055,6 +2164,7 @@ snippet azure_rm_virtualmachine
     #storage_blob_name: ${65}
     #admin_password: ${66}
 endsnippet
+
 snippet azure_rm_virtualmachineimage_facts
 - name: ${1:task_description}
   azure_rm_virtualmachineimage_facts: 
@@ -2072,6 +2182,7 @@ snippet azure_rm_virtualmachineimage_facts
     #password: ${25}
     #tenant: ${26}
 endsnippet
+
 snippet azure_rm_virtualnetwork
 - name: ${1:task_description}
   azure_rm_virtualnetwork: 
@@ -2093,6 +2204,7 @@ snippet azure_rm_virtualnetwork
     #tenant: ${32}
     #location: ${33:resource_group location}
 endsnippet
+
 snippet azure_rm_virtualnetwork_facts
 - name: ${1:task_description}
   azure_rm_virtualnetwork_facts: 
@@ -2107,6 +2219,7 @@ snippet azure_rm_virtualnetwork_facts
     #password: ${20}
     #tenant: ${21}
 endsnippet
+
 snippet clc_aa_policy
 - name: ${1:task_description}
   clc_aa_policy: 
@@ -2115,6 +2228,7 @@ snippet clc_aa_policy
     #state: ${6:present}
     #wait: ${7:True}
 endsnippet
+
 snippet clc_alert_policy
 - name: ${1:task_description}
   clc_alert_policy: 
@@ -2127,6 +2241,7 @@ snippet clc_alert_policy
     #id: ${15:None}
     #duration: ${16:None}
 endsnippet
+
 snippet clc_blueprint_package
 - name: ${1:task_description}
   clc_blueprint_package: 
@@ -2136,6 +2251,7 @@ snippet clc_blueprint_package
     #state: ${8:present}
     #wait: ${9:True}
 endsnippet
+
 snippet clc_firewall_policy
 - name: ${1:task_description}
   clc_firewall_policy: 
@@ -2150,6 +2266,7 @@ snippet clc_firewall_policy
     #ports: ${18:None}
     #wait: ${19:True}
 endsnippet
+
 snippet clc_group
 - name: ${1:task_description}
   clc_group: 
@@ -2160,6 +2277,7 @@ snippet clc_group
     #location: ${11}
     #description: ${12}
 endsnippet
+
 snippet clc_loadbalancer
 - name: ${1:task_description}
   clc_loadbalancer: 
@@ -2174,6 +2292,7 @@ snippet clc_loadbalancer
     #persistence: ${17:None}
     #description: ${18:None}
 endsnippet
+
 snippet clc_modify_server
 - name: ${1:task_description}
   clc_modify_server: 
@@ -2187,6 +2306,7 @@ snippet clc_modify_server
     #cpu: ${17:None}
     #wait: ${18:True}
 endsnippet
+
 snippet clc_publicip
 - name: ${1:task_description}
   clc_publicip: 
@@ -2196,6 +2316,7 @@ snippet clc_publicip
     #ports: ${9:None}
     #wait: ${10:True}
 endsnippet
+
 snippet clc_server
 - name: ${1:task_description}
   clc_server: 
@@ -2237,6 +2358,7 @@ snippet clc_server
     #configuration_id: ${74:None}
     #cpu: ${75:1}
 endsnippet
+
 snippet clc_server_snapshot
 - name: ${1:task_description}
   clc_server_snapshot: 
@@ -2245,6 +2367,7 @@ snippet clc_server_snapshot
     #state: ${7:present}
     #wait: ${8:True}
 endsnippet
+
 snippet cloudscale_server
 - name: ${1:task_description}
   cloudscale_server: 
@@ -2263,6 +2386,7 @@ snippet cloudscale_server
     #flavor: ${28}
     #ssh_keys: ${29}
 endsnippet
+
 snippet cs_account
 - name: ${1:task_description}
   cs_account: 
@@ -2285,6 +2409,7 @@ snippet cs_account
     #email: ${35}
     #api_url: ${36}
 endsnippet
+
 snippet cs_affinitygroup
 - name: ${1:task_description}
   cs_affinitygroup: 
@@ -2303,6 +2428,7 @@ snippet cs_affinitygroup
     #api_key: ${27}
     #description: ${28}
 endsnippet
+
 snippet cs_cluster
 - name: ${1:task_description}
   cs_cluster: 
@@ -2332,6 +2458,7 @@ snippet cs_cluster
     #api_key: ${49}
     #vms_password: ${50}
 endsnippet
+
 snippet cs_configuration
 - name: ${1:task_description}
   cs_configuration: 
@@ -2349,6 +2476,7 @@ snippet cs_configuration
     #api_key: ${24}
     #api_url: ${25}
 endsnippet
+
 snippet cs_domain
 - name: ${1:task_description}
   cs_domain: 
@@ -2364,11 +2492,13 @@ snippet cs_domain
     #state: ${21:present}
     #network_domain: ${22}
 endsnippet
+
 snippet cs_facts
 - name: ${1:task_description}
   cs_facts: 
     #filter: ${3}
 endsnippet
+
 snippet cs_firewall
 - name: ${1:task_description}
   cs_firewall: 
@@ -2394,6 +2524,7 @@ snippet cs_firewall
     #ip_address: ${42}
     #api_url: ${43}
 endsnippet
+
 snippet cs_host
 - name: ${1:task_description}
   cs_host: 
@@ -2414,6 +2545,7 @@ snippet cs_host
     #allocation_state: ${31}
     #api_url: ${32}
 endsnippet
+
 snippet cs_instance
 - name: ${1:task_description}
   cs_instance: 
@@ -2456,6 +2588,7 @@ snippet cs_instance
     #poll_async: ${76:True}
     #cpu: ${77}
 endsnippet
+
 snippet cs_instance_facts
 - name: ${1:task_description}
   cs_instance_facts: 
@@ -2470,6 +2603,7 @@ snippet cs_instance_facts
     #api_key: ${19}
     #api_url: ${20}
 endsnippet
+
 snippet cs_instancegroup
 - name: ${1:task_description}
   cs_instancegroup: 
@@ -2485,6 +2619,7 @@ snippet cs_instancegroup
     #api_key: ${21}
     #api_url: ${22}
 endsnippet
+
 snippet cs_ip_address
 - name: ${1:task_description}
   cs_ip_address: 
@@ -2503,6 +2638,7 @@ snippet cs_ip_address
     #ip_address: ${28}
     #api_url: ${29}
 endsnippet
+
 snippet cs_iso
 - name: ${1:task_description}
   cs_iso: 
@@ -2529,6 +2665,7 @@ snippet cs_iso
     #os_type: ${43}
     #api_key: ${44}
 endsnippet
+
 snippet cs_loadbalancer_rule
 - name: ${1:task_description}
   cs_loadbalancer_rule: 
@@ -2553,6 +2690,7 @@ snippet cs_loadbalancer_rule
     #zone: ${36}
     #description: ${37}
 endsnippet
+
 snippet cs_loadbalancer_rule_member
 - name: ${1:task_description}
   cs_loadbalancer_rule_member: 
@@ -2571,6 +2709,7 @@ snippet cs_loadbalancer_rule_member
     #ip_address: ${26}
     #api_url: ${27}
 endsnippet
+
 snippet cs_network
 - name: ${1:task_description}
   cs_network: 
@@ -2604,6 +2743,7 @@ snippet cs_network
     #end_ip: ${57}
     #network_domain: ${58}
 endsnippet
+
 snippet cs_nic
 - name: ${1:task_description}
   cs_nic: 
@@ -2624,6 +2764,7 @@ snippet cs_nic
     #api_key: ${31}
     #api_url: ${32}
 endsnippet
+
 snippet cs_pod
 - name: ${1:task_description}
   cs_pod: 
@@ -2642,6 +2783,7 @@ snippet cs_pod
     #id: ${27}
     #api_url: ${28}
 endsnippet
+
 snippet cs_portforward
 - name: ${1:task_description}
   cs_portforward: 
@@ -2667,6 +2809,7 @@ snippet cs_portforward
     #api_key: ${39}
     #api_url: ${40}
 endsnippet
+
 snippet cs_project
 - name: ${1:task_description}
   cs_project: 
@@ -2684,6 +2827,7 @@ snippet cs_project
     #api_key: ${25}
     #api_url: ${26}
 endsnippet
+
 snippet cs_region
 - name: ${1:task_description}
   cs_region: 
@@ -2698,6 +2842,7 @@ snippet cs_region
     #api_key: ${19}
     #api_url: ${20}
 endsnippet
+
 snippet cs_resourcelimit
 - name: ${1:task_description}
   cs_resourcelimit: 
@@ -2713,6 +2858,7 @@ snippet cs_resourcelimit
     #limit: ${21:-1}
     #api_key: ${22}
 endsnippet
+
 snippet cs_role
 - name: ${1:task_description}
   cs_role: 
@@ -2728,6 +2874,7 @@ snippet cs_role
     #id: ${21}
     #role_type: ${22:User}
 endsnippet
+
 snippet cs_router
 - name: ${1:task_description}
   cs_router: 
@@ -2744,6 +2891,7 @@ snippet cs_router
     #api_key: ${23}
     #api_url: ${24}
 endsnippet
+
 snippet cs_securitygroup
 - name: ${1:task_description}
   cs_securitygroup: 
@@ -2760,6 +2908,7 @@ snippet cs_securitygroup
     #api_key: ${23}
     #description: ${24}
 endsnippet
+
 snippet cs_securitygroup_rule
 - name: ${1:task_description}
   cs_securitygroup_rule: 
@@ -2782,6 +2931,7 @@ snippet cs_securitygroup_rule
     #icmp_type: ${35}
     #type: ${36:ingress}
 endsnippet
+
 snippet cs_snapshot_policy
 - name: ${1:task_description}
   cs_snapshot_policy: 
@@ -2805,6 +2955,7 @@ snippet cs_snapshot_policy
     #api_key: ${38}
     #device_id: ${39}
 endsnippet
+
 snippet cs_sshkeypair
 - name: ${1:task_description}
   cs_sshkeypair: 
@@ -2821,6 +2972,7 @@ snippet cs_sshkeypair
     #api_key: ${23}
     #api_url: ${24}
 endsnippet
+
 snippet cs_staticnat
 - name: ${1:task_description}
   cs_staticnat: 
@@ -2842,6 +2994,7 @@ snippet cs_staticnat
     #api_key: ${33}
     #api_url: ${34}
 endsnippet
+
 snippet cs_template
 - name: ${1:task_description}
   cs_template: 
@@ -2882,6 +3035,7 @@ snippet cs_template
     #snapshot: ${71}
     #mode: ${72:http_download}
 endsnippet
+
 snippet cs_user
 - name: ${1:task_description}
   cs_user: 
@@ -2902,6 +3056,7 @@ snippet cs_user
     #password: ${31}
     #email: ${32}
 endsnippet
+
 snippet cs_vmsnapshot
 - name: ${1:task_description}
   cs_vmsnapshot: 
@@ -2922,6 +3077,7 @@ snippet cs_vmsnapshot
     #api_url: ${30}
     #api_key: ${31}
 endsnippet
+
 snippet cs_volume
 - name: ${1:task_description}
   cs_volume: 
@@ -2949,6 +3105,7 @@ snippet cs_volume
     #vm: ${45}
     #api_key: ${46}
 endsnippet
+
 snippet cs_vpc
 - name: ${1:task_description}
   cs_vpc: 
@@ -2971,6 +3128,7 @@ snippet cs_vpc
     #network_domain: ${35}
     #api_url: ${36}
 endsnippet
+
 snippet cs_zone
 - name: ${1:task_description}
   cs_zone: 
@@ -2995,6 +3153,7 @@ snippet cs_zone
     #id: ${39}
     #dns1_ipv6: ${40}
 endsnippet
+
 snippet cs_zone_facts
 - name: ${1:task_description}
   cs_zone_facts: 
@@ -3006,6 +3165,7 @@ snippet cs_zone_facts
     #api_region: ${13:cloudstack}
     #api_url: ${14}
 endsnippet
+
 snippet digital_ocean
 - name: ${1:task_description}
   digital_ocean: 
@@ -3028,6 +3188,7 @@ snippet digital_ocean
     #ipv6: ${36:no}
     #private_networking: ${37:no}
 endsnippet
+
 snippet digital_ocean_block_storage
 - name: ${1:task_description}
   digital_ocean_block_storage: 
@@ -3041,6 +3202,7 @@ snippet digital_ocean_block_storage
     #timeout: ${13:10}
     #block_size: ${14}
 endsnippet
+
 snippet digital_ocean_domain
 - name: ${1:task_description}
   digital_ocean_domain: 
@@ -3050,6 +3212,7 @@ snippet digital_ocean_domain
     #id: ${10}
     #name: ${11}
 endsnippet
+
 snippet digital_ocean_sshkey
 - name: ${1:task_description}
   digital_ocean_sshkey: 
@@ -3060,6 +3223,7 @@ snippet digital_ocean_sshkey
     #id: ${12}
     #ssh_pub_key: ${13}
 endsnippet
+
 snippet digital_ocean_tag
 - name: ${1:task_description}
   digital_ocean_tag: 
@@ -3069,6 +3233,7 @@ snippet digital_ocean_tag
     #resource_type: ${9:droplet}
     #api_token: ${10}
 endsnippet
+
 snippet dimensiondata_network
 - name: ${1:task_description}
   dimensiondata_network: 
@@ -3085,6 +3250,7 @@ snippet dimensiondata_network
     #verify_ssl_cert: ${22:True}
     #wait_poll_interval: ${23:2}
 endsnippet
+
 snippet docker
 - name: ${1:task_description}
   docker: 
@@ -3144,6 +3310,7 @@ snippet docker
     #ulimits: ${109}
     #cpu_shares: ${110}
 endsnippet
+
 snippet docker_container
 - name: ${1:task_description}
   docker_container: 
@@ -3224,6 +3391,7 @@ snippet docker_container
     #cpu_shares: ${151}
     #restart_retries: ${152}
 endsnippet
+
 snippet docker_image
 - name: ${1:task_description}
   docker_image: 
@@ -3255,6 +3423,7 @@ snippet docker_image
     #dockerfile: ${53:Dockerfile}
     #api_version: ${54:default provided by docker-py}
 endsnippet
+
 snippet docker_image_facts
 - name: ${1:task_description}
   docker_image_facts: 
@@ -3270,6 +3439,7 @@ snippet docker_image_facts
     #cert_path: ${21}
     #api_version: ${22:default provided by docker-py}
 endsnippet
+
 snippet docker_login
 - name: ${1:task_description}
   docker_login: 
@@ -3291,6 +3461,7 @@ snippet docker_login
     #api_version: ${32:default provided by docker-py}
     #reauthorize: ${33}
 endsnippet
+
 snippet docker_network
 - name: ${1:task_description}
   docker_network: 
@@ -3314,6 +3485,7 @@ snippet docker_network
     #appends: ${37}
     #api_version: ${38:default provided by docker-py}
 endsnippet
+
 snippet docker_service
 - name: ${1:task_description}
   docker_service: 
@@ -3346,6 +3518,7 @@ snippet docker_service
     #cacert_path: ${56}
     #key_path: ${57}
 endsnippet
+
 snippet gc_storage
 - name: ${1:task_description}
   gc_storage: 
@@ -3361,6 +3534,7 @@ snippet gc_storage
     #expiration: ${18}
     #headers: ${19:{}}
 endsnippet
+
 snippet gcdns_record
 - name: ${1:task_description}
   gcdns_record: 
@@ -3377,6 +3551,7 @@ snippet gcdns_record
     #project_id: ${22}
     #overwrite: ${23}
 endsnippet
+
 snippet gcdns_zone
 - name: ${1:task_description}
   gcdns_zone: 
@@ -3388,6 +3563,7 @@ snippet gcdns_zone
     #project_id: ${13}
     #pem_file: ${14}
 endsnippet
+
 snippet gce
 - name: ${1:task_description}
   gce: 
@@ -3415,6 +3591,7 @@ snippet gce
     #preemptible: ${45:false}
     #metadata: ${46}
 endsnippet
+
 snippet gce_img
 - name: ${1:task_description}
   gce_img: 
@@ -3429,6 +3606,7 @@ snippet gce_img
     #zone: ${19:us-central1-a}
     #description: ${20}
 endsnippet
+
 snippet gce_lb
 - name: ${1:task_description}
   gce_lb: 
@@ -3452,6 +3630,7 @@ snippet gce_lb
     #project_id: ${38}
     #httphealthcheck_interval: ${39:5}
 endsnippet
+
 snippet gce_mig
 - name: ${1:task_description}
   gce_mig: 
@@ -3466,6 +3645,7 @@ snippet gce_mig
     #project_id: ${18}
     #size: ${19}
 endsnippet
+
 snippet gce_net
 - name: ${1:task_description}
   gce_net: 
@@ -3486,6 +3666,7 @@ snippet gce_net
     #project_id: ${32}
     #subnet_desc: ${33}
 endsnippet
+
 snippet gce_pd
 - name: ${1:task_description}
   gce_pd: 
@@ -3505,6 +3686,7 @@ snippet gce_pd
     #delete_on_termination: ${29}
     #mode: ${30:READ_ONLY}
 endsnippet
+
 snippet gce_tag
 - name: ${1:task_description}
   gce_tag: 
@@ -3517,6 +3699,7 @@ snippet gce_tag
     #instance_pattern: ${15}
     #project_id: ${16}
 endsnippet
+
 snippet linode
 - name: ${1:task_description}
   linode: 
@@ -3534,6 +3717,7 @@ snippet linode
     #ssh_pub_key: ${26}
     #wait: ${27:no}
 endsnippet
+
 snippet lxc_container
 - name: ${1:task_description}
   lxc_container: 
@@ -3561,6 +3745,7 @@ snippet lxc_container
     #directory: ${45}
     #config: ${46}
 endsnippet
+
 snippet lxd_container
 - name: ${1:task_description}
   lxd_container: 
@@ -3579,6 +3764,7 @@ snippet lxd_container
     #trust_password: ${27}
     #force_stop: ${28}
 endsnippet
+
 snippet lxd_profile
 - name: ${1:task_description}
   lxd_profile: 
@@ -3592,6 +3778,7 @@ snippet lxd_profile
     #key_file: ${17:"{}/.config/lxc/client.key" .format(os.environ["HOME"])}
     #trust_password: ${18}
 endsnippet
+
 snippet ovirt
 - name: ${1:task_description}
   ovirt: 
@@ -3623,6 +3810,7 @@ snippet ovirt
     #resource_type: ${50}
     #disk_int: ${51:virtio}
 endsnippet
+
 snippet proxmox
 - name: ${1:task_description}
   proxmox: 
@@ -3652,6 +3840,7 @@ snippet proxmox
     #validate_certs: ${48}
     #onboot: ${49}
 endsnippet
+
 snippet proxmox_kvm
 - name: ${1:task_description}
   proxmox_kvm: 
@@ -3719,6 +3908,7 @@ snippet proxmox_kvm
     #onboot: ${124:yes}
     #delete: ${125}
 endsnippet
+
 snippet proxmox_template
 - name: ${1:task_description}
   proxmox_template: 
@@ -3735,6 +3925,7 @@ snippet proxmox_template
     #validate_certs: ${21}
     #template: ${22}
 endsnippet
+
 snippet rhevm
 - name: ${1:task_description}
   rhevm: 
@@ -3762,6 +3953,7 @@ snippet rhevm
     #type: ${46:server}
     #vmcpu: ${47:2}
 endsnippet
+
 snippet serverless
 - name: ${1:task_description}
   serverless: 
@@ -3771,6 +3963,7 @@ snippet serverless
     #state: ${9:present}
     #deploy: ${10:True}
 endsnippet
+
 snippet virt
 - name: ${1:task_description}
   virt: 
@@ -3780,6 +3973,7 @@ snippet virt
     #command: ${9}
     #uri: ${10}
 endsnippet
+
 snippet virt_net
 - name: ${1:task_description}
   virt_net: 
@@ -3790,6 +3984,7 @@ snippet virt_net
     #autostart: ${11}
     #uri: ${12:qemu:///system}
 endsnippet
+
 snippet virt_pool
 - name: ${1:task_description}
   virt_pool: 
@@ -3801,10 +3996,12 @@ snippet virt_pool
     #uri: ${14:qemu:///system}
     #mode: ${15}
 endsnippet
+
 snippet xenserver_facts
 - name: ${1:task_description}
   xenserver_facts: 
 endsnippet
+
 snippet glance_image
 - name: ${1:task_description}
   glance_image: 
@@ -3826,6 +4023,7 @@ snippet glance_image
     #state: ${30:present}
     #timeout: ${31:180}
 endsnippet
+
 snippet keystone_user
 - name: ${1:task_description}
   keystone_user: 
@@ -3842,6 +4040,7 @@ snippet keystone_user
     #email: ${24:None}
     #tenant: ${25:None}
 endsnippet
+
 snippet nova_compute
 - name: ${1:task_description}
   nova_compute: 
@@ -3872,6 +4071,7 @@ snippet nova_compute
     #config_drive: ${46:no}
     #floating_ip_pools: ${47:None}
 endsnippet
+
 snippet nova_keypair
 - name: ${1:task_description}
   nova_keypair: 
@@ -3884,6 +4084,7 @@ snippet nova_keypair
     #state: ${12:present}
     #auth_url: ${13:http://127.0.0.1:35357/v2.0/}
 endsnippet
+
 snippet quantum_floating_ip
 - name: ${1:task_description}
   quantum_floating_ip: 
@@ -3897,6 +4098,7 @@ snippet quantum_floating_ip
     #auth_url: ${13:http://127.0.0.1:35357/v2.0/}
     #internal_network_name: ${14:None}
 endsnippet
+
 snippet quantum_floating_ip_associate
 - name: ${1:task_description}
   quantum_floating_ip_associate: 
@@ -3909,6 +4111,7 @@ snippet quantum_floating_ip_associate
     #state: ${11:present}
     #auth_url: ${12:http://127.0.0.1:35357/v2.0/}
 endsnippet
+
 snippet quantum_network
 - name: ${1:task_description}
   quantum_network: 
@@ -3927,6 +4130,7 @@ snippet quantum_network
     #shared: ${24}
     #provider_segmentation_id: ${25:None}
 endsnippet
+
 snippet quantum_router
 - name: ${1:task_description}
   quantum_router: 
@@ -3940,6 +4144,7 @@ snippet quantum_router
     #state: ${14:present}
     #auth_url: ${15:http://127.0.0.1:35357/v2.0/}
 endsnippet
+
 snippet quantum_router_gateway
 - name: ${1:task_description}
   quantum_router_gateway: 
@@ -3952,6 +4157,7 @@ snippet quantum_router_gateway
     #state: ${11:present}
     #auth_url: ${12:http://127.0.0.1:35357/v2.0/}
 endsnippet
+
 snippet quantum_router_interface
 - name: ${1:task_description}
   quantum_router_interface: 
@@ -3965,6 +4171,7 @@ snippet quantum_router_interface
     #state: ${13:present}
     #auth_url: ${14:http://127.0.0.1:35357/v2.0/}
 endsnippet
+
 snippet quantum_subnet
 - name: ${1:task_description}
   quantum_subnet: 
@@ -3985,6 +4192,7 @@ snippet quantum_subnet
     #gateway_ip: ${26:None}
     #ip_version: ${27:4}
 endsnippet
+
 snippet os_auth
 - name: ${1:task_description}
   os_auth: 
@@ -4002,11 +4210,13 @@ snippet os_auth
     #cloud: ${26}
     #wait: ${27:yes}
 endsnippet
+
 snippet os_client_config
 - name: ${1:task_description}
   os_client_config: 
     #clouds: ${3}
 endsnippet
+
 snippet os_flavor_facts
 - name: ${1:task_description}
   os_flavor_facts: 
@@ -4029,6 +4239,7 @@ snippet os_flavor_facts
     #timeout: ${36:180}
     #validate_certs: ${37:True}
 endsnippet
+
 snippet os_floating_ip
 - name: ${1:task_description}
   os_floating_ip: 
@@ -4054,6 +4265,7 @@ snippet os_floating_ip
     #timeout: ${41:180}
     #validate_certs: ${42:True}
 endsnippet
+
 snippet os_group
 - name: ${1:task_description}
   os_group: 
@@ -4074,6 +4286,7 @@ snippet os_group
     #wait: ${31:yes}
     #validate_certs: ${32:True}
 endsnippet
+
 snippet os_image
 - name: ${1:task_description}
   os_image: 
@@ -4103,6 +4316,7 @@ snippet os_image
     #timeout: ${49:180}
     #validate_certs: ${50:True}
 endsnippet
+
 snippet os_image_facts
 - name: ${1:task_description}
   os_image_facts: 
@@ -4121,6 +4335,7 @@ snippet os_image_facts
     #cloud: ${27}
     #wait: ${28:yes}
 endsnippet
+
 snippet os_ironic
 - name: ${1:task_description}
   os_ironic: 
@@ -4148,6 +4363,7 @@ snippet os_ironic
     #wait: ${44:yes}
     #skip_update_of_driver_password: ${45}
 endsnippet
+
 snippet os_ironic_inspect
 - name: ${1:task_description}
   os_ironic_inspect: 
@@ -4169,6 +4385,7 @@ snippet os_ironic_inspect
     #wait: ${34:yes}
     #validate_certs: ${35:True}
 endsnippet
+
 snippet os_ironic_node
 - name: ${1:task_description}
   os_ironic_node: 
@@ -4195,6 +4412,7 @@ snippet os_ironic_node
     #instance_info: ${44}
     #config_drive: ${45:None}
 endsnippet
+
 snippet os_keypair
 - name: ${1:task_description}
   os_keypair: 
@@ -4216,6 +4434,7 @@ snippet os_keypair
     #timeout: ${33:180}
     #validate_certs: ${34:True}
 endsnippet
+
 snippet os_keystone_domain
 - name: ${1:task_description}
   os_keystone_domain: 
@@ -4237,6 +4456,7 @@ snippet os_keystone_domain
     #wait: ${33:yes}
     #validate_certs: ${34:True}
 endsnippet
+
 snippet os_keystone_domain_facts
 - name: ${1:task_description}
   os_keystone_domain_facts: 
@@ -4256,6 +4476,7 @@ snippet os_keystone_domain_facts
     #cloud: ${29}
     #region_name: ${30}
 endsnippet
+
 snippet os_keystone_role
 - name: ${1:task_description}
   os_keystone_role: 
@@ -4275,6 +4496,7 @@ snippet os_keystone_role
     #cloud: ${29}
     #region_name: ${30}
 endsnippet
+
 snippet os_keystone_service
 - name: ${1:task_description}
   os_keystone_service: 
@@ -4297,6 +4519,7 @@ snippet os_keystone_service
     #wait: ${34:yes}
     #validate_certs: ${35:True}
 endsnippet
+
 snippet os_network
 - name: ${1:task_description}
   os_network: 
@@ -4323,6 +4546,7 @@ snippet os_network
     #shared: ${43}
     #validate_certs: ${44:True}
 endsnippet
+
 snippet os_networks_facts
 - name: ${1:task_description}
   os_networks_facts: 
@@ -4342,6 +4566,7 @@ snippet os_networks_facts
     #cloud: ${30}
     #region_name: ${31}
 endsnippet
+
 snippet os_nova_flavor
 - name: ${1:task_description}
   os_nova_flavor: 
@@ -4369,6 +4594,7 @@ snippet os_nova_flavor
     #timeout: ${45:180}
     #validate_certs: ${46:True}
 endsnippet
+
 snippet os_nova_host_aggregate
 - name: ${1:task_description}
   os_nova_host_aggregate: 
@@ -4390,6 +4616,7 @@ snippet os_nova_host_aggregate
     #validate_certs: ${33:True}
     #metadata: ${34:None}
 endsnippet
+
 snippet os_object
 - name: ${1:task_description}
   os_object: 
@@ -4412,6 +4639,7 @@ snippet os_object
     #validate_certs: ${35:True}
     #container_access: ${36:private}
 endsnippet
+
 snippet os_port
 - name: ${1:task_description}
   os_port: 
@@ -4441,6 +4669,7 @@ snippet os_port
     #device_id: ${49:None}
     #validate_certs: ${50:True}
 endsnippet
+
 snippet os_port_facts
 - name: ${1:task_description}
   os_port_facts: 
@@ -4460,6 +4689,7 @@ snippet os_port_facts
     #cloud: ${30}
     #wait: ${31:yes}
 endsnippet
+
 snippet os_project
 - name: ${1:task_description}
   os_project: 
@@ -4482,6 +4712,7 @@ snippet os_project
     #wait: ${35:yes}
     #validate_certs: ${36:True}
 endsnippet
+
 snippet os_project_facts
 - name: ${1:task_description}
   os_project_facts: 
@@ -4502,6 +4733,7 @@ snippet os_project_facts
     #timeout: ${31:180}
     #validate_certs: ${32:True}
 endsnippet
+
 snippet os_quota
 - name: ${1:task_description}
   os_quota: 
@@ -4550,6 +4782,7 @@ snippet os_quota
     #router: ${87:None}
     #auth: ${88}
 endsnippet
+
 snippet os_recordset
 - name: ${1:task_description}
   os_recordset: 
@@ -4574,6 +4807,7 @@ snippet os_recordset
     #wait: ${36:yes}
     #validate_certs: ${37:True}
 endsnippet
+
 snippet os_router
 - name: ${1:task_description}
   os_router: 
@@ -4599,6 +4833,7 @@ snippet os_router
     #cloud: ${41}
     #external_fixed_ips: ${42:None}
 endsnippet
+
 snippet os_security_group
 - name: ${1:task_description}
   os_security_group: 
@@ -4619,6 +4854,7 @@ snippet os_security_group
     #wait: ${31:yes}
     #validate_certs: ${32:True}
 endsnippet
+
 snippet os_security_group_rule
 - name: ${1:task_description}
   os_security_group_rule: 
@@ -4645,6 +4881,7 @@ snippet os_security_group_rule
     #ethertype: ${43:IPv4}
     #validate_certs: ${44:True}
 endsnippet
+
 snippet os_server
 - name: ${1:task_description}
   os_server: 
@@ -4687,6 +4924,7 @@ snippet os_server
     #reuse_ips: ${74:True}
     #floating_ip_pools: ${75:None}
 endsnippet
+
 snippet os_server_actions
 - name: ${1:task_description}
   os_server_actions: 
@@ -4707,6 +4945,7 @@ snippet os_server_actions
     #action: ${31:present}
     #validate_certs: ${32:True}
 endsnippet
+
 snippet os_server_facts
 - name: ${1:task_description}
   os_server_facts: 
@@ -4726,6 +4965,7 @@ snippet os_server_facts
     #cloud: ${30}
     #wait: ${31:yes}
 endsnippet
+
 snippet os_server_group
 - name: ${1:task_description}
   os_server_group: 
@@ -4746,6 +4986,7 @@ snippet os_server_group
     #policies: ${31}
     #validate_certs: ${32:True}
 endsnippet
+
 snippet os_server_volume
 - name: ${1:task_description}
   os_server_volume: 
@@ -4767,6 +5008,7 @@ snippet os_server_volume
     #timeout: ${32:180}
     #validate_certs: ${33:True}
 endsnippet
+
 snippet os_stack
 - name: ${1:task_description}
   os_stack: 
@@ -4790,6 +5032,7 @@ snippet os_stack
     #wait: ${37:yes}
     #validate_certs: ${38:True}
 endsnippet
+
 snippet os_subnet
 - name: ${1:task_description}
   os_subnet: 
@@ -4822,6 +5065,7 @@ snippet os_subnet
     #ip_version: ${55:4}
     #validate_certs: ${56:True}
 endsnippet
+
 snippet os_subnets_facts
 - name: ${1:task_description}
   os_subnets_facts: 
@@ -4841,6 +5085,7 @@ snippet os_subnets_facts
     #cloud: ${30}
     #wait: ${31:yes}
 endsnippet
+
 snippet os_user
 - name: ${1:task_description}
   os_user: 
@@ -4866,6 +5111,7 @@ snippet os_user
     #cloud: ${41}
     #region_name: ${42}
 endsnippet
+
 snippet os_user_facts
 - name: ${1:task_description}
   os_user_facts: 
@@ -4886,6 +5132,7 @@ snippet os_user_facts
     #timeout: ${31:180}
     #validate_certs: ${32:True}
 endsnippet
+
 snippet os_user_group
 - name: ${1:task_description}
   os_user_group: 
@@ -4906,6 +5153,7 @@ snippet os_user_group
     #timeout: ${30:180}
     #validate_certs: ${31:True}
 endsnippet
+
 snippet os_user_role
 - name: ${1:task_description}
   os_user_role: 
@@ -4929,6 +5177,7 @@ snippet os_user_role
     #timeout: ${37:180}
     #validate_certs: ${38:True}
 endsnippet
+
 snippet os_volume
 - name: ${1:task_description}
   os_volume: 
@@ -4953,6 +5202,7 @@ snippet os_volume
     #wait: ${39:yes}
     #validate_certs: ${40:True}
 endsnippet
+
 snippet os_zone
 - name: ${1:task_description}
   os_zone: 
@@ -4977,6 +5227,7 @@ snippet os_zone
     #validate_certs: ${39:True}
     #email: ${40}
 endsnippet
+
 snippet ovh_ip_loadbalancing_backend
 - name: ${1:task_description}
   ovh_ip_loadbalancing_backend: 
@@ -4991,6 +5242,7 @@ snippet ovh_ip_loadbalancing_backend
     #state: ${14:present}
     #timeout: ${15:120}
 endsnippet
+
 snippet ovirt_affinity_labels
 - name: ${1:task_description}
   ovirt_affinity_labels: 
@@ -5004,6 +5256,7 @@ snippet ovirt_affinity_labels
     #vms: ${16}
     #wait: ${17}
 endsnippet
+
 snippet ovirt_affinity_labels_facts
 - name: ${1:task_description}
   ovirt_affinity_labels_facts: 
@@ -5011,6 +5264,7 @@ snippet ovirt_affinity_labels_facts
     #name: ${6}
     #vm: ${7}
 endsnippet
+
 snippet ovirt_auth
 - name: ${1:task_description}
   ovirt_auth: 
@@ -5024,6 +5278,7 @@ snippet ovirt_auth
     #state: ${15:present}
     #timeout: ${16}
 endsnippet
+
 snippet ovirt_clusters
 - name: ${1:task_description}
   ovirt_clusters: 
@@ -5068,11 +5323,13 @@ snippet ovirt_clusters
     #serial_policy: ${78}
     #trusted_service: ${79}
 endsnippet
+
 snippet ovirt_clusters_facts
 - name: ${1:task_description}
   ovirt_clusters_facts: 
     #pattern: ${3}
 endsnippet
+
 snippet ovirt_datacenters
 - name: ${1:task_description}
   ovirt_datacenters: 
@@ -5089,11 +5346,13 @@ snippet ovirt_datacenters
     #quota_mode: ${22}
     #description: ${23}
 endsnippet
+
 snippet ovirt_datacenters_facts
 - name: ${1:task_description}
   ovirt_datacenters_facts: 
     #pattern: ${3}
 endsnippet
+
 snippet ovirt_disks
 - name: ${1:task_description}
   ovirt_disks: 
@@ -5118,6 +5377,7 @@ snippet ovirt_disks
     #timeout: ${39:180}
     #wait: ${40}
 endsnippet
+
 snippet ovirt_external_providers
 - name: ${1:task_description}
   ovirt_external_providers: 
@@ -5138,12 +5398,14 @@ snippet ovirt_external_providers
     #network_type: ${31:[u'external']}
     #description: ${32}
 endsnippet
+
 snippet ovirt_external_providers_facts
 - name: ${1:task_description}
   ovirt_external_providers_facts: 
     type: ${2}
     #name: ${4}
 endsnippet
+
 snippet ovirt_groups
 - name: ${1:task_description}
   ovirt_groups: 
@@ -5156,11 +5418,13 @@ snippet ovirt_groups
     #timeout: ${13:180}
     #wait: ${14}
 endsnippet
+
 snippet ovirt_groups_facts
 - name: ${1:task_description}
   ovirt_groups_facts: 
     #pattern: ${3}
 endsnippet
+
 snippet ovirt_host_networks
 - name: ${1:task_description}
   ovirt_host_networks: 
@@ -5177,6 +5441,7 @@ snippet ovirt_host_networks
     #check: ${22}
     #bond: ${23}
 endsnippet
+
 snippet ovirt_host_pm
 - name: ${1:task_description}
   ovirt_host_pm: 
@@ -5196,6 +5461,7 @@ snippet ovirt_host_pm
     #options: ${28}
     #wait: ${29}
 endsnippet
+
 snippet ovirt_hosts
 - name: ${1:task_description}
   ovirt_hosts: 
@@ -5215,11 +5481,13 @@ snippet ovirt_hosts
     #kdump_integration: ${28:enabled}
     #wait: ${29}
 endsnippet
+
 snippet ovirt_hosts_facts
 - name: ${1:task_description}
   ovirt_hosts_facts: 
     #pattern: ${3}
 endsnippet
+
 snippet ovirt_mac_pools
 - name: ${1:task_description}
   ovirt_mac_pools: 
@@ -5233,6 +5501,7 @@ snippet ovirt_mac_pools
     #wait: ${16}
     #description: ${17}
 endsnippet
+
 snippet ovirt_networks
 - name: ${1:task_description}
   ovirt_networks: 
@@ -5250,11 +5519,13 @@ snippet ovirt_networks
     #wait: ${24}
     #description: ${25}
 endsnippet
+
 snippet ovirt_networks_facts
 - name: ${1:task_description}
   ovirt_networks_facts: 
     #pattern: ${3}
 endsnippet
+
 snippet ovirt_nics
 - name: ${1:task_description}
   ovirt_nics: 
@@ -5270,12 +5541,14 @@ snippet ovirt_nics
     #interface: ${19:virtio}
     #wait: ${20}
 endsnippet
+
 snippet ovirt_nics_facts
 - name: ${1:task_description}
   ovirt_nics_facts: 
     vm: ${2}
     #name: ${4}
 endsnippet
+
 snippet ovirt_permissions
 - name: ${1:task_description}
   ovirt_permissions: 
@@ -5293,6 +5566,7 @@ snippet ovirt_permissions
     #user_name: ${24}
     #wait: ${25}
 endsnippet
+
 snippet ovirt_permissions_facts
 - name: ${1:task_description}
   ovirt_permissions_facts: 
@@ -5301,6 +5575,7 @@ snippet ovirt_permissions_facts
     #group_name: ${7}
     #user_name: ${8}
 endsnippet
+
 snippet ovirt_quotas
 - name: ${1:task_description}
   ovirt_quotas: 
@@ -5319,12 +5594,14 @@ snippet ovirt_quotas
     #wait: ${25}
     #description: ${26}
 endsnippet
+
 snippet ovirt_quotas_facts
 - name: ${1:task_description}
   ovirt_quotas_facts: 
     datacenter: ${2}
     #name: ${4}
 endsnippet
+
 snippet ovirt_storage_domains
 - name: ${1:task_description}
   ovirt_storage_domains: 
@@ -5347,11 +5624,13 @@ snippet ovirt_storage_domains
     #wait: ${35}
     #description: ${36}
 endsnippet
+
 snippet ovirt_storage_domains_facts
 - name: ${1:task_description}
   ovirt_storage_domains_facts: 
     #pattern: ${3}
 endsnippet
+
 snippet ovirt_tags
 - name: ${1:task_description}
   ovirt_tags: 
@@ -5365,6 +5644,7 @@ snippet ovirt_tags
     #wait: ${16}
     #vms: ${17}
 endsnippet
+
 snippet ovirt_tags_facts
 - name: ${1:task_description}
   ovirt_tags_facts: 
@@ -5376,6 +5656,7 @@ snippet ovirt_tags_facts
     #vm: ${13}
     #wait: ${14}
 endsnippet
+
 snippet ovirt_templates
 - name: ${1:task_description}
   ovirt_templates: 
@@ -5396,11 +5677,13 @@ snippet ovirt_templates
     #clone_permissions: ${30}
     #image_provider: ${31}
 endsnippet
+
 snippet ovirt_templates_facts
 - name: ${1:task_description}
   ovirt_templates_facts: 
     #pattern: ${3}
 endsnippet
+
 snippet ovirt_users
 - name: ${1:task_description}
   ovirt_users: 
@@ -5412,11 +5695,13 @@ snippet ovirt_users
     #poll_interval: ${11:3}
     #wait: ${12}
 endsnippet
+
 snippet ovirt_users_facts
 - name: ${1:task_description}
   ovirt_users_facts: 
     #pattern: ${3}
 endsnippet
+
 snippet ovirt_vmpools
 - name: ${1:task_description}
   ovirt_vmpools: 
@@ -5434,11 +5719,13 @@ snippet ovirt_vmpools
     #type: ${24}
     #vm_count: ${25}
 endsnippet
+
 snippet ovirt_vmpools_facts
 - name: ${1:task_description}
   ovirt_vmpools_facts: 
     #pattern: ${3}
 endsnippet
+
 snippet ovirt_vms
 - name: ${1:task_description}
   ovirt_vms: 
@@ -5478,11 +5765,13 @@ snippet ovirt_vms
     #initrd_path: ${69}
     #cpu_shares: ${70}
 endsnippet
+
 snippet ovirt_vms_facts
 - name: ${1:task_description}
   ovirt_vms_facts: 
     #pattern: ${3}
 endsnippet
+
 snippet packet_device
 - name: ${1:task_description}
   packet_device: 
@@ -5502,6 +5791,7 @@ snippet packet_device
     #wait_timeout: ${29:60}
     #wait: ${30}
 endsnippet
+
 snippet packet_sshkey
 - name: ${1:task_description}
   packet_sshkey: 
@@ -5513,6 +5803,7 @@ snippet packet_sshkey
     #key_file: ${14}
     #label: ${15}
 endsnippet
+
 snippet profitbricks
 - name: ${1:task_description}
   profitbricks: 
@@ -5539,6 +5830,7 @@ snippet profitbricks
     #auto_increment: ${42:True}
     #cores: ${43:2}
 endsnippet
+
 snippet profitbricks_datacenter
 - name: ${1:task_description}
   profitbricks_datacenter: 
@@ -5551,6 +5843,7 @@ snippet profitbricks_datacenter
     #wait: ${15:yes}
     #description: ${16}
 endsnippet
+
 snippet profitbricks_nic
 - name: ${1:task_description}
   profitbricks_nic: 
@@ -5564,6 +5857,7 @@ snippet profitbricks_nic
     #wait_timeout: ${14:600}
     #wait: ${15:yes}
 endsnippet
+
 snippet profitbricks_volume
 - name: ${1:task_description}
   profitbricks_volume: 
@@ -5585,6 +5879,7 @@ snippet profitbricks_volume
     #size: ${31:10}
     #ssh_keys: ${32}
 endsnippet
+
 snippet profitbricks_volume_attachments
 - name: ${1:task_description}
   profitbricks_volume_attachments: 
@@ -5597,6 +5892,7 @@ snippet profitbricks_volume_attachments
     #subscription_password: ${13}
     #wait: ${14:yes}
 endsnippet
+
 snippet rax
 - name: ${1:task_description}
   rax: 
@@ -5636,6 +5932,7 @@ snippet rax
     #extra_create_args: ${70}
     #config_drive: ${71}
 endsnippet
+
 snippet rax_cbs
 - name: ${1:task_description}
   rax_cbs: 
@@ -5660,6 +5957,7 @@ snippet rax_cbs
     #region: ${36:DFW}
     #wait_timeout: ${37:300}
 endsnippet
+
 snippet rax_cbs_attachments
 - name: ${1:task_description}
   rax_cbs_attachments: 
@@ -5680,6 +5978,7 @@ snippet rax_cbs_attachments
     #env: ${28}
     #api_key: ${29}
 endsnippet
+
 snippet rax_cdb
 - name: ${1:task_description}
   rax_cdb: 
@@ -5698,6 +5997,7 @@ snippet rax_cdb
     #api_key: ${28}
     #wait: ${29:no}
 endsnippet
+
 snippet rax_cdb_database
 - name: ${1:task_description}
   rax_cdb_database: 
@@ -5713,6 +6013,7 @@ snippet rax_cdb_database
     #api_key: ${22}
     #character_set: ${23:utf8}
 endsnippet
+
 snippet rax_cdb_user
 - name: ${1:task_description}
   rax_cdb_user: 
@@ -5729,6 +6030,7 @@ snippet rax_cdb_user
     #credentials: ${24}
     #api_key: ${25}
 endsnippet
+
 snippet rax_clb
 - name: ${1:task_description}
   rax_clb: 
@@ -5750,6 +6052,7 @@ snippet rax_clb
     #port: ${34:80}
     #wait: ${35:no}
 endsnippet
+
 snippet rax_clb_nodes
 - name: ${1:task_description}
   rax_clb_nodes: 
@@ -5770,6 +6073,7 @@ snippet rax_clb_nodes
     #node_id: ${31}
     #wait: ${32:no}
 endsnippet
+
 snippet rax_clb_ssl
 - name: ${1:task_description}
   rax_clb_ssl: 
@@ -5791,6 +6095,7 @@ snippet rax_clb_ssl
     #api_key: ${33}
     #wait: ${34}
 endsnippet
+
 snippet rax_dns
 - name: ${1:task_description}
   rax_dns: 
@@ -5806,6 +6111,7 @@ snippet rax_dns
     #api_key: ${22}
     #email: ${23}
 endsnippet
+
 snippet rax_dns_record
 - name: ${1:task_description}
   rax_dns_record: 
@@ -5827,6 +6133,7 @@ snippet rax_dns_record
     #api_key: ${31}
     #overwrite: ${32:True}
 endsnippet
+
 snippet rax_facts
 - name: ${1:task_description}
   rax_facts: 
@@ -5844,6 +6151,7 @@ snippet rax_facts
     #id: ${26}
     #auth_endpoint: ${27:https://identity.api.rackspacecloud.com/v2.0/}
 endsnippet
+
 snippet rax_files
 - name: ${1:task_description}
   rax_files: 
@@ -5864,6 +6172,7 @@ snippet rax_files
     #type: ${31:file}
     #public: ${32}
 endsnippet
+
 snippet rax_files_objects
 - name: ${1:task_description}
   rax_files_objects: 
@@ -5884,6 +6193,7 @@ snippet rax_files_objects
     #method: ${31:get}
     #structure: ${32:yes}
 endsnippet
+
 snippet rax_identity
 - name: ${1:task_description}
   rax_identity: 
@@ -5899,6 +6209,7 @@ snippet rax_identity
     #api_key: ${22}
     #auth_endpoint: ${23:https://identity.api.rackspacecloud.com/v2.0/}
 endsnippet
+
 snippet rax_keypair
 - name: ${1:task_description}
   rax_keypair: 
@@ -5916,6 +6227,7 @@ snippet rax_keypair
     #api_key: ${25}
     #auth_endpoint: ${26:https://identity.api.rackspacecloud.com/v2.0/}
 endsnippet
+
 snippet rax_meta
 - name: ${1:task_description}
   rax_meta: 
@@ -5934,6 +6246,7 @@ snippet rax_meta
     #id: ${28}
     #auth_endpoint: ${29:https://identity.api.rackspacecloud.com/v2.0/}
 endsnippet
+
 snippet rax_mon_alarm
 - name: ${1:task_description}
   rax_mon_alarm: 
@@ -5956,6 +6269,7 @@ snippet rax_mon_alarm
     #api_key: ${32}
     #metadata: ${33}
 endsnippet
+
 snippet rax_mon_check
 - name: ${1:task_description}
   rax_mon_check: 
@@ -5982,6 +6296,7 @@ snippet rax_mon_check
     #api_key: ${41}
     #metadata: ${42}
 endsnippet
+
 snippet rax_mon_entity
 - name: ${1:task_description}
   rax_mon_entity: 
@@ -6001,6 +6316,7 @@ snippet rax_mon_entity
     #named_ip_addresses: ${29}
     #metadata: ${30}
 endsnippet
+
 snippet rax_mon_notification
 - name: ${1:task_description}
   rax_mon_notification: 
@@ -6019,6 +6335,7 @@ snippet rax_mon_notification
     #api_key: ${25}
     #auth_endpoint: ${26:https://identity.api.rackspacecloud.com/v2.0/}
 endsnippet
+
 snippet rax_mon_notification_plan
 - name: ${1:task_description}
   rax_mon_notification_plan: 
@@ -6038,6 +6355,7 @@ snippet rax_mon_notification_plan
     #api_key: ${29}
     #auth_endpoint: ${30:https://identity.api.rackspacecloud.com/v2.0/}
 endsnippet
+
 snippet rax_network
 - name: ${1:task_description}
   rax_network: 
@@ -6055,6 +6373,7 @@ snippet rax_network
     #api_key: ${26}
     #auth_endpoint: ${27:https://identity.api.rackspacecloud.com/v2.0/}
 endsnippet
+
 snippet rax_queue
 - name: ${1:task_description}
   rax_queue: 
@@ -6067,6 +6386,7 @@ snippet rax_queue
     #credentials: ${16}
     #api_key: ${17}
 endsnippet
+
 snippet rax_scaling_group
 - name: ${1:task_description}
   rax_scaling_group: 
@@ -6095,6 +6415,7 @@ snippet rax_scaling_group
     #region: ${42:DFW}
     #config_drive: ${43}
 endsnippet
+
 snippet rax_scaling_policy
 - name: ${1:task_description}
   rax_scaling_policy: 
@@ -6115,6 +6436,7 @@ snippet rax_scaling_policy
     #api_key: ${29}
     #change: ${30}
 endsnippet
+
 snippet imgadm
 - name: ${1:task_description}
   imgadm: 
@@ -6125,11 +6447,13 @@ snippet imgadm
     #type: ${11:imgapi}
     #pool: ${12:zones}
 endsnippet
+
 snippet smartos_image_facts
 - name: ${1:task_description}
   smartos_image_facts: 
     #filters: ${3:None}
 endsnippet
+
 snippet vmadm
 - name: ${1:task_description}
   vmadm: 
@@ -6168,6 +6492,7 @@ snippet vmadm
     #zpool: ${66}
     #cpu_shares: ${67}
 endsnippet
+
 snippet sl_vm
 - name: ${1:task_description}
   sl_vm: 
@@ -6194,6 +6519,7 @@ snippet sl_vm
     #wait_timeout: ${41:600}
     #post_uri: ${42}
 endsnippet
+
 snippet udm_dns_record
 - name: ${1:task_description}
   udm_dns_record: 
@@ -6203,6 +6529,7 @@ snippet udm_dns_record
     #state: ${7:present}
     #data: ${8}
 endsnippet
+
 snippet udm_dns_zone
 - name: ${1:task_description}
   udm_dns_zone: 
@@ -6218,6 +6545,7 @@ snippet udm_dns_zone
     #nameserver: ${20}
     #mx: ${21}
 endsnippet
+
 snippet udm_group
 - name: ${1:task_description}
   udm_group: 
@@ -6228,6 +6556,7 @@ snippet udm_group
     #subpath: ${11}
     #description: ${12}
 endsnippet
+
 snippet udm_share
 - name: ${1:task_description}
   udm_share: 
@@ -6285,6 +6614,7 @@ snippet udm_share
     #directorymode: ${104:00755}
     #samba_hosts_deny: ${105}
 endsnippet
+
 snippet udm_user
 - name: ${1:task_description}
   udm_user: 
@@ -6337,6 +6667,7 @@ snippet udm_user
     #samba_privileges: ${95}
     #secretary: ${96}
 endsnippet
+
 snippet vca_fw
 - name: ${1:task_description}
   vca_fw: 
@@ -6353,6 +6684,7 @@ snippet vca_fw
     #api_version: ${23:5.7}
     #verify_certs: ${24:True}
 endsnippet
+
 snippet vca_nat
 - name: ${1:task_description}
   vca_nat: 
@@ -6370,6 +6702,7 @@ snippet vca_nat
     #api_version: ${25:5.7}
     #verify_certs: ${26:True}
 endsnippet
+
 snippet vca_vapp
 - name: ${1:task_description}
   vca_vapp: 
@@ -6391,6 +6724,7 @@ snippet vca_vapp
     #service_type: ${33:vca}
     #api_version: ${34:5.7}
 endsnippet
+
 snippet vmware_cluster
 - name: ${1:task_description}
   vmware_cluster: 
@@ -6404,6 +6738,7 @@ snippet vmware_cluster
     #enable_drs: ${13}
     #validate_certs: ${14:True}
 endsnippet
+
 snippet vmware_datacenter
 - name: ${1:task_description}
   vmware_datacenter: 
@@ -6414,6 +6749,7 @@ snippet vmware_datacenter
     #state: ${8:present}
     #validate_certs: ${9:True}
 endsnippet
+
 snippet vmware_dns_config
 - name: ${1:task_description}
   vmware_dns_config: 
@@ -6425,6 +6761,7 @@ snippet vmware_dns_config
     hostname: ${8}
     #validate_certs: ${9:True}
 endsnippet
+
 snippet vmware_dvs_host
 - name: ${1:task_description}
   vmware_dvs_host: 
@@ -6437,6 +6774,7 @@ snippet vmware_dvs_host
     switch_name: ${9}
     #validate_certs: ${10:True}
 endsnippet
+
 snippet vmware_dvs_portgroup
 - name: ${1:task_description}
   vmware_dvs_portgroup: 
@@ -6450,6 +6788,7 @@ snippet vmware_dvs_portgroup
     vlan_id: ${10}
     #validate_certs: ${11:True}
 endsnippet
+
 snippet vmware_dvswitch
 - name: ${1:task_description}
   vmware_dvswitch: 
@@ -6465,6 +6804,7 @@ snippet vmware_dvswitch
     #discovery_operation: ${14}
     #validate_certs: ${15:True}
 endsnippet
+
 snippet vmware_guest
 - name: ${1:task_description}
   vmware_guest: 
@@ -6494,6 +6834,7 @@ snippet vmware_guest
     #folder: ${44}
     #validate_certs: ${45:True}
 endsnippet
+
 snippet vmware_host
 - name: ${1:task_description}
   vmware_host: 
@@ -6508,6 +6849,7 @@ snippet vmware_host
     #state: ${12:present}
     #validate_certs: ${13:True}
 endsnippet
+
 snippet vmware_local_user_manager
 - name: ${1:task_description}
   vmware_local_user_manager: 
@@ -6520,6 +6862,7 @@ snippet vmware_local_user_manager
     #state: ${12:present}
     #validate_certs: ${13:True}
 endsnippet
+
 snippet vmware_maintenancemode
 - name: ${1:task_description}
   vmware_maintenancemode: 
@@ -6533,6 +6876,7 @@ snippet vmware_maintenancemode
     #state: ${14:present}
     #validate_certs: ${15:True}
 endsnippet
+
 snippet vmware_migrate_vmk
 - name: ${1:task_description}
   vmware_migrate_vmk: 
@@ -6547,6 +6891,7 @@ snippet vmware_migrate_vmk
     hostname: ${11}
     #validate_certs: ${12:True}
 endsnippet
+
 snippet vmware_portgroup
 - name: ${1:task_description}
   vmware_portgroup: 
@@ -6559,6 +6904,7 @@ snippet vmware_portgroup
     #network_policy: ${10}
     #validate_certs: ${11:True}
 endsnippet
+
 snippet vmware_target_canonical_facts
 - name: ${1:task_description}
   vmware_target_canonical_facts: 
@@ -6568,6 +6914,7 @@ snippet vmware_target_canonical_facts
     hostname: ${6}
     #validate_certs: ${7:True}
 endsnippet
+
 snippet vmware_vm_facts
 - name: ${1:task_description}
   vmware_vm_facts: 
@@ -6576,6 +6923,7 @@ snippet vmware_vm_facts
     hostname: ${5}
     #validate_certs: ${6:True}
 endsnippet
+
 snippet vmware_vm_shell
 - name: ${1:task_description}
   vmware_vm_shell: 
@@ -6594,6 +6942,7 @@ snippet vmware_vm_shell
     #vm_id_type: ${23:vm_name}
     #validate_certs: ${24:True}
 endsnippet
+
 snippet vmware_vm_vss_dvs_migrate
 - name: ${1:task_description}
   vmware_vm_vss_dvs_migrate: 
@@ -6604,6 +6953,7 @@ snippet vmware_vm_vss_dvs_migrate
     password: ${6}
     #validate_certs: ${8:True}
 endsnippet
+
 snippet vmware_vmkernel
 - name: ${1:task_description}
   vmware_vmkernel: 
@@ -6622,6 +6972,7 @@ snippet vmware_vmkernel
     #enable_vsan: ${20}
     #enable_ft: ${21}
 endsnippet
+
 snippet vmware_vmkernel_ip_config
 - name: ${1:task_description}
   vmware_vmkernel_ip_config: 
@@ -6633,6 +6984,7 @@ snippet vmware_vmkernel_ip_config
     ip_address: ${8}
     #validate_certs: ${9:True}
 endsnippet
+
 snippet vmware_vmotion
 - name: ${1:task_description}
   vmware_vmotion: 
@@ -6643,6 +6995,7 @@ snippet vmware_vmotion
     destination_host: ${7}
     #validate_certs: ${8:True}
 endsnippet
+
 snippet vmware_vsan_cluster
 - name: ${1:task_description}
   vmware_vsan_cluster: 
@@ -6652,6 +7005,7 @@ snippet vmware_vsan_cluster
     #cluster_uuid: ${7}
     #validate_certs: ${8:True}
 endsnippet
+
 snippet vmware_vswitch
 - name: ${1:task_description}
   vmware_vswitch: 
@@ -6665,6 +7019,7 @@ snippet vmware_vswitch
     #number_of_ports: ${13:128}
     #validate_certs: ${14:True}
 endsnippet
+
 snippet vsphere_copy
 - name: ${1:task_description}
   vsphere_copy: 
@@ -6677,6 +7032,7 @@ snippet vsphere_copy
     datastore: ${9}
     #validate_certs: ${10:yes}
 endsnippet
+
 snippet vsphere_guest
 - name: ${1:task_description}
   vsphere_guest: 
@@ -6701,6 +7057,7 @@ snippet vsphere_guest
     #from_template: ${36}
     #snapshot_to_clone: ${37:none}
 endsnippet
+
 snippet webfaction_app
 - name: ${1:task_description}
   webfaction_app: 
@@ -6714,6 +7071,7 @@ snippet webfaction_app
     #autostart: ${14:no}
     #extra_info: ${15}
 endsnippet
+
 snippet webfaction_db
 - name: ${1:task_description}
   webfaction_db: 
@@ -6725,6 +7083,7 @@ snippet webfaction_db
     #state: ${10:present}
     #password: ${11:None}
 endsnippet
+
 snippet webfaction_domain
 - name: ${1:task_description}
   webfaction_domain: 
@@ -6734,6 +7093,7 @@ snippet webfaction_domain
     #state: ${7:present}
     #subdomains: ${8}
 endsnippet
+
 snippet webfaction_mailbox
 - name: ${1:task_description}
   webfaction_mailbox: 
@@ -6743,6 +7103,7 @@ snippet webfaction_mailbox
     login_password: ${6}
     #state: ${7:present}
 endsnippet
+
 snippet webfaction_site
 - name: ${1:task_description}
   webfaction_site: 
@@ -6755,6 +7116,7 @@ snippet webfaction_site
     #https: ${12:false}
     #site_apps: ${13}
 endsnippet
+
 snippet consul
 - name: ${1:task_description}
   consul: 
@@ -6778,6 +7140,7 @@ snippet consul
     #scheme: ${37:http}
     #validate_certs: ${38:True}
 endsnippet
+
 snippet consul_acl
 - name: ${1:task_description}
   consul_acl: 
@@ -6792,6 +7155,7 @@ snippet consul_acl
     #validate_certs: ${20:True}
     #port: ${21:8500}
 endsnippet
+
 snippet consul_kv
 - name: ${1:task_description}
   consul_kv: 
@@ -6808,6 +7172,7 @@ snippet consul_kv
     #validate_certs: ${22:True}
     #port: ${23:8500}
 endsnippet
+
 snippet consul_session
 - name: ${1:task_description}
   consul_session: 
@@ -6823,6 +7188,7 @@ snippet consul_session
     #validate_certs: ${22:True}
     #port: ${23:8500}
 endsnippet
+
 snippet kubernetes
 - name: ${1:task_description}
   kubernetes: 
@@ -6836,6 +7202,7 @@ snippet kubernetes
     #url_username: ${15:admin}
     #validate_certs: ${16}
 endsnippet
+
 snippet pacemaker_cluster
 - name: ${1:task_description}
   pacemaker_cluster: 
@@ -6844,6 +7211,7 @@ snippet pacemaker_cluster
     #force: ${7:True}
     #timeout: ${8:300}
 endsnippet
+
 snippet znode
 - name: ${1:task_description}
   znode: 
@@ -6855,6 +7223,7 @@ snippet znode
     #value: ${12:None}
     #recursive: ${13}
 endsnippet
+
 snippet command
 - name: ${1:task_description}
   command: 
@@ -6865,6 +7234,7 @@ snippet command
     #chdir: ${11}
     #removes: ${12}
 endsnippet
+
 snippet expect
 - name: ${1:task_description}
   expect: 
@@ -6876,12 +7246,14 @@ snippet expect
     #removes: ${12}
     #echo: ${13}
 endsnippet
+
 snippet raw
 - name: ${1:task_description}
   raw: 
     free_form: ${2}
     #executable: ${4}
 endsnippet
+
 snippet script
 - name: ${1:task_description}
   script: 
@@ -6889,6 +7261,7 @@ snippet script
     #creates: ${5}
     #removes: ${6}
 endsnippet
+
 snippet shell
 - name: ${1:task_description}
   shell: 
@@ -6899,6 +7272,7 @@ snippet shell
     #chdir: ${11}
     #removes: ${12}
 endsnippet
+
 snippet openssl_privatekey
 - name: ${1:task_description}
   openssl_privatekey: 
@@ -6908,6 +7282,7 @@ snippet openssl_privatekey
     #force: ${9}
     #type: ${10:RSA}
 endsnippet
+
 snippet openssl_publickey
 - name: ${1:task_description}
   openssl_publickey: 
@@ -6916,6 +7291,7 @@ snippet openssl_publickey
     #state: ${6:present}
     #force: ${7}
 endsnippet
+
 snippet influxdb_database
 - name: ${1:task_description}
   influxdb_database: 
@@ -6926,6 +7302,7 @@ snippet influxdb_database
     #password: ${10:root}
     #port: ${11:8086}
 endsnippet
+
 snippet influxdb_retention_policy
 - name: ${1:task_description}
   influxdb_retention_policy: 
@@ -6939,6 +7316,7 @@ snippet influxdb_retention_policy
     #password: ${12:root}
     #port: ${13:8086}
 endsnippet
+
 snippet elasticsearch_plugin
 - name: ${1:task_description}
   elasticsearch_plugin: 
@@ -6952,6 +7330,7 @@ snippet elasticsearch_plugin
     #plugin_dir: ${17:/usr/share/elasticsearch/plugins/}
     #plugin_bin: ${18:/usr/share/elasticsearch/bin/plugin}
 endsnippet
+
 snippet kibana_plugin
 - name: ${1:task_description}
   kibana_plugin: 
@@ -6964,6 +7343,7 @@ snippet kibana_plugin
     #plugin_dir: ${15:/opt/kibana/installedPlugins/}
     #plugin_bin: ${16:/opt/kibana/bin/kibana}
 endsnippet
+
 snippet mongodb_parameter
 - name: ${1:task_description}
   mongodb_parameter: 
@@ -6979,6 +7359,7 @@ snippet mongodb_parameter
     #login_password: ${19}
     #replica_set: ${20}
 endsnippet
+
 snippet mongodb_user
 - name: ${1:task_description}
   mongodb_user: 
@@ -6997,6 +7378,7 @@ snippet mongodb_user
     #password: ${26}
     #replica_set: ${27}
 endsnippet
+
 snippet redis
 - name: ${1:task_description}
   redis: 
@@ -7012,6 +7394,7 @@ snippet redis
     #login_password: ${21}
     #slave_mode: ${22:slave}
 endsnippet
+
 snippet riak
 - name: ${1:task_description}
   riak: 
@@ -7024,6 +7407,7 @@ snippet riak
     #command: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet mssql_db
 - name: ${1:task_description}
   mssql_db: 
@@ -7036,6 +7420,7 @@ snippet mssql_db
     #login_password: ${15}
     #target: ${16}
 endsnippet
+
 snippet mysql_db
 - name: ${1:task_description}
   mysql_db: 
@@ -7057,6 +7442,7 @@ snippet mysql_db
     #quick: ${33:True}
     #connect_timeout: ${34:30}
 endsnippet
+
 snippet mysql_replication
 - name: ${1:task_description}
   mysql_replication: 
@@ -7088,6 +7474,7 @@ snippet mysql_replication
     #connect_timeout: ${54:30}
     #relay_log_pos: ${55}
 endsnippet
+
 snippet mysql_user
 - name: ${1:task_description}
   mysql_user: 
@@ -7113,6 +7500,7 @@ snippet mysql_user
     #connect_timeout: ${41:30}
     #priv: ${42}
 endsnippet
+
 snippet mysql_variables
 - name: ${1:task_description}
   mysql_variables: 
@@ -7129,6 +7517,7 @@ snippet mysql_variables
     #login_password: ${23}
     #connect_timeout: ${24:30}
 endsnippet
+
 snippet postgresql_db
 - name: ${1:task_description}
   postgresql_db: 
@@ -7147,6 +7536,7 @@ snippet postgresql_db
     #owner: ${27}
     #login_host: ${28:localhost}
 endsnippet
+
 snippet postgresql_ext
 - name: ${1:task_description}
   postgresql_ext: 
@@ -7158,6 +7548,7 @@ snippet postgresql_ext
     #login_host: ${12:localhost}
     #port: ${13:5432}
 endsnippet
+
 snippet postgresql_lang
 - name: ${1:task_description}
   postgresql_lang: 
@@ -7173,6 +7564,7 @@ snippet postgresql_lang
     #fail_on_drop: ${21:yes}
     #port: ${22:5432}
 endsnippet
+
 snippet postgresql_privs
 - name: ${1:task_description}
   postgresql_privs: 
@@ -7192,6 +7584,7 @@ snippet postgresql_privs
     #grant_option: ${28}
     #schema: ${29}
 endsnippet
+
 snippet postgresql_schema
 - name: ${1:task_description}
   postgresql_schema: 
@@ -7205,6 +7598,7 @@ snippet postgresql_schema
     #owner: ${17}
     #port: ${18:5432}
 endsnippet
+
 snippet postgresql_user
 - name: ${1:task_description}
   postgresql_user: 
@@ -7226,6 +7620,7 @@ snippet postgresql_user
     #encrypted: ${33}
     #role_attr_flags: ${34}
 endsnippet
+
 snippet vertica_configuration
 - name: ${1:task_description}
   vertica_configuration: 
@@ -7237,6 +7632,7 @@ snippet vertica_configuration
     #db: ${12}
     #port: ${13:5433}
 endsnippet
+
 snippet vertica_facts
 - name: ${1:task_description}
   vertica_facts: 
@@ -7246,6 +7642,7 @@ snippet vertica_facts
     #port: ${10:5433}
     #login_password: ${11}
 endsnippet
+
 snippet vertica_role
 - name: ${1:task_description}
   vertica_role: 
@@ -7258,6 +7655,7 @@ snippet vertica_role
     #login_password: ${15}
     #port: ${16:5433}
 endsnippet
+
 snippet vertica_schema
 - name: ${1:task_description}
   vertica_schema: 
@@ -7272,6 +7670,7 @@ snippet vertica_schema
     #owner: ${19}
     #port: ${20:5433}
 endsnippet
+
 snippet vertica_user
 - name: ${1:task_description}
   vertica_user: 
@@ -7289,6 +7688,7 @@ snippet vertica_user
     #expired: ${25}
     #port: ${26:5433}
 endsnippet
+
 snippet acl
 - name: ${1:task_description}
   acl: 
@@ -7302,6 +7702,7 @@ snippet acl
     #entry: ${17}
     #permissions: ${18}
 endsnippet
+
 snippet archive
 - name: ${1:task_description}
   archive: 
@@ -7318,6 +7719,7 @@ snippet archive
     #mode: ${23}
     #owner: ${24}
 endsnippet
+
 snippet assemble
 - name: ${1:task_description}
   assemble: 
@@ -7338,6 +7740,7 @@ snippet assemble
     #backup: ${30:no}
     #setype: ${31}
 endsnippet
+
 snippet blockinfile
 - name: ${1:task_description}
   blockinfile: 
@@ -7360,6 +7763,7 @@ snippet blockinfile
     #block: ${35}
     #setype: ${36}
 endsnippet
+
 snippet copy
 - name: ${1:task_description}
   copy: 
@@ -7381,6 +7785,7 @@ snippet copy
     #validate: ${33:None}
     #backup: ${34:no}
 endsnippet
+
 snippet fetch
 - name: ${1:task_description}
   fetch: 
@@ -7390,6 +7795,7 @@ snippet fetch
     #fail_on_missing: ${8:no}
     #flat: ${9}
 endsnippet
+
 snippet file
 - name: ${1:task_description}
   file: 
@@ -7408,6 +7814,7 @@ snippet file
     #owner: ${27}
     #setype: ${28}
 endsnippet
+
 snippet find
 - name: ${1:task_description}
   find: 
@@ -7424,6 +7831,7 @@ snippet find
     #hidden: ${23:False}
     #size: ${24}
 endsnippet
+
 snippet ini_file
 - name: ${1:task_description}
   ini_file: 
@@ -7445,6 +7853,7 @@ snippet ini_file
     #create: ${32:yes}
     #setype: ${33}
 endsnippet
+
 snippet lineinfile
 - name: ${1:task_description}
   lineinfile: 
@@ -7468,6 +7877,7 @@ snippet lineinfile
     #line: ${37}
     #setype: ${38}
 endsnippet
+
 snippet patch
 - name: ${1:task_description}
   patch: 
@@ -7479,6 +7889,7 @@ snippet patch
     #basedir: ${13}
     #backup: ${14:no}
 endsnippet
+
 snippet replace
 - name: ${1:task_description}
   replace: 
@@ -7498,6 +7909,7 @@ snippet replace
     #backup: ${28:no}
     #validate: ${29:None}
 endsnippet
+
 snippet stat
 - name: ${1:task_description}
   stat: 
@@ -7509,6 +7921,7 @@ snippet stat
     #get_md5: ${13:True}
     #get_attributes: ${14:True}
 endsnippet
+
 snippet synchronize
 - name: ${1:task_description}
   synchronize: 
@@ -7537,6 +7950,7 @@ snippet synchronize
     #use_ssh_args: ${46:no}
     #delete: ${47:no}
 endsnippet
+
 snippet tempfile
 - name: ${1:task_description}
   tempfile: 
@@ -7545,6 +7959,7 @@ snippet tempfile
     #prefix: ${8:ansible.}
     #suffix: ${9}
 endsnippet
+
 snippet template
 - name: ${1:task_description}
   template: 
@@ -7562,6 +7977,7 @@ snippet template
     #validate: ${24:None}
     #backup: ${25:no}
 endsnippet
+
 snippet unarchive
 - name: ${1:task_description}
   unarchive: 
@@ -7584,6 +8000,7 @@ snippet unarchive
     #copy: ${34:yes}
     #validate_certs: ${35:yes}
 endsnippet
+
 snippet xattr
 - name: ${1:task_description}
   xattr: 
@@ -7593,6 +8010,7 @@ snippet xattr
     #value: ${9:None}
     #follow: ${10:True}
 endsnippet
+
 snippet ipa_group
 - name: ${1:task_description}
   ipa_group: 
@@ -7610,6 +8028,7 @@ snippet ipa_group
     #nonposix: ${24}
     #user: ${25}
 endsnippet
+
 snippet ipa_hbacrule
 - name: ${1:task_description}
   ipa_hbacrule: 
@@ -7635,6 +8054,7 @@ snippet ipa_hbacrule
     #sourcehostgroup: ${40}
     #sourcehost: ${41}
 endsnippet
+
 snippet ipa_host
 - name: ${1:task_description}
   ipa_host: 
@@ -7655,6 +8075,7 @@ snippet ipa_host
     #mac_address: ${30}
     #validate_certs: ${31:True}
 endsnippet
+
 snippet ipa_hostgroup
 - name: ${1:task_description}
   ipa_hostgroup: 
@@ -7670,6 +8091,7 @@ snippet ipa_hostgroup
     #validate_certs: ${20:True}
     #description: ${21}
 endsnippet
+
 snippet ipa_role
 - name: ${1:task_description}
   ipa_role: 
@@ -7688,6 +8110,7 @@ snippet ipa_role
     #validate_certs: ${26:True}
     #user: ${27}
 endsnippet
+
 snippet ipa_sudocmd
 - name: ${1:task_description}
   ipa_sudocmd: 
@@ -7701,6 +8124,7 @@ snippet ipa_sudocmd
     #ipa_user: ${16:admin}
     #validate_certs: ${17:True}
 endsnippet
+
 snippet ipa_sudocmdgroup
 - name: ${1:task_description}
   ipa_sudocmdgroup: 
@@ -7715,6 +8139,7 @@ snippet ipa_sudocmdgroup
     #validate_certs: ${18:True}
     #description: ${19}
 endsnippet
+
 snippet ipa_sudorule
 - name: ${1:task_description}
   ipa_sudorule: 
@@ -7735,6 +8160,7 @@ snippet ipa_sudorule
     #validate_certs: ${30:True}
     #ipa_host: ${31:ipa.example.com}
 endsnippet
+
 snippet ipa_user
 - name: ${1:task_description}
   ipa_user: 
@@ -7756,6 +8182,7 @@ snippet ipa_user
     #mail: ${32}
     #validate_certs: ${33:True}
 endsnippet
+
 snippet opendj_backendprop
 - name: ${1:task_description}
   opendj_backendprop: 
@@ -7770,17 +8197,20 @@ snippet opendj_backendprop
     #password: ${15}
     #opendj_bindir: ${16:/opt/opendj/bin}
 endsnippet
+
 snippet add_host
 - name: ${1:task_description}
   add_host: 
     name: ${2}
     #groups: ${4}
 endsnippet
+
 snippet group_by
 - name: ${1:task_description}
   group_by: 
     key: ${2}
 endsnippet
+
 snippet rabbitmq_binding
 - name: ${1:task_description}
   rabbitmq_binding: 
@@ -7796,6 +8226,7 @@ snippet rabbitmq_binding
     #arguments: ${19}
     #login_password: ${20}
 endsnippet
+
 snippet rabbitmq_exchange
 - name: ${1:task_description}
   rabbitmq_exchange: 
@@ -7812,6 +8243,7 @@ snippet rabbitmq_exchange
     #login_password: ${23}
     #auto_delete: ${24}
 endsnippet
+
 snippet rabbitmq_parameter
 - name: ${1:task_description}
   rabbitmq_parameter: 
@@ -7822,6 +8254,7 @@ snippet rabbitmq_parameter
     #state: ${10:present}
     #value: ${11}
 endsnippet
+
 snippet rabbitmq_plugin
 - name: ${1:task_description}
   rabbitmq_plugin: 
@@ -7830,6 +8263,7 @@ snippet rabbitmq_plugin
     #new_only: ${7:no}
     #prefix: ${8}
 endsnippet
+
 snippet rabbitmq_policy
 - name: ${1:task_description}
   rabbitmq_policy: 
@@ -7842,6 +8276,7 @@ snippet rabbitmq_policy
     #state: ${13:present}
     #apply_to: ${14:all}
 endsnippet
+
 snippet rabbitmq_queue
 - name: ${1:task_description}
   rabbitmq_queue: 
@@ -7861,6 +8296,7 @@ snippet rabbitmq_queue
     #dead_letter_routing_key: ${29:None}
     #auto_delete: ${30}
 endsnippet
+
 snippet rabbitmq_user
 - name: ${1:task_description}
   rabbitmq_user: 
@@ -7876,6 +8312,7 @@ snippet rabbitmq_user
     #password: ${21}
     #permissions: ${22}
 endsnippet
+
 snippet rabbitmq_vhost
 - name: ${1:task_description}
   rabbitmq_vhost: 
@@ -7884,6 +8321,7 @@ snippet rabbitmq_vhost
     #tracing: ${7:no}
     #state: ${8:present}
 endsnippet
+
 snippet airbrake_deployment
 - name: ${1:task_description}
   airbrake_deployment: 
@@ -7895,6 +8333,7 @@ snippet airbrake_deployment
     #validate_certs: ${12:yes}
     #revision: ${13}
 endsnippet
+
 snippet bigpanda
 - name: ${1:task_description}
   bigpanda: 
@@ -7909,6 +8348,7 @@ snippet bigpanda
     #owner: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet boundary_meter
 - name: ${1:task_description}
   boundary_meter: 
@@ -7918,6 +8358,7 @@ snippet boundary_meter
     #state: ${7:True}
     #validate_certs: ${8:yes}
 endsnippet
+
 snippet circonus_annotation
 - name: ${1:task_description}
   circonus_annotation: 
@@ -7929,6 +8370,7 @@ snippet circonus_annotation
     #duration: ${10}
     #stop: ${11}
 endsnippet
+
 snippet datadog_event
 - name: ${1:task_description}
   datadog_event: 
@@ -7943,6 +8385,7 @@ snippet datadog_event
     #aggregation_key: ${16}
     #validate_certs: ${17:yes}
 endsnippet
+
 snippet datadog_monitor
 - name: ${1:task_description}
   datadog_monitor: 
@@ -7966,6 +8409,7 @@ snippet datadog_monitor
     #escalation_message: ${34}
     #type: ${35}
 endsnippet
+
 snippet honeybadger_deployment
 - name: ${1:task_description}
   honeybadger_deployment: 
@@ -7977,12 +8421,14 @@ snippet honeybadger_deployment
     #validate_certs: ${12:yes}
     #revision: ${13:None}
 endsnippet
+
 snippet icinga2_feature
 - name: ${1:task_description}
   icinga2_feature: 
     name: ${3}
     #state: ${4:present}
 endsnippet
+
 snippet librato_annotation
 - name: ${1:task_description}
   librato_annotation: 
@@ -7996,6 +8442,7 @@ snippet librato_annotation
     #source: ${14}
     #end_time: ${15}
 endsnippet
+
 snippet logentries
 - name: ${1:task_description}
   logentries: 
@@ -8004,6 +8451,7 @@ snippet logentries
     #name: ${7}
     #logtype: ${8}
 endsnippet
+
 snippet logicmonitor
 - name: ${1:task_description}
   logicmonitor: 
@@ -8024,6 +8472,7 @@ snippet logicmonitor
     #starttime: ${27:Now}
     #fullpath: ${28}
 endsnippet
+
 snippet logicmonitor_facts
 - name: ${1:task_description}
   logicmonitor_facts: 
@@ -8036,6 +8485,7 @@ snippet logicmonitor_facts
     #fullpath: ${12}
     #collector: ${13}
 endsnippet
+
 snippet monit
 - name: ${1:task_description}
   monit: 
@@ -8043,6 +8493,7 @@ snippet monit
     name: ${3:None}
     #timeout: ${5:300}
 endsnippet
+
 snippet nagios
 - name: ${1:task_description}
   nagios: 
@@ -8056,6 +8507,7 @@ snippet nagios
     #minutes: ${15:30}
     #cmdfile: ${16:auto-detected}
 endsnippet
+
 snippet newrelic_deployment
 - name: ${1:task_description}
   newrelic_deployment: 
@@ -8070,6 +8522,7 @@ snippet newrelic_deployment
     #validate_certs: ${19:yes}
     #app_name: ${20}
 endsnippet
+
 snippet pagerduty
 - name: ${1:task_description}
   pagerduty: 
@@ -8085,6 +8538,7 @@ snippet pagerduty
     #validate_certs: ${16:yes}
     #desc: ${17:Created by Ansible}
 endsnippet
+
 snippet pagerduty_alert
 - name: ${1:task_description}
   pagerduty_alert: 
@@ -8097,6 +8551,7 @@ snippet pagerduty_alert
     #client: ${12}
     #desc: ${13:Created via Ansible}
 endsnippet
+
 snippet pingdom
 - name: ${1:task_description}
   pingdom: 
@@ -8106,6 +8561,7 @@ snippet pingdom
     uid: ${5:None}
     key: ${6:None}
 endsnippet
+
 snippet rollbar_deployment
 - name: ${1:task_description}
   rollbar_deployment: 
@@ -8118,6 +8574,7 @@ snippet rollbar_deployment
     #user: ${13}
     #validate_certs: ${14:yes}
 endsnippet
+
 snippet sensu_check
 - name: ${1:task_description}
   sensu_check: 
@@ -8145,6 +8602,7 @@ snippet sensu_check
     #subdue_end: ${44}
     #refresh: ${45}
 endsnippet
+
 snippet sensu_subscription
 - name: ${1:task_description}
   sensu_subscription: 
@@ -8153,6 +8611,7 @@ snippet sensu_subscription
     #state: ${7:present}
     #backup: ${8}
 endsnippet
+
 snippet stackdriver
 - name: ${1:task_description}
   stackdriver: 
@@ -8168,6 +8627,7 @@ snippet stackdriver
     #revision_id: ${21}
     #event: ${22}
 endsnippet
+
 snippet statusio_maintenance
 - name: ${1:task_description}
   statusio_maintenance: 
@@ -8191,6 +8651,7 @@ snippet statusio_maintenance
     #start_date: ${35:None}
     #containers: ${36:None}
 endsnippet
+
 snippet uptimerobot
 - name: ${1:task_description}
   uptimerobot: 
@@ -8198,6 +8659,7 @@ snippet uptimerobot
     state: ${3:None}
     apikey: ${4:None}
 endsnippet
+
 snippet zabbix_group
 - name: ${1:task_description}
   zabbix_group: 
@@ -8210,6 +8672,7 @@ snippet zabbix_group
     #http_login_user: ${12:None}
     #state: ${13:present}
 endsnippet
+
 snippet zabbix_host
 - name: ${1:task_description}
   zabbix_host: 
@@ -8230,6 +8693,7 @@ snippet zabbix_host
     #timeout: ${28:10}
     #link_templates: ${29:None}
 endsnippet
+
 snippet zabbix_hostmacro
 - name: ${1:task_description}
   zabbix_hostmacro: 
@@ -8244,6 +8708,7 @@ snippet zabbix_hostmacro
     #state: ${14:present}
     #timeout: ${15:10}
 endsnippet
+
 snippet zabbix_maintenance
 - name: ${1:task_description}
   zabbix_maintenance: 
@@ -8261,6 +8726,7 @@ snippet zabbix_maintenance
     #collect_data: ${21:true}
     #minutes: ${22:10}
 endsnippet
+
 snippet zabbix_screen
 - name: ${1:task_description}
   zabbix_screen: 
@@ -8272,6 +8738,7 @@ snippet zabbix_screen
     #timeout: ${10:10}
     #http_login_user: ${11:None}
 endsnippet
+
 snippet cloudflare_dns
 - name: ${1:task_description}
   cloudflare_dns: 
@@ -8292,6 +8759,7 @@ snippet cloudflare_dns
     #timeout: ${29:30}
     #type: ${30}
 endsnippet
+
 snippet dnsimple
 - name: ${1:task_description}
   dnsimple: 
@@ -8307,6 +8775,7 @@ snippet dnsimple
     #type: ${22}
     #account_api_token: ${23}
 endsnippet
+
 snippet dnsmadeeasy
 - name: ${1:task_description}
   dnsmadeeasy: 
@@ -8320,6 +8789,7 @@ snippet dnsmadeeasy
     #record_value: ${14}
     #validate_certs: ${15:yes}
 endsnippet
+
 snippet haproxy
 - name: ${1:task_description}
   haproxy: 
@@ -8334,18 +8804,21 @@ snippet haproxy
     #shutdown_sessions: ${18}
     #wait: ${19}
 endsnippet
+
 snippet ipify_facts
 - name: ${1:task_description}
   ipify_facts: 
     #api_url: ${4:https://api.ipify.org}
     #timeout: ${5:10}
 endsnippet
+
 snippet ipinfoio_facts
 - name: ${1:task_description}
   ipinfoio_facts: 
     #http_agent: ${4:ansible-ipinfoio-module/0.0.1}
     #timeout: ${5:10}
 endsnippet
+
 snippet ldap_attr
 - name: ${1:task_description}
   ldap_attr: 
@@ -8358,6 +8831,7 @@ snippet ldap_attr
     #state: ${13:present}
     #bind_pw: ${14}
 endsnippet
+
 snippet ldap_entry
 - name: ${1:task_description}
   ldap_entry: 
@@ -8371,10 +8845,12 @@ snippet ldap_entry
     #bind_pw: ${17}
     #attributes: ${18}
 endsnippet
+
 snippet lldp
 - name: ${1:task_description}
   lldp: 
 endsnippet
+
 snippet nmcli
 - name: ${1:task_description}
   nmcli: 
@@ -8414,6 +8890,7 @@ snippet nmcli
     #mode: ${68:balence-rr}
     #updelay: ${69:None}
 endsnippet
+
 snippet omapi_host
 - name: ${1:task_description}
   omapi_host: 
@@ -8428,6 +8905,7 @@ snippet omapi_host
     #ip: ${16:None}
     #port: ${17:7911}
 endsnippet
+
 snippet snmp_facts
 - name: ${1:task_description}
   snmp_facts: 
@@ -8441,6 +8919,7 @@ snippet snmp_facts
     #integrity: ${16}
     #privkey: ${17}
 endsnippet
+
 snippet wakeonlan
 - name: ${1:task_description}
   wakeonlan: 
@@ -8448,6 +8927,7 @@ snippet wakeonlan
     #broadcast: ${5:255.255.255.255}
     #port: ${6:7}
 endsnippet
+
 snippet a10_server
 - name: ${1:task_description}
   a10_server: 
@@ -8459,6 +8939,7 @@ snippet a10_server
     #validate_certs: ${13:yes}
     #server_status: ${14:enabled}
 endsnippet
+
 snippet a10_server_axapi3
 - name: ${1:task_description}
   a10_server_axapi3: 
@@ -8469,6 +8950,7 @@ snippet a10_server_axapi3
     #validate_certs: ${10:yes}
     #server_status: ${11:enable}
 endsnippet
+
 snippet a10_service_group
 - name: ${1:task_description}
   a10_service_group: 
@@ -8479,6 +8961,7 @@ snippet a10_service_group
     #validate_certs: ${11:yes}
     #servers: ${12}
 endsnippet
+
 snippet a10_virtual_server
 - name: ${1:task_description}
   a10_virtual_server: 
@@ -8489,6 +8972,7 @@ snippet a10_virtual_server
     #partition: ${11}
     #virtual_server_ports: ${12}
 endsnippet
+
 snippet asa_acl
 - name: ${1:task_description}
   asa_acl: 
@@ -8510,6 +8994,7 @@ snippet asa_acl
     #config: ${32}
     #match: ${33:line}
 endsnippet
+
 snippet asa_command
 - name: ${1:task_description}
   asa_command: 
@@ -8529,6 +9014,7 @@ snippet asa_command
     #port: ${28:22}
     #match: ${29:all}
 endsnippet
+
 snippet asa_config
 - name: ${1:task_description}
   asa_config: 
@@ -8557,6 +9043,7 @@ snippet asa_config
     #backup: ${47}
     #match: ${48:line}
 endsnippet
+
 snippet get_url
 - name: ${1:task_description}
   get_url: 
@@ -8584,16 +9071,19 @@ snippet get_url
     #backup: ${44:no}
     #tmp_dest: ${45}
 endsnippet
+
 snippet net_command
 - name: ${1:task_description}
   net_command: 
     free_form: ${2}
 endsnippet
+
 snippet slurp
 - name: ${1:task_description}
   slurp: 
     src: ${2:None}
 endsnippet
+
 snippet uri
 - name: ${1:task_description}
   uri: 
@@ -8616,6 +9106,7 @@ snippet uri
     #validate_certs: ${35:yes}
     #method: ${36:GET}
 endsnippet
+
 snippet bigmon_chain
 - name: ${1:task_description}
   bigmon_chain: 
@@ -8625,6 +9116,7 @@ snippet bigmon_chain
     #state: ${8:present}
     #validate_certs: ${9:True}
 endsnippet
+
 snippet netscaler
 - name: ${1:task_description}
   netscaler: 
@@ -8637,6 +9129,7 @@ snippet netscaler
     #action: ${12:disable}
     #validate_certs: ${13:yes}
 endsnippet
+
 snippet ce_command
 - name: ${1:task_description}
   ce_command: 
@@ -8646,6 +9139,7 @@ snippet ce_command
     #match: ${9:all}
     #interval: ${10:1}
 endsnippet
+
 snippet cl_bond
 - name: ${1:task_description}
   cl_bond: 
@@ -8675,6 +9169,7 @@ snippet cl_bond
     #mstpctl_portnetwork: ${48}
     #virtual_ip: ${49}
 endsnippet
+
 snippet cl_bridge
 - name: ${1:task_description}
   cl_bridge: 
@@ -8694,6 +9189,7 @@ snippet cl_bridge
     #alias_name: ${28}
     #ipv4: ${29}
 endsnippet
+
 snippet cl_img_install
 - name: ${1:task_description}
   cl_img_install: 
@@ -8701,6 +9197,7 @@ snippet cl_img_install
     #version: ${5:None}
     #switch_slot: ${6:no}
 endsnippet
+
 snippet cl_interface
 - name: ${1:task_description}
   cl_interface: 
@@ -8724,18 +9221,21 @@ snippet cl_interface
     #mstpctl_portnetwork: ${37}
     #ipv4: ${38}
 endsnippet
+
 snippet cl_interface_policy
 - name: ${1:task_description}
   cl_interface_policy: 
     allowed: ${3}
     #location: ${4:/etc/network/interfaces.d/}
 endsnippet
+
 snippet cl_license
 - name: ${1:task_description}
   cl_license: 
     src: ${2}
     #force: ${4}
 endsnippet
+
 snippet cl_ports
 - name: ${1:task_description}
   cl_ports: 
@@ -8744,6 +9244,7 @@ snippet cl_ports
     #speed_40g: ${8}
     #speed_40g_div_4: ${9}
 endsnippet
+
 snippet dellos10_command
 - name: ${1:task_description}
   dellos10_command: 
@@ -8759,6 +9260,7 @@ snippet dellos10_command
     #wait_for: ${20}
     #port: ${21:22}
 endsnippet
+
 snippet dellos10_config
 - name: ${1:task_description}
   dellos10_config: 
@@ -8781,6 +9283,7 @@ snippet dellos10_config
     #match: ${35:line}
     #before: ${36}
 endsnippet
+
 snippet dellos10_facts
 - name: ${1:task_description}
   dellos10_facts: 
@@ -8793,6 +9296,7 @@ snippet dellos10_facts
     #password: ${15}
     #port: ${16:22}
 endsnippet
+
 snippet dellos6_command
 - name: ${1:task_description}
   dellos6_command: 
@@ -8810,6 +9314,7 @@ snippet dellos6_command
     #wait_for: ${24}
     #port: ${25:22}
 endsnippet
+
 snippet dellos6_config
 - name: ${1:task_description}
   dellos6_config: 
@@ -8834,6 +9339,7 @@ snippet dellos6_config
     #match: ${39:line}
     #before: ${40}
 endsnippet
+
 snippet dellos6_facts
 - name: ${1:task_description}
   dellos6_facts: 
@@ -8848,6 +9354,7 @@ snippet dellos6_facts
     #password: ${19}
     #port: ${20:22}
 endsnippet
+
 snippet dellos9_command
 - name: ${1:task_description}
   dellos9_command: 
@@ -8865,6 +9372,7 @@ snippet dellos9_command
     #wait_for: ${24}
     #port: ${25:22}
 endsnippet
+
 snippet dellos9_config
 - name: ${1:task_description}
   dellos9_config: 
@@ -8889,6 +9397,7 @@ snippet dellos9_config
     #match: ${39:line}
     #before: ${40}
 endsnippet
+
 snippet dellos9_facts
 - name: ${1:task_description}
   dellos9_facts: 
@@ -8903,6 +9412,7 @@ snippet dellos9_facts
     #password: ${19}
     #port: ${20:22}
 endsnippet
+
 snippet eos_template
 - name: ${1:task_description}
   eos_template: 
@@ -8923,6 +9433,7 @@ snippet eos_template
     #provider: ${29}
     #config: ${30}
 endsnippet
+
 snippet eos_command
 - name: ${1:task_description}
   eos_command: 
@@ -8942,6 +9453,7 @@ snippet eos_command
     #port: ${27:0 (use common port)}
     #match: ${28:all}
 endsnippet
+
 snippet eos_config
 - name: ${1:task_description}
   eos_config: 
@@ -8968,6 +9480,7 @@ snippet eos_config
     #backup: ${42}
     #match: ${43:line}
 endsnippet
+
 snippet eos_eapi
 - name: ${1:task_description}
   eos_eapi: 
@@ -8992,6 +9505,7 @@ snippet eos_eapi
     #local_http: ${38}
     #socket: ${39}
 endsnippet
+
 snippet eos_facts
 - name: ${1:task_description}
   eos_facts: 
@@ -9007,6 +9521,7 @@ snippet eos_facts
     #password: ${20}
     #port: ${21:0 (use common port)}
 endsnippet
+
 snippet exo_dns_domain
 - name: ${1:task_description}
   exo_dns_domain: 
@@ -9018,6 +9533,7 @@ snippet exo_dns_domain
     #validate_certs: ${13:True}
     #api_region: ${14:cloudstack}
 endsnippet
+
 snippet exo_dns_record
 - name: ${1:task_description}
   exo_dns_record: 
@@ -9035,6 +9551,7 @@ snippet exo_dns_record
     #api_key: ${25}
     #validate_certs: ${26:True}
 endsnippet
+
 snippet bigip_device_dns
 - name: ${1:task_description}
   bigip_device_dns: 
@@ -9050,6 +9567,7 @@ snippet bigip_device_dns
     #name_servers: ${19}
     #validate_certs: ${20:True}
 endsnippet
+
 snippet bigip_device_ntp
 - name: ${1:task_description}
   bigip_device_ntp: 
@@ -9062,6 +9580,7 @@ snippet bigip_device_ntp
     #timezone: ${13:UTC}
     #validate_certs: ${14:True}
 endsnippet
+
 snippet bigip_device_sshd
 - name: ${1:task_description}
   bigip_device_sshd: 
@@ -9078,6 +9597,7 @@ snippet bigip_device_sshd
     #banner: ${21}
     #port: ${22}
 endsnippet
+
 snippet bigip_facts
 - name: ${1:task_description}
   bigip_facts: 
@@ -9090,6 +9610,7 @@ snippet bigip_facts
     #server_port: ${12:443}
     #validate_certs: ${13:True}
 endsnippet
+
 snippet bigip_gtm_datacenter
 - name: ${1:task_description}
   bigip_gtm_datacenter: 
@@ -9105,6 +9626,7 @@ snippet bigip_gtm_datacenter
     #server_port: ${18:443}
     #validate_certs: ${19:True}
 endsnippet
+
 snippet bigip_gtm_facts
 - name: ${1:task_description}
   bigip_gtm_facts: 
@@ -9116,6 +9638,7 @@ snippet bigip_gtm_facts
     #server_port: ${10:443}
     #validate_certs: ${11:True}
 endsnippet
+
 snippet bigip_gtm_virtual_server
 - name: ${1:task_description}
   bigip_gtm_virtual_server: 
@@ -9130,6 +9653,7 @@ snippet bigip_gtm_virtual_server
     #server_port: ${15:443}
     #port: ${16:None}
 endsnippet
+
 snippet bigip_gtm_wide_ip
 - name: ${1:task_description}
   bigip_gtm_wide_ip: 
@@ -9141,6 +9665,7 @@ snippet bigip_gtm_wide_ip
     #server_port: ${9:443}
     #validate_certs: ${10:True}
 endsnippet
+
 snippet bigip_hostname
 - name: ${1:task_description}
   bigip_hostname: 
@@ -9151,6 +9676,7 @@ snippet bigip_hostname
     #server_port: ${8:443}
     #validate_certs: ${9:True}
 endsnippet
+
 snippet bigip_irule
 - name: ${1:task_description}
   bigip_irule: 
@@ -9166,6 +9692,7 @@ snippet bigip_irule
     #server_port: ${16:443}
     #validate_certs: ${17:True}
 endsnippet
+
 snippet bigip_monitor_http
 - name: ${1:task_description}
   bigip_monitor_http: 
@@ -9188,6 +9715,7 @@ snippet bigip_monitor_http
     #validate_certs: ${29:True}
     #port: ${30:none}
 endsnippet
+
 snippet bigip_monitor_tcp
 - name: ${1:task_description}
   bigip_monitor_tcp: 
@@ -9210,6 +9738,7 @@ snippet bigip_monitor_tcp
     #type: ${30:tcp}
     #port: ${31:none}
 endsnippet
+
 snippet bigip_node
 - name: ${1:task_description}
   bigip_node: 
@@ -9229,6 +9758,7 @@ snippet bigip_node
     #monitors: ${25}
     #description: ${26}
 endsnippet
+
 snippet bigip_pool
 - name: ${1:task_description}
   bigip_pool: 
@@ -9251,6 +9781,7 @@ snippet bigip_pool
     #monitors: ${32}
     #quorum: ${33}
 endsnippet
+
 snippet bigip_pool_member
 - name: ${1:task_description}
   bigip_pool_member: 
@@ -9272,6 +9803,7 @@ snippet bigip_pool_member
     #rate_limit: ${27}
     #validate_certs: ${28:True}
 endsnippet
+
 snippet bigip_routedomain
 - name: ${1:task_description}
   bigip_routedomain: 
@@ -9292,6 +9824,7 @@ snippet bigip_routedomain
     #vlans: ${28}
     #validate_certs: ${29:True}
 endsnippet
+
 snippet bigip_selfip
 - name: ${1:task_description}
   bigip_selfip: 
@@ -9309,6 +9842,7 @@ snippet bigip_selfip
     #traffic_group: ${20}
     #validate_certs: ${21:True}
 endsnippet
+
 snippet bigip_snat_pool
 - name: ${1:task_description}
   bigip_snat_pool: 
@@ -9322,6 +9856,7 @@ snippet bigip_snat_pool
     #validate_certs: ${14:True}
     #append: ${15}
 endsnippet
+
 snippet bigip_ssl_certificate
 - name: ${1:task_description}
   bigip_ssl_certificate: 
@@ -9339,6 +9874,7 @@ snippet bigip_ssl_certificate
     #cert_content: ${21}
     #key_src: ${22}
 endsnippet
+
 snippet bigip_sys_db
 - name: ${1:task_description}
   bigip_sys_db: 
@@ -9351,6 +9887,7 @@ snippet bigip_sys_db
     #state: ${12:present}
     #validate_certs: ${13:True}
 endsnippet
+
 snippet bigip_sys_global
 - name: ${1:task_description}
   bigip_sys_global: 
@@ -9369,6 +9906,7 @@ snippet bigip_sys_global
     #validate_certs: ${25:True}
     #lcd_display: ${26}
 endsnippet
+
 snippet bigip_virtual_server
 - name: ${1:task_description}
   bigip_virtual_server: 
@@ -9393,6 +9931,7 @@ snippet bigip_virtual_server
     #pool: ${35:None}
     #description: ${36:None}
 endsnippet
+
 snippet bigip_vlan
 - name: ${1:task_description}
   bigip_vlan: 
@@ -9408,6 +9947,7 @@ snippet bigip_vlan
     #validate_certs: ${18:True}
     #description: ${19}
 endsnippet
+
 snippet dladm_etherstub
 - name: ${1:task_description}
   dladm_etherstub: 
@@ -9415,6 +9955,7 @@ snippet dladm_etherstub
     #state: ${5:present}
     #temporary: ${6}
 endsnippet
+
 snippet dladm_iptun
 - name: ${1:task_description}
   dladm_iptun: 
@@ -9425,6 +9966,7 @@ snippet dladm_iptun
     #type: ${11:ipv4}
     #remote_address: ${12}
 endsnippet
+
 snippet dladm_linkprop
 - name: ${1:task_description}
   dladm_linkprop: 
@@ -9434,6 +9976,7 @@ snippet dladm_linkprop
     #temporary: ${8}
     #value: ${9}
 endsnippet
+
 snippet dladm_vlan
 - name: ${1:task_description}
   dladm_vlan: 
@@ -9443,6 +9986,7 @@ snippet dladm_vlan
     #temporary: ${8}
     #vlan_id: ${9}
 endsnippet
+
 snippet dladm_vnic
 - name: ${1:task_description}
   dladm_vnic: 
@@ -9453,6 +9997,7 @@ snippet dladm_vnic
     #vlan: ${10}
     #mac: ${11}
 endsnippet
+
 snippet flowadm
 - name: ${1:task_description}
   flowadm: 
@@ -9468,6 +10013,7 @@ snippet flowadm
     #link: ${21}
     #transport: ${22}
 endsnippet
+
 snippet ipadm_addr
 - name: ${1:task_description}
   ipadm_addr: 
@@ -9478,6 +10024,7 @@ snippet ipadm_addr
     #address: ${11}
     #wait: ${12:60}
 endsnippet
+
 snippet ipadm_addrprop
 - name: ${1:task_description}
   ipadm_addrprop: 
@@ -9487,6 +10034,7 @@ snippet ipadm_addrprop
     #temporary: ${8}
     #value: ${9}
 endsnippet
+
 snippet ipadm_if
 - name: ${1:task_description}
   ipadm_if: 
@@ -9494,6 +10042,7 @@ snippet ipadm_if
     #state: ${5:present}
     #temporary: ${6}
 endsnippet
+
 snippet ipadm_ifprop
 - name: ${1:task_description}
   ipadm_ifprop: 
@@ -9504,6 +10053,7 @@ snippet ipadm_ifprop
     #temporary: ${9}
     #value: ${10}
 endsnippet
+
 snippet ipadm_prop
 - name: ${1:task_description}
   ipadm_prop: 
@@ -9513,6 +10063,7 @@ snippet ipadm_prop
     #temporary: ${8}
     #value: ${9}
 endsnippet
+
 snippet ios_template
 - name: ${1:task_description}
   ios_template: 
@@ -9522,6 +10073,7 @@ snippet ios_template
     #config: ${8}
     #backup: ${9}
 endsnippet
+
 snippet ios_command
 - name: ${1:task_description}
   ios_command: 
@@ -9531,6 +10083,7 @@ snippet ios_command
     #match: ${9:all}
     #interval: ${10:1}
 endsnippet
+
 snippet ios_config
 - name: ${1:task_description}
   ios_config: 
@@ -9548,6 +10101,7 @@ snippet ios_config
     #match: ${26:line}
     #before: ${27}
 endsnippet
+
 snippet ios_facts
 - name: ${1:task_description}
   ios_facts: 
@@ -9562,6 +10116,7 @@ snippet ios_facts
     #password: ${19}
     #port: ${20:22}
 endsnippet
+
 snippet ios_system
 - name: ${1:task_description}
   ios_system: 
@@ -9573,6 +10128,7 @@ snippet ios_system
     #domain_name: ${14}
     #lookup_enabled: ${15}
 endsnippet
+
 snippet ios_vrf
 - name: ${1:task_description}
   ios_vrf: 
@@ -9584,6 +10140,7 @@ snippet ios_vrf
     #interfaces: ${14}
     #vrfs: ${15}
 endsnippet
+
 snippet iosxr_template
 - name: ${1:task_description}
   iosxr_template: 
@@ -9598,6 +10155,7 @@ snippet iosxr_template
     #config: ${19}
     #port: ${20:22}
 endsnippet
+
 snippet iosxr_command
 - name: ${1:task_description}
   iosxr_command: 
@@ -9613,6 +10171,7 @@ snippet iosxr_command
     #port: ${20:22}
     #match: ${21:all}
 endsnippet
+
 snippet iosxr_config
 - name: ${1:task_description}
   iosxr_config: 
@@ -9634,6 +10193,7 @@ snippet iosxr_config
     #match: ${33:line}
     #before: ${34}
 endsnippet
+
 snippet iosxr_facts
 - name: ${1:task_description}
   iosxr_facts: 
@@ -9645,6 +10205,7 @@ snippet iosxr_facts
     #provider: ${13}
     #port: ${14:22}
 endsnippet
+
 snippet iosxr_system
 - name: ${1:task_description}
   iosxr_system: 
@@ -9656,6 +10217,7 @@ snippet iosxr_system
     #domain_name: ${14}
     #lookup_enabled: ${15}
 endsnippet
+
 snippet junos_template
 - name: ${1:task_description}
   junos_template: 
@@ -9672,6 +10234,7 @@ snippet junos_template
     #backup: ${22}
     #port: ${23:22}
 endsnippet
+
 snippet junos_command
 - name: ${1:task_description}
   junos_command: 
@@ -9689,6 +10252,7 @@ snippet junos_command
     #port: ${25:22}
     #match: ${26:all}
 endsnippet
+
 snippet junos_config
 - name: ${1:task_description}
   junos_config: 
@@ -9709,6 +10273,7 @@ snippet junos_config
     #backup: ${31}
     #port: ${32:22}
 endsnippet
+
 snippet junos_facts
 - name: ${1:task_description}
   junos_facts: 
@@ -9721,6 +10286,7 @@ snippet junos_facts
     #config: ${15}
     #port: ${16:22}
 endsnippet
+
 snippet junos_netconf
 - name: ${1:task_description}
   junos_netconf: 
@@ -9733,6 +10299,7 @@ snippet junos_netconf
     #password: ${15}
     #port: ${16:22}
 endsnippet
+
 snippet junos_package
 - name: ${1:task_description}
   junos_package: 
@@ -9748,6 +10315,7 @@ snippet junos_package
     #password: ${18}
     #port: ${19:22}
 endsnippet
+
 snippet netconf_config
 - name: ${1:task_description}
   netconf_config: 
@@ -9758,6 +10326,7 @@ snippet netconf_config
     #hostkey_verify: ${8:True}
     #port: ${9:830}
 endsnippet
+
 snippet pn_cluster
 - name: ${1:task_description}
   pn_cluster: 
@@ -9770,6 +10339,7 @@ snippet pn_cluster
     #pn_cliswitch: ${14}
     #pn_cluster_node2: ${15}
 endsnippet
+
 snippet pn_ospf
 - name: ${1:task_description}
   pn_ospf: 
@@ -9781,6 +10351,7 @@ snippet pn_ospf
     #pn_cliswitch: ${11}
     #pn_cliusername: ${12}
 endsnippet
+
 snippet pn_ospfarea
 - name: ${1:task_description}
   pn_ospfarea: 
@@ -9795,6 +10366,7 @@ snippet pn_ospfarea
     #pn_cliswitch: ${15}
     #pn_quiet: ${16:True}
 endsnippet
+
 snippet pn_show
 - name: ${1:task_description}
   pn_show: 
@@ -9805,6 +10377,7 @@ snippet pn_show
     #pn_cliswitch: ${11}
     #pn_cliusername: ${12}
 endsnippet
+
 snippet pn_trunk
 - name: ${1:task_description}
   pn_trunk: 
@@ -9835,6 +10408,7 @@ snippet pn_trunk
     #pn_loopvlans: ${50}
     #pn_description: ${51}
 endsnippet
+
 snippet pn_vlag
 - name: ${1:task_description}
   pn_vlag: 
@@ -9853,6 +10427,7 @@ snippet pn_vlag
     #pn_cliswitch: ${26}
     #pn_mode: ${27}
 endsnippet
+
 snippet pn_vlan
 - name: ${1:task_description}
   pn_vlan: 
@@ -9867,6 +10442,7 @@ snippet pn_vlan
     #pn_stats: ${18}
     #pn_description: ${19}
 endsnippet
+
 snippet pn_vrouter
 - name: ${1:task_description}
   pn_vrouter: 
@@ -9889,6 +10465,7 @@ snippet pn_vrouter
     #pn_cliswitch: ${34}
     #pn_bgp_max_paths: ${35}
 endsnippet
+
 snippet pn_vrouterbgp
 - name: ${1:task_description}
   pn_vrouterbgp: 
@@ -9918,6 +10495,7 @@ snippet pn_vrouterbgp
     #pn_holdtime: ${48}
     #pn_next_hop_self: ${49}
 endsnippet
+
 snippet pn_vrouterif
 - name: ${1:task_description}
   pn_vrouterif: 
@@ -9941,6 +10519,7 @@ snippet pn_vrouterif
     #pn_cliswitch: ${36}
     #pn_assignment: ${37}
 endsnippet
+
 snippet pn_vrouterlbif
 - name: ${1:task_description}
   pn_vrouterlbif: 
@@ -9952,6 +10531,7 @@ snippet pn_vrouterlbif
     #pn_cliswitch: ${11}
     #pn_index: ${12}
 endsnippet
+
 snippet nxos_template
 - name: ${1:task_description}
   nxos_template: 
@@ -9969,6 +10549,7 @@ snippet nxos_template
     #config: ${24}
     #port: ${25:0 (use common port)}
 endsnippet
+
 snippet nxos_aaa_server
 - name: ${1:task_description}
   nxos_aaa_server: 
@@ -9988,6 +10569,7 @@ snippet nxos_aaa_server
     #password: ${26}
     #port: ${27:0 (use common port)}
 endsnippet
+
 snippet nxos_aaa_server_host
 - name: ${1:task_description}
   nxos_aaa_server_host: 
@@ -10009,6 +10591,7 @@ snippet nxos_aaa_server_host
     #password: ${30}
     #port: ${31:0 (use common port)}
 endsnippet
+
 snippet nxos_acl
 - name: ${1:task_description}
   nxos_acl: 
@@ -10047,6 +10630,7 @@ snippet nxos_acl
     #fin: ${65}
     #src_port2: ${66}
 endsnippet
+
 snippet nxos_acl_interface
 - name: ${1:task_description}
   nxos_acl_interface: 
@@ -10063,6 +10647,7 @@ snippet nxos_acl_interface
     #password: ${19}
     #port: ${20:0 (use common port)}
 endsnippet
+
 snippet nxos_bgp
 - name: ${1:task_description}
   nxos_bgp: 
@@ -10115,6 +10700,7 @@ snippet nxos_bgp
     #graceful_restart_timers_restart: ${93}
     #bestpath_compare_routerid: ${94}
 endsnippet
+
 snippet nxos_bgp_af
 - name: ${1:task_description}
   nxos_bgp_af: 
@@ -10159,6 +10745,7 @@ snippet nxos_bgp_af
     #table_map: ${74}
     #dampening_half_time: ${75}
 endsnippet
+
 snippet nxos_bgp_neighbor
 - name: ${1:task_description}
   nxos_bgp_neighbor: 
@@ -10194,6 +10781,7 @@ snippet nxos_bgp_neighbor
     #provider: ${58}
     #use_ssl: ${59}
 endsnippet
+
 snippet nxos_bgp_neighbor_af
 - name: ${1:task_description}
   nxos_bgp_neighbor_af: 
@@ -10240,6 +10828,7 @@ snippet nxos_bgp_neighbor_af
     #advertise_map_exist: ${78}
     #allowas_in_max: ${79}
 endsnippet
+
 snippet nxos_command
 - name: ${1:task_description}
   nxos_command: 
@@ -10257,6 +10846,7 @@ snippet nxos_command
     #port: ${23:0 (use common port)}
     #match: ${24:all}
 endsnippet
+
 snippet nxos_config
 - name: ${1:task_description}
   nxos_config: 
@@ -10281,6 +10871,7 @@ snippet nxos_config
     #match: ${38:line}
     #before: ${39}
 endsnippet
+
 snippet nxos_evpn_global
 - name: ${1:task_description}
   nxos_evpn_global: 
@@ -10294,6 +10885,7 @@ snippet nxos_evpn_global
     #password: ${15}
     #port: ${16:0 (use common port)}
 endsnippet
+
 snippet nxos_evpn_vni
 - name: ${1:task_description}
   nxos_evpn_vni: 
@@ -10312,6 +10904,7 @@ snippet nxos_evpn_vni
     #password: ${24}
     #port: ${25:0 (use common port)}
 endsnippet
+
 snippet nxos_facts
 - name: ${1:task_description}
   nxos_facts: 
@@ -10325,6 +10918,7 @@ snippet nxos_facts
     #password: ${16}
     #port: ${17:0 (use common port)}
 endsnippet
+
 snippet nxos_feature
 - name: ${1:task_description}
   nxos_feature: 
@@ -10339,6 +10933,7 @@ snippet nxos_feature
     #password: ${17}
     #port: ${18:0 (use common port)}
 endsnippet
+
 snippet nxos_file_copy
 - name: ${1:task_description}
   nxos_file_copy: 
@@ -10354,6 +10949,7 @@ snippet nxos_file_copy
     #remote_file: ${19}
     #file_system: ${20}
 endsnippet
+
 snippet nxos_gir
 - name: ${1:task_description}
   nxos_gir: 
@@ -10372,6 +10968,7 @@ snippet nxos_gir
     #password: ${25}
     #port: ${26:0 (use common port)}
 endsnippet
+
 snippet nxos_gir_profile_management
 - name: ${1:task_description}
   nxos_gir_profile_management: 
@@ -10389,6 +10986,7 @@ snippet nxos_gir_profile_management
     #config: ${23}
     #port: ${24:0 (use common port)}
 endsnippet
+
 snippet nxos_hsrp
 - name: ${1:task_description}
   nxos_hsrp: 
@@ -10409,6 +11007,7 @@ snippet nxos_hsrp
     #password: ${28}
     #port: ${29:0 (use common port)}
 endsnippet
+
 snippet nxos_igmp
 - name: ${1:task_description}
   nxos_igmp: 
@@ -10425,6 +11024,7 @@ snippet nxos_igmp
     #port: ${22:0 (use common port)}
     #restart: ${23}
 endsnippet
+
 snippet nxos_igmp_interface
 - name: ${1:task_description}
   nxos_igmp_interface: 
@@ -10455,6 +11055,7 @@ snippet nxos_igmp_interface
     #query_interval: ${49}
     #query_mrt: ${50}
 endsnippet
+
 snippet nxos_igmp_snooping
 - name: ${1:task_description}
   nxos_igmp_snooping: 
@@ -10473,12 +11074,14 @@ snippet nxos_igmp_snooping
     #password: ${26}
     #port: ${27:0 (use common port)}
 endsnippet
+
 snippet nxos_install_os
 - name: ${1:task_description}
   nxos_install_os: 
     system_image_file: ${2}
     #kickstart_image_file: ${4}
 endsnippet
+
 snippet nxos_interface
 - name: ${1:task_description}
   nxos_interface: 
@@ -10491,6 +11094,7 @@ snippet nxos_interface
     #admin_state: ${14:up}
     #mode: ${15}
 endsnippet
+
 snippet nxos_interface_ospf
 - name: ${1:task_description}
   nxos_interface_ospf: 
@@ -10516,6 +11120,7 @@ snippet nxos_interface_ospf
     #port: ${37:0 (use common port)}
     #message_digest: ${38}
 endsnippet
+
 snippet nxos_ip_interface
 - name: ${1:task_description}
   nxos_ip_interface: 
@@ -10532,6 +11137,7 @@ snippet nxos_ip_interface
     #password: ${21}
     #port: ${22:0 (use common port)}
 endsnippet
+
 snippet nxos_mtu
 - name: ${1:task_description}
   nxos_mtu: 
@@ -10548,6 +11154,7 @@ snippet nxos_mtu
     #password: ${22}
     #port: ${23:0 (use common port)}
 endsnippet
+
 snippet nxos_ntp
 - name: ${1:task_description}
   nxos_ntp: 
@@ -10568,6 +11175,7 @@ snippet nxos_ntp
     #source_int: ${30}
     #port: ${31:0 (use common port)}
 endsnippet
+
 snippet nxos_ntp_auth
 - name: ${1:task_description}
   nxos_ntp_auth: 
@@ -10586,6 +11194,7 @@ snippet nxos_ntp_auth
     #password: ${24}
     #port: ${25:0 (use common port)}
 endsnippet
+
 snippet nxos_ntp_options
 - name: ${1:task_description}
   nxos_ntp_options: 
@@ -10602,6 +11211,7 @@ snippet nxos_ntp_options
     #password: ${22}
     #port: ${23:0 (use common port)}
 endsnippet
+
 snippet nxos_nxapi
 - name: ${1:task_description}
   nxos_nxapi: 
@@ -10621,6 +11231,7 @@ snippet nxos_nxapi
     #config: ${28}
     #port: ${29:0 (use common port)}
 endsnippet
+
 snippet nxos_ospf
 - name: ${1:task_description}
   nxos_ospf: 
@@ -10635,6 +11246,7 @@ snippet nxos_ospf
     #password: ${17}
     #port: ${18:0 (use common port)}
 endsnippet
+
 snippet nxos_ospf_vrf
 - name: ${1:task_description}
   nxos_ospf_vrf: 
@@ -10659,6 +11271,7 @@ snippet nxos_ospf_vrf
     #password: ${37}
     #timer_throttle_spf_hold: ${38}
 endsnippet
+
 snippet nxos_overlay_global
 - name: ${1:task_description}
   nxos_overlay_global: 
@@ -10672,6 +11285,7 @@ snippet nxos_overlay_global
     #password: ${15}
     #port: ${16:0 (use common port)}
 endsnippet
+
 snippet nxos_pim
 - name: ${1:task_description}
   nxos_pim: 
@@ -10685,6 +11299,7 @@ snippet nxos_pim
     #password: ${15}
     #port: ${16:0 (use common port)}
 endsnippet
+
 snippet nxos_pim_interface
 - name: ${1:task_description}
   nxos_pim_interface: 
@@ -10709,6 +11324,7 @@ snippet nxos_pim_interface
     #port: ${36:0 (use common port)}
     #jp_type_out: ${37}
 endsnippet
+
 snippet nxos_pim_rp_address
 - name: ${1:task_description}
   nxos_pim_rp_address: 
@@ -10726,6 +11342,7 @@ snippet nxos_pim_rp_address
     #prefix_list: ${23}
     #port: ${24:0 (use common port)}
 endsnippet
+
 snippet nxos_ping
 - name: ${1:task_description}
   nxos_ping: 
@@ -10742,6 +11359,7 @@ snippet nxos_ping
     #password: ${21}
     #port: ${22:0 (use common port)}
 endsnippet
+
 snippet nxos_portchannel
 - name: ${1:task_description}
   nxos_portchannel: 
@@ -10760,6 +11378,7 @@ snippet nxos_portchannel
     #password: ${25}
     #port: ${26:0 (use common port)}
 endsnippet
+
 snippet nxos_reboot
 - name: ${1:task_description}
   nxos_reboot: 
@@ -10773,6 +11392,7 @@ snippet nxos_reboot
     #password: ${16}
     #port: ${17:0 (use common port)}
 endsnippet
+
 snippet nxos_rollback
 - name: ${1:task_description}
   nxos_rollback: 
@@ -10787,6 +11407,7 @@ snippet nxos_rollback
     #password: ${18}
     #port: ${19:0 (use common port)}
 endsnippet
+
 snippet nxos_smu
 - name: ${1:task_description}
   nxos_smu: 
@@ -10801,6 +11422,7 @@ snippet nxos_smu
     #password: ${17}
     #file_system: ${18}
 endsnippet
+
 snippet nxos_snapshot
 - name: ${1:task_description}
   nxos_snapshot: 
@@ -10827,6 +11449,7 @@ snippet nxos_snapshot
     #row_id: ${41}
     #save_snapshot_locally: ${42}
 endsnippet
+
 snippet nxos_snmp_community
 - name: ${1:task_description}
   nxos_snmp_community: 
@@ -10844,6 +11467,7 @@ snippet nxos_snmp_community
     #password: ${22}
     #port: ${23:0 (use common port)}
 endsnippet
+
 snippet nxos_snmp_contact
 - name: ${1:task_description}
   nxos_snmp_contact: 
@@ -10858,6 +11482,7 @@ snippet nxos_snmp_contact
     #password: ${16}
     #port: ${17:0 (use common port)}
 endsnippet
+
 snippet nxos_snmp_host
 - name: ${1:task_description}
   nxos_snmp_host: 
@@ -10879,6 +11504,7 @@ snippet nxos_snmp_host
     #type: ${30:traps}
     #port: ${31:0 (use common port)}
 endsnippet
+
 snippet nxos_snmp_location
 - name: ${1:task_description}
   nxos_snmp_location: 
@@ -10893,6 +11519,7 @@ snippet nxos_snmp_location
     #password: ${17}
     #port: ${18:0 (use common port)}
 endsnippet
+
 snippet nxos_snmp_traps
 - name: ${1:task_description}
   nxos_snmp_traps: 
@@ -10907,6 +11534,7 @@ snippet nxos_snmp_traps
     #password: ${17}
     #port: ${18:0 (use common port)}
 endsnippet
+
 snippet nxos_snmp_user
 - name: ${1:task_description}
   nxos_snmp_user: 
@@ -10926,6 +11554,7 @@ snippet nxos_snmp_user
     #password: ${26}
     #port: ${27:0 (use common port)}
 endsnippet
+
 snippet nxos_static_route
 - name: ${1:task_description}
   nxos_static_route: 
@@ -10945,6 +11574,7 @@ snippet nxos_static_route
     #password: ${25}
     #port: ${26:0 (use common port)}
 endsnippet
+
 snippet nxos_switchport
 - name: ${1:task_description}
   nxos_switchport: 
@@ -10964,6 +11594,7 @@ snippet nxos_switchport
     #password: ${27}
     #port: ${28:0 (use common port)}
 endsnippet
+
 snippet nxos_udld
 - name: ${1:task_description}
   nxos_udld: 
@@ -10980,6 +11611,7 @@ snippet nxos_udld
     #password: ${22}
     #port: ${23:0 (use common port)}
 endsnippet
+
 snippet nxos_udld_interface
 - name: ${1:task_description}
   nxos_udld_interface: 
@@ -10995,6 +11627,7 @@ snippet nxos_udld_interface
     #password: ${18}
     #port: ${19:0 (use common port)}
 endsnippet
+
 snippet nxos_vlan
 - name: ${1:task_description}
   nxos_vlan: 
@@ -11014,6 +11647,7 @@ snippet nxos_vlan
     #port: ${28:0 (use common port)}
     #vlan_id: ${29}
 endsnippet
+
 snippet nxos_vpc
 - name: ${1:task_description}
   nxos_vpc: 
@@ -11036,6 +11670,7 @@ snippet nxos_vpc
     #pkl_dest: ${30}
     #pkl_src: ${31}
 endsnippet
+
 snippet nxos_vpc_interface
 - name: ${1:task_description}
   nxos_vpc_interface: 
@@ -11052,6 +11687,7 @@ snippet nxos_vpc_interface
     #password: ${20}
     #port: ${21:0 (use common port)}
 endsnippet
+
 snippet nxos_vrf
 - name: ${1:task_description}
   nxos_vrf: 
@@ -11070,6 +11706,7 @@ snippet nxos_vrf
     #password: ${25}
     #port: ${26:0 (use common port)}
 endsnippet
+
 snippet nxos_vrf_af
 - name: ${1:task_description}
   nxos_vrf_af: 
@@ -11087,6 +11724,7 @@ snippet nxos_vrf_af
     #password: ${21}
     #port: ${22:0 (use common port)}
 endsnippet
+
 snippet nxos_vrf_interface
 - name: ${1:task_description}
   nxos_vrf_interface: 
@@ -11102,6 +11740,7 @@ snippet nxos_vrf_interface
     #password: ${18}
     #port: ${19:0 (use common port)}
 endsnippet
+
 snippet nxos_vrrp
 - name: ${1:task_description}
   nxos_vrrp: 
@@ -11121,6 +11760,7 @@ snippet nxos_vrrp
     #password: ${26}
     #port: ${27:0 (use common port)}
 endsnippet
+
 snippet nxos_vtp_domain
 - name: ${1:task_description}
   nxos_vtp_domain: 
@@ -11134,6 +11774,7 @@ snippet nxos_vtp_domain
     #password: ${15}
     #port: ${16:0 (use common port)}
 endsnippet
+
 snippet nxos_vtp_password
 - name: ${1:task_description}
   nxos_vtp_password: 
@@ -11148,6 +11789,7 @@ snippet nxos_vtp_password
     #password: ${18}
     #port: ${19:0 (use common port)}
 endsnippet
+
 snippet nxos_vtp_version
 - name: ${1:task_description}
   nxos_vtp_version: 
@@ -11161,6 +11803,7 @@ snippet nxos_vtp_version
     #password: ${15}
     #port: ${16:0 (use common port)}
 endsnippet
+
 snippet nxos_vxlan_vtep
 - name: ${1:task_description}
   nxos_vxlan_vtep: 
@@ -11180,6 +11823,7 @@ snippet nxos_vxlan_vtep
     #password: ${27}
     #port: ${28:0 (use common port)}
 endsnippet
+
 snippet nxos_vxlan_vtep_vni
 - name: ${1:task_description}
   nxos_vxlan_vtep_vni: 
@@ -11203,6 +11847,7 @@ snippet nxos_vxlan_vtep_vni
     #config: ${34}
     #port: ${35:0 (use common port)}
 endsnippet
+
 snippet ops_template
 - name: ${1:task_description}
   ops_template: 
@@ -11219,6 +11864,7 @@ snippet ops_template
     #config: ${21}
     #port: ${22:0 (use common port)}
 endsnippet
+
 snippet ops_command
 - name: ${1:task_description}
   ops_command: 
@@ -11236,6 +11882,7 @@ snippet ops_command
     #port: ${23:0 (use common port)}
     #match: ${24:all}
 endsnippet
+
 snippet ops_config
 - name: ${1:task_description}
   ops_config: 
@@ -11258,6 +11905,7 @@ snippet ops_config
     #match: ${34:line}
     #before: ${35}
 endsnippet
+
 snippet ops_facts
 - name: ${1:task_description}
   ops_facts: 
@@ -11273,6 +11921,7 @@ snippet ops_facts
     #config: ${20}
     #port: ${21:0 (use common port)}
 endsnippet
+
 snippet openvswitch_bridge
 - name: ${1:task_description}
   openvswitch_bridge: 
@@ -11285,6 +11934,7 @@ snippet openvswitch_bridge
     #timeout: ${15:5}
     #external_ids: ${16:None}
 endsnippet
+
 snippet openvswitch_db
 - name: ${1:task_description}
   openvswitch_db: 
@@ -11295,6 +11945,7 @@ snippet openvswitch_db
     value: ${7}
     #timeout: ${8:5}
 endsnippet
+
 snippet openvswitch_port
 - name: ${1:task_description}
   openvswitch_port: 
@@ -11306,6 +11957,7 @@ snippet openvswitch_port
     #external_ids: ${12}
     #tag: ${13}
 endsnippet
+
 snippet panos_admin
 - name: ${1:task_description}
   panos_admin: 
@@ -11317,6 +11969,7 @@ snippet panos_admin
     #commit: ${11:True}
     #admin_username: ${12:admin}
 endsnippet
+
 snippet panos_admpwd
 - name: ${1:task_description}
   panos_admpwd: 
@@ -11325,6 +11978,7 @@ snippet panos_admpwd
     ip_address: ${5}
     #username: ${6:admin}
 endsnippet
+
 snippet panos_check
 - name: ${1:task_description}
   panos_check: 
@@ -11334,6 +11988,7 @@ snippet panos_check
     #timeout: ${8:0}
     #interval: ${9:0}
 endsnippet
+
 snippet panos_commit
 - name: ${1:task_description}
   panos_commit: 
@@ -11344,6 +11999,7 @@ snippet panos_commit
     #interval: ${10:0.5}
     #sync: ${11:True}
 endsnippet
+
 snippet panos_dag
 - name: ${1:task_description}
   panos_dag: 
@@ -11354,6 +12010,7 @@ snippet panos_dag
     #username: ${8:admin}
     #commit: ${9:True}
 endsnippet
+
 snippet panos_loadcfg
 - name: ${1:task_description}
   panos_loadcfg: 
@@ -11363,6 +12020,7 @@ snippet panos_loadcfg
     #commit: ${8:True}
     #file: ${9:None}
 endsnippet
+
 snippet panos_mgtconfig
 - name: ${1:task_description}
   panos_mgtconfig: 
@@ -11375,6 +12033,7 @@ snippet panos_mgtconfig
     #panorama_secondary: ${14:None}
     #commit: ${15:True}
 endsnippet
+
 snippet panos_nat_policy
 - name: ${1:task_description}
   panos_nat_policy: 
@@ -11397,6 +12056,7 @@ snippet panos_nat_policy
     #commit: ${31:True}
     #snat_interface: ${32:None}
 endsnippet
+
 snippet panos_pg
 - name: ${1:task_description}
   panos_pg: 
@@ -11413,6 +12073,7 @@ snippet panos_pg
     #virus: ${21:None}
     #commit: ${22:True}
 endsnippet
+
 snippet panos_restart
 - name: ${1:task_description}
   panos_restart: 
@@ -11420,6 +12081,7 @@ snippet panos_restart
     ip_address: ${4}
     #username: ${5:admin}
 endsnippet
+
 snippet panos_service
 - name: ${1:task_description}
   panos_service: 
@@ -11432,6 +12094,7 @@ snippet panos_service
     #source_port: ${11:None}
     #commit: ${12:True}
 endsnippet
+
 snippet sros_command
 - name: ${1:task_description}
   sros_command: 
@@ -11448,6 +12111,7 @@ snippet sros_command
     #port: ${22:22}
     #match: ${23:all}
 endsnippet
+
 snippet sros_config
 - name: ${1:task_description}
   sros_config: 
@@ -11471,6 +12135,7 @@ snippet sros_config
     #match: ${37:line}
     #before: ${38}
 endsnippet
+
 snippet sros_rollback
 - name: ${1:task_description}
   sros_rollback: 
@@ -11487,6 +12152,7 @@ snippet sros_rollback
     #password: ${23}
     #provider: ${24}
 endsnippet
+
 snippet vyos_command
 - name: ${1:task_description}
   vyos_command: 
@@ -11503,6 +12169,7 @@ snippet vyos_command
     #port: ${22:22}
     #match: ${23:all}
 endsnippet
+
 snippet vyos_config
 - name: ${1:task_description}
   vyos_config: 
@@ -11521,6 +12188,7 @@ snippet vyos_config
     #port: ${27:22}
     #match: ${28:line}
 endsnippet
+
 snippet vyos_facts
 - name: ${1:task_description}
   vyos_facts: 
@@ -11533,6 +12201,7 @@ snippet vyos_facts
     #password: ${15}
     #port: ${16:22}
 endsnippet
+
 snippet campfire
 - name: ${1:task_description}
   campfire: 
@@ -11542,6 +12211,7 @@ snippet campfire
     room: ${6}
     #notify: ${7}
 endsnippet
+
 snippet flowdock
 - name: ${1:task_description}
   flowdock: 
@@ -11559,6 +12229,7 @@ snippet flowdock
     #subject: ${23}
     #validate_certs: ${24:yes}
 endsnippet
+
 snippet grove
 - name: ${1:task_description}
   grove: 
@@ -11569,6 +12240,7 @@ snippet grove
     #icon_url: ${10}
     #validate_certs: ${11:yes}
 endsnippet
+
 snippet hall
 - name: ${1:task_description}
   hall: 
@@ -11577,6 +12249,7 @@ snippet hall
     title: ${4}
     #picture: ${6}
 endsnippet
+
 snippet hipchat
 - name: ${1:task_description}
   hipchat: 
@@ -11590,6 +12263,7 @@ snippet hipchat
     #notify: ${15:yes}
     #validate_certs: ${16:yes}
 endsnippet
+
 snippet irc
 - name: ${1:task_description}
   irc: 
@@ -11608,6 +12282,7 @@ snippet irc
     #use_ssl: ${26}
     #port: ${27:6667}
 endsnippet
+
 snippet jabber
 - name: ${1:task_description}
   jabber: 
@@ -11619,6 +12294,7 @@ snippet jabber
     #encoding: ${10}
     #port: ${11:5222}
 endsnippet
+
 snippet mail
 - name: ${1:task_description}
   mail: 
@@ -11639,6 +12315,7 @@ snippet mail
     #timeout: ${31:20}
     #subtype: ${32:plain}
 endsnippet
+
 snippet mqtt
 - name: ${1:task_description}
   mqtt: 
@@ -11655,6 +12332,7 @@ snippet mqtt
     #keyfile: ${22:None}
     #qos: ${23}
 endsnippet
+
 snippet nexmo
 - name: ${1:task_description}
   nexmo: 
@@ -11665,12 +12343,14 @@ snippet nexmo
     msg: ${7}
     #validate_certs: ${8:yes}
 endsnippet
+
 snippet osx_say
 - name: ${1:task_description}
   osx_say: 
     msg: ${2}
     #voice: ${4}
 endsnippet
+
 snippet pushbullet
 - name: ${1:task_description}
   pushbullet: 
@@ -11681,6 +12361,7 @@ snippet pushbullet
     #push_type: ${10:note}
     #channel: ${11}
 endsnippet
+
 snippet pushover
 - name: ${1:task_description}
   pushover: 
@@ -11689,6 +12370,7 @@ snippet pushover
     app_token: ${4}
     #pri: ${6}
 endsnippet
+
 snippet rocketchat
 - name: ${1:task_description}
   rocketchat: 
@@ -11705,6 +12387,7 @@ snippet rocketchat
     #validate_certs: ${22:yes}
     #channel: ${23:None}
 endsnippet
+
 snippet sendgrid
 - name: ${1:task_description}
   sendgrid: 
@@ -11721,6 +12404,7 @@ snippet sendgrid
     #password: ${21}
     #attachments: ${22}
 endsnippet
+
 snippet slack
 - name: ${1:task_description}
   slack: 
@@ -11737,6 +12421,7 @@ snippet slack
     #validate_certs: ${23:yes}
     #channel: ${24:None}
 endsnippet
+
 snippet sns
 - name: ${1:task_description}
   sns: 
@@ -11752,6 +12437,7 @@ snippet sns
     #email: ${20}
     #subject: ${21}
 endsnippet
+
 snippet telegram
 - name: ${1:task_description}
   telegram: 
@@ -11759,6 +12445,7 @@ snippet telegram
     token: ${3}
     chat_id: ${4}
 endsnippet
+
 snippet twilio
 - name: ${1:task_description}
   twilio: 
@@ -11769,6 +12456,7 @@ snippet twilio
     account_sid: ${7}
     #media_url: ${8}
 endsnippet
+
 snippet typetalk
 - name: ${1:task_description}
   typetalk: 
@@ -11777,6 +12465,7 @@ snippet typetalk
     client_id: ${4}
     msg: ${5}
 endsnippet
+
 snippet bower
 - name: ${1:task_description}
   bower: 
@@ -11788,6 +12477,7 @@ snippet bower
     #relative_execpath: ${13}
     #offline: ${14}
 endsnippet
+
 snippet bundler
 - name: ${1:task_description}
   bundler: 
@@ -11804,6 +12494,7 @@ snippet bundler
     #local: ${24:no}
     #gem_path: ${25:RubyGems gem paths}
 endsnippet
+
 snippet composer
 - name: ${1:task_description}
   composer: 
@@ -11818,6 +12509,7 @@ snippet composer
     #no_plugins: ${19:no}
     #optimize_autoloader: ${20:yes}
 endsnippet
+
 snippet cpanm
 - name: ${1:task_description}
   cpanm: 
@@ -11832,6 +12524,7 @@ snippet cpanm
     #locallib: ${20}
     #notest: ${21}
 endsnippet
+
 snippet easy_install
 - name: ${1:task_description}
   easy_install: 
@@ -11842,6 +12535,7 @@ snippet easy_install
     #state: ${11:present}
     #executable: ${12}
 endsnippet
+
 snippet gem
 - name: ${1:task_description}
   gem: 
@@ -11858,6 +12552,7 @@ snippet gem
     #version: ${23}
     #gem_source: ${24}
 endsnippet
+
 snippet maven_artifact
 - name: ${1:task_description}
   maven_artifact: 
@@ -11874,6 +12569,7 @@ snippet maven_artifact
     #validate_certs: ${20:yes}
     #classifier: ${21}
 endsnippet
+
 snippet npm
 - name: ${1:task_description}
   npm: 
@@ -11887,12 +12583,14 @@ snippet npm
     #version: ${18}
     #path: ${19}
 endsnippet
+
 snippet pear
 - name: ${1:task_description}
   pear: 
     name: ${3}
     #state: ${4:present}
 endsnippet
+
 snippet pip
 - name: ${1:task_description}
   pip: 
@@ -11910,6 +12608,7 @@ snippet pip
     #state: ${26:present}
     #version: ${27}
 endsnippet
+
 snippet apk
 - name: ${1:task_description}
   apk: 
@@ -11918,6 +12617,7 @@ snippet apk
     #update_cache: ${8}
     #name: ${9}
 endsnippet
+
 snippet apt
 - name: ${1:task_description}
   apt: 
@@ -11936,6 +12636,7 @@ snippet apt
     #deb: ${28}
     #install_recommends: ${29}
 endsnippet
+
 snippet apt_key
 - name: ${1:task_description}
   apt_key: 
@@ -11948,6 +12649,7 @@ snippet apt_key
     #validate_certs: ${16:yes}
     #id: ${17:none}
 endsnippet
+
 snippet apt_repository
 - name: ${1:task_description}
   apt_repository: 
@@ -11959,6 +12661,7 @@ snippet apt_repository
     #validate_certs: ${13:yes}
     #filename: ${14}
 endsnippet
+
 snippet apt_rpm
 - name: ${1:task_description}
   apt_rpm: 
@@ -11966,6 +12669,7 @@ snippet apt_rpm
     #state: ${5:present}
     #update_cache: ${6}
 endsnippet
+
 snippet dnf
 - name: ${1:task_description}
   dnf: 
@@ -11978,12 +12682,14 @@ snippet dnf
     #enablerepo: ${15}
     #installroot: ${16:/}
 endsnippet
+
 snippet dpkg_selections
 - name: ${1:task_description}
   dpkg_selections: 
     selection: ${2}
     name: ${3}
 endsnippet
+
 snippet homebrew
 - name: ${1:task_description}
   homebrew: 
@@ -11994,6 +12700,7 @@ snippet homebrew
     #path: ${12:/usr/local/bin}
     #upgrade_all: ${13}
 endsnippet
+
 snippet homebrew_cask
 - name: ${1:task_description}
   homebrew_cask: 
@@ -12003,6 +12710,7 @@ snippet homebrew_cask
     #state: ${9:present}
     #install_options: ${10}
 endsnippet
+
 snippet homebrew_tap
 - name: ${1:task_description}
   homebrew_tap: 
@@ -12010,6 +12718,7 @@ snippet homebrew_tap
     #url: ${5}
     #state: ${6:present}
 endsnippet
+
 snippet layman
 - name: ${1:task_description}
   layman: 
@@ -12018,6 +12727,7 @@ snippet layman
     #validate_certs: ${7:yes}
     #state: ${8:present}
 endsnippet
+
 snippet macports
 - name: ${1:task_description}
   macports: 
@@ -12025,6 +12735,7 @@ snippet macports
     #state: ${5:present}
     #update_cache: ${6:no}
 endsnippet
+
 snippet openbsd_pkg
 - name: ${1:task_description}
   openbsd_pkg: 
@@ -12035,6 +12746,7 @@ snippet openbsd_pkg
     #quick: ${10}
     #build: ${11}
 endsnippet
+
 snippet opkg
 - name: ${1:task_description}
   opkg: 
@@ -12043,6 +12755,7 @@ snippet opkg
     #state: ${7:present}
     #update_cache: ${8:no}
 endsnippet
+
 snippet package
 - name: ${1:task_description}
   package: 
@@ -12050,6 +12763,7 @@ snippet package
     name: ${4}
     #use: ${5:auto}
 endsnippet
+
 snippet pacman
 - name: ${1:task_description}
   pacman: 
@@ -12060,6 +12774,7 @@ snippet pacman
     #update_cache: ${12}
     #recurse: ${13}
 endsnippet
+
 snippet pkg5
 - name: ${1:task_description}
   pkg5: 
@@ -12067,6 +12782,7 @@ snippet pkg5
     #accept_licenses: ${5}
     #state: ${6:present}
 endsnippet
+
 snippet pkg5_publisher
 - name: ${1:task_description}
   pkg5_publisher: 
@@ -12077,6 +12793,7 @@ snippet pkg5_publisher
     #enabled: ${11}
     #sticky: ${12}
 endsnippet
+
 snippet pkgin
 - name: ${1:task_description}
   pkgin: 
@@ -12088,6 +12805,7 @@ snippet pkgin
     #update_cache: ${14}
     #clean: ${15}
 endsnippet
+
 snippet pkgng
 - name: ${1:task_description}
   pkgng: 
@@ -12100,6 +12818,7 @@ snippet pkgng
     #autoremove: ${15}
     #annotation: ${16}
 endsnippet
+
 snippet pkgutil
 - name: ${1:task_description}
   pkgutil: 
@@ -12108,6 +12827,7 @@ snippet pkgutil
     #site: ${6}
     #update_catalog: ${7}
 endsnippet
+
 snippet portage
 - name: ${1:task_description}
   portage: 
@@ -12131,6 +12851,7 @@ snippet portage
     #changed_use: ${38}
     #usepkgonly: ${39}
 endsnippet
+
 snippet portinstall
 - name: ${1:task_description}
   portinstall: 
@@ -12138,6 +12859,7 @@ snippet portinstall
     #state: ${5:present}
     #use_packages: ${6:True}
 endsnippet
+
 snippet pulp_repo
 - name: ${1:task_description}
   pulp_repo: 
@@ -12162,6 +12884,7 @@ snippet pulp_repo
     #url_username: ${38}
     #validate_certs: ${39:yes}
 endsnippet
+
 snippet redhat_subscription
 - name: ${1:task_description}
   redhat_subscription: 
@@ -12181,6 +12904,7 @@ snippet redhat_subscription
     #rhsm_baseurl: ${30:Current value from C(/etc/rhsm/rhsm.conf) is the default}
     #pool: ${31:^$}
 endsnippet
+
 snippet rhn_channel
 - name: ${1:task_description}
   rhn_channel: 
@@ -12191,6 +12915,7 @@ snippet rhn_channel
     user: ${7}
     #state: ${8:present}
 endsnippet
+
 snippet rhn_register
 - name: ${1:task_description}
   rhn_register: 
@@ -12204,6 +12929,7 @@ snippet rhn_register
     #profilename: ${18}
     #password: ${19}
 endsnippet
+
 snippet rpm_key
 - name: ${1:task_description}
   rpm_key: 
@@ -12211,6 +12937,7 @@ snippet rpm_key
     #state: ${5:present}
     #validate_certs: ${6:yes}
 endsnippet
+
 snippet slackpkg
 - name: ${1:task_description}
   slackpkg: 
@@ -12218,6 +12945,7 @@ snippet slackpkg
     #state: ${5:present}
     #update_cache: ${6}
 endsnippet
+
 snippet sorcery
 - name: ${1:task_description}
   sorcery: 
@@ -12228,6 +12956,7 @@ snippet sorcery
     #update: ${12:no}
     #cache_valid_time: ${13}
 endsnippet
+
 snippet svr4pkg
 - name: ${1:task_description}
   svr4pkg: 
@@ -12239,6 +12968,7 @@ snippet svr4pkg
     #response_file: ${12}
     #proxy: ${13}
 endsnippet
+
 snippet swdepot
 - name: ${1:task_description}
   swdepot: 
@@ -12246,6 +12976,7 @@ snippet swdepot
     name: ${4:None}
     #depot: ${5}
 endsnippet
+
 snippet urpmi
 - name: ${1:task_description}
   urpmi: 
@@ -12255,6 +12986,7 @@ snippet urpmi
     #force: ${9:True}
     #no-recommends: ${10:True}
 endsnippet
+
 snippet xbps
 - name: ${1:task_description}
   xbps: 
@@ -12264,6 +12996,7 @@ snippet xbps
     #update_cache: ${10:True}
     #name: ${11}
 endsnippet
+
 snippet yum
 - name: ${1:task_description}
   yum: 
@@ -12279,6 +13012,7 @@ snippet yum
     #validate_certs: ${21:yes}
     #installroot: ${22:/}
 endsnippet
+
 snippet yum_repository
 - name: ${1:task_description}
   yum_repository: 
@@ -12340,6 +13074,7 @@ snippet yum_repository
     #metadata_expire_filter: ${113:read-only:present}
     #proxy: ${114}
 endsnippet
+
 snippet zypper
 - name: ${1:task_description}
   zypper: 
@@ -12352,6 +13087,7 @@ snippet zypper
     #disable_recommends: ${15:yes}
     #type: ${16:package}
 endsnippet
+
 snippet zypper_repository
 - name: ${1:task_description}
   zypper_repository: 
@@ -12367,6 +13103,7 @@ snippet zypper_repository
     #runrefresh: ${22:no}
     #description: ${23:none}
 endsnippet
+
 snippet foreman
 - name: ${1:task_description}
   foreman: 
@@ -12376,6 +13113,7 @@ snippet foreman
     server_url: ${5}
     entity: ${6}
 endsnippet
+
 snippet katello
 - name: ${1:task_description}
   katello: 
@@ -12385,6 +13123,7 @@ snippet katello
     server_url: ${5}
     entity: ${6}
 endsnippet
+
 snippet ipmi_boot
 - name: ${1:task_description}
   ipmi_boot: 
@@ -12397,6 +13136,7 @@ snippet ipmi_boot
     #state: ${12:present}
     #port: ${13:623}
 endsnippet
+
 snippet ipmi_power
 - name: ${1:task_description}
   ipmi_power: 
@@ -12407,6 +13147,7 @@ snippet ipmi_power
     #timeout: ${8:300}
     #port: ${9:623}
 endsnippet
+
 snippet stacki_host
 - name: ${1:task_description}
   stacki_host: 
@@ -12419,6 +13160,7 @@ snippet stacki_host
     #force_install: ${12}
     #prim_intf_mac: ${13}
 endsnippet
+
 snippet bzr
 - name: ${1:task_description}
   bzr: 
@@ -12428,6 +13170,7 @@ snippet bzr
     #version: ${8:head}
     #force: ${9:no}
 endsnippet
+
 snippet git
 - name: ${1:task_description}
   git: 
@@ -12451,6 +13194,7 @@ snippet git
     #version: ${36:HEAD}
     #key_file: ${37:None}
 endsnippet
+
 snippet git_config
 - name: ${1:task_description}
   git_config: 
@@ -12460,6 +13204,7 @@ snippet git_config
     #name: ${10}
     #value: ${11}
 endsnippet
+
 snippet github_hooks
 - name: ${1:task_description}
   github_hooks: 
@@ -12471,6 +13216,7 @@ snippet github_hooks
     #validate_certs: ${10:yes}
     #hookurl: ${11}
 endsnippet
+
 snippet github_key
 - name: ${1:task_description}
   github_key: 
@@ -12480,6 +13226,7 @@ snippet github_key
     #force: ${8:yes}
     #state: ${9:present}
 endsnippet
+
 snippet github_release
 - name: ${1:task_description}
   github_release: 
@@ -12488,6 +13235,7 @@ snippet github_release
     token: ${4}
     user: ${5}
 endsnippet
+
 snippet gitlab_group
 - name: ${1:task_description}
   gitlab_group: 
@@ -12500,6 +13248,7 @@ snippet gitlab_group
     #path: ${14}
     #validate_certs: ${15:True}
 endsnippet
+
 snippet gitlab_project
 - name: ${1:task_description}
   gitlab_project: 
@@ -12521,6 +13270,7 @@ snippet gitlab_project
     #validate_certs: ${32:True}
     #public: ${33}
 endsnippet
+
 snippet gitlab_user
 - name: ${1:task_description}
   gitlab_user: 
@@ -12539,6 +13289,7 @@ snippet gitlab_user
     #login_password: ${23}
     #validate_certs: ${24:True}
 endsnippet
+
 snippet hg
 - name: ${1:task_description}
   hg: 
@@ -12551,6 +13302,7 @@ snippet hg
     #purge: ${14:no}
     #revision: ${15}
 endsnippet
+
 snippet subversion
 - name: ${1:task_description}
   subversion: 
@@ -12566,6 +13318,7 @@ snippet subversion
     #checkout: ${20:yes}
     #revision: ${21:HEAD}
 endsnippet
+
 snippet infini_export
 - name: ${1:task_description}
   infini_export: 
@@ -12575,6 +13328,7 @@ snippet infini_export
     #state: ${8:present}
     #client_list: ${9:All Hosts(*), RW, no_root_squash: True}
 endsnippet
+
 snippet infini_export_client
 - name: ${1:task_description}
   infini_export_client: 
@@ -12584,6 +13338,7 @@ snippet infini_export_client
     #access_mode: ${8:RW}
     #no_root_squash: ${9}
 endsnippet
+
 snippet infini_fs
 - name: ${1:task_description}
   infini_fs: 
@@ -12592,6 +13347,7 @@ snippet infini_fs
     #state: ${6:present}
     #size: ${7}
 endsnippet
+
 snippet infini_host
 - name: ${1:task_description}
   infini_host: 
@@ -12600,6 +13356,7 @@ snippet infini_host
     #state: ${7:present}
     #wwns: ${8}
 endsnippet
+
 snippet infini_pool
 - name: ${1:task_description}
   infini_pool: 
@@ -12609,6 +13366,7 @@ snippet infini_pool
     #ssd_cache: ${9:True}
     #size: ${10}
 endsnippet
+
 snippet infini_vol
 - name: ${1:task_description}
   infini_vol: 
@@ -12617,6 +13375,7 @@ snippet infini_vol
     #state: ${6:present}
     #size: ${7}
 endsnippet
+
 snippet netapp_e_amg
 - name: ${1:task_description}
   netapp_e_amg: 
@@ -12635,6 +13394,7 @@ snippet netapp_e_amg
     #syncWarnThresholdMinutes: ${21:10}
     #validate_certs: ${22:True}
 endsnippet
+
 snippet netapp_e_amg_role
 - name: ${1:task_description}
   netapp_e_amg_role: 
@@ -12647,6 +13407,7 @@ snippet netapp_e_amg_role
     #validate_certs: ${11:True}
     #noSync: ${12}
 endsnippet
+
 snippet netapp_e_amg_sync
 - name: ${1:task_description}
   netapp_e_amg_sync: 
@@ -12659,6 +13420,7 @@ snippet netapp_e_amg_sync
     #delete_recovery_point: ${11}
     #validate_certs: ${12:True}
 endsnippet
+
 snippet netapp_e_auth
 - name: ${1:task_description}
   netapp_e_auth: 
@@ -12672,6 +13434,7 @@ snippet netapp_e_auth
     #set_admin: ${17}
     #api_url: ${18}
 endsnippet
+
 snippet netapp_e_facts
 - name: ${1:task_description}
   netapp_e_facts: 
@@ -12681,6 +13444,7 @@ snippet netapp_e_facts
     api_url: ${6}
     #validate_certs: ${7:True}
 endsnippet
+
 snippet netapp_e_flashcache
 - name: ${1:task_description}
   netapp_e_flashcache: 
@@ -12696,6 +13460,7 @@ snippet netapp_e_flashcache
     #size_unit: ${16:gb}
     #validate_certs: ${17:True}
 endsnippet
+
 snippet netapp_e_host
 - name: ${1:task_description}
   netapp_e_host: 
@@ -12709,6 +13474,7 @@ snippet netapp_e_host
     #validate_certs: ${12:True}
     #ports: ${13}
 endsnippet
+
 snippet netapp_e_hostgroup
 - name: ${1:task_description}
   netapp_e_hostgroup: 
@@ -12723,6 +13489,7 @@ snippet netapp_e_hostgroup
     #id: ${15}
     #name: ${16}
 endsnippet
+
 snippet netapp_e_lun_mapping
 - name: ${1:task_description}
   netapp_e_lun_mapping: 
@@ -12737,6 +13504,7 @@ snippet netapp_e_lun_mapping
     #lun: ${18}
     #api_url: ${19}
 endsnippet
+
 snippet netapp_e_snapshot_group
 - name: ${1:task_description}
   netapp_e_snapshot_group: 
@@ -12754,6 +13522,7 @@ snippet netapp_e_snapshot_group
     #full_policy: ${19:purgepit}
     #validate_certs: ${20:True}
 endsnippet
+
 snippet netapp_e_snapshot_images
 - name: ${1:task_description}
   netapp_e_snapshot_images: 
@@ -12764,6 +13533,7 @@ snippet netapp_e_snapshot_images
     api_password: ${7}
     #validate_certs: ${8:True}
 endsnippet
+
 snippet netapp_e_snapshot_volume
 - name: ${1:task_description}
   netapp_e_snapshot_volume: 
@@ -12780,6 +13550,7 @@ snippet netapp_e_snapshot_volume
     #full_threshold: ${15:85}
     #validate_certs: ${16:True}
 endsnippet
+
 snippet netapp_e_storage_system
 - name: ${1:task_description}
   netapp_e_storage_system: 
@@ -12795,6 +13566,7 @@ snippet netapp_e_storage_system
     #enable_trace: ${16}
     #validate_certs: ${17:True}
 endsnippet
+
 snippet netapp_e_storagepool
 - name: ${1:task_description}
   netapp_e_storagepool: 
@@ -12818,6 +13590,7 @@ snippet netapp_e_storagepool
     #validate_certs: ${31:True}
     #erase_secured_drives: ${32}
 endsnippet
+
 snippet netapp_e_volume
 - name: ${1:task_description}
   netapp_e_volume: 
@@ -12838,6 +13611,7 @@ snippet netapp_e_volume
     #thin_volume_max_repo_size: ${23:same as size (in size_unit)}
     #validate_certs: ${24:True}
 endsnippet
+
 snippet netapp_e_volume_copy
 - name: ${1:task_description}
   netapp_e_volume_copy: 
@@ -12853,6 +13627,7 @@ snippet netapp_e_volume_copy
     #start_stop_copy: ${18}
     #validate_certs: ${19:True}
 endsnippet
+
 snippet zfs
 - name: ${1:task_description}
   zfs: 
@@ -12861,6 +13636,7 @@ snippet zfs
     #origin: ${6}
     #key_value: ${7}
 endsnippet
+
 snippet zfs_facts
 - name: ${1:task_description}
   zfs_facts: 
@@ -12871,6 +13647,7 @@ snippet zfs_facts
     #recurse: ${11}
     #properties: ${12:all}
 endsnippet
+
 snippet zpool_facts
 - name: ${1:task_description}
   zpool_facts: 
@@ -12878,6 +13655,7 @@ snippet zpool_facts
     #name: ${6}
     #properties: ${7:all}
 endsnippet
+
 snippet alternatives
 - name: ${1:task_description}
   alternatives: 
@@ -12886,6 +13664,7 @@ snippet alternatives
     #priority: ${6:50}
     #link: ${7}
 endsnippet
+
 snippet at
 - name: ${1:task_description}
   at: 
@@ -12896,6 +13675,7 @@ snippet at
     #unique: ${10}
     #script_file: ${11}
 endsnippet
+
 snippet authorized_key
 - name: ${1:task_description}
   authorized_key: 
@@ -12908,6 +13688,7 @@ snippet authorized_key
     #validate_certs: ${14:yes}
     #manage_dir: ${15:yes}
 endsnippet
+
 snippet beadm
 - name: ${1:task_description}
   beadm: 
@@ -12919,6 +13700,7 @@ snippet beadm
     #options: ${13}
     #description: ${14}
 endsnippet
+
 snippet capabilities
 - name: ${1:task_description}
   capabilities: 
@@ -12926,6 +13708,7 @@ snippet capabilities
     path: ${3:None}
     #state: ${5:present}
 endsnippet
+
 snippet cron
 - name: ${1:task_description}
   cron: 
@@ -12947,6 +13730,7 @@ snippet cron
     #env: ${34:no}
     #backup: ${35}
 endsnippet
+
 snippet cronvar
 - name: ${1:task_description}
   cronvar: 
@@ -12959,6 +13743,7 @@ snippet cronvar
     #insertafter: ${15}
     #backup: ${16}
 endsnippet
+
 snippet crypttab
 - name: ${1:task_description}
   crypttab: 
@@ -12969,6 +13754,7 @@ snippet crypttab
     #password: ${10:none}
     #opts: ${11}
 endsnippet
+
 snippet debconf
 - name: ${1:task_description}
   debconf: 
@@ -12978,10 +13764,12 @@ snippet debconf
     #question: ${9}
     #unseen: ${10}
 endsnippet
+
 snippet facter
 - name: ${1:task_description}
   facter: 
 endsnippet
+
 snippet filesystem
 - name: ${1:task_description}
   filesystem: 
@@ -12991,6 +13779,7 @@ snippet filesystem
     #force: ${8:no}
     #opts: ${9}
 endsnippet
+
 snippet firewalld
 - name: ${1:task_description}
   firewalld: 
@@ -13006,6 +13795,7 @@ snippet firewalld
     #port: ${21}
     #rich_rule: ${22}
 endsnippet
+
 snippet gconftool2
 - name: ${1:task_description}
   gconftool2: 
@@ -13016,6 +13806,7 @@ snippet gconftool2
     #value: ${10}
     #config_source: ${11}
 endsnippet
+
 snippet getent
 - name: ${1:task_description}
   getent: 
@@ -13024,6 +13815,7 @@ snippet getent
     #split: ${7:None}
     #key: ${8}
 endsnippet
+
 snippet gluster_volume
 - name: ${1:task_description}
   gluster_volume: 
@@ -13045,6 +13837,7 @@ snippet gluster_volume
     #rebalance: ${32:no}
     #options: ${33}
 endsnippet
+
 snippet group
 - name: ${1:task_description}
   group: 
@@ -13053,11 +13846,13 @@ snippet group
     #gid: ${7}
     #system: ${8:no}
 endsnippet
+
 snippet hostname
 - name: ${1:task_description}
   hostname: 
     name: ${2}
 endsnippet
+
 snippet iptables
 - name: ${1:task_description}
   iptables: 
@@ -13093,6 +13888,7 @@ snippet iptables
     #ip_version: ${62:ipv4}
     #match: ${63}
 endsnippet
+
 snippet kernel_blacklist
 - name: ${1:task_description}
   kernel_blacklist: 
@@ -13100,6 +13896,7 @@ snippet kernel_blacklist
     #blacklist_file: ${5}
     #state: ${6:present}
 endsnippet
+
 snippet known_hosts
 - name: ${1:task_description}
   known_hosts: 
@@ -13109,12 +13906,14 @@ snippet known_hosts
     #hash_host: ${9}
     #key: ${10}
 endsnippet
+
 snippet locale_gen
 - name: ${1:task_description}
   locale_gen: 
     name: ${3:None}
     #state: ${4:present}
 endsnippet
+
 snippet lvg
 - name: ${1:task_description}
   lvg: 
@@ -13125,6 +13924,7 @@ snippet lvg
     #pesize: ${11:4}
     #state: ${12:present}
 endsnippet
+
 snippet lvol
 - name: ${1:task_description}
   lvol: 
@@ -13139,6 +13939,7 @@ snippet lvol
     #opts: ${18}
     #size: ${19}
 endsnippet
+
 snippet make
 - name: ${1:task_description}
   make: 
@@ -13146,6 +13947,7 @@ snippet make
     #params: ${5:none}
     #target: ${6:none}
 endsnippet
+
 snippet modprobe
 - name: ${1:task_description}
   modprobe: 
@@ -13153,6 +13955,7 @@ snippet modprobe
     #state: ${5:present}
     #params: ${6}
 endsnippet
+
 snippet mount
 - name: ${1:task_description}
   mount: 
@@ -13166,10 +13969,12 @@ snippet mount
     #fstype: ${16}
     #opts: ${17}
 endsnippet
+
 snippet ohai
 - name: ${1:task_description}
   ohai: 
 endsnippet
+
 snippet open_iscsi
 - name: ${1:task_description}
   open_iscsi: 
@@ -13184,6 +13989,7 @@ snippet open_iscsi
     #node_user: ${20}
     #port: ${21:3260}
 endsnippet
+
 snippet openwrt_init
 - name: ${1:task_description}
   openwrt_init: 
@@ -13192,6 +13998,7 @@ snippet openwrt_init
     #state: ${7}
     #enabled: ${8}
 endsnippet
+
 snippet osx_defaults
 - name: ${1:task_description}
   osx_defaults: 
@@ -13203,6 +14010,7 @@ snippet osx_defaults
     #state: ${13:present}
     #value: ${14}
 endsnippet
+
 snippet pam_limits
 - name: ${1:task_description}
   pam_limits: 
@@ -13216,6 +14024,7 @@ snippet pam_limits
     #use_min: ${14:no}
     #backup: ${15:no}
 endsnippet
+
 snippet pamd
 - name: ${1:task_description}
   pamd: 
@@ -13230,10 +14039,12 @@ snippet pamd
     #path: ${16:/etc/pam.d/}
     #module_arguments: ${17}
 endsnippet
+
 snippet ping
 - name: ${1:task_description}
   ping: 
 endsnippet
+
 snippet puppet
 - name: ${1:task_description}
   puppet: 
@@ -13248,6 +14059,7 @@ snippet puppet
     #timeout: ${20:30m}
     #facts: ${21:None}
 endsnippet
+
 snippet seboolean
 - name: ${1:task_description}
   seboolean: 
@@ -13255,6 +14067,7 @@ snippet seboolean
     name: ${3:None}
     #persistent: ${5}
 endsnippet
+
 snippet sefcontext
 - name: ${1:task_description}
   sefcontext: 
@@ -13266,6 +14079,7 @@ snippet sefcontext
     #seuser: ${12}
     #state: ${13:present}
 endsnippet
+
 snippet selinux
 - name: ${1:task_description}
   selinux: 
@@ -13273,6 +14087,7 @@ snippet selinux
     #policy: ${5}
     #conf: ${6:/etc/selinux/config}
 endsnippet
+
 snippet selinux_permissive
 - name: ${1:task_description}
   selinux_permissive: 
@@ -13281,6 +14096,7 @@ snippet selinux_permissive
     #no_reload: ${6}
     #store: ${7}
 endsnippet
+
 snippet seport
 - name: ${1:task_description}
   seport: 
@@ -13290,6 +14106,7 @@ snippet seport
     ports: ${6:None}
     #reload: ${7:True}
 endsnippet
+
 snippet service
 - name: ${1:task_description}
   service: 
@@ -13302,6 +14119,7 @@ snippet service
     #arguments: ${15}
     #runlevel: ${16:default}
 endsnippet
+
 snippet setup
 - name: ${1:task_description}
   setup: 
@@ -13310,6 +14128,7 @@ snippet setup
     #fact_path: ${8:/etc/ansible/facts.d}
     #gather_timeout: ${9:10}
 endsnippet
+
 snippet solaris_zone
 - name: ${1:task_description}
   solaris_zone: 
@@ -13324,6 +14143,7 @@ snippet solaris_zone
     #config: ${18:empty string}
     #attach_options: ${19:empty string}
 endsnippet
+
 snippet svc
 - name: ${1:task_description}
   svc: 
@@ -13334,6 +14154,7 @@ snippet svc
     #state: ${11}
     #service_src: ${12}
 endsnippet
+
 snippet sysctl
 - name: ${1:task_description}
   sysctl: 
@@ -13345,6 +14166,7 @@ snippet sysctl
     #sysctl_file: ${13:/etc/sysctl.conf}
     #value: ${14}
 endsnippet
+
 snippet systemd
 - name: ${1:task_description}
   systemd: 
@@ -13356,12 +14178,14 @@ snippet systemd
     #daemon_reload: ${13}
     #user: ${14}
 endsnippet
+
 snippet timezone
 - name: ${1:task_description}
   timezone: 
     #hwclock: ${4}
     #name: ${5}
 endsnippet
+
 snippet ufw
 - name: ${1:task_description}
   ufw: 
@@ -13382,6 +14206,7 @@ snippet ufw
     #policy: ${32}
     #delete: ${33}
 endsnippet
+
 snippet user
 - name: ${1:task_description}
   user: 
@@ -13413,6 +14238,7 @@ snippet user
     #login_class: ${53}
     #shell: ${54}
 endsnippet
+
 snippet accelerate
 - name: ${1:task_description}
   accelerate: 
@@ -13422,23 +14248,27 @@ snippet accelerate
     #multi_key: ${10}
     #ipv6: ${11}
 endsnippet
+
 snippet meta
 - name: ${1:task_description}
   meta: 
     free_form: ${2:None}
 endsnippet
+
 snippet assert
 - name: ${1:task_description}
   assert: 
     that: ${3}
     #msg: ${4}
 endsnippet
+
 snippet async_status
 - name: ${1:task_description}
   async_status: 
     jid: ${2:None}
     #mode: ${4:status}
 endsnippet
+
 snippet debug
 - name: ${1:task_description}
   debug: 
@@ -13446,16 +14276,19 @@ snippet debug
     #var: ${6}
     #verbosity: ${7}
 endsnippet
+
 snippet fail
 - name: ${1:task_description}
   fail: 
     #msg: ${3:'Failed as requested from task'}
 endsnippet
+
 snippet include
 - name: ${1:task_description}
   include: 
     #free-form: ${3}
 endsnippet
+
 snippet include_role
 - name: ${1:task_description}
   include_role: 
@@ -13466,6 +14299,7 @@ snippet include_role
     #defaults_from: ${11:main}
     #private: ${12:None}
 endsnippet
+
 snippet include_vars
 - name: ${1:task_description}
   include_vars: 
@@ -13477,6 +14311,7 @@ snippet include_vars
     #dir: ${14}
     #name: ${15}
 endsnippet
+
 snippet pause
 - name: ${1:task_description}
   pause: 
@@ -13484,11 +14319,13 @@ snippet pause
     #minutes: ${6}
     #prompt: ${7}
 endsnippet
+
 snippet set_fact
 - name: ${1:task_description}
   set_fact: 
     key_value: ${2:None}
 endsnippet
+
 snippet set_stats
 - name: ${1:task_description}
   set_stats: 
@@ -13496,6 +14333,7 @@ snippet set_stats
     #aggregate: ${5:True}
     #per_host: ${6}
 endsnippet
+
 snippet wait_for
 - name: ${1:task_description}
   wait_for: 
@@ -13511,6 +14349,7 @@ snippet wait_for
     #path: ${22}
     #port: ${23}
 endsnippet
+
 snippet apache2_mod_proxy
 - name: ${1:task_description}
   apache2_mod_proxy: 
@@ -13521,6 +14360,7 @@ snippet apache2_mod_proxy
     #state: ${11:None}
     #balancer_url_suffix: ${12:/balancer-manager/}
 endsnippet
+
 snippet apache2_module
 - name: ${1:task_description}
   apache2_module: 
@@ -13529,6 +14369,7 @@ snippet apache2_module
     #force: ${7}
     #ignore_configcheck: ${8}
 endsnippet
+
 snippet deploy_helper
 - name: ${1:task_description}
   deploy_helper: 
@@ -13542,6 +14383,7 @@ snippet deploy_helper
     #clean: ${17:True}
     #release: ${18:None}
 endsnippet
+
 snippet django_manage
 - name: ${1:task_description}
   django_manage: 
@@ -13559,6 +14401,7 @@ snippet django_manage
     #fixtures: ${24}
     #failfast: ${25:no}
 endsnippet
+
 snippet ejabberd_user
 - name: ${1:task_description}
   ejabberd_user: 
@@ -13568,6 +14411,7 @@ snippet ejabberd_user
     #logging: ${8}
     #state: ${9:present}
 endsnippet
+
 snippet htpasswd
 - name: ${1:task_description}
   htpasswd: 
@@ -13578,6 +14422,7 @@ snippet htpasswd
     #password: ${10}
     #crypt_scheme: ${11:apr_md5_crypt}
 endsnippet
+
 snippet jboss
 - name: ${1:task_description}
   jboss: 
@@ -13586,6 +14431,7 @@ snippet jboss
     #deploy_path: ${7:/var/lib/jbossas/standalone/deployments}
     #state: ${8:present}
 endsnippet
+
 snippet jenkins_job
 - name: ${1:task_description}
   jenkins_job: 
@@ -13598,6 +14444,7 @@ snippet jenkins_job
     #password: ${15}
     #config: ${16}
 endsnippet
+
 snippet jenkins_plugin
 - name: ${1:task_description}
   jenkins_plugin: 
@@ -13615,6 +14462,7 @@ snippet jenkins_plugin
     #owner: ${25:jenkins}
     #updates_expiration: ${26:86400}
 endsnippet
+
 snippet jenkins_script
 - name: ${1:task_description}
   jenkins_script: 
@@ -13625,6 +14473,7 @@ snippet jenkins_script
     #args: ${11}
     #validate_certs: ${12:True}
 endsnippet
+
 snippet jira
 - name: ${1:task_description}
   jira: 
@@ -13645,6 +14494,7 @@ snippet jira
     #issuetype: ${28}
     #issue: ${29}
 endsnippet
+
 snippet letsencrypt
 - name: ${1:task_description}
   letsencrypt: 
@@ -13658,12 +14508,14 @@ snippet letsencrypt
     #agreement: ${15:https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf}
     #remaining_days: ${16:10}
 endsnippet
+
 snippet nginx_status_facts
 - name: ${1:task_description}
   nginx_status_facts: 
     url: ${2}
     #timeout: ${4:10}
 endsnippet
+
 snippet supervisorctl
 - name: ${1:task_description}
   supervisorctl: 
@@ -13675,6 +14527,7 @@ snippet supervisorctl
     #config: ${12}
     #server_url: ${13}
 endsnippet
+
 snippet taiga_issue
 - name: ${1:task_description}
   taiga_issue: 
@@ -13691,6 +14544,7 @@ snippet taiga_issue
     #attachment_description: ${21}
     #description: ${22}
 endsnippet
+
 snippet win_acl
 - name: ${1:task_description}
   win_acl: 
@@ -13702,6 +14556,7 @@ snippet win_acl
     #state: ${10:present}
     #inherit: ${11:For Leaf File, None; For Directory, ContainerInherit, ObjectInherit;}
 endsnippet
+
 snippet win_acl_inheritance
 - name: ${1:task_description}
   win_acl_inheritance: 
@@ -13709,6 +14564,7 @@ snippet win_acl_inheritance
     #state: ${5:absent}
     #reorganize: ${6}
 endsnippet
+
 snippet win_chocolatey
 - name: ${1:task_description}
   win_chocolatey: 
@@ -13724,6 +14580,7 @@ snippet win_chocolatey
     #params: ${21}
     #ignore_dependencies: ${22}
 endsnippet
+
 snippet win_command
 - name: ${1:task_description}
   win_command: 
@@ -13732,16 +14589,19 @@ snippet win_command
     #chdir: ${7}
     #removes: ${8}
 endsnippet
+
 snippet win_copy
 - name: ${1:task_description}
   win_copy: 
     dest: ${2:None}
     #src: ${4}
 endsnippet
+
 snippet win_dotnet_ngen
 - name: ${1:task_description}
   win_dotnet_ngen: 
 endsnippet
+
 snippet win_environment
 - name: ${1:task_description}
   win_environment: 
@@ -13750,6 +14610,7 @@ snippet win_environment
     #state: ${6:present}
     #value: ${7:no default}
 endsnippet
+
 snippet win_feature
 - name: ${1:task_description}
   win_feature: 
@@ -13760,17 +14621,20 @@ snippet win_feature
     #include_sub_features: ${11}
     #restart: ${12}
 endsnippet
+
 snippet win_file
 - name: ${1:task_description}
   win_file: 
     path: ${2:[]}
     #state: ${4:file}
 endsnippet
+
 snippet win_file_version
 - name: ${1:task_description}
   win_file_version: 
     path: ${2}
 endsnippet
+
 snippet win_firewall_rule
 - name: ${1:task_description}
   win_firewall_rule: 
@@ -13790,6 +14654,7 @@ snippet win_firewall_rule
     #force: ${26}
     #localport: ${27:any}
 endsnippet
+
 snippet win_get_url
 - name: ${1:task_description}
   win_get_url: 
@@ -13803,6 +14668,7 @@ snippet win_get_url
     #proxy_username: ${16}
     #password: ${17}
 endsnippet
+
 snippet win_group
 - name: ${1:task_description}
   win_group: 
@@ -13810,6 +14676,7 @@ snippet win_group
     #state: ${5:present}
     #description: ${6}
 endsnippet
+
 snippet win_iis_virtualdirectory
 - name: ${1:task_description}
   win_iis_virtualdirectory: 
@@ -13819,6 +14686,7 @@ snippet win_iis_virtualdirectory
     #state: ${8:present}
     #physical_path: ${9}
 endsnippet
+
 snippet win_iis_webapplication
 - name: ${1:task_description}
   win_iis_webapplication: 
@@ -13828,6 +14696,7 @@ snippet win_iis_webapplication
     #application_pool: ${8}
     #physical_path: ${9}
 endsnippet
+
 snippet win_iis_webapppool
 - name: ${1:task_description}
   win_iis_webapppool: 
@@ -13835,6 +14704,7 @@ snippet win_iis_webapppool
     #attributes: ${5}
     #state: ${6}
 endsnippet
+
 snippet win_iis_webbinding
 - name: ${1:task_description}
   win_iis_webbinding: 
@@ -13847,6 +14717,7 @@ snippet win_iis_webbinding
     #port: ${15}
     #certificate_store_name: ${16:My}
 endsnippet
+
 snippet win_iis_website
 - name: ${1:task_description}
   win_iis_website: 
@@ -13861,6 +14732,7 @@ snippet win_iis_website
     #state: ${19}
     #port: ${20}
 endsnippet
+
 snippet win_lineinfile
 - name: ${1:task_description}
   win_lineinfile: 
@@ -13877,6 +14749,7 @@ snippet win_lineinfile
     #backup: ${23:no}
     #validate: ${24:None}
 endsnippet
+
 snippet win_msi
 - name: ${1:task_description}
   win_msi: 
@@ -13886,6 +14759,7 @@ snippet win_msi
     #creates: ${9}
     #wait: ${10}
 endsnippet
+
 snippet win_nssm
 - name: ${1:task_description}
   win_nssm: 
@@ -13900,6 +14774,7 @@ snippet win_nssm
     #stdout_file: ${18}
     #app_parameters: ${19}
 endsnippet
+
 snippet win_owner
 - name: ${1:task_description}
   win_owner: 
@@ -13907,6 +14782,7 @@ snippet win_owner
     user: ${4}
     #recurse: ${5}
 endsnippet
+
 snippet win_package
 - name: ${1:task_description}
   win_package: 
@@ -13918,6 +14794,7 @@ snippet win_package
     #user_name: ${12}
     #arguments: ${13}
 endsnippet
+
 snippet win_path
 - name: ${1:task_description}
   win_path: 
@@ -13926,11 +14803,13 @@ snippet win_path
     #state: ${7}
     #name: ${8:PATH}
 endsnippet
+
 snippet win_ping
 - name: ${1:task_description}
   win_ping: 
     #data: ${3:pong}
 endsnippet
+
 snippet win_reboot
 - name: ${1:task_description}
   win_reboot: 
@@ -13941,6 +14820,7 @@ snippet win_reboot
     #shutdown_timeout_sec: ${12:600}
     #reboot_timeout_sec: ${13:600}
 endsnippet
+
 snippet win_regedit
 - name: ${1:task_description}
   win_regedit: 
@@ -13950,12 +14830,14 @@ snippet win_regedit
     #state: ${8:present}
     #data: ${9}
 endsnippet
+
 snippet win_regmerge
 - name: ${1:task_description}
   win_regmerge: 
     path: ${2:no default}
     #compare_key: ${4:no default}
 endsnippet
+
 snippet win_robocopy
 - name: ${1:task_description}
   win_robocopy: 
@@ -13965,6 +14847,7 @@ snippet win_robocopy
     #purge: ${8}
     #flags: ${9:None}
 endsnippet
+
 snippet win_say
 - name: ${1:task_description}
   win_say: 
@@ -13975,6 +14858,7 @@ snippet win_say
     #msg_file: ${12:none}
     #speech_speed: ${13}
 endsnippet
+
 snippet win_scheduled_task
 - name: ${1:task_description}
   win_scheduled_task: 
@@ -13990,6 +14874,7 @@ snippet win_scheduled_task
     #path: ${20:\}
     #description: ${21}
 endsnippet
+
 snippet win_service
 - name: ${1:task_description}
   win_service: 
@@ -13997,6 +14882,7 @@ snippet win_service
     #start_mode: ${5}
     #state: ${6}
 endsnippet
+
 snippet win_share
 - name: ${1:task_description}
   win_share: 
@@ -14010,6 +14896,7 @@ snippet win_share
     #change: ${16:none}
     #description: ${17:none}
 endsnippet
+
 snippet win_shell
 - name: ${1:task_description}
   win_shell: 
@@ -14019,6 +14906,7 @@ snippet win_shell
     #removes: ${9}
     #executable: ${10}
 endsnippet
+
 snippet win_shortcut
 - name: ${1:task_description}
   win_shortcut: 
@@ -14032,6 +14920,7 @@ snippet win_shortcut
     #hotkey: ${17}
     #icon: ${18}
 endsnippet
+
 snippet win_stat
 - name: ${1:task_description}
   win_stat: 
@@ -14039,17 +14928,20 @@ snippet win_stat
     #get_md5: ${5:True}
     #get_checksum: ${6:True}
 endsnippet
+
 snippet win_template
 - name: ${1:task_description}
   win_template: 
     dest: ${2}
     src: ${3}
 endsnippet
+
 snippet win_timezone
 - name: ${1:task_description}
   win_timezone: 
     timezone: ${2:None}
 endsnippet
+
 snippet win_unzip
 - name: ${1:task_description}
   win_unzip: 
@@ -14059,6 +14951,7 @@ snippet win_unzip
     #creates: ${8}
     #rm: ${9}
 endsnippet
+
 snippet win_updates
 - name: ${1:task_description}
   win_updates: 
@@ -14066,6 +14959,7 @@ snippet win_updates
     #state: ${6:installed}
     #category_names: ${7:[u'CriticalUpdates', u'SecurityUpdates', u'UpdateRollups']}
 endsnippet
+
 snippet win_uri
 - name: ${1:task_description}
   win_uri: 
@@ -14077,6 +14971,7 @@ snippet win_uri
     #method: ${14:GET}
     #use_basic_parsing: ${15:True}
 endsnippet
+
 snippet win_user
 - name: ${1:task_description}
   win_user: 
@@ -14094,8 +14989,10 @@ snippet win_user
     #account_locked: ${25}
     #user_cannot_change_password: ${26}
 endsnippet
+
 snippet win_webpicmd
 - name: ${1:task_description}
   win_webpicmd: 
     name: ${2}
 endsnippet
+
