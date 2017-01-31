@@ -9,22 +9,19 @@ This repo contains snippets for Ansible.
 
 ## Installation
 
-To install using [vim-plug](junegunn/vim-plug):
+To install using [vim-plug](junegunn/vim-plug) add `Plug 'phenomenes/ansible-snippets'`
+to you `~/.vimrc` and `:PlugInstall` or `$ vim +PlugInstall +qall`
+
+To install manually clone the repo to your favourite location:
 
 ```
-" add this line to your .vimrc
-Plug 'phenomenes/ansible-snippets'
-```
-
-To install manually, clone the repo:
-
-```
-cp -r /<repo_path>/ansible-snippets/* ~/.vim/
+$ git clone https://github.com/phenomenes/ansible-snippets.git ~/ansible-snippets
+$ cp -r ~/ansible-snippets/* ~/.vim/
 ```
 
 ## Usage
 
-Edit a `.yml` or `.yaml` file, type `play` or an Ansible module name and use
+Edit a `.yml` or `.yaml` file, type `play` or any Ansible's module name and use
 `<tab>` to expand the snippet:
 
 ```
@@ -52,3 +49,7 @@ Edit a `.yml` or `.yaml` file, type `play` or an Ansible module name and use
 
 Use `<tab>` again to move between arguments.
 
+## Credits
+
+This snippets were generated with [ansible_snippet_generator](phenomenes/ansible_snippet_generator)
+forked from [bleader/ansible_snippet_generator](bleader/ansible_snippet_generator)
