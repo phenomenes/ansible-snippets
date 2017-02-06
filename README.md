@@ -4,12 +4,12 @@ This repo contains snippets for Ansible.
 
 ##  Requirements
 
-* [UtilSnips](SirvVer/ultisnips) or [SnipMate](garbas/vim-snipmate)
-* [vim-plug](junegunn/vim-plug) (optional)
+* [UtilSnips](https://github.com/SirVer/ultisnips) or [SnipMate](https://github.com/garbas/vim-snipmate)
+* [vim-plug](https://github.com/junegunn/vim-plug) (optional)
 
 ## Installation
 
-To install using [vim-plug](junegunn/vim-plug) add `Plug 'phenomenes/ansible-snippets'`
+To install using [vim-plug](https://github.com/junegunn/vim-plug) add `Plug 'phenomenes/ansible-snippets'`
 to you `~/.vimrc` and `:PlugInstall` or `$ vim +PlugInstall +qall`
 
 To install manually clone the repo to your favourite location:
@@ -51,5 +51,5 @@ Use `<tab>` again to move between arguments.
 
 ## Credits
 
-This snippets were generated with [ansible_snippet_generator](phenomenes/ansible_snippet_generator)
-forked from [bleader/ansible_snippet_generator](bleader/ansible_snippet_generator)
+This snippets were generated with [ansible_snippet_generator](https://github.com/phenomenes/ansible_snippet_generator)
+forked from [bleader/ansible_snippet_generator](https://github.com/bleader/ansible_snippet_generator)
