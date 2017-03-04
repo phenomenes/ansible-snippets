@@ -9,8 +9,9 @@ This repo contains snippets for Ansible.
 
 ## Installation
 
-To install using [vim-plug](https://github.com/junegunn/vim-plug) add `Plug 'phenomenes/ansible-snippets'`
-to you `~/.vimrc` and `:PlugInstall` or `$ vim +PlugInstall +qall`
+To install using [vim-plug](https://github.com/junegunn/vim-plug) add
+`Plug 'phenomenes/ansible-snippets'` to your `~/.vimrc` and `:PlugInstall` or
+`$ vim +PlugInstall +qall`
 
 To install manually clone the repo to your favourite location:
 
