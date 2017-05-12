@@ -1,13 +1,13 @@
-# Ansible snippets
+# Ansible snippets
 
 This repo contains snippets for Ansible.
 
-##  Requirements
+## Requirements
 
 * [UtilSnips](https://github.com/SirVer/ultisnips) or [SnipMate](https://github.com/garbas/vim-snipmate)
 * [vim-plug](https://github.com/junegunn/vim-plug) (optional)
 
-## Installation
+## Installation
 
 To install using [vim-plug](https://github.com/junegunn/vim-plug) add
 `Plug 'phenomenes/ansible-snippets'` to your `~/.vimrc` and `:PlugInstall` or
@@ -50,7 +50,7 @@ Edit a `.yml` or `.yaml` file, type `play` or any Ansible's module name and use
 
 Use `<tab>` again to move between arguments.
 
-## Credits
+## Credits
 
 This snippets were generated with [ansible_snippet_generator](https://github.com/phenomenes/ansible_snippet_generator)
 forked from [bleader/ansible_snippet_generator](https://github.com/bleader/ansible_snippet_generator)
