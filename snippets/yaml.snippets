@@ -70,6 +70,20 @@ snippet accelerate
 	    #multi_key: ${5}
 	    #ipv6: ${6}
 
+snippet aci_rest
+	- name: ${1:task_description}
+	  aci_rest:
+	    username: ${2:admin}
+	    password: ${3}
+	    path: ${4}
+	    hostname: ${5}
+	    method: ${6:get}
+	    #content: ${7}
+	    #timeout: ${8:30}
+	    #use_ssl: ${9:yes}
+	    #src: ${10}
+	    #validate_certs: ${11:yes}
+
 snippet acl
 	- name: ${1:task_description}
 	  acl:
@@ -100,6 +114,32 @@ snippet airbrake_deployment
 	    #validate_certs: ${7:yes}
 	    #revision: ${8}
 
+snippet aireos_command
+	- name: ${1:task_description}
+	  aireos_command:
+	    commands: ${2}
+	    #retries: ${3:10}
+	    #interval: ${4:1}
+	    #provider: ${5}
+	    #wait_for: ${6}
+	    #match: ${7:all}
+
+snippet aireos_config
+	- name: ${1:task_description}
+	  aireos_config:
+	    #src: ${2}
+	    #diff_ignore_lines: ${3}
+	    #after: ${4}
+	    #lines: ${5}
+	    #diff_against: ${6}
+	    #intended_config: ${7}
+	    #running_config: ${8}
+	    #provider: ${9}
+	    #save: ${10}
+	    #backup: ${11}
+	    #match: ${12:line}
+	    #before: ${13}
+
 snippet aix_inittab
 	- name: ${1:task_description}
 	  aix_inittab:
@@ -116,8 +156,8 @@ snippet aix_lvol
 	    vg: ${2}
 	    lv: ${3}
 	    #pvs: ${4}
-	    #lv_type: ${5}
-	    #copies: ${6}
+	    #lv_type: ${5:jfs2}
+	    #copies: ${6:1}
 	    #state: ${7:present}
 	    #policy: ${8:maximum}
 	    #opts: ${9}
@@ -227,7 +267,7 @@ snippet aos_login
 	    server: ${2}
 	    #passwd: ${3:admin}
 	    #user: ${4:admin}
-	    #port: ${5:8888}
+	    #port: ${5:443}
 
 snippet aos_rack_type
 	- name: ${1:task_description}
@@ -268,10 +308,12 @@ snippet apache2_module
 snippet apk
 	- name: ${1:task_description}
 	  apk:
-	    #state: ${2:present}
-	    #upgrade: ${3}
-	    #update_cache: ${4}
-	    #name: ${5}
+	    #available: ${2}
+	    #state: ${3:present}
+	    #upgrade: ${4}
+	    #update_cache: ${5}
+	    #name: ${6}
+	    #repository: ${7}
 
 snippet apt
 	- name: ${1:task_description}
@@ -280,16 +322,17 @@ snippet apt
 	    #upgrade: ${3:no}
 	    #force: ${4:no}
 	    #name: ${5}
-	    #purge: ${6}
-	    #allow_unauthenticated: ${7:no}
-	    #state: ${8:present}
-	    #autoremove: ${9}
-	    #update_cache: ${10}
-	    #default_release: ${11}
-	    #only_upgrade: ${12}
-	    #cache_valid_time: ${13}
-	    #deb: ${14}
-	    #install_recommends: ${15}
+	    #autoclean: ${6}
+	    #purge: ${7}
+	    #allow_unauthenticated: ${8:no}
+	    #state: ${9:present}
+	    #autoremove: ${10}
+	    #update_cache: ${11}
+	    #default_release: ${12}
+	    #only_upgrade: ${13}
+	    #cache_valid_time: ${14}
+	    #deb: ${15}
+	    #install_recommends: ${16}
 
 snippet apt_key
 	- name: ${1:task_description}
@@ -337,6 +380,35 @@ snippet archive
 	    #mode: ${12}
 	    #owner: ${13}
 	    #attributes: ${14:None}
+	    #exclude_path: ${15}
+
+snippet aruba_command
+	- name: ${1:task_description}
+	  aruba_command:
+	    commands: ${2}
+	    #retries: ${3:10}
+	    #interval: ${4:1}
+	    #provider: ${5}
+	    #wait_for: ${6}
+	    #match: ${7:all}
+
+snippet aruba_config
+	- name: ${1:task_description}
+	  aruba_config:
+	    #src: ${2}
+	    #diff_ignore_lines: ${3}
+	    #after: ${4}
+	    #lines: ${5}
+	    #intended_config: ${6}
+	    #diff_against: ${7}
+	    #replace: ${8:line}
+	    #parents: ${9}
+	    #provider: ${10}
+	    #running_config: ${11}
+	    #save_when: ${12:never}
+	    #backup: ${13}
+	    #match: ${14:line}
+	    #before: ${15}
 
 snippet asa_acl
 	- name: ${1:task_description}
@@ -416,7 +488,7 @@ snippet assert
 snippet async_status
 	- name: ${1:task_description}
 	  async_status:
-	    jid: ${2:None}
+	    jid: ${2}
 	    #mode: ${3:status}
 
 snippet at
@@ -464,6 +536,110 @@ snippet authorized_key
 	    #path: ${7:(homedir)+/.ssh/authorized_keys}
 	    #validate_certs: ${8:yes}
 	    #manage_dir: ${9:yes}
+
+snippet avi_actiongroupconfig
+	- name: ${1:task_description}
+	  avi_actiongroupconfig:
+	    external_only: ${2}
+	    name: ${3}
+	    level: ${4}
+	    #username: ${5}
+	    #snmp_trap_profile_ref: ${6}
+	    #description: ${7}
+	    #autoscale_trigger_notification: ${8}
+	    #controller: ${9}
+	    #email_config_ref: ${10}
+	    #password: ${11}
+	    #tenant: ${12:admin}
+	    #uuid: ${13}
+	    #url: ${14}
+	    #syslog_config_ref: ${15}
+	    #tenant_ref: ${16}
+	    #action_script_config_ref: ${17}
+	    #state: ${18:present}
+	    #tenant_uuid: ${19}
+	    #api_version: ${20}
+
+snippet avi_alertconfig
+	- name: ${1:task_description}
+	  avi_alertconfig:
+	    category: ${2}
+	    name: ${3}
+	    source: ${4}
+	    alert_rule: ${5}
+	    #username: ${6}
+	    #description: ${7}
+	    #tenant_ref: ${8}
+	    #object_type: ${9}
+	    #autoscale_alert: ${10}
+	    #controller: ${11}
+	    #obj_uuid: ${12}
+	    #recommendation: ${13}
+	    #threshold: ${14}
+	    #expiry_time: ${15}
+	    #password: ${16}
+	    #tenant: ${17:admin}
+	    #uuid: ${18}
+	    #throttle: ${19}
+	    #url: ${20}
+	    #enabled: ${21}
+	    #summary: ${22}
+	    #rolling_window: ${23}
+	    #state: ${24:present}
+	    #action_group_ref: ${25}
+	    #tenant_uuid: ${26}
+	    #api_version: ${27}
+
+snippet avi_alertemailconfig
+	- name: ${1:task_description}
+	  avi_alertemailconfig:
+	    to_emails: ${2}
+	    name: ${3}
+	    #username: ${4}
+	    #uuid: ${5}
+	    #description: ${6}
+	    #url: ${7}
+	    #cc_emails: ${8}
+	    #tenant_ref: ${9}
+	    #state: ${10:present}
+	    #controller: ${11}
+	    #api_version: ${12}
+	    #password: ${13}
+	    #tenant_uuid: ${14}
+	    #tenant: ${15:admin}
+
+snippet avi_alertscriptconfig
+	- name: ${1:task_description}
+	  avi_alertscriptconfig:
+	    name: ${2}
+	    #username: ${3}
+	    #action_script: ${4}
+	    #url: ${5}
+	    #tenant_ref: ${6}
+	    #state: ${7:present}
+	    #controller: ${8}
+	    #api_version: ${9}
+	    #password: ${10}
+	    #tenant_uuid: ${11}
+	    #tenant: ${12:admin}
+	    #uuid: ${13}
+
+snippet avi_alertsyslogconfig
+	- name: ${1:task_description}
+	  avi_alertsyslogconfig:
+	    name: ${2}
+	    #username: ${3}
+	    #uuid: ${4}
+	    #syslog_servers: ${5}
+	    #description: ${6}
+	    #url: ${7}
+	    #tenant_ref: ${8}
+	    #state: ${9:present}
+	    #controller: ${10}
+	    #api_version: ${11}
+	    #password: ${12}
+	    #tenant_uuid: ${13}
+	    #tenant: ${14:admin}
 
 snippet avi_analyticsprofile
 	- name: ${1:task_description}
@@ -566,20 +742,21 @@ snippet avi_applicationpersistenceprofile
 	    persistence_type: ${3}
 	    #username: ${4}
 	    #description: ${5}
-	    #controller: ${6}
-	    #ip_persistence_profile: ${7}
-	    #password: ${8}
-	    #tenant: ${9:admin}
-	    #uuid: ${10}
-	    #app_cookie_persistence_profile: ${11}
-	    #tenant_ref: ${12}
-	    #server_hm_down_recovery: ${13}
-	    #http_cookie_persistence_profile: ${14}
-	    #url: ${15}
-	    #state: ${16:present}
-	    #hdr_persistence_profile: ${17}
-	    #tenant_uuid: ${18}
-	    #api_version: ${19}
+	    #server_hm_down_recovery: ${6}
+	    #controller: ${7}
+	    #ip_persistence_profile: ${8}
+	    #password: ${9}
+	    #tenant: ${10:admin}
+	    #uuid: ${11}
+	    #app_cookie_persistence_profile: ${12}
+	    #tenant_ref: ${13}
+	    #is_federated: ${14}
+	    #http_cookie_persistence_profile: ${15}
+	    #url: ${16}
+	    #state: ${17:present}
+	    #hdr_persistence_profile: ${18}
+	    #tenant_uuid: ${19}
+	    #api_version: ${20}
 
 snippet avi_applicationprofile
 	- name: ${1:task_description}
@@ -602,6 +779,69 @@ snippet avi_applicationprofile
 	    #state: ${17:present}
 	    #tenant_uuid: ${18}
 	    #api_version: ${19}
+
+snippet avi_authprofile
+	- name: ${1:task_description}
+	  avi_authprofile:
+	    name: ${2}
+	    type: ${3}
+	    #username: ${4}
+	    #http: ${5}
+	    #description: ${6}
+	    #controller: ${7}
+	    #tacacs_plus: ${8}
+	    #password: ${9}
+	    #tenant: ${10:admin}
+	    #uuid: ${11}
+	    #url: ${12}
+	    #tenant_ref: ${13}
+	    #state: ${14:present}
+	    #ldap: ${15}
+	    #tenant_uuid: ${16}
+	    #api_version: ${17}
+
+snippet avi_backup
+	- name: ${1:task_description}
+	  avi_backup:
+	    file_name: ${2}
+	    #username: ${3}
+	    #scheduler_ref: ${4}
+	    #local_file_url: ${5}
+	    #remote_file_url: ${6}
+	    #backup_config_ref: ${7}
+	    #controller: ${8}
+	    #password: ${9}
+	    #tenant: ${10:admin}
+	    #uuid: ${11}
+	    #url: ${12}
+	    #tenant_ref: ${13}
+	    #state: ${14:present}
+	    #timestamp: ${15}
+	    #tenant_uuid: ${16}
+	    #api_version: ${17}
+
+snippet avi_backupconfiguration
+	- name: ${1:task_description}
+	  avi_backupconfiguration:
+	    name: ${2}
+	    #username: ${3}
+	    #backup_passphrase: ${4}
+	    #controller: ${5}
+	    #password: ${6}
+	    #tenant: ${7:admin}
+	    #uuid: ${8}
+	    #ssh_user_ref: ${9}
+	    #url: ${10}
+	    #tenant_ref: ${11}
+	    #remote_hostname: ${12}
+	    #state: ${13:present}
+	    #remote_directory: ${14}
+	    #maximum_backups_stored: ${15}
+	    #upload_to_remote_host: ${16}
+	    #backup_file_prefix: ${17}
+	    #tenant_uuid: ${18}
+	    #api_version: ${19}
+	    #save_local: ${20}
 
 snippet avi_certificatemanagementprofile
 	- name: ${1:task_description}
@@ -694,6 +934,97 @@ snippet avi_cloudproperties
 	    #tenant: ${13:admin}
 	    #cc_props: ${14}
 
+snippet avi_cluster
+	- name: ${1:task_description}
+	  avi_cluster:
+	    name: ${2}
+	    #username: ${3}
+	    #rejoin_nodes_automatically: ${4}
+	    #virtual_ip: ${5}
+	    #url: ${6}
+	    #tenant_ref: ${7}
+	    #state: ${8:present}
+	    #controller: ${9}
+	    #api_version: ${10}
+	    #nodes: ${11}
+	    #password: ${12}
+	    #tenant_uuid: ${13}
+	    #tenant: ${14:admin}
+	    #uuid: ${15}
+
+snippet avi_controllerproperties
+	- name: ${1:task_description}
+	  avi_controllerproperties:
+	    #vs_se_ping_fail: ${2}
+	    #vs_se_create_fail: ${3}
+	    #portal_token: ${4}
+	    #warmstart_se_reconnect_wait_time: ${5}
+	    #persistence_key_rotate_period: ${6}
+	    #unresponsive_se_reboot: ${7}
+	    #attach_ip_retry_interval: ${8}
+	    #vs_se_vnic_fail: ${9}
+	    #attach_ip_retry_limit: ${10}
+	    #se_vnic_cooldown: ${11}
+	    #vnic_op_fail_time: ${12}
+	    #max_pcap_per_tenant: ${13}
+	    #vs_se_bootup_fail: ${14}
+	    #seupgrade_fabric_pool_size: ${15}
+	    #vs_key_rotate_period: ${16}
+	    #seupgrade_segroup_min_dead_timeout: ${17}
+	    #dns_refresh_period: ${18}
+	    #upgrade_lease_time: ${19}
+	    #se_create_timeout: ${20}
+	    #query_host_fail: ${21}
+	    #vs_apic_scaleout_timeout: ${22}
+	    #state: ${23:present}
+	    #se_offline_del: ${24}
+	    #max_dead_se_in_grp: ${25}
+	    #upgrade_dns_ttl: ${26}
+	    #fatal_error_lease_time: ${27}
+	    #api_version: ${28}
+	    #username: ${29}
+	    #allow_ip_forwarding: ${30}
+	    #max_seq_vnic_failures: ${31}
+	    #allow_unauthenticated_nodes: ${32}
+	    #allow_unauthenticated_apis: ${33}
+	    #controller: ${34}
+	    #vs_awaiting_se_timeout: ${35}
+	    #cluster_ip_gratuitous_arp_period: ${36}
+	    #password: ${37}
+	    #tenant: ${38:admin}
+	    #uuid: ${39}
+	    #dummy: ${40}
+	    #secure_channel_cleanup_timeout: ${41}
+	    #vs_se_vnic_ip_fail: ${42}
+	    #ssl_certificate_expiry_warning_days: ${43}
+	    #secure_channel_se_token_timeout: ${44}
+	    #url: ${45}
+	    #secure_channel_controller_token_timeout: ${46}
+	    #api_idle_timeout: ${47}
+	    #crashed_se_reboot: ${48}
+	    #appviewx_compat_mode: ${49}
+	    #se_failover_attempt_interval: ${50}
+	    #dead_se_detection_timer: ${51}
+	    #tenant_uuid: ${52}
+
+snippet avi_dnspolicy
+	- name: ${1:task_description}
+	  avi_dnspolicy:
+	    #username: ${2}
+	    #uuid: ${3}
+	    #description: ${4}
+	    #url: ${5}
+	    #created_by: ${6}
+	    #tenant_ref: ${7}
+	    #state: ${8:present}
+	    #rule: ${9}
+	    #controller: ${10}
+	    #api_version: ${11}
+	    #password: ${12}
+	    #tenant_uuid: ${13}
+	    #tenant: ${14:admin}
+	    #name: ${15}
+
 snippet avi_gslb
 	- name: ${1:task_description}
 	  avi_gslb:
@@ -702,20 +1033,56 @@ snippet avi_gslb
 	    #description: ${4}
 	    #view_id: ${5}
 	    #third_party_sites: ${6}
-	    #controller: ${7}
-	    #dns_configs: ${8}
-	    #leader_cluster_uuid: ${9}
+	    #sites: ${7}
+	    #controller: ${8}
+	    #dns_configs: ${9}
+	    #leader_cluster_uuid: ${10}
+	    #password: ${11}
+	    #tenant: ${12:admin}
+	    #uuid: ${13}
+	    #url: ${14}
+	    #tenant_ref: ${15}
+	    #is_federated: ${16}
+	    #clear_on_max_retries: ${17}
+	    #state: ${18:present}
+	    #send_interval: ${19}
+	    #client_ip_addr_group: ${20}
+	    #tenant_uuid: ${21}
+	    #api_version: ${22}
+
+snippet avi_gslbapplicationpersistenceprofile
+	- name: ${1:task_description}
+	  avi_gslbapplicationpersistenceprofile:
+	    name: ${2}
+	    #username: ${3}
+	    #uuid: ${4}
+	    #url: ${5}
+	    #tenant_ref: ${6}
+	    #state: ${7:present}
+	    #controller: ${8}
+	    #api_version: ${9}
 	    #password: ${10}
-	    #tenant: ${11:admin}
-	    #uuid: ${12}
-	    #url: ${13}
-	    #tenant_ref: ${14}
-	    #sites: ${15}
-	    #clear_on_max_retries: ${16}
-	    #state: ${17:present}
-	    #send_interval: ${18}
-	    #tenant_uuid: ${19}
-	    #api_version: ${20}
+	    #tenant_uuid: ${11}
+	    #tenant: ${12:admin}
+	    #description: ${13}
+
+snippet avi_gslbgeodbprofile
+	- name: ${1:task_description}
+	  avi_gslbgeodbprofile:
+	    name: ${2}
+	    #username: ${3}
+	    #uuid: ${4}
+	    #state: ${5:present}
+	    #url: ${6}
+	    #description: ${7}
+	    #tenant_ref: ${8}
+	    #is_federated: ${9}
+	    #controller: ${10}
+	    #api_version: ${11}
+	    #entries: ${12}
+	    #password: ${13}
+	    #tenant_uuid: ${14}
+	    #tenant: ${15:admin}
 
 snippet avi_gslbhealthmonitor
 	- name: ${1:task_description}
@@ -754,23 +1121,41 @@ snippet avi_gslbservice
 	    #wildcard_match: ${5}
 	    #enabled: ${6}
 	    #domain_names: ${7}
-	    #controller: ${8}
-	    #groups: ${9}
-	    #ttl: ${10}
+	    #is_federated: ${8}
+	    #controller: ${9}
+	    #groups: ${10}
+	    #ttl: ${11}
+	    #password: ${12}
+	    #health_monitor_scope: ${13}
+	    #tenant: ${14:admin}
+	    #uuid: ${15}
+	    #controller_health_status_enabled: ${16}
+	    #url: ${17}
+	    #down_response: ${18}
+	    #tenant_ref: ${19}
+	    #use_edns_client_subnet: ${20}
+	    #created_by: ${21}
+	    #health_monitor_refs: ${22}
+	    #state: ${23:present}
+	    #num_dns_ip: ${24}
+	    #tenant_uuid: ${25}
+	    #api_version: ${26}
+
+snippet avi_hardwaresecuritymodulegroup
+	- name: ${1:task_description}
+	  avi_hardwaresecuritymodulegroup:
+	    hsm: ${2}
+	    name: ${3}
+	    #username: ${4}
+	    #uuid: ${5}
+	    #url: ${6}
+	    #tenant_ref: ${7}
+	    #state: ${8:present}
+	    #controller: ${9}
+	    #api_version: ${10}
 	    #password: ${11}
-	    #health_monitor_scope: ${12}
+	    #tenant_uuid: ${12}
 	    #tenant: ${13:admin}
-	    #uuid: ${14}
-	    #controller_health_status_enabled: ${15}
-	    #url: ${16}
-	    #down_response: ${17}
-	    #tenant_ref: ${18}
-	    #use_edns_client_subnet: ${19}
-	    #health_monitor_refs: ${20}
-	    #state: ${21:present}
-	    #num_dns_ip: ${22}
-	    #tenant_uuid: ${23}
-	    #api_version: ${24}
 
 snippet avi_healthmonitor
 	- name: ${1:task_description}
@@ -792,13 +1177,36 @@ snippet avi_healthmonitor
 	    #url: ${16}
 	    #dns_monitor: ${17}
 	    #tenant_ref: ${18}
-	    #failed_checks: ${19}
-	    #tcp_monitor: ${20}
-	    #state: ${21:present}
-	    #send_interval: ${22}
-	    #external_monitor: ${23}
-	    #tenant_uuid: ${24}
-	    #api_version: ${25}
+	    #is_federated: ${19}
+	    #failed_checks: ${20}
+	    #tcp_monitor: ${21}
+	    #state: ${22:present}
+	    #send_interval: ${23}
+	    #external_monitor: ${24}
+	    #tenant_uuid: ${25}
+	    #api_version: ${26}
+
+snippet avi_httppolicyset
+	- name: ${1:task_description}
+	  avi_httppolicyset:
+	    name: ${2}
+	    #username: ${3}
+	    #description: ${4}
+	    #controller: ${5}
+	    #http_security_policy: ${6}
+	    #password: ${7}
+	    #tenant: ${8:admin}
+	    #uuid: ${9}
+	    #url: ${10}
+	    #tenant_ref: ${11}
+	    #created_by: ${12}
+	    #state: ${13:present}
+	    #cloud_config_cksum: ${14}
+	    #http_request_policy: ${15}
+	    #http_response_policy: ${16}
+	    #tenant_uuid: ${17}
+	    #api_version: ${18}
+	    #is_internal_policy: ${19}
 
 snippet avi_ipaddrgroup
 	- name: ${1:task_description}
@@ -823,6 +1231,47 @@ snippet avi_ipaddrgroup
 	    #ip_ports: ${19}
 	    #tenant_uuid: ${20}
 	    #api_version: ${21}
+
+snippet avi_ipamdnsproviderprofile
+	- name: ${1:task_description}
+	  avi_ipamdnsproviderprofile:
+	    name: ${2}
+	    type: ${3}
+	    #username: ${4}
+	    #proxy_configuration: ${5}
+	    #infoblox_profile: ${6}
+	    #internal_profile: ${7}
+	    #controller: ${8}
+	    #aws_profile: ${9}
+	    #password: ${10}
+	    #tenant: ${11:admin}
+	    #uuid: ${12}
+	    #openstack_profile: ${13}
+	    #gcp_profile: ${14}
+	    #url: ${15}
+	    #tenant_ref: ${16}
+	    #custom_profile: ${17}
+	    #state: ${18:present}
+	    #tenant_uuid: ${19}
+	    #api_version: ${20}
+
+snippet avi_microservicegroup
+	- name: ${1:task_description}
+	  avi_microservicegroup:
+	    name: ${2}
+	    #username: ${3}
+	    #uuid: ${4}
+	    #description: ${5}
+	    #url: ${6}
+	    #tenant_ref: ${7}
+	    #state: ${8:present}
+	    #created_by: ${9}
+	    #controller: ${10}
+	    #api_version: ${11}
+	    #service_refs: ${12}
+	    #password: ${13}
+	    #tenant_uuid: ${14}
+	    #tenant: ${15:admin}
 
 snippet avi_network
 	- name: ${1:task_description}
@@ -864,6 +1313,25 @@ snippet avi_networkprofile
 	    #tenant_uuid: ${13}
 	    #tenant: ${14:admin}
 
+snippet avi_networksecuritypolicy
+	- name: ${1:task_description}
+	  avi_networksecuritypolicy:
+	    #username: ${2}
+	    #uuid: ${3}
+	    #description: ${4}
+	    #rules: ${5}
+	    #tenant_ref: ${6}
+	    #state: ${7:present}
+	    #created_by: ${8}
+	    #url: ${9}
+	    #controller: ${10}
+	    #cloud_config_cksum: ${11}
+	    #api_version: ${12}
+	    #password: ${13}
+	    #tenant_uuid: ${14}
+	    #tenant: ${15:admin}
+	    #name: ${16}
+
 snippet avi_pkiprofile
 	- name: ${1:task_description}
 	  avi_pkiprofile:
@@ -878,12 +1346,13 @@ snippet avi_pkiprofile
 	    #uuid: ${10}
 	    #url: ${11}
 	    #tenant_ref: ${12}
-	    #created_by: ${13}
-	    #state: ${14:present}
-	    #ca_certs: ${15}
-	    #crl_check: ${16}
-	    #tenant_uuid: ${17}
-	    #api_version: ${18}
+	    #is_federated: ${13}
+	    #created_by: ${14}
+	    #state: ${15:present}
+	    #ca_certs: ${16}
+	    #crl_check: ${17}
+	    #tenant_uuid: ${18}
+	    #api_version: ${19}
 
 snippet avi_pool
 	- name: ${1:task_description}
@@ -900,7 +1369,7 @@ snippet avi_pool
 	    #servers: ${11}
 	    #fewest_tasks_feedback_delay: ${12}
 	    #server_auto_scale: ${13}
-	    #created_by: ${14}
+	    #east_west: ${14}
 	    #ab_pool: ${15}
 	    #capacity_estimation_ttfb_thresh: ${16}
 	    #fail_action: ${17}
@@ -911,7 +1380,7 @@ snippet avi_pool
 	    #server_name: ${22}
 	    #lb_algorithm_consistent_hash_hdr: ${23}
 	    #cloud_ref: ${24}
-	    #domain_name: ${25}
+	    #lb_algorithm_core_nonaffinity: ${25}
 	    #autoscale_policy_ref: ${26}
 	    #ssl_profile_ref: ${27}
 	    #ipaddrgroup_ref: ${28}
@@ -922,7 +1391,7 @@ snippet avi_pool
 	    #a_pool: ${33}
 	    #pki_profile_ref: ${34}
 	    #api_version: ${35}
-	    #east_west: ${36}
+	    #vrf_ref: ${36}
 	    #username: ${37}
 	    #application_persistence_profile_ref: ${38}
 	    #inline_health_monitor: ${39}
@@ -930,25 +1399,27 @@ snippet avi_pool
 	    #description: ${41}
 	    #request_queue_depth: ${42}
 	    #graceful_disable_timeout: ${43}
-	    #ab_priority: ${44}
-	    #connection_ramp_duration: ${45}
-	    #controller: ${46}
-	    #password: ${47}
-	    #server_count: ${48}
-	    #tenant: ${49:admin}
-	    #uuid: ${50}
-	    #request_queue_enabled: ${51}
-	    #max_concurrent_connections_per_server: ${52}
-	    #url: ${53}
-	    #autoscale_launch_config_ref: ${54}
-	    #enabled: ${55}
-	    #autoscale_networks: ${56}
-	    #health_monitor_refs: ${57}
-	    #ssl_key_and_certificate_ref: ${58}
-	    #cloud_config_cksum: ${59}
-	    #vrf_ref: ${60}
-	    #tenant_uuid: ${61}
-	    #prst_hdr_name: ${62}
+	    #domain_name: ${44}
+	    #ab_priority: ${45}
+	    #connection_ramp_duration: ${46}
+	    #controller: ${47}
+	    #password: ${48}
+	    #server_count: ${49}
+	    #tenant: ${50:admin}
+	    #uuid: ${51}
+	    #request_queue_enabled: ${52}
+	    #max_concurrent_connections_per_server: ${53}
+	    #url: ${54}
+	    #autoscale_launch_config_ref: ${55}
+	    #enabled: ${56}
+	    #autoscale_networks: ${57}
+	    #health_monitor_refs: ${58}
+	    #ssl_key_and_certificate_ref: ${59}
+	    #cloud_config_cksum: ${60}
+	    #external_autoscale_groups: ${61}
+	    #tenant_uuid: ${62}
+	    #created_by: ${63}
+	    #prst_hdr_name: ${64}
 
 snippet avi_poolgroup
 	- name: ${1:task_description}
@@ -974,6 +1445,48 @@ snippet avi_poolgroup
 	    #tenant_uuid: ${20}
 	    #api_version: ${21}
 
+snippet avi_poolgroupdeploymentpolicy
+	- name: ${1:task_description}
+	  avi_poolgroupdeploymentpolicy:
+	    name: ${2}
+	    #username: ${3}
+	    #target_test_traffic_ratio: ${4}
+	    #evaluation_duration: ${5}
+	    #description: ${6}
+	    #test_traffic_ratio_rampup: ${7}
+	    #rules: ${8}
+	    #auto_disable_old_prod_pools: ${9}
+	    #controller: ${10}
+	    #webhook_ref: ${11}
+	    #password: ${12}
+	    #tenant: ${13:admin}
+	    #uuid: ${14}
+	    #cloud_ref: ${15}
+	    #tenant_ref: ${16}
+	    #url: ${17}
+	    #state: ${18:present}
+	    #scheme: ${19}
+	    #tenant_uuid: ${20}
+	    #api_version: ${21}
+
+snippet avi_prioritylabels
+	- name: ${1:task_description}
+	  avi_prioritylabels:
+	    name: ${2}
+	    #username: ${3}
+	    #uuid: ${4}
+	    #description: ${5}
+	    #cloud_ref: ${6}
+	    #tenant_ref: ${7}
+	    #state: ${8:present}
+	    #url: ${9}
+	    #controller: ${10}
+	    #api_version: ${11}
+	    #equivalent_labels: ${12}
+	    #password: ${13}
+	    #tenant_uuid: ${14}
+	    #tenant: ${15:admin}
+
 snippet avi_role
 	- name: ${1:task_description}
 	  avi_role:
@@ -990,92 +1503,217 @@ snippet avi_role
 	    #tenant_uuid: ${12}
 	    #tenant: ${13:admin}
 
+snippet avi_scheduler
+	- name: ${1:task_description}
+	  avi_scheduler:
+	    name: ${2}
+	    #username: ${3}
+	    #tenant_ref: ${4}
+	    #backup_config_ref: ${5}
+	    #controller: ${6}
+	    #frequency: ${7}
+	    #scheduler_action: ${8}
+	    #end_date_time: ${9}
+	    #password: ${10}
+	    #tenant: ${11:admin}
+	    #uuid: ${12}
+	    #start_date_time: ${13}
+	    #url: ${14}
+	    #enabled: ${15}
+	    #frequency_unit: ${16}
+	    #state: ${17:present}
+	    #run_script_ref: ${18}
+	    #tenant_uuid: ${19}
+	    #api_version: ${20}
+	    #run_mode: ${21}
+
+snippet avi_seproperties
+	- name: ${1:task_description}
+	  avi_seproperties:
+	    #username: ${2}
+	    #se_agent_properties: ${3}
+	    #uuid: ${4}
+	    #url: ${5}
+	    #se_runtime_properties: ${6}
+	    #state: ${7:present}
+	    #controller: ${8}
+	    #se_bootup_properties: ${9}
+	    #api_version: ${10}
+	    #password: ${11}
+	    #tenant_uuid: ${12}
+	    #tenant: ${13:admin}
+
+snippet avi_serverautoscalepolicy
+	- name: ${1:task_description}
+	  avi_serverautoscalepolicy:
+	    name: ${2}
+	    #username: ${3}
+	    #use_predicted_load: ${4}
+	    #intelligent_autoscale: ${5}
+	    #description: ${6}
+	    #intelligent_scaleout_margin: ${7}
+	    #scaleout_alertconfig_refs: ${8}
+	    #min_size: ${9}
+	    #controller: ${10}
+	    #scalein_cooldown: ${11}
+	    #password: ${12}
+	    #tenant: ${13:admin}
+	    #uuid: ${14}
+	    #scaleout_cooldown: ${15}
+	    #intelligent_scalein_margin: ${16}
+	    #url: ${17}
+	    #tenant_ref: ${18}
+	    #max_scalein_adjustment_step: ${19}
+	    #state: ${20:present}
+	    #scalein_alertconfig_refs: ${21}
+	    #max_size: ${22}
+	    #max_scaleout_adjustment_step: ${23}
+	    #tenant_uuid: ${24}
+	    #api_version: ${25}
+
+snippet avi_serviceengine
+	- name: ${1:task_description}
+	  avi_serviceengine:
+	    #username: ${2}
+	    #enable_state: ${3}
+	    #mgmt_vnic: ${4}
+	    #data_vnics: ${5}
+	    #controller_created: ${6}
+	    #controller: ${7}
+	    #flavor: ${8}
+	    #password: ${9}
+	    #tenant: ${10:admin}
+	    #name: ${11}
+	    #uuid: ${12}
+	    #cloud_ref: ${13}
+	    #hypervisor: ${14}
+	    #se_group_ref: ${15}
+	    #container_mode: ${16}
+	    #tenant_ref: ${17}
+	    #container_type: ${18}
+	    #host_ref: ${19}
+	    #url: ${20}
+	    #state: ${21:present}
+	    #resources: ${22}
+	    #availability_zone: ${23}
+	    #controller_ip: ${24}
+	    #tenant_uuid: ${25}
+	    #api_version: ${26}
+
 snippet avi_serviceenginegroup
 	- name: ${1:task_description}
 	  avi_serviceenginegroup:
 	    name: ${2}
 	    #floating_intf_ip: ${3}
 	    #host_attribute_value: ${4}
-	    #enable_vip_on_all_interfaces: ${5}
+	    #async_ssl: ${5}
 	    #instance_flavor: ${6}
 	    #auto_redistribute_active_standby_load: ${7}
 	    #auto_rebalance: ${8}
-	    #url: ${9}
-	    #se_tunnel_mode: ${10}
-	    #memory_per_se: ${11}
-	    #extra_config_multiplier: ${12}
-	    #vs_scaleout_timeout: ${13}
-	    #ha_mode: ${14}
-	    #cloud_ref: ${15}
-	    #mgmt_network_ref: ${16}
+	    #se_tunnel_mode: ${9}
+	    #uuid: ${10}
+	    #extra_config_multiplier: ${11}
+	    #se_tunnel_udp_port: ${12}
+	    #vs_scalein_timeout: ${13}
+	    #mgmt_subnet: ${14}
+	    #se_remote_punt_udp_port: ${15}
+	    #se_udp_encap_ipc: ${16}
 	    #min_cpu_usage: ${17}
-	    #vcenter_clusters: ${18}
-	    #active_standby: ${19}
-	    #username: ${20}
-	    #max_vs_per_se: ${21}
-	    #connection_memory_percentage: ${22}
-	    #service_ip_subnets: ${23}
-	    #placement_mode: ${24}
-	    #max_scaleout_per_vs: ${25}
-	    #os_reserved_memory: ${26}
-	    #openstack_mgmt_network_uuid: ${27}
-	    #controller: ${28}
-	    #per_app: ${29}
-	    #vcenter_datastores_include: ${30}
-	    #password: ${31}
-	    #se_vs_hb_max_pkts_in_batch: ${32}
-	    #tenant_ref: ${33}
-	    #host_attribute_key: ${34}
-	    #buffer_se: ${35}
-	    #max_se: ${36}
-	    #hypervisor: ${37}
-	    #cpu_reserve: ${38}
-	    #se_dos_profile: ${39}
-	    #enable_vmac: ${40}
-	    #tenant_uuid: ${41}
-	    #iptables: ${42}
-	    #vcenter_hosts: ${43}
-	    #vcpus_per_se: ${44}
-	    #hm_on_standby: ${45}
-	    #disk_per_se: ${46}
-	    #cpu_socket_affinity: ${47}
-	    #realtime_se_metrics: ${48}
-	    #hardwaresecuritymodulegroup_ref: ${49}
-	    #custom_tag: ${50}
-	    #floating_intf_ip_se_2: ${51}
-	    #log_disksz: ${52}
-	    #openstack_availability_zone: ${53}
-	    #extra_shared_config_memory: ${54}
-	    #auto_rebalance_interval: ${55}
-	    #vcenter_datastores: ${56}
-	    #state: ${57:present}
-	    #openstack_availability_zones: ${58}
-	    #num_flow_cores_sum_changes_to_ignore: ${59}
-	    #api_version: ${60}
-	    #se_thread_multiplier: ${61}
-	    #openstack_mgmt_network_name: ${62}
-	    #description: ${63}
-	    #enable_routing: ${64}
-	    #vcenter_folder: ${65}
-	    #vs_scalein_timeout_for_upgrade: ${66}
-	    #vs_scalein_timeout: ${67}
-	    #se_deprovision_delay: ${68}
-	    #se_vs_hb_max_vs_in_pkt: ${69}
-	    #advertise_backend_networks: ${70}
-	    #tenant: ${71:admin}
-	    #uuid: ${72}
-	    #max_cpu_usage: ${73}
-	    #min_scaleout_per_vs: ${74}
-	    #se_name_prefix: ${75}
-	    #mem_reserve: ${76}
-	    #vcenter_datastore_mode: ${77}
-	    #distribute_load_active_standby: ${78}
-	    #least_load_core_selection: ${79}
-	    #aggressive_failure_detection: ${80}
-	    #algo: ${81}
-	    #dedicated_dispatcher_core: ${82}
-	    #mgmt_subnet: ${83}
-	    #vs_host_redundancy: ${84}
+	    #custom_securitygroups_data: ${18}
+	    #vcenter_clusters: ${19}
+	    #enable_vip_on_all_interfaces: ${20}
+	    #active_standby: ${21}
+	    #username: ${22}
+	    #max_vs_per_se: ${23}
+	    #connection_memory_percentage: ${24}
+	    #service_ip_subnets: ${25}
+	    #placement_mode: ${26}
+	    #max_scaleout_per_vs: ${27}
+	    #os_reserved_memory: ${28}
+	    #enable_routing: ${29}
+	    #controller: ${30}
+	    #per_app: ${31}
+	    #vcenter_datastores_include: ${32}
+	    #password: ${33}
+	    #se_vs_hb_max_pkts_in_batch: ${34}
+	    #tenant_ref: ${35}
+	    #host_attribute_key: ${36}
+	    #url: ${37}
+	    #max_se: ${38}
+	    #hypervisor: ${39}
+	    #cpu_reserve: ${40}
+	    #se_dos_profile: ${41}
+	    #enable_vmac: ${42}
+	    #tenant_uuid: ${43}
+	    #iptables: ${44}
+	    #udf_log_throttle: ${45}
+	    #vcenter_hosts: ${46}
+	    #se_ipc_udp_port: ${47}
+	    #vcpus_per_se: ${48}
+	    #hm_on_standby: ${49}
+	    #disk_per_se: ${50}
+	    #cpu_socket_affinity: ${51}
+	    #realtime_se_metrics: ${52}
+	    #archive_shm_limit: ${53}
+	    #hardwaresecuritymodulegroup_ref: ${54}
+	    #custom_securitygroups_mgmt: ${55}
+	    #custom_tag: ${56}
+	    #floating_intf_ip_se_2: ${57}
+	    #log_disksz: ${58}
+	    #non_significant_log_throttle: ${59}
+	    #distribute_load_active_standby: ${60}
+	    #cloud_ref: ${61}
+	    #extra_shared_config_memory: ${62}
+	    #auto_rebalance_interval: ${63}
+	    #buffer_se: ${64}
+	    #vcenter_datastores: ${65}
+	    #state: ${66:present}
+	    #vs_scaleout_timeout: ${67}
+	    #openstack_availability_zones: ${68}
+	    #mgmt_network_ref: ${69}
+	    #num_flow_cores_sum_changes_to_ignore: ${70}
+	    #api_version: ${71}
+	    #se_thread_multiplier: ${72}
+	    #openstack_mgmt_network_name: ${73}
+	    #async_ssl_threads: ${74}
+	    #description: ${75}
+	    #openstack_mgmt_network_uuid: ${76}
+	    #vcenter_folder: ${77}
+	    #vs_scalein_timeout_for_upgrade: ${78}
+	    #se_deprovision_delay: ${79}
+	    #se_vs_hb_max_vs_in_pkt: ${80}
+	    #advertise_backend_networks: ${81}
+	    #tenant: ${82:admin}
+	    #memory_per_se: ${83}
+	    #max_cpu_usage: ${84}
+	    #min_scaleout_per_vs: ${85}
+	    #se_name_prefix: ${86}
+	    #mem_reserve: ${87}
+	    #ha_mode: ${88}
+	    #vcenter_datastore_mode: ${89}
+	    #openstack_availability_zone: ${90}
+	    #least_load_core_selection: ${91}
+	    #aggressive_failure_detection: ${92}
+	    #significant_log_throttle: ${93}
+	    #dedicated_dispatcher_core: ${94}
+	    #algo: ${95}
+	    #vs_host_redundancy: ${96}
+
+snippet avi_snmptrapprofile
+	- name: ${1:task_description}
+	  avi_snmptrapprofile:
+	    name: ${2}
+	    #username: ${3}
+	    #url: ${4}
+	    #tenant_ref: ${5}
+	    #state: ${6:present}
+	    #trap_servers: ${7}
+	    #controller: ${8}
+	    #api_version: ${9}
+	    #password: ${10}
+	    #tenant_uuid: ${11}
+	    #tenant: ${12:admin}
+	    #uuid: ${13}
 
 snippet avi_sslkeyandcertificate
 	- name: ${1:task_description}
@@ -1164,17 +1802,16 @@ snippet avi_systemconfiguration
 	    #uuid: ${12}
 	    #snmp_configuration: ${13}
 	    #url: ${14}
-	    #tech_support_uploader_configuration: ${15}
-	    #linux_configuration: ${16}
-	    #global_tenant_config: ${17}
-	    #dns_virtualservice_refs: ${18}
-	    #state: ${19:present}
-	    #ntp_configuration: ${20}
-	    #admin_auth_configuration: ${21}
-	    #mgmt_ip_access_control: ${22}
-	    #ssh_ciphers: ${23}
-	    #tenant_uuid: ${24}
-	    #api_version: ${25}
+	    #linux_configuration: ${15}
+	    #global_tenant_config: ${16}
+	    #dns_virtualservice_refs: ${17}
+	    #state: ${18:present}
+	    #ntp_configuration: ${19}
+	    #admin_auth_configuration: ${20}
+	    #mgmt_ip_access_control: ${21}
+	    #ssh_ciphers: ${22}
+	    #tenant_uuid: ${23}
+	    #api_version: ${24}
 
 snippet avi_tenant
 	- name: ${1:task_description}
@@ -1193,6 +1830,43 @@ snippet avi_tenant
 	    #tenant_uuid: ${13}
 	    #tenant: ${14:admin}
 	    #uuid: ${15}
+
+snippet avi_trafficcloneprofile
+	- name: ${1:task_description}
+	  avi_trafficcloneprofile:
+	    name: ${2}
+	    #username: ${3}
+	    #uuid: ${4}
+	    #cloud_ref: ${5}
+	    #tenant_ref: ${6}
+	    #state: ${7:present}
+	    #url: ${8}
+	    #controller: ${9}
+	    #api_version: ${10}
+	    #password: ${11}
+	    #preserve_client_ip: ${12}
+	    #tenant_uuid: ${13}
+	    #tenant: ${14:admin}
+	    #clone_servers: ${15}
+
+snippet avi_useraccountprofile
+	- name: ${1:task_description}
+	  avi_useraccountprofile:
+	    name: ${2}
+	    #username: ${3}
+	    #max_concurrent_sessions: ${4}
+	    #uuid: ${5}
+	    #state: ${6:present}
+	    #url: ${7}
+	    #account_lock_timeout: ${8}
+	    #controller: ${9}
+	    #max_login_failure_count: ${10}
+	    #api_version: ${11}
+	    #max_password_history_count: ${12}
+	    #password: ${13}
+	    #tenant_uuid: ${14}
+	    #tenant: ${15:admin}
+	    #credentials_timeout_threshold: ${16}
 
 snippet avi_virtualservice
 	- name: ${1:task_description}
@@ -1284,6 +1958,112 @@ snippet avi_virtualservice
 	    #avi_allocated_fip: ${86}
 	    #vh_parent_vs_uuid: ${87}
 
+snippet avi_vrfcontext
+	- name: ${1:task_description}
+	  avi_vrfcontext:
+	    name: ${2}
+	    #username: ${3}
+	    #description: ${4}
+	    #controller: ${5}
+	    #system_default: ${6}
+	    #password: ${7}
+	    #tenant: ${8:admin}
+	    #internal_gateway_monitor: ${9}
+	    #static_routes: ${10}
+	    #cloud_ref: ${11}
+	    #tenant_ref: ${12}
+	    #uuid: ${13}
+	    #debugvrfcontext: ${14}
+	    #url: ${15}
+	    #state: ${16:present}
+	    #bgp_profile: ${17}
+	    #gateway_mon: ${18}
+	    #tenant_uuid: ${19}
+	    #api_version: ${20}
+
+snippet avi_vsdatascriptset
+	- name: ${1:task_description}
+	  avi_vsdatascriptset:
+	    name: ${2}
+	    #username: ${3}
+	    #description: ${4}
+	    #pool_refs: ${5}
+	    #pool_group_refs: ${6}
+	    #string_group_refs: ${7}
+	    #controller: ${8}
+	    #password: ${9}
+	    #tenant: ${10:admin}
+	    #datascript: ${11}
+	    #uuid: ${12}
+	    #url: ${13}
+	    #tenant_ref: ${14}
+	    #ipgroup_refs: ${15}
+	    #state: ${16:present}
+	    #tenant_uuid: ${17}
+	    #api_version: ${18}
+
+snippet avi_vsvip
+	- name: ${1:task_description}
+	  avi_vsvip:
+	    name: ${2}
+	    #username: ${3}
+	    #tenant_ref: ${4}
+	    #controller: ${5}
+	    #password: ${6}
+	    #tenant: ${7:admin}
+	    #uuid: ${8}
+	    #east_west_placement: ${9}
+	    #vrf_context_ref: ${10}
+	    #cloud_ref: ${11}
+	    #dns_info: ${12}
+	    #vip: ${13}
+	    #url: ${14}
+	    #state: ${15:present}
+	    #tenant_uuid: ${16}
+	    #api_version: ${17}
+
+snippet avi_webhook
+	- name: ${1:task_description}
+	  avi_webhook:
+	    name: ${2}
+	    #username: ${3}
+	    #uuid: ${4}
+	    #callback_url: ${5}
+	    #description: ${6}
+	    #url: ${7}
+	    #tenant_ref: ${8}
+	    #state: ${9:present}
+	    #verification_token: ${10}
+	    #controller: ${11}
+	    #api_version: ${12}
+	    #password: ${13}
+	    #tenant_uuid: ${14}
+	    #tenant: ${15:admin}
+
+snippet awall
+	- name: ${1:task_description}
+	  awall:
+	    #state: ${2:enabled}
+	    #activate: ${3}
+	    #name: ${4}
+
+snippet aws_api_gateway
+	- name: ${1:task_description}
+	  aws_api_gateway:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #security_token: ${5}
+	    #swagger_file: ${6}
+	    #swagger_dict: ${7}
+	    #deploy_desc: ${8:Automatic deployment by Ansible.}
+	    #api_id: ${9}
+	    #state: ${10:present}
+	    #ec2_url: ${11}
+	    #swagger_text: ${12}
+	    #validate_certs: ${13:yes}
+	    #stage: ${14}
+
 snippet aws_kms
 	- name: ${1:task_description}
 	  aws_kms:
@@ -1301,6 +2081,17 @@ snippet aws_kms
 	    #clean_invalid_entries: ${13:True}
 	    #validate_certs: ${14:yes}
 	    #key_alias: ${15}
+
+snippet aws_s3_bucket_facts
+	- name: ${1:task_description}
+	  aws_s3_bucket_facts:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #security_token: ${5}
+	    #ec2_url: ${6}
+	    #region: ${7}
+	    #validate_certs: ${8:yes}
 
 snippet azure
 	- name: ${1:task_description}
@@ -1571,38 +2362,39 @@ snippet azure_rm_virtualmachine
 	  azure_rm_virtualmachine:
 	    resource_group: ${2}
 	    image: ${3}
-	    name: ${4}
-	    #public_ip_allocation_method: ${5:[u'Static']}
-	    #ssh_public_keys: ${6}
-	    #storage_container_name: ${7:vhds}
-	    #allocated: ${8:True}
-	    #ssh_password_enabled: ${9:True}
-	    #vm_size: ${10:Standard_D1}
-	    #remove_on_absent: ${11:[u'all']}
-	    #append_tags: ${12:True}
-	    #ad_user: ${13}
-	    #secret: ${14}
-	    #short_hostname: ${15}
-	    #virtual_network_name: ${16}
-	    #state: ${17:present}
-	    #subnet_name: ${18}
-	    #location: ${19}
-	    #network_interface_names: ${20}
-	    #subscription_id: ${21}
-	    #admin_password: ${22}
-	    #profile: ${23}
-	    #tags: ${24}
-	    #started: ${25:True}
-	    #open_ports: ${26}
-	    #client_id: ${27}
-	    #storage_blob_name: ${28}
-	    #password: ${29}
-	    #tenant: ${30}
-	    #restarted: ${31}
-	    #admin_username: ${32}
-	    #os_type: ${33:[u'Linux']}
-	    #storage_account_name: ${34}
-	    #os_disk_caching: ${35:ReadOnly}
+	    vm_size: ${4}
+	    name: ${5}
+	    #virtual_network_resource_group: ${6}
+	    #public_ip_allocation_method: ${7:[u'Static']}
+	    #ssh_public_keys: ${8}
+	    #storage_container_name: ${9:vhds}
+	    #allocated: ${10:True}
+	    #ssh_password_enabled: ${11:True}
+	    #remove_on_absent: ${12:[u'all']}
+	    #append_tags: ${13:True}
+	    #ad_user: ${14}
+	    #secret: ${15}
+	    #short_hostname: ${16}
+	    #virtual_network_name: ${17}
+	    #state: ${18:present}
+	    #subnet_name: ${19}
+	    #location: ${20}
+	    #network_interface_names: ${21}
+	    #subscription_id: ${22}
+	    #admin_password: ${23}
+	    #profile: ${24}
+	    #tags: ${25}
+	    #started: ${26:True}
+	    #open_ports: ${27}
+	    #client_id: ${28}
+	    #storage_blob_name: ${29}
+	    #password: ${30}
+	    #tenant: ${31}
+	    #restarted: ${32}
+	    #admin_username: ${33}
+	    #os_type: ${34:[u'Linux']}
+	    #storage_account_name: ${35}
+	    #os_disk_caching: ${36:ReadOnly}
 
 snippet azure_rm_virtualmachineimage_facts
 	- name: ${1:task_description}
@@ -1656,6 +2448,18 @@ snippet azure_rm_virtualnetwork_facts
 	    #ad_user: ${10}
 	    #tenant: ${11}
 
+snippet bcf_switch
+	- name: ${1:task_description}
+	  bcf_switch:
+	    name: ${2}
+	    mac: ${3}
+	    controller: ${4}
+	    fabric_role: ${5}
+	    #access_token: ${6}
+	    #state: ${7:present}
+	    #leaf_group: ${8}
+	    #validate_certs: ${9:True}
+
 snippet beadm
 	- name: ${1:task_description}
 	  beadm:
@@ -1666,6 +2470,55 @@ snippet beadm
 	    #snapshot: ${6}
 	    #options: ${7}
 	    #description: ${8}
+
+snippet bearychat
+	- name: ${1:task_description}
+	  bearychat:
+	    url: ${2}
+	    #text: ${3}
+	    #markdown: ${4:yes}
+	    #attachments: ${5}
+	    #channel: ${6}
+
+snippet bigip_command
+	- name: ${1:task_description}
+	  bigip_command:
+	    commands: ${2}
+	    server: ${3}
+	    user: ${4}
+	    password: ${5}
+	    #retries: ${6:10}
+	    #wait_for: ${7}
+	    #interval: ${8:1}
+	    #server_port: ${9:443}
+	    #validate_certs: ${10:True}
+	    #match: ${11:all}
+
+snippet bigip_config
+	- name: ${1:task_description}
+	  bigip_config:
+	    server: ${2}
+	    user: ${3}
+	    password: ${4}
+	    #reset: ${5}
+	    #save: ${6}
+	    #merge_content: ${7}
+	    #verify: ${8:True}
+	    #server_port: ${9:443}
+	    #validate_certs: ${10:True}
+
+snippet bigip_configsync_actions
+	- name: ${1:task_description}
+	  bigip_configsync_actions:
+	    device_group: ${2}
+	    server: ${3}
+	    user: ${4}
+	    password: ${5}
+	    #sync_most_recent_to_device: ${6}
+	    #sync_device_to_group: ${7}
+	    #server_port: ${8:443}
+	    #overwrite_config: ${9}
+	    #validate_certs: ${10:True}
 
 snippet bigip_device_dns
 	- name: ${1:task_description}
@@ -1748,6 +2601,22 @@ snippet bigip_gtm_facts
 	    #server_port: ${7:443}
 	    #validate_certs: ${8:True}
 
+snippet bigip_gtm_pool
+	- name: ${1:task_description}
+	  bigip_gtm_pool:
+	    name: ${2}
+	    server: ${3}
+	    state: ${4}
+	    user: ${5}
+	    password: ${6}
+	    #alternate_lb_method: ${7}
+	    #type: ${8}
+	    #fallback_ip: ${9}
+	    #fallback_lb_method: ${10}
+	    #server_port: ${11:443}
+	    #preferred_lb_method: ${12}
+	    #validate_certs: ${13:True}
+
 snippet bigip_gtm_virtual_server
 	- name: ${1:task_description}
 	  bigip_gtm_virtual_server:
@@ -1766,12 +2635,14 @@ snippet bigip_gtm_wide_ip
 	- name: ${1:task_description}
 	  bigip_gtm_wide_ip:
 	    lb_method: ${2}
-	    user: ${3}
-	    wide_ip: ${4}
-	    password: ${5}
-	    server: ${6}
-	    #server_port: ${7:443}
-	    #validate_certs: ${8:True}
+	    name: ${3}
+	    server: ${4}
+	    user: ${5}
+	    password: ${6}
+	    #type: ${7}
+	    #state: ${8:present}
+	    #server_port: ${9:443}
+	    #validate_certs: ${10:True}
 
 snippet bigip_hostname
 	- name: ${1:task_description}
@@ -1783,6 +2654,33 @@ snippet bigip_hostname
 	    #server_port: ${6:443}
 	    #validate_certs: ${7:True}
 
+snippet bigip_iapp_service
+	- name: ${1:task_description}
+	  bigip_iapp_service:
+	    name: ${2}
+	    server: ${3}
+	    user: ${4}
+	    password: ${5}
+	    #force: ${6}
+	    #parameters: ${7}
+	    #state: ${8:present}
+	    #server_port: ${9:443}
+	    #validate_certs: ${10:True}
+	    #template: ${11}
+
+snippet bigip_iapp_template
+	- name: ${1:task_description}
+	  bigip_iapp_template:
+	    server: ${2}
+	    user: ${3}
+	    password: ${4}
+	    #force: ${5}
+	    #name: ${6}
+	    #content: ${7}
+	    #state: ${8:present}
+	    #server_port: ${9:443}
+	    #validate_certs: ${10:True}
+
 snippet bigip_irule
 	- name: ${1:task_description}
 	  bigip_irule:
@@ -1792,11 +2690,10 @@ snippet bigip_irule
 	    server: ${5}
 	    user: ${6}
 	    password: ${7}
-	    #partition: ${8:Common}
-	    #content: ${9}
-	    #state: ${10:present}
-	    #server_port: ${11:443}
-	    #validate_certs: ${12:True}
+	    #content: ${8}
+	    #state: ${9:present}
+	    #server_port: ${10:443}
+	    #validate_certs: ${11:True}
 
 snippet bigip_monitor_http
 	- name: ${1:task_description}
@@ -1823,24 +2720,51 @@ snippet bigip_monitor_http
 snippet bigip_monitor_tcp
 	- name: ${1:task_description}
 	  bigip_monitor_tcp:
-	    user: ${2}
-	    password: ${3}
-	    name: ${4:None}
-	    receive: ${5:none}
-	    send: ${6:none}
-	    server: ${7}
-	    #interval: ${8:none}
-	    #timeout: ${9:none}
-	    #parent: ${10:tcp}
-	    #ip: ${11:none}
-	    #port: ${12:none}
-	    #type: ${13:tcp}
-	    #partition: ${14:Common}
-	    #state: ${15:present}
-	    #time_until_up: ${16:none}
-	    #server_port: ${17:443}
-	    #parent_partition: ${18:Common}
-	    #validate_certs: ${19:True}
+	    name: ${2}
+	    server: ${3}
+	    user: ${4}
+	    password: ${5}
+	    #parent: ${6:/Common/tcp}
+	    #receive: ${7}
+	    #ip: ${8}
+	    #interval: ${9}
+	    #timeout: ${10}
+	    #send: ${11}
+	    #time_until_up: ${12}
+	    #server_port: ${13:443}
+	    #type: ${14:tcp}
+	    #validate_certs: ${15:True}
+	    #port: ${16}
+
+snippet bigip_monitor_tcp_echo
+	- name: ${1:task_description}
+	  bigip_monitor_tcp_echo:
+	    name: ${2}
+	    server: ${3}
+	    user: ${4}
+	    password: ${5}
+	    #parent: ${6:/Common/tcp}
+	    #ip: ${7}
+	    #interval: ${8}
+	    #timeout: ${9}
+	    #time_until_up: ${10}
+	    #server_port: ${11:443}
+	    #validate_certs: ${12:True}
+
+snippet bigip_monitor_tcp_half_open
+	- name: ${1:task_description}
+	  bigip_monitor_tcp_half_open:
+	    name: ${2}
+	    server: ${3}
+	    user: ${4}
+	    password: ${5}
+	    #parent: ${6:/Common/tcp}
+	    #ip: ${7}
+	    #interval: ${8}
+	    #timeout: ${9}
+	    #time_until_up: ${10}
+	    #server_port: ${11:443}
+	    #validate_certs: ${12:True}
 
 snippet bigip_node
 	- name: ${1:task_description}
@@ -1866,22 +2790,20 @@ snippet bigip_pool
 	  bigip_pool:
 	    user: ${2}
 	    password: ${3}
-	    name: ${4:None}
+	    name: ${4}
 	    server: ${5}
-	    #monitors: ${6}
-	    #lb_method: ${7:round_robin}
+	    #lb_method: ${6}
+	    #reselect_tries: ${7}
 	    #description: ${8}
 	    #service_down_action: ${9}
 	    #host: ${10}
-	    #reselect_tries: ${11}
+	    #monitors: ${11}
 	    #quorum: ${12}
-	    #partition: ${13:Common}
-	    #slow_ramp_time: ${14}
-	    #port: ${15}
-	    #state: ${16:present}
-	    #server_port: ${17:443}
-	    #validate_certs: ${18:True}
-	    #monitor_type: ${19}
+	    #slow_ramp_time: ${13}
+	    #port: ${14}
+	    #server_port: ${15:443}
+	    #validate_certs: ${16:True}
+	    #monitor_type: ${17}
 
 snippet bigip_pool_member
 	- name: ${1:task_description}
@@ -1902,7 +2824,37 @@ snippet bigip_pool_member
 	    #connection_limit: ${15}
 	    #preserve_node: ${16:no}
 	    #server_port: ${17:443}
-	    #validate_certs: ${18:True}
+	    #priority_group: ${18}
+	    #validate_certs: ${19:True}
+
+snippet bigip_provision
+	- name: ${1:task_description}
+	  bigip_provision:
+	    module: ${2}
+	    server: ${3}
+	    user: ${4}
+	    password: ${5}
+	    #level: ${6:nominal}
+	    #state: ${7:present}
+	    #server_port: ${8:443}
+	    #validate_certs: ${9:True}
+
+snippet bigip_qkview
+	- name: ${1:task_description}
+	  bigip_qkview:
+	    dest: ${2}
+	    server: ${3}
+	    user: ${4}
+	    password: ${5}
+	    #max_file_size: ${6}
+	    #force: ${7:True}
+	    #complete_information: ${8:True}
+	    #asm_request_log: ${9}
+	    #filename: ${10:localhost.localdomain.qkview}
+	    #exclude_core: ${11}
+	    #server_port: ${12:443}
+	    #exclude: ${13}
+	    #validate_certs: ${14:True}
 
 snippet bigip_routedomain
 	- name: ${1:task_description}
@@ -1954,22 +2906,51 @@ snippet bigip_snat_pool
 	    #validate_certs: ${9:True}
 	    #append: ${10}
 
+snippet bigip_snmp
+	- name: ${1:task_description}
+	  bigip_snmp:
+	    server: ${2}
+	    user: ${3}
+	    password: ${4}
+	    #agent_status_traps: ${5}
+	    #agent_authentication_traps: ${6}
+	    #device_warning_traps: ${7}
+	    #contact: ${8}
+	    #server_port: ${9:443}
+	    #validate_certs: ${10:True}
+	    #location: ${11}
+
+snippet bigip_snmp_trap
+	- name: ${1:task_description}
+	  bigip_snmp_trap:
+	    server: ${2}
+	    user: ${3}
+	    password: ${4}
+	    name: ${5}
+	    #snmp_version: ${6}
+	    #network: ${7}
+	    #destination: ${8}
+	    #community: ${9}
+	    #state: ${10:present}
+	    #server_port: ${11:443}
+	    #validate_certs: ${12:True}
+	    #port: ${13}
+
 snippet bigip_ssl_certificate
 	- name: ${1:task_description}
 	  bigip_ssl_certificate:
-	    name: ${2}
-	    server: ${3}
-	    state: ${4:present}
-	    user: ${5}
-	    password: ${6}
+	    server: ${2}
+	    user: ${3}
+	    password: ${4}
+	    name: ${5}
+	    #key_src: ${6}
 	    #key_content: ${7}
-	    #partition: ${8:Common}
-	    #cert_src: ${9}
+	    #cert_src: ${8}
+	    #state: ${9:present}
 	    #server_port: ${10:443}
 	    #cert_content: ${11}
 	    #validate_certs: ${12:True}
 	    #passphrase: ${13}
-	    #key_src: ${14}
 
 snippet bigip_sys_db
 	- name: ${1:task_description}
@@ -2000,6 +2981,57 @@ snippet bigip_sys_global
 	    #gui_setup: ${13}
 	    #validate_certs: ${14:True}
 	    #lcd_display: ${15}
+
+snippet bigip_ucs
+	- name: ${1:task_description}
+	  bigip_ucs:
+	    server: ${2}
+	    user: ${3}
+	    password: ${4}
+	    #no_license: ${5}
+	    #force: ${6}
+	    #reset_trust: ${7}
+	    #no_platform_check: ${8}
+	    #state: ${9:present}
+	    #include_chassis_level_config: ${10}
+	    #server_port: ${11:443}
+	    #ucs: ${12}
+	    #validate_certs: ${13:True}
+	    #passphrase: ${14}
+
+snippet bigip_user
+	- name: ${1:task_description}
+	  bigip_user:
+	    username_credential: ${2}
+	    server: ${3}
+	    user: ${4}
+	    password: ${5}
+	    #update_password: ${6:on_create}
+	    #shell: ${7}
+	    #full_name: ${8}
+	    #password_credential: ${9}
+	    #partition_access: ${10}
+	    #state: ${11:present}
+	    #server_port: ${12:443}
+	    #validate_certs: ${13:True}
+
+snippet bigip_virtual_address
+	- name: ${1:task_description}
+	  bigip_virtual_address:
+	    server: ${2}
+	    user: ${3}
+	    address: ${4}
+	    password: ${5}
+	    #icmp_echo: ${6}
+	    #auto_delete: ${7}
+	    #connection_limit: ${8}
+	    #state: ${9:present}
+	    #netmask: ${10:255.255.255.255}
+	    #arp_state: ${11}
+	    #server_port: ${12:443}
+	    #validate_certs: ${13:True}
+	    #use_route_advertisement: ${14}
+	    #advertise_route: ${15}
 
 snippet bigip_virtual_server
 	- name: ${1:task_description}
@@ -2162,15 +3194,997 @@ snippet capabilities
 	    path: ${3:None}
 	    #state: ${4:present}
 
+snippet catapult
+	- name: ${1:task_description}
+	  catapult:
+	    src: ${2:None}
+	    user_id: ${3:None}
+	    api_secret: ${4:None}
+	    dest: ${5:None}
+	    api_token: ${6:None}
+	    msg: ${7:None}
+	    #media: ${8}
+
+snippet ce_aaa_server
+	- name: ${1:task_description}
+	  ce_aaa_server:
+	    #acct_scheme_name: ${2}
+	    #first_author_mode: ${3}
+	    #authen_scheme_name: ${4}
+	    #author_scheme_name: ${5}
+	    #radius_server_group: ${6}
+	    #domain_name: ${7}
+	    #first_authen_mode: ${8}
+	    #state: ${9:present}
+	    #local_user_group: ${10}
+	    #hwtacas_template: ${11}
+	    #accounting_mode: ${12}
+
+snippet ce_aaa_server_host
+	- name: ${1:task_description}
+	  ce_aaa_server_host:
+	    #radius_server_port: ${2}
+	    #hwtacacs_server_ipv6: ${3}
+	    #local_service_type: ${4}
+	    #radius_server_name: ${5}
+	    #radius_server_mode: ${6}
+	    #hwtacacs_server_type: ${7}
+	    #radius_vpn_name: ${8}
+	    #radius_server_ipv6: ${9}
+	    #radius_server_type: ${10}
+	    #hwtacacs_server_ip: ${11}
+	    #local_user_group: ${12}
+	    #local_user_level: ${13}
+	    #radius_server_ip: ${14}
+	    #local_ftp_dir: ${15}
+	    #hwtacacs_vpn_name: ${16}
+	    #hwtacacs_is_secondary_server: ${17}
+	    #radius_group_name: ${18}
+	    #hwtacacs_template: ${19}
+	    #local_password: ${20}
+	    #state: ${21:present}
+	    #hwtacacs_server_host_name: ${22}
+	    #local_user_name: ${23}
+	    #hwtacacs_is_public_net: ${24}
+
+snippet ce_acl
+	- name: ${1:task_description}
+	  ce_acl:
+	    acl_name: ${2}
+	    #acl_step: ${3}
+	    #log_flag: ${4}
+	    #source_ip: ${5}
+	    #state: ${6:present}
+	    #src_mask: ${7}
+	    #rule_action: ${8}
+	    #rule_name: ${9}
+	    #acl_num: ${10}
+	    #vrf_name: ${11}
+	    #acl_description: ${12}
+	    #rule_id: ${13}
+	    #time_range: ${14}
+	    #rule_description: ${15}
+	    #frag_type: ${16}
+
+snippet ce_acl_advance
+	- name: ${1:task_description}
+	  ce_acl_advance:
+	    acl_name: ${2}
+	    #acl_step: ${3}
+	    #protocol: ${4}
+	    #precedence: ${5}
+	    #src_port_op: ${6}
+	    #log_flag: ${7}
+	    #time_range: ${8}
+	    #src_port_begin: ${9}
+	    #frag_type: ${10}
+	    #dest_port_op: ${11}
+	    #dest_pool_name: ${12}
+	    #acl_description: ${13}
+	    #ttl_expired: ${14}
+	    #icmp_type: ${15}
+	    #src_mask: ${16}
+	    #icmp_name: ${17}
+	    #established: ${18}
+	    #igmp_type: ${19}
+	    #tos: ${20}
+	    #acl_num: ${21}
+	    #rule_action: ${22}
+	    #state: ${23:present}
+	    #tcp_flag_mask: ${24}
+	    #src_port_end: ${25}
+	    #dest_ip: ${26}
+	    #icmp_code: ${27}
+	    #dest_port_end: ${28}
+	    #dscp: ${29}
+	    #rule_name: ${30}
+	    #rule_description: ${31}
+	    #dest_mask: ${32}
+	    #src_port_pool_name: ${33}
+	    #source_ip: ${34}
+	    #syn_flag: ${35}
+	    #vrf_name: ${36}
+	    #src_pool_name: ${37}
+	    #dest_port_begin: ${38}
+	    #dest_port_pool_name: ${39}
+	    #rule_id: ${40}
+
+snippet ce_acl_interface
+	- name: ${1:task_description}
+	  ce_acl_interface:
+	    interface: ${2}
+	    direction: ${3}
+	    acl_name: ${4}
+	    #state: ${5:present}
+
+snippet ce_bfd_global
+	- name: ${1:task_description}
+	  ce_bfd_global:
+	    #tos_exp_dynamic: ${2}
+	    #default_ip: ${3}
+	    #damp_init_wait_time: ${4}
+	    #bfd_enable: ${5}
+	    #delay_up_time: ${6}
+	    #state: ${7:present}
+	    #damp_max_wait_time: ${8}
+	    #damp_second_wait_time: ${9}
+	    #tos_exp_static: ${10}
+
+snippet ce_bfd_session
+	- name: ${1:task_description}
+	  ce_bfd_session:
+	    session_name: ${2:None}
+	    #src_addr: ${3}
+	    #out_if_name: ${4}
+	    #state: ${5:present}
+	    #dest_addr: ${6}
+	    #vrf_name: ${7}
+	    #create_type: ${8}
+	    #use_default_ip: ${9}
+	    #addr_type: ${10}
+
+snippet ce_bfd_view
+	- name: ${1:task_description}
+	  ce_bfd_view:
+	    session_name: ${2:None}
+	    #local_discr: ${3}
+	    #detect_multi: ${4}
+	    #remote_discr: ${5}
+	    #description: ${6}
+	    #admin_down: ${7}
+	    #tos_exp: ${8}
+	    #min_tx_interval: ${9}
+	    #min_rx_interval: ${10}
+	    #state: ${11:present}
+	    #wtr_interval: ${12}
+
+snippet ce_bgp
+	- name: ${1:task_description}
+	  ce_bgp:
+	    #router_id: ${2}
+	    #memory_limit: ${3:no_use}
+	    #vrf_rid_auto_sel: ${4:no_use}
+	    #suppress_interval: ${5}
+	    #as_number: ${6}
+	    #confed_id_number: ${7}
+	    #bgp_rid_auto_sel: ${8:no_use}
+	    #default_af_type: ${9}
+	    #conn_retry_time: ${10}
+	    #is_shutdown: ${11:no_use}
+	    #keepalive_time: ${12}
+	    #confed_peer_as_num: ${13}
+	    #min_hold_time: ${14}
+	    #ebgp_if_sensitive: ${15:no_use}
+	    #check_first_as: ${16:no_use}
+	    #clear_interval: ${17}
+	    #confed_nonstanded: ${18:no_use}
+	    #time_wait_for_rib: ${19}
+	    #hold_time: ${20}
+	    #as_path_limit: ${21}
+	    #hold_interval: ${22}
+	    #state: ${23:present}
+	    #vrf_name: ${24}
+	    #keep_all_routes: ${25:no_use}
+	    #gr_peer_reset: ${26:no_use}
+	    #graceful_restart: ${27:no_use}
+
+snippet ce_bgp_af
+	- name: ${1:task_description}
+	  ce_bgp_af:
+	    af_type: ${2}
+	    vrf_name: ${3}
+	    #reflector_cluster_id: ${4}
+	    #ingress_lsp_policy_name: ${5}
+	    #vrf_rid_auto_sel: ${6:no_use}
+	    #preference_internal: ${7}
+	    #maximum_load_balance: ${8}
+	    #preference_local: ${9}
+	    #preference_external: ${10}
+	    #router_id_neglect: ${11:no_use}
+	    #default_local_pref: ${12}
+	    #reflector_cluster_ipv4: ${13}
+	    #prefrence_policy_name: ${14}
+	    #default_rt_import_enable: ${15:no_use}
+	    #nhp_relay_route_policy_name: ${16}
+	    #igp_metric_ignore: ${17:no_use}
+	    #as_path_neglect: ${18:no_use}
+	    #auto_frr_enable: ${19:no_use}
+	    #mask_len: ${20}
+	    #ibgp_ecmp_nexthop_changed: ${21:no_use}
+	    #nexthop_third_party: ${22:no_use}
+	    #state: ${23:present}
+	    #default_med: ${24}
+	    #add_path_sel_num: ${25}
+	    #med_none_as_maximum: ${26:no_use}
+	    #ebgp_ecmp_nexthop_changed: ${27:no_use}
+	    #ecmp_nexthop_changed: ${28:no_use}
+	    #lowest_priority: ${29:no_use}
+	    #rr_filter_number: ${30}
+	    #import_process_id: ${31}
+	    #router_id: ${32}
+	    #determin_med: ${33:no_use}
+	    #load_balancing_as_path_ignore: ${34:no_use}
+	    #reflect_chg_path: ${35:no_use}
+	    #always_compare_med: ${36:no_use}
+	    #allow_invalid_as: ${37:no_use}
+	    #relay_delay_enable: ${38:no_use}
+	    #rib_only_policy_name: ${39}
+	    #max_load_ebgp_num: ${40}
+	    #import_protocol: ${41}
+	    #ebgp_if_sensitive: ${42:no_use}
+	    #network_address: ${43}
+	    #supernet_uni_adv: ${44:no_use}
+	    #next_hop_sel_depend_type: ${45:default}
+	    #originator_prior: ${46:no_use}
+	    #active_route_advertise: ${47:no_use}
+	    #reflect_between_client: ${48:no_use}
+	    #policy_vpn_target: ${49:no_use}
+	    #summary_automatic: ${50:no_use}
+	    #rib_only_enable: ${51:no_use}
+	    #max_load_ibgp_num: ${52}
+	    #route_sel_delay: ${53}
+	    #supernet_label_adv: ${54:no_use}
+	    #policy_ext_comm_enable: ${55:no_use}
+
+snippet ce_bgp_neighbor
+	- name: ${1:task_description}
+	  ce_bgp_neighbor:
+	    remote_as: ${2}
+	    vrf_name: ${3}
+	    peer_addr: ${4}
+	    #prepend_global_as: ${5:no_use}
+	    #ebgp_max_hop: ${6}
+	    #is_ignore: ${7:no_use}
+	    #prepend_fake_as: ${8:no_use}
+	    #fake_as: ${9}
+	    #is_single_hop: ${10:no_use}
+	    #conventional: ${11:no_use}
+	    #hold_time: ${12}
+	    #tx_interval: ${13}
+	    #pswd_cipher_text: ${14}
+	    #local_if_name: ${15}
+	    #rx_interval: ${16}
+	    #state: ${17:present}
+	    #dual_as: ${18:no_use}
+	    #connect_mode: ${19}
+	    #description: ${20}
+	    #is_log_change: ${21:no_use}
+	    #keep_alive_time: ${22}
+	    #key_chain_name: ${23}
+	    #conn_retry_time: ${24}
+	    #min_hold_time: ${25}
+	    #multiplier: ${26}
+	    #valid_ttl_hops: ${27}
+	    #is_bfd_block: ${28:no_use}
+	    #tcp_MSS: ${29}
+	    #is_bfd_enable: ${30:no_use}
+	    #route_refresh: ${31:no_use}
+	    #pswd_type: ${32}
+	    #mpls_local_ifnet_disable: ${33:no_use}
+
+snippet ce_bgp_neighbor_af
+	- name: ${1:task_description}
+	  ce_bgp_neighbor_af:
+	    af_type: ${2}
+	    remote_address: ${3}
+	    vrf_name: ${4}
+	    #import_pref_filt_name: ${5}
+	    #advertise_irb: ${6:no_use}
+	    #substitute_as_enable: ${7:no_use}
+	    #advertise_ext_community: ${8:no_use}
+	    #default_rt_match_mode: ${9}
+	    #redirect_ip: ${10:no_use}
+	    #route_limit: ${11}
+	    #import_as_path_filter: ${12}
+	    #public_as_only_force: ${13:no_use}
+	    #vpls_enable: ${14:no_use}
+	    #allow_as_loop_enable: ${15:no_use}
+	    #advertise_arp: ${16:no_use}
+	    #import_as_path_name_or_num: ${17}
+	    #orf_mode: ${18}
+	    #nexthop_configure: ${19}
+	    #discard_ext_community: ${20:no_use}
+	    #is_nonstd_ipprefix_mod: ${21:no_use}
+	    #keep_all_routes: ${22:no_use}
+	    #orftype: ${23}
+	    #advertise_community: ${24:no_use}
+	    #export_as_path_name_or_num: ${25}
+	    #adv_add_path_num: ${26}
+	    #ipprefix_orf_enable: ${27:no_use}
+	    #route_limit_type: ${28}
+	    #public_as_only_skip_peer_as: ${29:no_use}
+	    #origin_as_valid: ${30:no_use}
+	    #route_limit_idle_timeout: ${31}
+	    #reflect_client: ${32:no_use}
+	    #import_rt_policy_name: ${33}
+	    #route_limit_percent: ${34}
+	    #export_rt_policy_name: ${35}
+	    #public_as_only: ${36:no_use}
+	    #redirect_ip_vaildation: ${37:no_use}
+	    #import_acl_name_or_num: ${38}
+	    #allow_as_loop_limit: ${39}
+	    #add_path_mode: ${40}
+	    #export_as_path_filter: ${41}
+	    #vpls_ad_disable: ${42:no_use}
+	    #public_as_only_replace: ${43:no_use}
+	    #public_as_only_limited: ${44:no_use}
+	    #preferred_value: ${45}
+	    #export_acl_name_or_num: ${46}
+	    #soostring: ${47}
+	    #update_pkt_standard_compatible: ${48:no_use}
+	    #advertise_remote_nexthop: ${49:no_use}
+	    #default_rt_adv_policy: ${50}
+	    #export_pref_filt_name: ${51}
+	    #default_rt_adv_enable: ${52:no_use}
+	    #rt_updt_interval: ${53}
+
 snippet ce_command
 	- name: ${1:task_description}
 	  ce_command:
 	    commands: ${2}
 	    #retries: ${3:10}
-	    #interval: ${4:1}
-	    #provider: ${5}
-	    #wait_for: ${6}
-	    #match: ${7:all}
+	    #wait_for: ${4}
+	    #match: ${5:all}
+	    #interval: ${6:1}
+
+snippet ce_config
+	- name: ${1:task_description}
+	  ce_config:
+	    #src: ${2}
+	    #backup: ${3}
+	    #after: ${4}
+	    #lines: ${5}
+	    #replace: ${6:line}
+	    #parents: ${7}
+	    #defaults: ${8}
+	    #save: ${9}
+	    #config: ${10}
+	    #match: ${11:line}
+	    #before: ${12}
+
+snippet ce_dldp
+	- name: ${1:task_description}
+	  ce_dldp:
+	    #reset: ${2}
+	    #enable: ${3}
+	    #work_mode: ${4}
+	    #auth_pwd: ${5}
+	    #time_internal: ${6}
+	    #auth_mode: ${7}
+
+snippet ce_dldp_interface
+	- name: ${1:task_description}
+	  ce_dldp_interface:
+	    interface: ${2}
+	    #reset: ${3}
+	    #state: ${4:present}
+	    #enable: ${5}
+	    #mode_enable: ${6}
+	    #local_mac: ${7}
+
+snippet ce_eth_trunk
+	- name: ${1:task_description}
+	  ce_eth_trunk:
+	    trunk_id: ${2}
+	    #state: ${3:present}
+	    #force: ${4}
+	    #mode: ${5}
+	    #members: ${6}
+	    #min_links: ${7}
+	    #hash_type: ${8}
+
+snippet ce_evpn_bd_vni
+	- name: ${1:task_description}
+	  ce_evpn_bd_vni:
+	    vpn_target_import: ${2}
+	    bridge_domain_id: ${3}
+	    #vpn_target_export: ${4}
+	    #state: ${5:present}
+	    #route_distinguisher: ${6}
+	    #vpn_target_both: ${7}
+	    #evpn: ${8:enable}
+
+snippet ce_evpn_bgp
+	- name: ${1:task_description}
+	  ce_evpn_bgp:
+	    bgp_instance: ${2}
+	    #as_number: ${3}
+	    #advertise_l2vpn_evpn: ${4}
+	    #advertise_router_type: ${5}
+	    #vpn_name: ${6}
+	    #peer_group_name: ${7}
+	    #state: ${8:present}
+	    #peer_enable: ${9}
+	    #peer_address: ${10}
+
+snippet ce_evpn_bgp_rr
+	- name: ${1:task_description}
+	  ce_evpn_bgp_rr:
+	    as_number: ${2:None}
+	    #bgp_instance: ${3}
+	    #reflect_client: ${4}
+	    #peer: ${5}
+	    #bgp_evpn_enable: ${6:enable}
+	    #policy_vpn_target: ${7}
+	    #peer_type: ${8}
+
+snippet ce_evpn_global
+	- name: ${1:task_description}
+	  ce_evpn_global:
+	    evpn_overlay_enable: ${2}
+
+snippet ce_facts
+	- name: ${1:task_description}
+	  ce_facts:
+	    #gather_subset: ${2:!config}
+
+snippet ce_file_copy
+	- name: ${1:task_description}
+	  ce_file_copy:
+	    local_file: ${2}
+	    #remote_file: ${3}
+	    #file_system: ${4:flash:}
+
+snippet ce_info_center_debug
+	- name: ${1:task_description}
+	  ce_info_center_debug:
+	    #debug_enable: ${2:no_use}
+	    #state: ${3:present}
+	    #debug_level: ${4}
+	    #channel_id: ${5}
+	    #module_name: ${6}
+	    #debug_time_stamp: ${7}
+
+snippet ce_info_center_global
+	- name: ${1:task_description}
+	  ce_info_center_global:
+	    #server_ip: ${2}
+	    #filter_log_name: ${3}
+	    #facility: ${4}
+	    #ssl_policy_name: ${5}
+	    #transport_mode: ${6}
+	    #channel_cfg_name: ${7:console}
+	    #suppress_enable: ${8}
+	    #channel_out_direct: ${9}
+	    #channel_id: ${10}
+	    #filter_feature_name: ${11}
+	    #is_default_vpn: ${12}
+	    #server_domain: ${13}
+	    #level: ${14}
+	    #packet_priority: ${15}
+	    #source_ip: ${16}
+	    #channel_name: ${17}
+	    #state: ${18:present}
+	    #vrf_name: ${19}
+	    #logfile_max_size: ${20:32}
+	    #server_port: ${21}
+	    #timestamp: ${22}
+	    #info_center_enable: ${23}
+	    #ip_type: ${24}
+	    #logfile_max_num: ${25}
+
+snippet ce_info_center_log
+	- name: ${1:task_description}
+	  ce_info_center_log:
+	    #log_level: ${2}
+	    #log_enable: ${3:no_use}
+	    #log_buff_size: ${4}
+	    #channel_id: ${5}
+	    #state: ${6:present}
+	    #log_buff_enable: ${7:no_use}
+	    #log_time_stamp: ${8}
+	    #module_name: ${9}
+
+snippet ce_info_center_trap
+	- name: ${1:task_description}
+	  ce_info_center_trap:
+	    #trap_time_stamp: ${2}
+	    #trap_buff_size: ${3}
+	    #channel_id: ${4}
+	    #state: ${5:present}
+	    #trap_level: ${6}
+	    #trap_buff_enable: ${7:no_use}
+	    #module_name: ${8}
+	    #trap_enable: ${9:no_use}
+
+snippet ce_interface
+	- name: ${1:task_description}
+	  ce_interface:
+	    state: ${2:present}
+	    #admin_state: ${3}
+	    #description: ${4}
+	    #interface: ${5}
+	    #interface_type: ${6}
+	    #mode: ${7}
+	    #l2sub: ${8}
+
+snippet ce_interface_ospf
+	- name: ${1:task_description}
+	  ce_interface_ospf:
+	    area: ${2}
+	    process_id: ${3}
+	    interface: ${4}
+	    #cost: ${5}
+	    #silent_interface: ${6}
+	    #auth_mode: ${7}
+	    #auth_key_id: ${8}
+	    #dead_interval: ${9}
+	    #auth_text_simple: ${10}
+	    #state: ${11:present}
+	    #hello_interval: ${12}
+	    #auth_text_md5: ${13}
+
+snippet ce_ip_interface
+	- name: ${1:task_description}
+	  ce_ip_interface:
+	    interface: ${2}
+	    #state: ${3:present}
+	    #version: ${4:v4}
+	    #addr: ${5}
+	    #mask: ${6}
+	    #ipv4_type: ${7:main}
+
+snippet ce_link_status
+	- name: ${1:task_description}
+	  ce_link_status:
+	    interface: ${2}
+
+snippet ce_mlag_config
+	- name: ${1:task_description}
+	  ce_mlag_config:
+	    #eth_trunk_id: ${2}
+	    #pseudo_priority: ${3}
+	    #ip_address: ${4}
+	    #priority_id: ${5}
+	    #vpn_instance_name: ${6}
+	    #peer_link_id: ${7}
+	    #state: ${8:present}
+	    #dfs_group_id: ${9:present}
+	    #nickname: ${10}
+	    #pseudo_nickname: ${11}
+
+snippet ce_mlag_interface
+	- name: ${1:task_description}
+	  ce_mlag_interface:
+	    #eth_trunk_id: ${2}
+	    #mlag_id: ${3}
+	    #mlag_error_down: ${4}
+	    #mlag_system_id: ${5}
+	    #state: ${6:present}
+	    #dfs_group_id: ${7:present}
+	    #interface: ${8}
+	    #mlag_priority_id: ${9}
+
+snippet ce_mtu
+	- name: ${1:task_description}
+	  ce_mtu:
+	    #interface: ${2}
+	    #state: ${3:present}
+	    #jumbo_max: ${4}
+	    #jumbo_min: ${5}
+	    #mtu: ${6}
+
+snippet ce_netconf
+	- name: ${1:task_description}
+	  ce_netconf:
+	    rpc: ${2}
+	    cfg_xml: ${3}
+
+snippet ce_netstream_aging
+	- name: ${1:task_description}
+	  ce_netstream_aging:
+	    #timeout_type: ${2}
+	    #state: ${3:present}
+	    #type: ${4}
+	    #manual_slot: ${5}
+	    #timeout_interval: ${6:30}
+
+snippet ce_netstream_export
+	- name: ${1:task_description}
+	  ce_netstream_export:
+	    type: ${2:None}
+	    #bgp_nexthop: ${3:disable}
+	    #host_port: ${4}
+	    #source_ip: ${5}
+	    #host_ip: ${6}
+	    #as_option: ${7}
+	    #state: ${8:present}
+	    #version: ${9}
+	    #host_vpn: ${10}
+
+snippet ce_netstream_global
+	- name: ${1:task_description}
+	  ce_netstream_global:
+	    interface: ${2:None}
+	    #statistics_direction: ${3}
+	    #index_switch: ${4:16}
+	    #state: ${5:present}
+	    #sampler_interval: ${6}
+	    #statistics_record: ${7}
+	    #sampler_direction: ${8}
+	    #type: ${9:ip}
+
+snippet ce_netstream_template
+	- name: ${1:task_description}
+	  ce_netstream_template:
+	    type: ${2}
+	    #state: ${3:present}
+	    #collect_interface: ${4}
+	    #record_name: ${5}
+	    #description: ${6}
+	    #collect_counter: ${7}
+	    #match: ${8}
+
+snippet ce_ntp
+	- name: ${1:task_description}
+	  ce_ntp:
+	    #state: ${2:present}
+	    #is_preferred: ${3}
+	    #peer: ${4}
+	    #key_id: ${5}
+	    #vpn_name: ${6:_public_}
+	    #server: ${7}
+	    #source_int: ${8}
+
+snippet ce_ntp_auth
+	- name: ${1:task_description}
+	  ce_ntp_auth:
+	    key_id: ${2}
+	    #auth_type: ${3:encrypt}
+	    #state: ${4:present}
+	    #auth_pwd: ${5}
+	    #trusted_key: ${6:disable}
+	    #auth_mode: ${7}
+	    #authentication: ${8}
+
+snippet ce_ospf
+	- name: ${1:task_description}
+	  ce_ospf:
+	    process_id: ${2}
+	    #addr: ${3}
+	    #area: ${4}
+	    #max_load_balance: ${5}
+	    #mask: ${6}
+	    #auth_mode: ${7}
+	    #auth_key_id: ${8}
+	    #auth_text_simple: ${9}
+	    #state: ${10:present}
+	    #nexthop_addr: ${11}
+	    #auth_text_md5: ${12}
+	    #nexthop_weight: ${13}
+
+snippet ce_ospf_vrf
+	- name: ${1:task_description}
+	  ce_ospf_vrf:
+	    ospf: ${2:None}
+	    #description: ${3}
+	    #lsaostartinterval: ${4}
+	    #lsaastartinterval: ${5}
+	    #lsaointerval: ${6}
+	    #bandwidth: ${7}
+	    #spfintervalmi: ${8}
+	    #spfinterval: ${9}
+	    #lsaointervalflag: ${10}
+	    #lsaomaxinterval: ${11}
+	    #lsaalflag: ${12}
+	    #lsaamaxinterval: ${13}
+	    #lsaoholdinterval: ${14}
+	    #spfintervaltype: ${15:intelligent-timer}
+	    #lsaainterval: ${16}
+	    #spfstartinterval: ${17}
+	    #route_id: ${18}
+	    #state: ${19:present}
+	    #spfmaxinterval: ${20}
+	    #spfholdinterval: ${21}
+	    #lsaaholdinterval: ${22}
+	    #vrf: ${23:_public_}
+
+snippet ce_reboot
+	- name: ${1:task_description}
+	  ce_reboot:
+	    #save_config: ${2}
+	    #confirm: ${3}
+
+snippet ce_rollback
+	- name: ${1:task_description}
+	  ce_rollback:
+	    action: ${2}
+	    #commit_id: ${3}
+	    #oldest: ${4}
+	    #last: ${5}
+	    #filename: ${6}
+	    #label: ${7}
+
+snippet ce_sflow
+	- name: ${1:task_description}
+	  ce_sflow:
+	    #agent_ip: ${2}
+	    #export_route: ${3}
+	    #counter_collector: ${4}
+	    #rate_limit_slot: ${5}
+	    #source_ip: ${6}
+	    #collector_datagram_size: ${7}
+	    #sample_collector: ${8}
+	    #rate_limit: ${9}
+	    #sample_direction: ${10}
+	    #collector_meth: ${11}
+	    #collector_ip_vpn: ${12}
+	    #forward_enp_slot: ${13}
+	    #collector_ip: ${14}
+	    #sflow_interface: ${15}
+	    #sample_length: ${16}
+	    #state: ${17:present}
+	    #collector_id: ${18}
+	    #sample_rate: ${19}
+	    #collector_udp_port: ${20}
+	    #counter_interval: ${21}
+	    #collector_description: ${22}
+
+snippet ce_snmp_community
+	- name: ${1:task_description}
+	  ce_snmp_community:
+	    #notify_view: ${2}
+	    #community_name: ${3}
+	    #community_mib_view: ${4}
+	    #read_view: ${5}
+	    #acl_number: ${6}
+	    #group_name: ${7}
+	    #write_view: ${8}
+	    #state: ${9:present}
+	    #security_level: ${10}
+	    #access_right: ${11}
+
+snippet ce_snmp_contact
+	- name: ${1:task_description}
+	  ce_snmp_contact:
+	    contact: ${2:None}
+	    #state: ${3:present}
+
+snippet ce_snmp_location
+	- name: ${1:task_description}
+	  ce_snmp_location:
+	    location: ${2:None}
+	    #state: ${3:present}
+
+snippet ce_snmp_target_host
+	- name: ${1:task_description}
+	  ce_snmp_target_host:
+	    #security_name_v3: ${2}
+	    #recv_port: ${3}
+	    #security_model: ${4}
+	    #vpn_name: ${5}
+	    #address: ${6}
+	    #security_name: ${7}
+	    #notify_type: ${8}
+	    #connect_port: ${9}
+	    #version: ${10}
+	    #host_name: ${11}
+	    #security_level: ${12}
+	    #interface_name: ${13}
+	    #is_public_net: ${14:no_use}
+
+snippet ce_snmp_traps
+	- name: ${1:task_description}
+	  ce_snmp_traps:
+	    #feature_name: ${2}
+	    #interface_type: ${3}
+	    #trap_name: ${4}
+	    #port_number: ${5}
+	    #interface_number: ${6}
+
+snippet ce_snmp_user
+	- name: ${1:task_description}
+	  ce_snmp_user:
+	    #priv_key: ${2}
+	    #aaa_local_user: ${3}
+	    #auth_key: ${4}
+	    #usm_user_name: ${5}
+	    #acl_number: ${6}
+	    #auth_protocol: ${7}
+	    #remote_engine_id: ${8}
+	    #priv_protocol: ${9}
+	    #user_group: ${10}
+
+snippet ce_startup
+	- name: ${1:task_description}
+	  ce_startup:
+	    #slot: ${2}
+	    #action: ${3}
+	    #cfg_file: ${4:present}
+	    #patch_file: ${5}
+	    #software_file: ${6}
+
+snippet ce_static_route
+	- name: ${1:task_description}
+	  ce_static_route:
+	    prefix: ${2}
+	    aftype: ${3}
+	    mask: ${4}
+	    #description: ${5}
+	    #pref: ${6}
+	    #destvrf: ${7}
+	    #nhp_interface: ${8}
+	    #state: ${9:present}
+	    #next_hop: ${10}
+	    #vrf: ${11}
+	    #tag: ${12}
+
+snippet ce_stp
+	- name: ${1:task_description}
+	  ce_stp:
+	    #loop_protection: ${2}
+	    #tc_protection_threshold: ${3}
+	    #bpdu_filter: ${4}
+	    #stp_converge: ${5}
+	    #stp_mode: ${6}
+	    #bpdu_protection: ${7}
+	    #root_protection: ${8}
+	    #state: ${9:present}
+	    #cost: ${10}
+	    #stp_enable: ${11}
+	    #interface: ${12}
+	    #tc_protection: ${13}
+	    #edged_port: ${14}
+	    #tc_protection_interval: ${15}
+
+snippet ce_switchport
+	- name: ${1:task_description}
+	  ce_switchport:
+	    interface: ${2:None}
+	    #native_vlan: ${3}
+	    #access_vlan: ${4}
+	    #state: ${5:present}
+	    #mode: ${6}
+	    #trunk_vlans: ${7}
+
+snippet ce_vlan
+	- name: ${1:task_description}
+	  ce_vlan:
+	    #state: ${2:present}
+	    #vlan_range: ${3}
+	    #name: ${4}
+	    #vlan_id: ${5}
+	    #description: ${6}
+
+snippet ce_vrf
+	- name: ${1:task_description}
+	  ce_vrf:
+	    vrf: ${2}
+	    #state: ${3:present}
+	    #description: ${4}
+
+snippet ce_vrf_af
+	- name: ${1:task_description}
+	  ce_vrf_af:
+	    vrf: ${2:None}
+	    #vpn_target_type: ${3}
+	    #vpn_target_state: ${4}
+	    #vrf_aftype: ${5:v4}
+	    #state: ${6:present}
+	    #route_distinguisher: ${7}
+	    #evpn: ${8}
+	    #vpn_target_value: ${9}
+
+snippet ce_vrf_interface
+	- name: ${1:task_description}
+	  ce_vrf_interface:
+	    vrf: ${2}
+	    vpn_interface: ${3}
+	    #state: ${4:present}
+
+snippet ce_vrrp
+	- name: ${1:task_description}
+	  ce_vrrp:
+	    #vrrp_type: ${2}
+	    #auth_mode: ${3}
+	    #is_plain: ${4}
+	    #interface: ${5}
+	    #preempt_timer_delay: ${6}
+	    #gratuitous_arp_interval: ${7}
+	    #auth_key: ${8}
+	    #vrid: ${9:present}
+	    #priority: ${10}
+	    #recover_delay: ${11}
+	    #state: ${12:present}
+	    #version: ${13}
+	    #virtual_ip: ${14}
+	    #admin_interface: ${15}
+	    #admin_ignore_if_down: ${16}
+	    #fast_resume: ${17}
+	    #admin_flowdown: ${18}
+	    #holding_multiplier: ${19}
+	    #admin_vrid: ${20}
+	    #advertise_interval: ${21}
+
+snippet ce_vxlan_arp
+	- name: ${1:task_description}
+	  ce_vxlan_arp:
+	    #evn_bgp: ${2}
+	    #vbdif_name: ${3}
+	    #bridge_domain_id: ${4}
+	    #state: ${5:present}
+	    #evn_server: ${6}
+	    #evn_peer_ip: ${7}
+	    #evn_source_ip: ${8}
+	    #arp_collect_host: ${9}
+	    #arp_suppress: ${10}
+	    #evn_reflect_client: ${11}
+	    #host_collect_protocol: ${12}
+
+snippet ce_vxlan_gateway
+	- name: ${1:task_description}
+	  ce_vxlan_gateway:
+	    #dfs_source_vpn: ${2}
+	    #dfs_id: ${3}
+	    #arp_direct_route: ${4}
+	    #dfs_peer_vpn: ${5}
+	    #vbdif_name: ${6}
+	    #vpn_vni: ${7}
+	    #vbdif_mac: ${8}
+	    #vbdif_bind_vpn: ${9}
+	    #dfs_source_ip: ${10}
+	    #dfs_udp_port: ${11}
+	    #arp_distribute_gateway: ${12}
+	    #state: ${13:present}
+	    #dfs_all_active: ${14}
+	    #vpn_instance: ${15}
+	    #dfs_peer_ip: ${16}
+
+snippet ce_vxlan_global
+	- name: ${1:task_description}
+	  ce_vxlan_global:
+	    #nvo3_prevent_loops: ${2}
+	    #nvo3_eth_trunk_hash: ${3}
+	    #tunnel_mode_vxlan: ${4}
+	    #nvo3_acl_extend: ${5}
+	    #bridge_domain_id: ${6}
+	    #nvo3_gw_enhanced: ${7}
+	    #state: ${8:present}
+	    #nvo3_ecmp_hash: ${9}
+	    #nvo3_service_extend: ${10}
+
+snippet ce_vxlan_tunnel
+	- name: ${1:task_description}
+	  ce_vxlan_tunnel:
+	    #vni_id: ${2}
+	    #nve_mode: ${3}
+	    #source_ip: ${4}
+	    #bridge_domain_id: ${5}
+	    #peer_list_ip: ${6}
+	    #state: ${7:present}
+	    #nve_name: ${8}
+	    #protocol_type: ${9}
+
+snippet ce_vxlan_vap
+	- name: ${1:task_description}
+	  ce_vxlan_vap:
+	    #state: ${2:present}
+	    #pe_vid: ${3}
+	    #l2_sub_interface: ${4}
+	    #ce_vid: ${5}
+	    #encapsulation: ${6}
+	    #bind_vlan_id: ${7}
+	    #bridge_domain_id: ${8}
 
 snippet circonus_annotation
 	- name: ${1:task_description}
@@ -2467,8 +4481,10 @@ snippet cloudformation
 	    #region: ${15}
 	    #template_format: ${16:json}
 	    #template_parameters: ${17}
-	    #template: ${18}
-	    #validate_certs: ${19:yes}
+	    #validate_certs: ${18:yes}
+	    #template: ${19}
+	    #changeset_name: ${20}
+	    #create_changeset: ${21}
 
 snippet cloudformation_facts
 	- name: ${1:task_description}
@@ -2538,18 +4554,26 @@ snippet cloudscale_server
 snippet cloudtrail
 	- name: ${1:task_description}
 	  cloudtrail:
-	    state: ${2}
-	    #aws_secret_key: ${3}
+	    name: ${2}
+	    state: ${3}
 	    #profile: ${4}
-	    #aws_access_key: ${5}
-	    #name: ${6}
-	    #security_token: ${7}
-	    #s3_key_prefix: ${8}
-	    #region: ${9}
-	    #include_global_events: ${10}
-	    #s3_bucket_prefix: ${11}
-	    #ec2_url: ${12}
-	    #validate_certs: ${13:yes}
+	    #tags: ${5}
+	    #kms_key_id: ${6}
+	    #s3_bucket_name: ${7}
+	    #is_multi_region_trail: ${8}
+	    #ec2_url: ${9}
+	    #sns_topic_name: ${10}
+	    #s3_key_prefix: ${11}
+	    #enable_logging: ${12:True}
+	    #aws_secret_key: ${13}
+	    #enable_log_file_validation: ${14}
+	    #aws_access_key: ${15}
+	    #security_token: ${16}
+	    #cloudwatch_logs_role_arn: ${17}
+	    #region: ${18}
+	    #include_global_events: ${19:True}
+	    #cloudwatch_logs_log_group_arn: ${20}
+	    #validate_certs: ${21:yes}
 
 snippet cloudwatchevent_rule
 	- name: ${1:task_description}
@@ -2802,27 +4826,27 @@ snippet cnos_vlan
 snippet command
 	- name: ${1:task_description}
 	  command:
-	    free_form: ${2:None}
-	    #warn: ${3:True}
-	    #creates: ${4}
-	    #executable: ${5}
-	    #chdir: ${6}
-	    #removes: ${7}
+	    free_form: ${2}
+	    #creates: ${3}
+	    #warn: ${4:yes}
+	    #chdir: ${5}
+	    #removes: ${6}
 
 snippet composer
 	- name: ${1:task_description}
 	  composer:
-	    #no_scripts: ${2}
-	    #arguments: ${3}
-	    #prefer_dist: ${4}
-	    #working_dir: ${5}
-	    #command: ${6:install}
+	    #executable: ${2}
+	    #no_scripts: ${3}
+	    #prefer_source: ${4}
+	    #prefer_dist: ${5}
+	    #working_dir: ${6}
 	    #global_command: ${7}
-	    #prefer_source: ${8}
-	    #ignore_platform_reqs: ${9}
-	    #no_dev: ${10:True}
-	    #no_plugins: ${11}
-	    #optimize_autoloader: ${12:True}
+	    #command: ${8:install}
+	    #arguments: ${9}
+	    #ignore_platform_reqs: ${10}
+	    #no_dev: ${11:True}
+	    #no_plugins: ${12}
+	    #optimize_autoloader: ${13:True}
 
 snippet consul
 	- name: ${1:task_description}
@@ -2838,7 +4862,7 @@ snippet consul
 	    #port: ${10:8500}
 	    #script: ${11:None}
 	    #check_id: ${12:None}
-	    #service_port: ${13}
+	    #service_port: ${13:None}
 	    #notes: ${14:None}
 	    #interval: ${15:None}
 	    #token: ${16:None}
@@ -2895,25 +4919,26 @@ snippet consul_session
 snippet copy
 	- name: ${1:task_description}
 	  copy:
-	    dest: ${2:None}
+	    dest: ${2}
 	    #directory_mode: ${3}
 	    #force: ${4:yes}
-	    #remote_src: ${5:False}
+	    #remote_src: ${5:no}
 	    #selevel: ${6:s0}
 	    #decrypt: ${7:Yes}
 	    #owner: ${8}
 	    #follow: ${9:no}
 	    #validate: ${10:None}
-	    #src: ${11}
-	    #group: ${12}
-	    #unsafe_writes: ${13}
-	    #seuser: ${14}
-	    #serole: ${15}
-	    #content: ${16}
-	    #setype: ${17}
-	    #mode: ${18}
-	    #attributes: ${19:None}
-	    #backup: ${20:no}
+	    #local_follow: ${11:yes}
+	    #src: ${12}
+	    #group: ${13}
+	    #unsafe_writes: ${14}
+	    #seuser: ${15}
+	    #serole: ${16}
+	    #content: ${17}
+	    #setype: ${18}
+	    #mode: ${19}
+	    #attributes: ${20:None}
+	    #backup: ${21:no}
 
 snippet cpanm
 	- name: ${1:task_description}
@@ -3077,6 +5102,7 @@ snippet cs_facts
 	- name: ${1:task_description}
 	  cs_facts:
 	    #filter: ${2}
+	    #meta_data_host: ${3}
 
 snippet cs_firewall
 	- name: ${1:task_description}
@@ -3118,11 +5144,12 @@ snippet cs_host
 	    #password: ${10}
 	    #api_url: ${11}
 	    #zone: ${12}
-	    #hypervisor: ${13}
-	    #api_region: ${14:cloudstack}
-	    #state: ${15:present}
-	    #api_key: ${16}
-	    #allocation_state: ${17}
+	    #url: ${13}
+	    #hypervisor: ${14}
+	    #api_region: ${15:cloudstack}
+	    #state: ${16:present}
+	    #api_key: ${17}
+	    #allocation_state: ${18}
 
 snippet cs_instance
 	- name: ${1:task_description}
@@ -3179,6 +5206,26 @@ snippet cs_instance_facts
 	    #api_timeout: ${10:10}
 	    #api_region: ${11:cloudstack}
 
+snippet cs_instance_nic
+	- name: ${1:task_description}
+	  cs_instance_nic:
+	    vm: ${2}
+	    network: ${3}
+	    #domain: ${4}
+	    #api_http_method: ${5:get}
+	    #api_secret: ${6}
+	    #api_timeout: ${7:10}
+	    #vpc: ${8}
+	    #ip_address: ${9}
+	    #account: ${10}
+	    #poll_async: ${11:True}
+	    #api_url: ${12}
+	    #zone: ${13}
+	    #api_region: ${14:cloudstack}
+	    #project: ${15}
+	    #state: ${16:present}
+	    #api_key: ${17}
+
 snippet cs_instancegroup
 	- name: ${1:task_description}
 	  cs_instancegroup:
@@ -3225,19 +5272,21 @@ snippet cs_iso
 	    #is_dynamically_scalable: ${9}
 	    #domain: ${10}
 	    #is_public: ${11}
-	    #account: ${12}
-	    #poll_async: ${13:True}
-	    #api_url: ${14}
-	    #zone: ${15}
-	    #url: ${16}
-	    #checksum: ${17}
-	    #api_region: ${18:cloudstack}
-	    #project: ${19}
-	    #bootable: ${20:True}
-	    #state: ${21:present}
-	    #is_ready: ${22}
-	    #os_type: ${23}
-	    #api_key: ${24}
+	    #display_text: ${12}
+	    #account: ${13}
+	    #poll_async: ${14:True}
+	    #api_url: ${15}
+	    #zone: ${16}
+	    #url: ${17}
+	    #checksum: ${18}
+	    #api_region: ${19:cloudstack}
+	    #cross_zones: ${20}
+	    #project: ${21}
+	    #bootable: ${22}
+	    #state: ${23:present}
+	    #is_ready: ${24}
+	    #os_type: ${25}
+	    #api_key: ${26}
 
 snippet cs_loadbalancer_rule
 	- name: ${1:task_description}
@@ -3313,6 +5362,54 @@ snippet cs_network
 	    #state: ${28:present}
 	    #end_ip: ${29}
 	    #api_key: ${30}
+
+snippet cs_network_acl
+	- name: ${1:task_description}
+	  cs_network_acl:
+	    vpc: ${2}
+	    name: ${3}
+	    #account: ${4}
+	    #poll_async: ${5:True}
+	    #api_url: ${6}
+	    #api_http_method: ${7:get}
+	    #state: ${8:present}
+	    #api_secret: ${9}
+	    #description: ${10}
+	    #api_timeout: ${11:10}
+	    #api_region: ${12:cloudstack}
+	    #project: ${13}
+	    #zone: ${14}
+	    #domain: ${15}
+	    #api_key: ${16}
+
+snippet cs_network_acl_rule
+	- name: ${1:task_description}
+	  cs_network_acl_rule:
+	    rule_position: ${2}
+	    network_acl: ${3}
+	    vpc: ${4}
+	    #icmp_code: ${5}
+	    #domain: ${6}
+	    #end_port: ${7}
+	    #start_port: ${8}
+	    #action_policy: ${9:ingress}
+	    #api_http_method: ${10:get}
+	    #tags: ${11}
+	    #api_secret: ${12}
+	    #api_timeout: ${13:10}
+	    #protocol: ${14:tcp}
+	    #cidr: ${15:0.0.0.0/0}
+	    #icmp_type: ${16}
+	    #account: ${17}
+	    #poll_async: ${18:True}
+	    #api_url: ${19}
+	    #zone: ${20}
+	    #protocol_number: ${21}
+	    #api_region: ${22:cloudstack}
+	    #project: ${23}
+	    #state: ${24:present}
+	    #traffic_type: ${25:ingress}
+	    #api_key: ${26}
 
 snippet cs_nic
 	- name: ${1:task_description}
@@ -3448,14 +5545,15 @@ snippet cs_router
 	    #account: ${3}
 	    #api_url: ${4}
 	    #api_http_method: ${5:get}
-	    #api_secret: ${6}
-	    #api_timeout: ${7:10}
-	    #api_region: ${8:cloudstack}
-	    #project: ${9}
-	    #state: ${10:present}
-	    #domain: ${11}
-	    #service_offering: ${12}
-	    #api_key: ${13}
+	    #state: ${6:present}
+	    #api_secret: ${7}
+	    #api_timeout: ${8:10}
+	    #api_region: ${9:cloudstack}
+	    #project: ${10}
+	    #zone: ${11}
+	    #domain: ${12}
+	    #service_offering: ${13}
+	    #api_key: ${14}
 
 snippet cs_securitygroup
 	- name: ${1:task_description}
@@ -3608,13 +5706,14 @@ snippet cs_user
 	    #first_name: ${8}
 	    #timezone: ${9}
 	    #password: ${10}
-	    #account: ${11}
-	    #poll_async: ${12:True}
-	    #api_url: ${13}
-	    #api_region: ${14:cloudstack}
-	    #state: ${15:present}
-	    #api_key: ${16}
-	    #email: ${17}
+	    #keys_registered: ${11}
+	    #account: ${12}
+	    #poll_async: ${13:True}
+	    #api_url: ${14}
+	    #api_region: ${15:cloudstack}
+	    #state: ${16:present}
+	    #api_key: ${17}
+	    #email: ${18}
 
 snippet cs_vmsnapshot
 	- name: ${1:task_description}
@@ -3739,6 +5838,54 @@ snippet cs_zone_facts
 	    #api_timeout: ${7:10}
 	    #api_region: ${8:cloudstack}
 
+snippet cv_server_provision
+	- name: ${1:task_description}
+	  cv_server_provision:
+	    username: ${2}
+	    switch_port: ${3}
+	    server_name: ${4}
+	    host: ${5}
+	    template: ${6}
+	    password: ${7}
+	    switch_name: ${8}
+	    #port_vlan: ${9:None}
+	    #protocol: ${10:https}
+	    #port: ${11:None}
+	    #auto_run: ${12}
+	    #action: ${13:show}
+
+snippet cyberark_authentication
+	- name: ${1:task_description}
+	  cyberark_authentication:
+	    #username: ${2}
+	    #use_radius_authentication: ${3:no}
+	    #new_password: ${4}
+	    #cyberark_session: ${5}
+	    #state: ${6:present}
+	    #password: ${7}
+	    #validate_certs: ${8:yes}
+	    #use_shared_logon_authentication: ${9:no}
+	    #api_base_url: ${10}
+
+snippet data_pipeline
+	- name: ${1:task_description}
+	  data_pipeline:
+	    name: ${2}
+	    #aws_secret_key: ${3}
+	    #profile: ${4}
+	    #aws_access_key: ${5}
+	    #security_token: ${6}
+	    #tags: ${7}
+	    #region: ${8}
+	    #state: ${9:present}
+	    #objects: ${10}
+	    #values: ${11}
+	    #timeout: ${12:300}
+	    #ec2_url: ${13}
+	    #parameters: ${14}
+	    #validate_certs: ${15:yes}
+	    #description: ${16}
+
 snippet datadog_event
 	- name: ${1:task_description}
 	  datadog_event:
@@ -3750,8 +5897,9 @@ snippet datadog_event
 	    #alert_type: ${7:info}
 	    #tags: ${8}
 	    #priority: ${9:normal}
-	    #aggregation_key: ${10}
-	    #validate_certs: ${11:yes}
+	    #host: ${10:{{ ansible_hostname }}}
+	    #aggregation_key: ${11}
+	    #validate_certs: ${12:yes}
 
 snippet datadog_monitor
 	- name: ${1:task_description}
@@ -3764,17 +5912,25 @@ snippet datadog_monitor
 	    #timeout_h: ${7}
 	    #tags: ${8:None}
 	    #thresholds: ${9:{u'warning': 1, u'ok': 1, u'critical': 1}}
-	    #query: ${10}
-	    #message: ${11}
-	    #id: ${12}
-	    #locked: ${13}
-	    #no_data_timeframe: ${14:2x timeframe for metric, 2 minutes for service}
-	    #silenced: ${15}
-	    #require_full_window: ${16}
-	    #notify_no_data: ${17}
-	    #renotify_interval: ${18}
-	    #escalation_message: ${19}
-	    #type: ${20}
+	    #new_host_delay: ${10}
+	    #query: ${11}
+	    #message: ${12}
+	    #id: ${13}
+	    #locked: ${14}
+	    #no_data_timeframe: ${15:2x timeframe for metric, 2 minutes for service}
+	    #silenced: ${16}
+	    #require_full_window: ${17}
+	    #notify_no_data: ${18}
+	    #renotify_interval: ${19}
+	    #escalation_message: ${20}
+	    #type: ${21}
+
+snippet dconf
+	- name: ${1:task_description}
+	  dconf:
+	    key: ${2}
+	    #state: ${3:present}
+	    #value: ${4}
 
 snippet debconf
 	- name: ${1:task_description}
@@ -3942,6 +6098,15 @@ snippet digital_ocean_domain
 	    #id: ${5}
 	    #name: ${6}
 
+snippet digital_ocean_floating_ip
+	- name: ${1:task_description}
+	  digital_ocean_floating_ip:
+	    oauth_token: ${2}
+	    #ip: ${3:None}
+	    #state: ${4:present}
+	    #region: ${5:None}
+	    #droplet_id: ${6:None}
+
 snippet digital_ocean_sshkey
 	- name: ${1:task_description}
 	  digital_ocean_sshkey:
@@ -4071,14 +6236,31 @@ snippet dnsmadeeasy
 	- name: ${1:task_description}
 	  dnsmadeeasy:
 	    domain: ${2:None}
-	    account_secret: ${3:None}
-	    account_key: ${4:None}
-	    state: ${5:None}
-	    #record_name: ${6}
-	    #record_ttl: ${7:1800}
-	    #record_type: ${8}
-	    #record_value: ${9}
-	    #validate_certs: ${10:yes}
+	    protocol: ${3:HTTP}
+	    autoFailover: ${4:no}
+	    sensitivity: ${5:Medium}
+	    contactList: ${6:}
+	    account_key: ${7:None}
+	    port: ${8:80}
+	    monitor: ${9:no}
+	    failover: ${10:no}
+	    maxEmails: ${11:1}
+	    state: ${12:None}
+	    systemDescription: ${13:}
+	    account_secret: ${14:None}
+	    #httpFqdn: ${15}
+	    #record_ttl: ${16:1800}
+	    #ip2: ${17}
+	    #record_type: ${18}
+	    #ip1: ${19}
+	    #ip4: ${20}
+	    #ip5: ${21}
+	    #record_name: ${22}
+	    #ip3: ${23}
+	    #httpQueryString: ${24}
+	    #record_value: ${25}
+	    #httpFile: ${26}
+	    #validate_certs: ${27:yes}
 
 snippet docker
 	- name: ${1:task_description}
@@ -4154,71 +6336,74 @@ snippet docker_container
 	    #pid_mode: ${11}
 	    #networks: ${12}
 	    #cpu_period: ${13}
-	    #capabilities: ${14}
-	    #restart: ${15}
-	    #mac_address: ${16}
-	    #volumes_from: ${17}
-	    #log_options: ${18}
-	    #memory_reservation: ${19}
-	    #recreate: ${20}
-	    #ipc_mode: ${21}
-	    #memory: ${22}
-	    #memory_swappiness: ${23}
-	    #network_mode: ${24}
-	    #detach: ${25:True}
-	    #memory_swap: ${26}
-	    #pull: ${27}
-	    #stop_signal: ${28}
-	    #devices: ${29}
-	    #uts: ${30}
-	    #published_ports: ${31}
-	    #timeout: ${32:60}
-	    #dns_search_domains: ${33}
-	    #ulimits: ${34}
-	    #interactive: ${35}
-	    #links: ${36}
-	    #oom_score_adj: ${37}
-	    #restart_policy: ${38:on-failure}
-	    #paused: ${39}
-	    #tls_verify: ${40}
-	    #stop_timeout: ${41}
-	    #kernel_memory: ${42}
-	    #env_file: ${43}
-	    #cpu_quota: ${44}
-	    #read_only: ${45}
-	    #cpuset_mems: ${46}
-	    #hostname: ${47}
-	    #state: ${48:started}
-	    #cleanup: ${49}
-	    #entrypoint: ${50}
-	    #key_path: ${51}
-	    #env: ${52}
-	    #keep_volumes: ${53:True}
-	    #blkio_weight: ${54}
-	    #privileged: ${55}
-	    #api_version: ${56:default provided by docker-py}
-	    #exposed_ports: ${57}
-	    #trust_image_content: ${58}
-	    #cacert_path: ${59}
-	    #log_driver: ${60}
-	    #oom_killer: ${61}
-	    #shm_size: ${62}
-	    #kill_signal: ${63}
-	    #tls_hostname: ${64:localhost}
-	    #volume_driver: ${65:none}
-	    #user: ${66}
-	    #groups: ${67}
-	    #cert_path: ${68}
-	    #purge_networks: ${69}
-	    #tls: ${70}
-	    #ignore_image: ${71}
-	    #ssl_version: ${72:1.0}
-	    #security_opts: ${73}
-	    #etc_hosts: ${74}
-	    #command: ${75}
-	    #volumes: ${76}
-	    #cpu_shares: ${77}
-	    #restart_retries: ${78}
+	    #tmpfs: ${14}
+	    #working_dir: ${15}
+	    #capabilities: ${16}
+	    #restart: ${17}
+	    #mac_address: ${18}
+	    #volumes_from: ${19}
+	    #log_options: ${20}
+	    #memory_reservation: ${21}
+	    #recreate: ${22}
+	    #ipc_mode: ${23}
+	    #memory: ${24}
+	    #memory_swappiness: ${25}
+	    #network_mode: ${26}
+	    #detach: ${27:True}
+	    #memory_swap: ${28}
+	    #pull: ${29}
+	    #stop_signal: ${30}
+	    #devices: ${31}
+	    #uts: ${32}
+	    #published_ports: ${33}
+	    #timeout: ${34:60}
+	    #dns_search_domains: ${35}
+	    #ulimits: ${36}
+	    #interactive: ${37}
+	    #links: ${38}
+	    #oom_score_adj: ${39}
+	    #restart_policy: ${40:on-failure}
+	    #paused: ${41}
+	    #tls_verify: ${42}
+	    #stop_timeout: ${43}
+	    #kernel_memory: ${44}
+	    #env_file: ${45}
+	    #cpu_quota: ${46}
+	    #read_only: ${47}
+	    #cpuset_mems: ${48}
+	    #hostname: ${49}
+	    #state: ${50:started}
+	    #cleanup: ${51}
+	    #entrypoint: ${52}
+	    #key_path: ${53}
+	    #env: ${54}
+	    #keep_volumes: ${55:True}
+	    #blkio_weight: ${56}
+	    #privileged: ${57}
+	    #api_version: ${58:default provided by docker-py}
+	    #exposed_ports: ${59}
+	    #trust_image_content: ${60}
+	    #cacert_path: ${61}
+	    #log_driver: ${62}
+	    #oom_killer: ${63}
+	    #shm_size: ${64}
+	    #kill_signal: ${65}
+	    #tls_hostname: ${66:localhost}
+	    #volume_driver: ${67:none}
+	    #user: ${68}
+	    #groups: ${69}
+	    #cert_path: ${70}
+	    #purge_networks: ${71}
+	    #tls: ${72}
+	    #ignore_image: ${73}
+	    #ssl_version: ${74:1.0}
+	    #security_opts: ${75}
+	    #etc_hosts: ${76}
+	    #sysctls: ${77}
+	    #command: ${78}
+	    #volumes: ${79}
+	    #cpu_shares: ${80}
+	    #restart_retries: ${81}
 
 snippet docker_image
 	- name: ${1:task_description}
@@ -4310,6 +6495,25 @@ snippet docker_network
 	    #appends: ${19}
 	    #api_version: ${20:default provided by docker-py}
 
+snippet docker_secret
+	- name: ${1:task_description}
+	  docker_secret:
+	    name: ${2}
+	    #tls: ${3}
+	    #cacert_path: ${4}
+	    #force: ${5}
+	    #labels: ${6}
+	    #ssl_version: ${7:1.0}
+	    #state: ${8:present}
+	    #tls_hostname: ${9:localhost}
+	    #docker_host: ${10:unix://var/run/docker.sock}
+	    #tls_verify: ${11}
+	    #key_path: ${12}
+	    #timeout: ${13:60}
+	    #cert_path: ${14}
+	    #data: ${15}
+	    #api_version: ${16:default provided by docker-py}
+
 snippet docker_service
 	- name: ${1:task_description}
 	  docker_service:
@@ -4342,6 +6546,26 @@ snippet docker_service
 	    #api_version: ${28:default provided by docker-py}
 	    #build: ${29}
 
+snippet docker_volume
+	- name: ${1:task_description}
+	  docker_volume:
+	    name: ${2}
+	    #tls: ${3}
+	    #cacert_path: ${4}
+	    #force: ${5:no}
+	    #driver: ${6:local}
+	    #driver_options: ${7}
+	    #labels: ${8}
+	    #ssl_version: ${9:1.0}
+	    #state: ${10:present}
+	    #tls_hostname: ${11:localhost}
+	    #docker_host: ${12:unix://var/run/docker.sock}
+	    #tls_verify: ${13}
+	    #key_path: ${14}
+	    #timeout: ${15:60}
+	    #cert_path: ${16}
+	    #api_version: ${17:default provided by docker-py}
+
 snippet dpkg_selections
 	- name: ${1:task_description}
 	  dpkg_selections:
@@ -4369,6 +6593,20 @@ snippet dynamodb_table
 	    #state: ${17:present}
 	    #validate_certs: ${18:yes}
 	    #hash_key_type: ${19:STRING}
+
+snippet dynamodb_ttl
+	- name: ${1:task_description}
+	  dynamodb_ttl:
+	    attribute_name: ${2}
+	    table_name: ${3}
+	    #aws_secret_key: ${4}
+	    #profile: ${5}
+	    #aws_access_key: ${6}
+	    #security_token: ${7}
+	    #region: ${8}
+	    #state: ${9:enable}
+	    #ec2_url: ${10}
+	    #validate_certs: ${11:yes}
 
 snippet easy_install
 	- name: ${1:task_description}
@@ -4566,9 +6804,10 @@ snippet ec2_customer_gateway
 	    #security_token: ${7}
 	    #validate_certs: ${8:yes}
 	    #region: ${9}
-	    #bgp_asn: ${10}
+	    #ec2_url: ${10}
 	    #state: ${11:present}
-	    #ec2_url: ${12}
+	    #routing: ${12:dynamic}
+	    #bgp_asn: ${13}
 
 snippet ec2_eip
 	- name: ${1:task_description}
@@ -4588,80 +6827,18 @@ snippet ec2_eip
 	    #release_on_disassociation: ${14}
 	    #device_id: ${15}
 
-snippet ec2_elb
-	- name: ${1:task_description}
-	  ec2_elb:
-	    instance_id: ${2}
-	    state: ${3}
-	    #aws_secret_key: ${4}
-	    #profile: ${5}
-	    #aws_access_key: ${6}
-	    #security_token: ${7}
-	    #region: ${8}
-	    #wait_timeout: ${9}
-	    #ec2_url: ${10}
-	    #wait: ${11:True}
-	    #validate_certs: ${12:yes}
-	    #enable_availability_zone: ${13:True}
-	    #ec2_elbs: ${14:None}
-
-snippet ec2_elb_facts
-	- name: ${1:task_description}
-	  ec2_elb_facts:
-	    #aws_secret_key: ${2}
-	    #profile: ${3}
-	    #aws_access_key: ${4}
-	    #security_token: ${5}
-	    #region: ${6}
-	    #names: ${7}
-	    #ec2_url: ${8}
-	    #validate_certs: ${9:yes}
-
-snippet ec2_elb_lb
-	- name: ${1:task_description}
-	  ec2_elb_lb:
-	    name: ${2}
-	    state: ${3}
-	    #profile: ${4}
-	    #subnets: ${5:None}
-	    #health_check: ${6:None}
-	    #tags: ${7}
-	    #purge_subnets: ${8}
-	    #aws_access_key: ${9}
-	    #instance_ids: ${10}
-	    #zones: ${11}
-	    #idle_timeout: ${12}
-	    #wait_timeout: ${13:60}
-	    #ec2_url: ${14}
-	    #cross_az_load_balancing: ${15:no}
-	    #security_group_ids: ${16:None}
-	    #purge_zones: ${17}
-	    #wait: ${18}
-	    #aws_secret_key: ${19}
-	    #purge_instance_ids: ${20}
-	    #connection_draining_timeout: ${21}
-	    #security_token: ${22}
-	    #region: ${23}
-	    #listeners: ${24}
-	    #access_logs: ${25:None}
-	    #security_group_names: ${26:None}
-	    #purge_listeners: ${27:True}
-	    #scheme: ${28:internet-facing}
-	    #validate_certs: ${29:yes}
-	    #stickiness: ${30}
-
 snippet ec2_eni
 	- name: ${1:task_description}
 	  ec2_eni:
-	    subnet_id: ${2}
-	    #profile: ${3}
-	    #description: ${4}
-	    #ec2_url: ${5}
-	    #security_groups: ${6}
-	    #aws_secret_key: ${7}
-	    #secondary_private_ip_addresses: ${8}
-	    #aws_access_key: ${9}
-	    #security_token: ${10}
+	    #profile: ${2}
+	    #description: ${3}
+	    #ec2_url: ${4}
+	    #security_groups: ${5}
+	    #aws_secret_key: ${6}
+	    #secondary_private_ip_addresses: ${7}
+	    #aws_access_key: ${8}
+	    #security_token: ${9}
+	    #subnet_id: ${10}
 	    #validate_certs: ${11:yes}
 	    #region: ${12}
 	    #device_index: ${13}
@@ -4687,29 +6864,25 @@ snippet ec2_eni_facts
 	    #ec2_url: ${8}
 	    #validate_certs: ${9:yes}
 
-snippet ec2_facts
-	- name: ${1:task_description}
-	  ec2_facts:
-	    #validate_certs: ${2:yes}
-
 snippet ec2_group
 	- name: ${1:task_description}
 	  ec2_group:
-	    name: ${2}
-	    #aws_secret_key: ${3}
-	    #profile: ${4}
-	    #aws_access_key: ${5}
-	    #security_token: ${6}
-	    #rules_egress: ${7}
-	    #rules: ${8}
-	    #region: ${9}
-	    #description: ${10}
-	    #purge_rules: ${11:true}
-	    #state: ${12:present}
-	    #ec2_url: ${13}
-	    #vpc_id: ${14}
-	    #validate_certs: ${15:yes}
-	    #purge_rules_egress: ${16:true}
+	    #profile: ${2}
+	    #rules_egress: ${3}
+	    #description: ${4}
+	    #purge_rules: ${5:true}
+	    #rules: ${6}
+	    #ec2_url: ${7}
+	    #purge_rules_egress: ${8:true}
+	    #aws_secret_key: ${9}
+	    #aws_access_key: ${10}
+	    #name: ${11}
+	    #security_token: ${12}
+	    #region: ${13}
+	    #state: ${14:present}
+	    #vpc_id: ${15}
+	    #group_id: ${16}
+	    #validate_certs: ${17:yes}
 
 snippet ec2_group_facts
 	- name: ${1:task_description}
@@ -4722,6 +6895,19 @@ snippet ec2_group_facts
 	    #filters: ${7}
 	    #ec2_url: ${8}
 	    #validate_certs: ${9:yes}
+
+snippet ec2_instance_facts
+	- name: ${1:task_description}
+	  ec2_instance_facts:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #security_token: ${5}
+	    #region: ${6}
+	    #instance_ids: ${7}
+	    #filters: ${8}
+	    #ec2_url: ${9}
+	    #validate_certs: ${10:yes}
 
 snippet ec2_key
 	- name: ${1:task_description}
@@ -4767,7 +6953,8 @@ snippet ec2_lc
 	    #ebs_optimized: ${23}
 	    #assign_public_ip: ${24}
 	    #volumes: ${25}
-	    #validate_certs: ${26:yes}
+	    #vpc_id: ${26}
+	    #validate_certs: ${27:yes}
 
 snippet ec2_lc_facts
 	- name: ${1:task_description}
@@ -4793,7 +6980,11 @@ snippet ec2_lc_find
 	    #sort_order: ${4:ascending}
 	    #limit: ${5}
 
-snippet ec2_metric_alarm
+snippet ec2_metadata_facts
+	- name: ${1:task_description}
+	  ec2_metadata_facts:snippet ec2_metadata_facts
+	- name: ${1:task_description}
+	  ec2_metadata_facts:snippet ec2_metric_alarm
 	- name: ${1:task_description}
 	  ec2_metric_alarm:
 	    name: ${2}
@@ -5014,6 +7205,19 @@ snippet ec2_vpc_endpoint
 	    #validate_certs: ${17:yes}
 	    #route_table_ids: ${18}
 
+snippet ec2_vpc_endpoint_facts
+	- name: ${1:task_description}
+	  ec2_vpc_endpoint_facts:
+	    query: ${2}
+	    #aws_secret_key: ${3}
+	    #profile: ${4}
+	    #aws_access_key: ${5}
+	    #vpc_endpoint_ids: ${6:None}
+	    #filters: ${7:None}
+	    #security_token: ${8}
+	    #ec2_url: ${9}
+	    #validate_certs: ${10:yes}
+
 snippet ec2_vpc_igw
 	- name: ${1:task_description}
 	  ec2_vpc_igw:
@@ -5022,10 +7226,11 @@ snippet ec2_vpc_igw
 	    #profile: ${4}
 	    #aws_access_key: ${5}
 	    #security_token: ${6}
-	    #region: ${7}
-	    #state: ${8:present}
-	    #ec2_url: ${9}
-	    #validate_certs: ${10:yes}
+	    #tags: ${7}
+	    #region: ${8}
+	    #state: ${9:present}
+	    #ec2_url: ${10}
+	    #validate_certs: ${11:yes}
 
 snippet ec2_vpc_igw_facts
 	- name: ${1:task_description}
@@ -5043,19 +7248,20 @@ snippet ec2_vpc_igw_facts
 snippet ec2_vpc_nacl
 	- name: ${1:task_description}
 	  ec2_vpc_nacl:
-	    name: ${2}
-	    vpc_id: ${3}
-	    #aws_secret_key: ${4}
-	    #profile: ${5}
-	    #aws_access_key: ${6}
-	    #security_token: ${7}
-	    #subnets: ${8}
-	    #tags: ${9}
-	    #ingress: ${10}
-	    #state: ${11:present}
-	    #egress: ${12}
-	    #ec2_url: ${13}
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #name: ${5}
+	    #security_token: ${6}
+	    #subnets: ${7}
+	    #tags: ${8}
+	    #ingress: ${9}
+	    #state: ${10:present}
+	    #egress: ${11}
+	    #ec2_url: ${12}
+	    #vpc_id: ${13}
 	    #validate_certs: ${14:yes}
+	    #nacl_id: ${15}
 
 snippet ec2_vpc_nacl_facts
 	- name: ${1:task_description}
@@ -5152,12 +7358,24 @@ snippet ec2_vpc_peer
 	    #vpc_id: ${12}
 	    #validate_certs: ${13:yes}
 
+snippet ec2_vpc_peering_facts
+	- name: ${1:task_description}
+	  ec2_vpc_peering_facts:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #filters: ${5:None}
+	    #security_token: ${6}
+	    #ec2_url: ${7}
+	    #peer_connection_ids: ${8:None}
+	    #validate_certs: ${9:yes}
+
 snippet ec2_vpc_route_table
 	- name: ${1:task_description}
 	  ec2_vpc_route_table:
-	    subnets: ${2}
-	    vpc_id: ${3}
-	    #profile: ${4}
+	    vpc_id: ${2}
+	    #profile: ${3}
+	    #subnets: ${4}
 	    #tags: ${5}
 	    #purge_subnets: ${6:true}
 	    #ec2_url: ${7}
@@ -5196,10 +7414,11 @@ snippet ec2_vpc_subnet
 	    #region: ${7}
 	    #state: ${8:present}
 	    #ec2_url: ${9}
-	    #vpc_id: ${10}
-	    #cidr: ${11}
-	    #az: ${12}
-	    #validate_certs: ${13:yes}
+	    #map_public: ${10}
+	    #vpc_id: ${11}
+	    #cidr: ${12}
+	    #az: ${13}
+	    #validate_certs: ${14:yes}
 
 snippet ec2_vpc_subnet_facts
 	- name: ${1:task_description}
@@ -5480,6 +7699,214 @@ snippet elasticsearch_plugin
 	    #plugin_dir: ${9:/usr/share/elasticsearch/plugins/}
 	    #plugin_bin: ${10:/usr/share/elasticsearch/bin/plugin}
 
+snippet elb_application_lb
+	- name: ${1:task_description}
+	  elb_application_lb:
+	    name: ${2}
+	    state: ${3}
+	    #profile: ${4}
+	    #subnets: ${5}
+	    #tags: ${6}
+	    #purge_tags: ${7:True}
+	    #idle_timeout: ${8:60}
+	    #deletion_protection: ${9}
+	    #ec2_url: ${10}
+	    #access_logs_s3_prefix: ${11}
+	    #security_groups: ${12}
+	    #access_logs_enabled: ${13}
+	    #aws_secret_key: ${14}
+	    #aws_access_key: ${15}
+	    #security_token: ${16}
+	    #access_logs_s3_bucket: ${17}
+	    #region: ${18}
+	    #listeners: ${19}
+	    #purge_listeners: ${20:True}
+	    #scheme: ${21:internet-facing}
+	    #validate_certs: ${22:yes}
+
+snippet elb_application_lb_facts
+	- name: ${1:task_description}
+	  elb_application_lb_facts:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #security_token: ${5}
+	    #region: ${6}
+	    #names: ${7}
+	    #ec2_url: ${8}
+	    #validate_certs: ${9:yes}
+	    #load_balancer_arns: ${10}
+
+snippet elb_classic_lb
+	- name: ${1:task_description}
+	  elb_classic_lb:
+	    name: ${2}
+	    state: ${3}
+	    #profile: ${4}
+	    #subnets: ${5:None}
+	    #health_check: ${6:None}
+	    #tags: ${7}
+	    #purge_subnets: ${8}
+	    #aws_access_key: ${9}
+	    #instance_ids: ${10}
+	    #zones: ${11}
+	    #idle_timeout: ${12}
+	    #wait_timeout: ${13:60}
+	    #ec2_url: ${14}
+	    #cross_az_load_balancing: ${15:no}
+	    #security_group_ids: ${16:None}
+	    #purge_zones: ${17}
+	    #wait: ${18}
+	    #aws_secret_key: ${19}
+	    #purge_instance_ids: ${20}
+	    #connection_draining_timeout: ${21}
+	    #security_token: ${22}
+	    #region: ${23}
+	    #listeners: ${24}
+	    #access_logs: ${25:None}
+	    #security_group_names: ${26:None}
+	    #purge_listeners: ${27:True}
+	    #scheme: ${28:internet-facing}
+	    #validate_certs: ${29:yes}
+	    #stickiness: ${30}
+
+snippet elb_classic_lb
+	- name: ${1:task_description}
+	  elb_classic_lb:
+	    name: ${2}
+	    state: ${3}
+	    #profile: ${4}
+	    #subnets: ${5:None}
+	    #health_check: ${6:None}
+	    #tags: ${7}
+	    #purge_subnets: ${8}
+	    #aws_access_key: ${9}
+	    #instance_ids: ${10}
+	    #zones: ${11}
+	    #idle_timeout: ${12}
+	    #wait_timeout: ${13:60}
+	    #ec2_url: ${14}
+	    #cross_az_load_balancing: ${15:no}
+	    #security_group_ids: ${16:None}
+	    #purge_zones: ${17}
+	    #wait: ${18}
+	    #aws_secret_key: ${19}
+	    #purge_instance_ids: ${20}
+	    #connection_draining_timeout: ${21}
+	    #security_token: ${22}
+	    #region: ${23}
+	    #listeners: ${24}
+	    #access_logs: ${25:None}
+	    #security_group_names: ${26:None}
+	    #purge_listeners: ${27:True}
+	    #scheme: ${28:internet-facing}
+	    #validate_certs: ${29:yes}
+	    #stickiness: ${30}
+
+snippet elb_classic_lb_facts
+	- name: ${1:task_description}
+	  elb_classic_lb_facts:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #security_token: ${5}
+	    #region: ${6}
+	    #names: ${7}
+	    #ec2_url: ${8}
+	    #validate_certs: ${9:yes}
+
+snippet elb_classic_lb_facts
+	- name: ${1:task_description}
+	  elb_classic_lb_facts:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #security_token: ${5}
+	    #region: ${6}
+	    #names: ${7}
+	    #ec2_url: ${8}
+	    #validate_certs: ${9:yes}
+
+snippet elb_instance
+	- name: ${1:task_description}
+	  elb_instance:
+	    instance_id: ${2}
+	    state: ${3}
+	    #aws_secret_key: ${4}
+	    #profile: ${5}
+	    #aws_access_key: ${6}
+	    #security_token: ${7}
+	    #region: ${8}
+	    #wait_timeout: ${9}
+	    #ec2_url: ${10}
+	    #wait: ${11:True}
+	    #validate_certs: ${12:yes}
+	    #enable_availability_zone: ${13:True}
+	    #ec2_elbs: ${14:None}
+
+snippet elb_instance
+	- name: ${1:task_description}
+	  elb_instance:
+	    instance_id: ${2}
+	    state: ${3}
+	    #aws_secret_key: ${4}
+	    #profile: ${5}
+	    #aws_access_key: ${6}
+	    #security_token: ${7}
+	    #region: ${8}
+	    #wait_timeout: ${9}
+	    #ec2_url: ${10}
+	    #wait: ${11:True}
+	    #validate_certs: ${12:yes}
+	    #enable_availability_zone: ${13:True}
+	    #ec2_elbs: ${14:None}
+
+snippet elb_target_group
+	- name: ${1:task_description}
+	  elb_target_group:
+	    name: ${2}
+	    state: ${3}
+	    #profile: ${4}
+	    #protocol: ${5}
+	    #tags: ${6}
+	    #purge_tags: ${7:True}
+	    #health_check_port: ${8:The port on which each target receives traffic from the load balancer.}
+	    #successful_response_codes: ${9}
+	    #ec2_url: ${10}
+	    #stickiness_type: ${11:lb_cookie}
+	    #modify_targets: ${12:True}
+	    #healthy_threshold_count: ${13}
+	    #targets: ${14}
+	    #health_check_path: ${15}
+	    #health_check_protocol: ${16}
+	    #aws_secret_key: ${17}
+	    #unhealthy_threshold_count: ${18}
+	    #aws_access_key: ${19}
+	    #health_check_interval: ${20}
+	    #security_token: ${21}
+	    #region: ${22}
+	    #port: ${23}
+	    #stickiness_lb_cookie_duration: ${24}
+	    #stickiness_enabled: ${25}
+	    #vpc_id: ${26}
+	    #deregistration_delay_timeout: ${27}
+	    #validate_certs: ${28:yes}
+	    #health_check_timeout: ${29}
+
+snippet elb_target_group_facts
+	- name: ${1:task_description}
+	  elb_target_group_facts:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #load_balancer_arn: ${5}
+	    #security_token: ${6}
+	    #region: ${7}
+	    #target_group_arns: ${8}
+	    #names: ${9}
+	    #ec2_url: ${10}
+	    #validate_certs: ${11:yes}
+
 snippet eos_banner
 	- name: ${1:task_description}
 	  eos_banner:
@@ -5506,20 +7933,24 @@ snippet eos_config
 	- name: ${1:task_description}
 	  eos_config:
 	    #authorize: ${2}
-	    #src: ${3}
+	    #force: ${3}
 	    #after: ${4}
-	    #force: ${5}
-	    #config: ${6}
-	    #auth_pass: ${7:none}
-	    #lines: ${8}
-	    #replace: ${9:line}
-	    #parents: ${10}
-	    #defaults: ${11}
-	    #provider: ${12}
-	    #save: ${13}
-	    #backup: ${14}
-	    #match: ${15:line}
-	    #before: ${16}
+	    #diff_against: ${5:session}
+	    #replace: ${6:line}
+	    #running_config: ${7}
+	    #diff_ignore_lines: ${8}
+	    #src: ${9}
+	    #save_when: ${10:never}
+	    #auth_pass: ${11:none}
+	    #lines: ${12}
+	    #intended_config: ${13}
+	    #parents: ${14}
+	    #defaults: ${15}
+	    #provider: ${16}
+	    #before: ${17}
+	    #save: ${18}
+	    #backup: ${19}
+	    #match: ${20:line}
 
 snippet eos_eapi
 	- name: ${1:task_description}
@@ -5546,6 +7977,18 @@ snippet eos_facts
 	    #auth_pass: ${4:none}
 	    #provider: ${5}
 
+snippet eos_logging
+	- name: ${1:task_description}
+	  eos_logging:
+	    #name: ${2}
+	    #level: ${3}
+	    #dest: ${4}
+	    #facility: ${5}
+	    #purge: ${6}
+	    #state: ${7:present}
+	    #aggregate: ${8}
+	    #size: ${9}
+
 snippet eos_system
 	- name: ${1:task_description}
 	  eos_system:
@@ -5559,34 +8002,42 @@ snippet eos_system
 	    #provider: ${9}
 	    #name_servers: ${10}
 
-snippet eos_template
-	- name: ${1:task_description}
-	  eos_template:
-	    src: ${2}
-	    #authorize: ${3}
-	    #force: ${4}
-	    #backup: ${5}
-	    #auth_pass: ${6:none}
-	    #replace: ${7}
-	    #include_defaults: ${8}
-	    #provider: ${9}
-	    #config: ${10}
-
 snippet eos_user
 	- name: ${1:task_description}
 	  eos_user:
 	    #authorize: ${2}
 	    #username: ${3}
 	    #update_password: ${4:always}
-	    #users: ${5}
+	    #sshkey: ${5}
 	    #auth_pass: ${6:none}
-	    #purge: ${7}
-	    #nopassword: ${8}
-	    #state: ${9:present}
-	    #role: ${10}
-	    #provider: ${11}
-	    #privilege: ${12}
-	    #sshkey: ${13}
+	    #nopassword: ${7}
+	    #purge: ${8}
+	    #privilege: ${9}
+	    #state: ${10:present}
+	    #role: ${11}
+	    #provider: ${12}
+	    #aggregate: ${13}
+	    #password: ${14}
+
+snippet eos_vlan
+	- name: ${1:task_description}
+	  eos_vlan:
+	    vlan_id: ${2}
+	    #purge: ${3}
+	    #state: ${4:present}
+	    #name: ${5}
+	    #aggregate: ${6}
+	    #interfaces: ${7}
+
+snippet eos_vrf
+	- name: ${1:task_description}
+	  eos_vrf:
+	    name: ${2}
+	    #purge: ${3}
+	    #rd: ${4}
+	    #state: ${5:present}
+	    #aggregate: ${6}
+	    #interfaces: ${7}
 
 snippet execute_lambda
 	- name: ${1:task_description}
@@ -5700,10 +8151,10 @@ snippet find
 	    #recurse: ${6:no}
 	    #age_stamp: ${7:mtime}
 	    #patterns: ${8:*}
-	    #get_checksum: ${9:False}
-	    #use_regex: ${10:False}
-	    #follow: ${11:False}
-	    #hidden: ${12:False}
+	    #get_checksum: ${9:no}
+	    #use_regex: ${10:no}
+	    #follow: ${11:no}
+	    #hidden: ${12:no}
 	    #size: ${13}
 
 snippet firewalld
@@ -5761,6 +8212,29 @@ snippet foreman
 	    params: ${4}
 	    server_url: ${5}
 	    entity: ${6}
+
+snippet fortios_address
+	- name: ${1:task_description}
+	  fortios_address:
+	    state: ${2}
+	    name: ${3}
+	    #username: ${4}
+	    #comment: ${5}
+	    #config_file: ${6}
+	    #file_mode: ${7}
+	    #backup_path: ${8}
+	    #country: ${9}
+	    #value: ${10}
+	    #interface: ${11:any}
+	    #host: ${12}
+	    #end_ip: ${13}
+	    #backup_filename: ${14}
+	    #timeout: ${15:60}
+	    #type: ${16}
+	    #start_ip: ${17}
+	    #password: ${18}
+	    #backup: ${19}
+	    #vdom: ${20}
 
 snippet fortios_config
 	- name: ${1:task_description}
@@ -5914,7 +8388,7 @@ snippet gce_instance_template
 	    #image: ${6}
 	    #service_account_permissions: ${7}
 	    #pem_file: ${8}
-	    #can_ip_forward: ${9}
+	    #subnetwork_region: ${9}
 	    #disk_type: ${10:pd-standard}
 	    #size: ${11:f1-micro}
 	    #network: ${12:default}
@@ -5925,12 +8399,23 @@ snippet gce_instance_template
 	    #disk_auto_delete: ${17:True}
 	    #source: ${18}
 	    #state: ${19:present}
-	    #credentials_file: ${20}
-	    #image_family: ${21}
-	    #subnetwork: ${22}
-	    #project_id: ${23}
-	    #preemptible: ${24}
-	    #metadata: ${25}
+	    #disks_gce_struct: ${20}
+	    #credentials_file: ${21}
+	    #image_family: ${22}
+	    #subnetwork: ${23}
+	    #project_id: ${24}
+	    #can_ip_forward: ${25}
+	    #preemptible: ${26}
+	    #metadata: ${27}
+
+snippet gce_labels
+	- name: ${1:task_description}
+	  gce_labels:
+	    #labels: ${2}
+	    #resource_url: ${3}
+	    #resource_name: ${4}
+	    #resource_type: ${5}
+	    #resource_location: ${6}
 
 snippet gce_lb
 	- name: ${1:task_description}
@@ -6056,6 +8541,42 @@ snippet gcp_backend_service
 	    #credentials_file: ${11}
 	    #project_id: ${12}
 
+snippet gcp_forwarding_rule
+	- name: ${1:task_description}
+	  gcp_forwarding_rule:
+	    forwarding_rule_name: ${2}
+	    state: ${3}
+	    #port_range: ${4}
+	    #protocol: ${5}
+	    #target: ${6}
+	    #address: ${7}
+	    #region: ${8}
+
+snippet gcp_healthcheck
+	- name: ${1:task_description}
+	  gcp_healthcheck:
+	    healthcheck_name: ${2}
+	    healthcheck_type: ${3}
+	    host_header: ${4:}
+	    state: ${5}
+	    #check_interval: ${6:5}
+	    #service_account_email: ${7}
+	    #healthy_threshold: ${8:2}
+	    #service_account_permissions: ${9}
+	    #unhealthy_threshold: ${10:2}
+	    #timeout: ${11:5}
+	    #credentials_file: ${12}
+	    #project_id: ${13}
+	    #port: ${14}
+	    #request_path: ${15:/}
+
+snippet gcp_target_proxy
+	- name: ${1:task_description}
+	  gcp_target_proxy:
+	    target_proxy_type: ${2}
+	    target_proxy_name: ${3}
+	    #url_map_name: ${4}
+
 snippet gcp_url_map
 	- name: ${1:task_description}
 	  gcp_url_map:
@@ -6162,14 +8683,15 @@ snippet git
 	    #ssh_opts: ${10:None}
 	    #bare: ${11:no}
 	    #verify_commit: ${12:no}
-	    #recursive: ${13:yes}
-	    #executable: ${14}
-	    #remote: ${15:origin}
-	    #refspec: ${16}
-	    #umask: ${17}
-	    #depth: ${18}
-	    #version: ${19:HEAD}
-	    #key_file: ${20:None}
+	    #archive: ${13}
+	    #recursive: ${14:yes}
+	    #executable: ${15}
+	    #remote: ${16:origin}
+	    #refspec: ${17}
+	    #umask: ${18}
+	    #depth: ${19}
+	    #version: ${20:HEAD}
+	    #key_file: ${21:None}
 
 snippet git_config
 	- name: ${1:task_description}
@@ -6179,6 +8701,21 @@ snippet git_config
 	    #list_all: ${4}
 	    #name: ${5}
 	    #value: ${6}
+
+snippet github_deploy_key
+	- name: ${1:task_description}
+	  github_deploy_key:
+	    name: ${2:None}
+	    repo: ${3:None}
+	    owner: ${4:None}
+	    key: ${5:None}
+	    #read_only: ${6:True}
+	    #username: ${7}
+	    #force: ${8}
+	    #state: ${9:present}
+	    #token: ${10}
+	    #otp: ${11}
+	    #password: ${12}
 
 snippet github_hooks
 	- name: ${1:task_description}
@@ -6211,10 +8748,17 @@ snippet github_key
 snippet github_release
 	- name: ${1:task_description}
 	  github_release:
-	    repo: ${2}
-	    action: ${3}
-	    token: ${4}
-	    user: ${5}
+	    repo: ${2:None}
+	    user: ${3:None}
+	    action: ${4}
+	    #body: ${5}
+	    #target: ${6}
+	    #token: ${7}
+	    #tag: ${8}
+	    #draft: ${9}
+	    #prerelease: ${10}
+	    #password: ${11}
+	    #name: ${12}
 
 snippet gitlab_group
 	- name: ${1:task_description}
@@ -6262,10 +8806,11 @@ snippet gitlab_user
 	    #sshkey_name: ${9}
 	    #login_user: ${10}
 	    #login_token: ${11}
-	    #access_level: ${12}
-	    #state: ${13:present}
-	    #login_password: ${14}
-	    #validate_certs: ${15:True}
+	    #confirm: ${12:True}
+	    #access_level: ${13}
+	    #state: ${14:present}
+	    #login_password: ${15}
+	    #validate_certs: ${16:True}
 
 snippet gluster_volume
 	- name: ${1:task_description}
@@ -6300,6 +8845,7 @@ snippet group_by
 	- name: ${1:task_description}
 	  group_by:
 	    key: ${2}
+	    #parents: ${3:all}
 
 snippet grove
 	- name: ${1:task_description}
@@ -6310,6 +8856,17 @@ snippet grove
 	    #url: ${5}
 	    #icon_url: ${6}
 	    #validate_certs: ${7:yes}
+
+snippet gunicorn
+	- name: ${1:task_description}
+	  gunicorn:
+	    app: ${2}
+	    #venv: ${3}
+	    #user: ${4}
+	    #config: ${5}
+	    #worker: ${6}
+	    #chdir: ${7}
+	    #pid: ${8}
 
 snippet hall
 	- name: ${1:task_description}
@@ -6332,6 +8889,18 @@ snippet haproxy
 	    #fail_on_not_found: ${9}
 	    #shutdown_sessions: ${10}
 	    #wait: ${11}
+
+snippet helm
+	- name: ${1:task_description}
+	  helm:
+	    #disable_hooks: ${2}
+	    #name: ${3}
+	    #namespace: ${4:default}
+	    #chart: ${5}
+	    #state: ${6:installed}
+	    #values: ${7}
+	    #host: ${8:localhost}
+	    #port: ${9:44134}
 
 snippet hg
 	- name: ${1:task_description}
@@ -6404,19 +8973,21 @@ snippet hpilo_boot
 	- name: ${1:task_description}
 	  hpilo_boot:
 	    host: ${2}
-	    #state: ${3:boot_once}
-	    #force: ${4}
-	    #media: ${5:network}
-	    #image: ${6}
-	    #password: ${7:admin}
+	    #force: ${3}
+	    #media: ${4:network}
+	    #image: ${5}
+	    #ssl_version: ${6:TLSv1}
+	    #state: ${7:boot_once}
 	    #login: ${8:Administrator}
+	    #password: ${9:admin}
 
 snippet hpilo_facts
 	- name: ${1:task_description}
 	  hpilo_facts:
 	    host: ${2}
 	    #password: ${3:admin}
-	    #login: ${4:Administrator}
+	    #ssl_version: ${4:TLSv1}
+	    #login: ${5:Administrator}
 
 snippet hponcfg
 	- name: ${1:task_description}
@@ -6462,21 +9033,59 @@ snippet iam_cert
 	- name: ${1:task_description}
 	  iam_cert:
 	    name: ${2}
-	    state: ${3:None}
+	    state: ${3}
 	    #profile: ${4}
-	    #aws_secret_key: ${5}
+	    #new_name: ${5}
 	    #dup_ok: ${6}
 	    #key: ${7}
 	    #ec2_url: ${8}
 	    #path: ${9:/}
 	    #cert_chain: ${10}
-	    #new_name: ${11}
+	    #aws_secret_key: ${11}
 	    #aws_access_key: ${12}
 	    #new_path: ${13}
 	    #security_token: ${14}
 	    #region: ${15}
 	    #cert: ${16}
 	    #validate_certs: ${17:yes}
+
+snippet iam_cert_facts
+	- name: ${1:task_description}
+	  iam_cert_facts:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #security_token: ${5}
+	    #ec2_url: ${6}
+	    #certificate_name: ${7}
+	    #path_prefix: ${8}
+	    #validate_certs: ${9:yes}
+
+snippet iam_group
+	- name: ${1:task_description}
+	  iam_group:
+	    name: ${2}
+	    state: ${3}
+	    #aws_secret_key: ${4}
+	    #profile: ${5}
+	    #aws_access_key: ${6}
+	    #security_token: ${7}
+	    #purge_users: ${8}
+	    #purge_policy: ${9}
+	    #managed_policy: ${10}
+	    #ec2_url: ${11}
+	    #validate_certs: ${12:yes}
+	    #users: ${13}
+
+snippet iam_managed_policy
+	- name: ${1:task_description}
+	  iam_managed_policy:
+	    state: ${2:None}
+	    policy_name: ${3}
+	    #policy_description: ${4}
+	    #make_default: ${5:True}
+	    #policy: ${6}
+	    #only_version: ${7}
 
 snippet iam_mfa_device_facts
 	- name: ${1:task_description}
@@ -6540,6 +9149,18 @@ snippet icinga2_feature
 	  icinga2_feature:
 	    name: ${2}
 	    #state: ${3:present}
+
+snippet imc_xml
+	- name: ${1:task_description}
+	  imc_xml:
+	    hostname: ${2}
+	    #username: ${3:admin}
+	    #protocol: ${4:https}
+	    #content: ${5}
+	    #timeout: ${6:30}
+	    #path: ${7}
+	    #password: ${8:password}
+	    #validate_certs: ${9:yes}
 
 snippet imgadm
 	- name: ${1:task_description}
@@ -6692,6 +9313,25 @@ snippet ini_file
 	    #backup: ${18:no}
 	    #create: ${19:yes}
 
+snippet interfaces_file
+	- name: ${1:task_description}
+	  interfaces_file:
+	    #iface: ${2}
+	    #group: ${3}
+	    #option: ${4}
+	    #state: ${5:present}
+	    #unsafe_writes: ${6}
+	    #selevel: ${7:s0}
+	    #seuser: ${8}
+	    #serole: ${9}
+	    #value: ${10}
+	    #dest: ${11:/etc/network/interfaces}
+	    #setype: ${12}
+	    #mode: ${13}
+	    #owner: ${14}
+	    #attributes: ${15:None}
+	    #backup: ${16:no}
+
 snippet ios_banner
 	- name: ${1:task_description}
 	  ios_banner:
@@ -6721,18 +9361,22 @@ snippet ios_config
 	    #multiline_delimiter: ${3:@}
 	    #force: ${4}
 	    #after: ${5}
-	    #replace: ${6:line}
-	    #before: ${7}
-	    #src: ${8}
-	    #config: ${9}
-	    #auth_pass: ${10:none}
-	    #lines: ${11}
-	    #parents: ${12}
-	    #defaults: ${13}
-	    #provider: ${14}
-	    #save: ${15}
-	    #backup: ${16}
-	    #match: ${17:line}
+	    #diff_against: ${6}
+	    #replace: ${7:line}
+	    #running_config: ${8}
+	    #diff_ignore_lines: ${9}
+	    #src: ${10}
+	    #save_when: ${11:never}
+	    #auth_pass: ${12:none}
+	    #lines: ${13}
+	    #intended_config: ${14}
+	    #parents: ${15}
+	    #defaults: ${16}
+	    #provider: ${17}
+	    #before: ${18}
+	    #save: ${19}
+	    #backup: ${20}
+	    #match: ${21:line}
 
 snippet ios_facts
 	- name: ${1:task_description}
@@ -6741,6 +9385,44 @@ snippet ios_facts
 	    #gather_subset: ${3:!config}
 	    #auth_pass: ${4:none}
 	    #provider: ${5}
+
+snippet ios_interface
+	- name: ${1:task_description}
+	  ios_interface:
+	    name: ${2}
+	    #rx_rate: ${3}
+	    #duplex: ${4:auto}
+	    #enabled: ${5}
+	    #mtu: ${6}
+	    #purge: ${7}
+	    #state: ${8:present}
+	    #aggregate: ${9}
+	    #speed: ${10}
+	    #tx_rate: ${11}
+	    #description: ${12}
+
+snippet ios_logging
+	- name: ${1:task_description}
+	  ios_logging:
+	    #name: ${2}
+	    #level: ${3}
+	    #dest: ${4}
+	    #facility: ${5}
+	    #purge: ${6}
+	    #state: ${7:present}
+	    #aggregate: ${8}
+	    #size: ${9}
+
+snippet ios_static_route
+	- name: ${1:task_description}
+	  ios_static_route:
+	    #purge: ${2}
+	    #state: ${3:present}
+	    #next_hop: ${4}
+	    #aggregate: ${5}
+	    #mask: ${6}
+	    #prefix: ${7}
+	    #admin_distance: ${8:1}
 
 snippet ios_system
 	- name: ${1:task_description}
@@ -6756,17 +9438,18 @@ snippet ios_system
 	    #name_servers: ${10}
 	    #lookup_enabled: ${11}
 
-snippet ios_template
+snippet ios_user
 	- name: ${1:task_description}
-	  ios_template:
-	    src: ${2}
-	    include_defaults: ${3}
-	    #authorize: ${4}
-	    #force: ${5}
-	    #backup: ${6}
-	    #auth_pass: ${7:none}
-	    #provider: ${8}
-	    #config: ${9}
+	  ios_user:
+	    #update_password: ${2:always}
+	    #users: ${3}
+	    #view: ${4}
+	    #purge: ${5}
+	    #privilege: ${6}
+	    #state: ${7:present}
+	    #nopassword: ${8}
+	    #password: ${9}
+	    #name: ${10}
 
 snippet ios_vrf
 	- name: ${1:task_description}
@@ -6781,6 +9464,13 @@ snippet ios_vrf
 	    #vrfs: ${9}
 	    #provider: ${10}
 	    #name: ${11}
+
+snippet iosxr_banner
+	- name: ${1:task_description}
+	  iosxr_banner:
+	    banner: ${2:None}
+	    #text: ${3}
+	    #state: ${4:present}
 
 snippet iosxr_command
 	- name: ${1:task_description}
@@ -6798,21 +9488,49 @@ snippet iosxr_config
 	    #comment: ${2:configured by iosxr_config}
 	    #src: ${3}
 	    #force: ${4}
-	    #backup: ${5}
-	    #after: ${6}
-	    #lines: ${7}
-	    #replace: ${8:line}
-	    #parents: ${9}
-	    #provider: ${10}
-	    #config: ${11}
-	    #match: ${12:line}
-	    #before: ${13}
+	    #admin: ${5}
+	    #backup: ${6}
+	    #after: ${7}
+	    #lines: ${8}
+	    #replace: ${9:line}
+	    #parents: ${10}
+	    #provider: ${11}
+	    #config: ${12}
+	    #match: ${13:line}
+	    #before: ${14}
 
 snippet iosxr_facts
 	- name: ${1:task_description}
 	  iosxr_facts:
 	    #gather_subset: ${2:!config}
 	    #provider: ${3}
+
+snippet iosxr_interface
+	- name: ${1:task_description}
+	  iosxr_interface:
+	    name: ${2}
+	    #rx_rate: ${3}
+	    #duplex: ${4}
+	    #enabled: ${5}
+	    #mtu: ${6}
+	    #purge: ${7}
+	    #state: ${8:present}
+	    #aggregate: ${9}
+	    #speed: ${10}
+	    #tx_rate: ${11}
+	    #description: ${12}
+
+snippet iosxr_logging
+	- name: ${1:task_description}
+	  iosxr_logging:
+	    #name: ${2}
+	    #level: ${3:debugging}
+	    #dest: ${4}
+	    #facility: ${5:local7}
+	    #purge: ${6}
+	    #state: ${7:present}
+	    #aggregate: ${8}
+	    #size: ${9:307200}
 
 snippet iosxr_system
 	- name: ${1:task_description}
@@ -6826,14 +9544,31 @@ snippet iosxr_system
 	    #name_servers: ${8}
 	    #lookup_enabled: ${9}
 
-snippet iosxr_template
+snippet iosxr_user
 	- name: ${1:task_description}
-	  iosxr_template:
-	    #src: ${2}
-	    #config: ${3}
-	    #force: ${4}
-	    #backup: ${5}
-	    #provider: ${6}
+	  iosxr_user:
+	    #purge: ${2}
+	    #update_password: ${3:always}
+	    #group: ${4}
+	    #users: ${5}
+	    #password: ${6}
+	    #state: ${7:present}
+	    #name: ${8}
+
+snippet ipa_dnsrecord
+	- name: ${1:task_description}
+	  ipa_dnsrecord:
+	    record_name: ${2}
+	    record_ip: ${3}
+	    ipa_pass: ${4}
+	    zone_name: ${5}
+	    #ipa_port: ${6:443}
+	    #ipa_prot: ${7:https}
+	    #record_type: ${8:A}
+	    #state: ${9:present}
+	    #ipa_host: ${10:ipa.example.com}
+	    #ipa_user: ${11:admin}
+	    #validate_certs: ${12:True}
 
 snippet ipa_group
 	- name: ${1:task_description}
@@ -6924,11 +9659,12 @@ snippet ipa_role
 	    #ipa_prot: ${8:https}
 	    #host: ${9}
 	    #hostgroup: ${10}
-	    #state: ${11:present}
-	    #ipa_host: ${12:ipa.example.com}
-	    #ipa_user: ${13:admin}
-	    #validate_certs: ${14:True}
-	    #user: ${15}
+	    #privilege: ${11:None}
+	    #state: ${12:present}
+	    #ipa_host: ${13:ipa.example.com}
+	    #ipa_user: ${14:admin}
+	    #validate_certs: ${15:True}
+	    #user: ${16}
 
 snippet ipa_sudocmd
 	- name: ${1:task_description}
@@ -7046,8 +9782,9 @@ snippet ipadm_prop
 snippet ipify_facts
 	- name: ${1:task_description}
 	  ipify_facts:
-	    #api_url: ${2:https://api.ipify.org}
-	    #timeout: ${3:10}
+	    #validate_certs: ${2:yes}
+	    #api_url: ${3:https://api.ipify.org}
+	    #timeout: ${4:10}
 
 snippet ipinfoio_facts
 	- name: ${1:task_description}
@@ -7080,37 +9817,38 @@ snippet ipmi_power
 snippet iptables
 	- name: ${1:task_description}
 	  iptables:
-	    #comment: ${2}
-	    #protocol: ${3}
-	    #goto: ${4}
+	    #tcp_flags: ${2}
+	    #comment: ${3}
+	    #protocol: ${4}
 	    #chain: ${5}
-	    #fragment: ${6}
-	    #out_interface: ${7}
-	    #to_source: ${8}
-	    #limit_burst: ${9}
-	    #ctstate: ${10}
-	    #jump: ${11}
-	    #policy: ${12}
-	    #source_port: ${13}
-	    #to_ports: ${14}
-	    #flush: ${15}
-	    #table: ${16:filter}
-	    #destination_port: ${17}
-	    #icmp_type: ${18}
-	    #to_destination: ${19}
-	    #in_interface: ${20}
-	    #uid_owner: ${21}
-	    #set_dscp_mark_class: ${22}
-	    #destination: ${23}
-	    #set_dscp_mark: ${24}
-	    #reject_with: ${25}
-	    #source: ${26}
-	    #state: ${27:present}
-	    #limit: ${28}
-	    #action: ${29:append}
-	    #set_counters: ${30}
-	    #ip_version: ${31:ipv4}
-	    #match: ${32}
+	    #out_interface: ${6}
+	    #limit_burst: ${7}
+	    #ctstate: ${8}
+	    #jump: ${9}
+	    #to_ports: ${10}
+	    #flush: ${11}
+	    #table: ${12:filter}
+	    #icmp_type: ${13}
+	    #to_destination: ${14}
+	    #uid_owner: ${15}
+	    #set_dscp_mark_class: ${16}
+	    #destination: ${17}
+	    #set_dscp_mark: ${18}
+	    #source: ${19}
+	    #state: ${20:present}
+	    #policy: ${21}
+	    #set_counters: ${22}
+	    #match: ${23}
+	    #goto: ${24}
+	    #fragment: ${25}
+	    #to_source: ${26}
+	    #in_interface: ${27}
+	    #source_port: ${28}
+	    #destination_port: ${29}
+	    #reject_with: ${30}
+	    #limit: ${31}
+	    #action: ${32:append}
+	    #ip_version: ${33:ipv4}
 
 snippet irc
 	- name: ${1:task_description}
@@ -7204,9 +9942,10 @@ snippet jenkins_script
 	    script: ${2:None}
 	    #password: ${3}
 	    #user: ${4}
-	    #url: ${5:http://localhost:8080}
-	    #args: ${6}
-	    #validate_certs: ${7:True}
+	    #timeout: ${5:10}
+	    #url: ${6:http://localhost:8080}
+	    #args: ${7}
+	    #validate_certs: ${8:True}
 
 snippet jira
 	- name: ${1:task_description}
@@ -7228,6 +9967,14 @@ snippet jira
 	    #timeout: ${16:10}
 	    #issuetype: ${17}
 	    #issue: ${18}
+
+snippet junos_banner
+	- name: ${1:task_description}
+	  junos_banner:
+	    banner: ${2}
+	    #active: ${3:True}
+	    #text: ${4}
+	    #state: ${5:present}
 
 snippet junos_command
 	- name: ${1:task_description}
@@ -7251,10 +9998,11 @@ snippet junos_config
 	    #lines: ${6}
 	    #update: ${7:merge}
 	    #replace: ${8}
-	    #zeroize: ${9}
-	    #src_format: ${10}
-	    #provider: ${11}
-	    #backup: ${12}
+	    #confirm_commit: ${9}
+	    #zeroize: ${10}
+	    #src_format: ${11}
+	    #provider: ${12}
+	    #backup: ${13}
 
 snippet junos_facts
 	- name: ${1:task_description}
@@ -7262,6 +10010,82 @@ snippet junos_facts
 	    #config_format: ${2:text}
 	    #gather_subset: ${3:!config}
 	    #provider: ${4}
+
+snippet junos_interface
+	- name: ${1:task_description}
+	  junos_interface:
+	    name: ${2}
+	    #rx_rate: ${3}
+	    #duplex: ${4:auto}
+	    #enabled: ${5}
+	    #mtu: ${6}
+	    #purge: ${7}
+	    #aggregate: ${8}
+	    #state: ${9:present}
+	    #active: ${10:True}
+	    #speed: ${11}
+	    #tx_rate: ${12}
+	    #description: ${13}
+
+snippet junos_l3_interface
+	- name: ${1:task_description}
+	  junos_l3_interface:
+	    #name: ${2}
+	    #purge: ${3}
+	    #aggregate: ${4}
+	    #state: ${5:present}
+	    #ipv4: ${6}
+	    #ipv6: ${7}
+	    #active: ${8:True}
+	    #unit: ${9}
+
+snippet junos_linkagg
+	- name: ${1:task_description}
+	  junos_linkagg:
+	    members: ${2}
+	    name: ${3}
+	    #description: ${4}
+	    #device_count: ${5}
+	    #collection: ${6}
+	    #purge: ${7}
+	    #state: ${8:present}
+	    #mode: ${9}
+	    #min_links: ${10}
+	    #active: ${11:True}
+
+snippet junos_lldp
+	- name: ${1:task_description}
+	  junos_lldp:
+	    #state: ${2:present}
+	    #enable: ${3:present}
+	    #active: ${4:True}
+	    #interval: ${5}
+	    #hold_multiplier: ${6}
+	    #transmit_delay: ${7}
+
+snippet junos_lldp_interface
+	- name: ${1:task_description}
+	  junos_lldp_interface:
+	    #aggregate: ${2}
+	    #purge: ${3}
+	    #state: ${4:present}
+	    #active: ${5:True}
+	    #name: ${6}
+
+snippet junos_logging
+	- name: ${1:task_description}
+	  junos_logging:
+	    #files: ${2}
+	    #name: ${3}
+	    #level: ${4}
+	    #dest: ${5}
+	    #facility: ${6}
+	    #purge: ${7}
+	    #aggregate: ${8}
+	    #state: ${9:present}
+	    #active: ${10:True}
+	    #rotate_frequency: ${11}
+	    #size: ${12}
 
 snippet junos_netconf
 	- name: ${1:task_description}
@@ -7288,28 +10112,66 @@ snippet junos_rpc
 	    #args: ${4}
 	    #provider: ${5}
 
-snippet junos_template
+snippet junos_static_route
 	- name: ${1:task_description}
-	  junos_template:
-	    src: ${2:None}
-	    #comment: ${3:configured by junos_template}
-	    #provider: ${4}
-	    #action: ${5:merge}
-	    #config_format: ${6}
-	    #confirm: ${7}
-	    #backup: ${8}
+	  junos_static_route:
+	    next_hop: ${2}
+	    address: ${3}
+	    #qualified_next_hop: ${4}
+	    #purge: ${5}
+	    #aggregate: ${6}
+	    #state: ${7:present}
+	    #preference: ${8}
+	    #qualified_preference: ${9}
+	    #active: ${10:True}
+
+snippet junos_system
+	- name: ${1:task_description}
+	  junos_system:
+	    #name_servers: ${2}
+	    #state: ${3:present}
+	    #active: ${4:True}
+	    #domain_search: ${5}
+	    #hostname: ${6}
+	    #domain_name: ${7}
 
 snippet junos_user
 	- name: ${1:task_description}
 	  junos_user:
-	    #sshkey: ${2}
-	    #name: ${3}
-	    #purge: ${4}
+	    #name: ${2}
+	    #purge: ${3}
+	    #active: ${4:True}
 	    #state: ${5:present}
 	    #role: ${6:read-only}
 	    #full_name: ${7}
 	    #provider: ${8}
-	    #users: ${9}
+	    #aggregate: ${9}
+	    #sshkey: ${10}
+
+snippet junos_vlan
+	- name: ${1:task_description}
+	  junos_vlan:
+	    name: ${2}
+	    vlan_id: ${3}
+	    #interfaces: ${4}
+	    #purge: ${5}
+	    #aggregate: ${6}
+	    #state: ${7:present}
+	    #active: ${8:True}
+	    #description: ${9}
+
+snippet junos_vrf
+	- name: ${1:task_description}
+	  junos_vrf:
+	    #rd: ${2}
+	    #target: ${3}
+	    #interfaces: ${4}
+	    #name: ${5}
+	    #purge: ${6}
+	    #aggregate: ${7}
+	    #state: ${8:present}
+	    #active: ${9:True}
+	    #description: ${10}
 
 snippet katello
 	- name: ${1:task_description}
@@ -7557,14 +10419,14 @@ snippet lineinfile
 snippet linode
 	- name: ${1:task_description}
 	  linode:
-	    #alert_diskio_enabled: ${2:True}
+	    #alert_diskio_enabled: ${2}
 	    #additional_disks: ${3}
-	    #alert_bwin_enabled: ${4:True}
+	    #alert_bwin_enabled: ${4}
 	    #payment_term: ${5:1}
 	    #kernel_id: ${6}
 	    #alert_bwin_threshold: ${7}
-	    #alert_cpu_enabled: ${8:True}
-	    #alert_bwquota_enabled: ${9:True}
+	    #alert_cpu_enabled: ${8}
+	    #alert_bwquota_enabled: ${9}
 	    #linode_id: ${10}
 	    #alert_diskio_threshold: ${11}
 	    #wait_timeout: ${12:300}
@@ -7579,7 +10441,7 @@ snippet linode
 	    #name: ${21}
 	    #displaygroup: ${22}
 	    #alert_cpu_threshold: ${23}
-	    #alert_bwout_enabled: ${24:True}
+	    #alert_bwout_enabled: ${24}
 	    #state: ${25:present}
 	    #swap: ${26:512}
 	    #alert_bwout_threshold: ${27}
@@ -7655,7 +10517,8 @@ snippet lvg
 	    #pvs: ${4}
 	    #force: ${5:no}
 	    #pesize: ${6:4}
-	    #state: ${7:present}
+	    #pv_options: ${7}
+	    #state: ${8:present}
 
 snippet lvol
 	- name: ${1:task_description}
@@ -7763,6 +10626,17 @@ snippet make
 	    #params: ${3:none}
 	    #target: ${4:none}
 
+snippet manageiq_user
+	- name: ${1:task_description}
+	  manageiq_user:
+	    manageiq_connection: ${2}
+	    userid: ${3}
+	    #state: ${4:present}
+	    #group: ${5}
+	    #name: ${6}
+	    #password: ${7}
+	    #email: ${8}
+
 snippet mattermost
 	- name: ${1:task_description}
 	  mattermost:
@@ -7793,7 +10667,7 @@ snippet maven_artifact
 snippet meta
 	- name: ${1:task_description}
 	  meta:
-	    free_form: ${2:None}
+	    free_form: ${2}
 
 snippet modprobe
 	- name: ${1:task_description}
@@ -8100,6 +10974,156 @@ snippet nclu
 	    #commit: ${6}
 	    #atomic: ${7}
 
+snippet net_banner
+	- name: ${1:task_description}
+	  net_banner:
+	    banner: ${2}
+	    #text: ${3}
+	    #state: ${4:present}
+
+snippet net_command
+	- name: ${1:task_description}
+	  net_command:
+	    commands: ${2}
+	    #retries: ${3:10}
+	    #wait_for: ${4}
+	    #match: ${5:all}
+	    #interval: ${6:1}
+
+snippet net_interface
+	- name: ${1:task_description}
+	  net_interface:
+	    name: ${2}
+	    #rx_rate: ${3}
+	    #duplex: ${4:auto}
+	    #enabled: ${5}
+	    #mtu: ${6}
+	    #purge: ${7}
+	    #state: ${8:present}
+	    #aggregate: ${9}
+	    #speed: ${10}
+	    #tx_rate: ${11}
+	    #description: ${12}
+
+snippet net_l2_interface
+	- name: ${1:task_description}
+	  net_l2_interface:
+	    #native_vlan: ${2}
+	    #access_vlan: ${3}
+	    #name: ${4}
+	    #trunk_vlans: ${5}
+	    #state: ${6:present}
+	    #trunk_allowed_vlans: ${7}
+	    #mode: ${8:access}
+	    #aggregate: ${9}
+
+snippet net_l3_interface
+	- name: ${1:task_description}
+	  net_l3_interface:
+	    #purge: ${2}
+	    #state: ${3:present}
+	    #name: ${4}
+	    #ipv6: ${5}
+	    #aggregate: ${6}
+	    #ipv4: ${7}
+
+snippet net_linkagg
+	- name: ${1:task_description}
+	  net_linkagg:
+	    name: ${2}
+	    members: ${3}
+	    #purge: ${4}
+	    #state: ${5:present}
+	    #min_links: ${6}
+	    #aggregate: ${7}
+	    #mode: ${8:True}
+
+snippet net_lldp
+	- name: ${1:task_description}
+	  net_lldp:
+	    #state: ${2:present}
+
+snippet net_lldp_interface
+	- name: ${1:task_description}
+	  net_lldp_interface:
+	    #aggregate: ${2}
+	    #purge: ${3}
+	    #state: ${4:present}
+	    #name: ${5}
+
+snippet net_lldp_interface
+	- name: ${1:task_description}
+	  net_lldp_interface:
+	    #aggregate: ${2}
+	    #purge: ${3}
+	    #state: ${4:present}
+	    #name: ${5}
+
+snippet net_logging
+	- name: ${1:task_description}
+	  net_logging:
+	    #purge: ${2}
+	    #aggregate: ${3}
+	    #state: ${4:present}
+	    #name: ${5}
+	    #level: ${6}
+	    #dest: ${7}
+	    #facility: ${8}
+
+snippet net_static_route
+	- name: ${1:task_description}
+	  net_static_route:
+	    next_hop: ${2}
+	    mask: ${3}
+	    prefix: ${4}
+	    #purge: ${5}
+	    #state: ${6:present}
+	    #aggregate: ${7}
+	    #admin_distance: ${8}
+
+snippet net_system
+	- name: ${1:task_description}
+	  net_system:
+	    #state: ${2:present}
+	    #lookup_source: ${3}
+	    #name_servers: ${4}
+	    #domain_search: ${5}
+	    #hostname: ${6}
+	    #domain_name: ${7}
+
+snippet net_user
+	- name: ${1:task_description}
+	  net_user:
+	    #update_password: ${2:always}
+	    #aggregate: ${3}
+	    #name: ${4}
+	    #purge: ${5}
+	    #privilege: ${6}
+	    #state: ${7:present}
+	    #role: ${8}
+	    #nopassword: ${9}
+	    #password: ${10}
+	    #sshkey: ${11}
+
+snippet net_vlan
+	- name: ${1:task_description}
+	  net_vlan:
+	    #purge: ${2}
+	    #state: ${3:present}
+	    #name: ${4}
+	    #aggregate: ${5}
+	    #interfaces: ${6}
+	    #vlan_id: ${7}
+
+snippet net_vrf
+	- name: ${1:task_description}
+	  net_vrf:
+	    #aggregate: ${2}
+	    #purge: ${3}
+	    #interfaces: ${4}
+	    #name: ${5}
+	    #state: ${6:present}
+
 snippet netapp_e_amg
 	- name: ${1:task_description}
 	  netapp_e_amg:
@@ -8363,6 +11387,571 @@ snippet netscaler
 	    #action: ${8:disable}
 	    #validate_certs: ${9:yes}
 
+snippet netscaler_cs_action
+	- name: ${1:task_description}
+	  netscaler_cs_action:
+	    nsip: ${2}
+	    nitro_user: ${3}
+	    nitro_pass: ${4}
+	    #comment: ${5}
+	    #name: ${6}
+	    #save_config: ${7:True}
+	    #targetlbvserver: ${8}
+	    #nitro_protocol: ${9:http}
+	    #state: ${10:present}
+	    #targetvserver: ${11}
+	    #validate_certs: ${12:yes}
+	    #nitro_timeout: ${13:310}
+	    #targetvserverexpr: ${14}
+
+snippet netscaler_cs_policy
+	- name: ${1:task_description}
+	  netscaler_cs_policy:
+	    nsip: ${2}
+	    nitro_user: ${3}
+	    nitro_pass: ${4}
+	    #policyname: ${5}
+	    #domain: ${6}
+	    #url: ${7}
+	    #save_config: ${8:True}
+	    #rule: ${9}
+	    #nitro_protocol: ${10:http}
+	    #state: ${11:present}
+	    #action: ${12}
+	    #validate_certs: ${13:yes}
+	    #nitro_timeout: ${14:310}
+
+snippet netscaler_cs_vserver
+	- name: ${1:task_description}
+	  netscaler_cs_vserver:
+	    nitro_user: ${2}
+	    nsip: ${3}
+	    nitro_pass: ${4}
+	    #comment: ${5}
+	    #precedence: ${6}
+	    #mysqlcharacterset: ${7}
+	    #rtspnat: ${8}
+	    #authn401: ${9}
+	    #disabled: ${10:no}
+	    #listenpolicy: ${11}
+	    #ttl: ${12}
+	    #redirecturl: ${13}
+	    #ipmask: ${14}
+	    #insertvserveripport: ${15}
+	    #redirectportrewrite: ${16}
+	    #clttimeout: ${17}
+	    #authenticationhost: ${18}
+	    #servicetype: ${19}
+	    #mysqlservercapabilities: ${20}
+	    #authentication: ${21}
+	    #vipheader: ${22}
+	    #pushvserver: ${23}
+	    #td: ${24}
+	    #nitro_timeout: ${25:310}
+	    #cookietimeout: ${26}
+	    #appflowlog: ${27}
+	    #dbprofilename: ${28}
+	    #cookiedomain: ${29}
+	    #name: ${30}
+	    #tcpprofilename: ${31}
+	    #downstateflush: ${32}
+	    #httpprofilename: ${33}
+	    #casesensitive: ${34}
+	    #validate_certs: ${35:yes}
+	    #dnsprofilename: ${36}
+	    #icmpvsrresponse: ${37}
+	    #domainname: ${38}
+	    #save_config: ${39:True}
+	    #somethod: ${40}
+	    #nitro_protocol: ${41:http}
+	    #mysqlprotocolversion: ${42}
+	    #oracleserverversion: ${43}
+	    #stateupdate: ${44}
+	    #authnprofile: ${45}
+	    #port: ${46}
+	    #cacheable: ${47}
+	    #mysqlserverversion: ${48}
+	    #backupvserver: ${49}
+	    #backupip: ${50}
+	    #state: ${51:present}
+	    #authnvsname: ${52}
+	    #netprofile: ${53}
+	    #pushmulticlients: ${54}
+	    #rhistate: ${55}
+	    #targettype: ${56}
+	    #sothreshold: ${57}
+	    #sopersistence: ${58}
+	    #sobackupaction: ${59}
+	    #l2conn: ${60}
+	    #range: ${61}
+	    #ipv46: ${62}
+	    #ippattern: ${63}
+	    #disableprimaryondown: ${64}
+	    #pushlabel: ${65}
+	    #mssqlserverversion: ${66}
+	    #sitedomainttl: ${67}
+	    #sopersistencetimeout: ${68}
+	    #push: ${69}
+
+snippet netscaler_gslb_service
+	- name: ${1:task_description}
+	  netscaler_gslb_service:
+	    nitro_user: ${2}
+	    nsip: ${3}
+	    nitro_pass: ${4}
+	    #comment: ${5}
+	    #cnameentry: ${6}
+	    #servername: ${7}
+	    #save_config: ${8:True}
+	    #nitro_protocol: ${9:http}
+	    #servicename: ${10}
+	    #sitepersistence: ${11}
+	    #monitor_bindings: ${12}
+	    #maxbandwidth: ${13}
+	    #publicport: ${14}
+	    #port: ${15}
+	    #clttimeout: ${16}
+	    #servicetype: ${17}
+	    #monthreshold: ${18}
+	    #maxaaausers: ${19}
+	    #maxclient: ${20}
+	    #sitename: ${21}
+	    #publicip: ${22}
+	    #state: ${23:present}
+	    #nitro_timeout: ${24:310}
+	    #appflowlog: ${25}
+	    #hashid: ${26}
+	    #ipaddress: ${27}
+	    #downstateflush: ${28}
+	    #cipheader: ${29}
+	    #siteprefix: ${30}
+	    #cip: ${31}
+	    #healthmonitor: ${32}
+	    #validate_certs: ${33:yes}
+
+snippet netscaler_gslb_site
+	- name: ${1:task_description}
+	  netscaler_gslb_site:
+	    nsip: ${2}
+	    nitro_user: ${3}
+	    nitro_pass: ${4}
+	    #naptrreplacementsuffix: ${5}
+	    #siteipaddress: ${6}
+	    #metricexchange: ${7}
+	    #nwmetricexchange: ${8}
+	    #sitename: ${9}
+	    #sitetype: ${10}
+	    #save_config: ${11:True}
+	    #sessionexchange: ${12}
+	    #publicclip: ${13}
+	    #publicip: ${14}
+	    #nitro_protocol: ${15:http}
+	    #state: ${16:present}
+	    #parentsite: ${17}
+	    #clip: ${18}
+	    #triggermonitor: ${19}
+	    #validate_certs: ${20:yes}
+	    #nitro_timeout: ${21:310}
+
+snippet netscaler_gslb_vserver
+	- name: ${1:task_description}
+	  netscaler_gslb_vserver:
+	    nitro_user: ${2}
+	    nsip: ${3}
+	    nitro_pass: ${4}
+	    #comment: ${5}
+	    #save_config: ${6:True}
+	    #disabled: ${7}
+	    #nitro_protocol: ${8:http}
+	    #domain_bindings: ${9}
+	    #service_bindings: ${10}
+	    #state: ${11:present}
+	    #mir: ${12}
+	    #tolerance: ${13}
+	    #nitro_timeout: ${14:310}
+	    #sothreshold: ${15}
+	    #sopersistence: ${16}
+	    #appflowlog: ${17}
+	    #persistenceid: ${18}
+	    #sobackupaction: ${19}
+	    #servicetype: ${20}
+	    #dnsrecordtype: ${21}
+	    #considereffectivestate: ${22}
+	    #netmask: ${23}
+	    #v6netmasklen: ${24}
+	    #persistencetype: ${25}
+	    #name: ${26}
+	    #disableprimaryondown: ${27}
+	    #backuplbmethod: ${28}
+	    #dynamicweight: ${29}
+	    #somethod: ${30}
+	    #lbmethod: ${31}
+	    #sopersistencetimeout: ${32}
+	    #persistmask: ${33}
+	    #timeout: ${34}
+	    #v6persistmasklen: ${35}
+	    #validate_certs: ${36:yes}
+
+snippet netscaler_lb_monitor
+	- name: ${1:task_description}
+	  netscaler_lb_monitor:
+	    nitro_user: ${2}
+	    nsip: ${3}
+	    nitro_pass: ${4}
+	    #lasversion: ${5}
+	    #secure: ${6}
+	    #radnasip: ${7}
+	    #Snmpoid: ${8}
+	    #storefrontacctservice: ${9}
+	    #radnasid: ${10}
+	    #firmwarerevision: ${11}
+	    #query: ${12}
+	    #storedb: ${13}
+	    #vendorid: ${14}
+	    #authapplicationid: ${15}
+	    #group: ${16}
+	    #tos: ${17}
+	    #maxforwards: ${18}
+	    #querytype: ${19}
+	    #send: ${20}
+	    #transparent: ${21}
+	    #recv: ${22}
+	    #binddn: ${23}
+	    #rtsprequest: ${24}
+	    #trofscode: ${25}
+	    #successretries: ${26}
+	    #iptunnel: ${27}
+	    #monitorname: ${28}
+	    #nitro_timeout: ${29:310}
+	    #units1: ${30}
+	    #units3: ${31}
+	    #units2: ${32}
+	    #units4: ${33}
+	    #scriptargs: ${34}
+	    #resptimeout: ${35}
+	    #downtime: ${36}
+	    #tosid: ${37}
+	    #password: ${38}
+	    #sipreguri: ${39}
+	    #retries: ${40}
+	    #failureretries: ${41}
+	    #snmpthreshold: ${42}
+	    #destip: ${43}
+	    #radkey: ${44}
+	    #type: ${45}
+	    #storename: ${46}
+	    #scriptname: ${47}
+	    #validatecred: ${48}
+	    #productname: ${49}
+	    #metrictable: ${50}
+	    #acctapplicationid: ${51}
+	    #oraclesid: ${52}
+	    #validate_certs: ${53:yes}
+	    #username: ${54}
+	    #domain: ${55}
+	    #interval: ${56}
+	    #resptimeoutthresh: ${57}
+	    #hostipaddress: ${58}
+	    #sipuri: ${59}
+	    #attribute: ${60}
+	    #save_config: ${61:True}
+	    #vendorspecificvendorid: ${62}
+	    #nitro_protocol: ${63:http}
+	    #snmpcommunity: ${64}
+	    #originrealm: ${65}
+	    #radmsisdn: ${66}
+	    #secondarypassword: ${67}
+	    #action: ${68}
+	    #respcode: ${69}
+	    #trofsstring: ${70}
+	    #logonpointname: ${71}
+	    #kcdaccount: ${72}
+	    #radapn: ${73}
+	    #hostname: ${74}
+	    #radframedip: ${75}
+	    #filename: ${76}
+	    #application: ${77}
+	    #state: ${78}
+	    #netprofile: ${79}
+	    #alertretries: ${80}
+	    #radaccountsession: ${81}
+	    #deviation: ${82}
+	    #httprequest: ${83}
+	    #supportedvendorids: ${84}
+	    #inbandsecurityid: ${85}
+	    #basedn: ${86}
+	    #sitepath: ${87}
+	    #storefrontcheckbackendservices: ${88}
+	    #sqlquery: ${89}
+	    #evalrule: ${90}
+	    #sipmethod: ${91}
+	    #customheaders: ${92}
+	    #mssqlprotocolversion: ${93}
+	    #lrtm: ${94}
+	    #ipaddress: ${95}
+	    #destport: ${96}
+	    #dispatcherport: ${97}
+	    #reverse: ${98}
+	    #database: ${99}
+	    #radaccounttype: ${100}
+	    #vendorspecificacctapplicationids: ${101}
+	    #originhost: ${102}
+	    #filter: ${103}
+	    #vendorspecificauthapplicationids: ${104}
+	    #snmpversion: ${105}
+	    #dispatcherip: ${106}
+
+snippet netscaler_lb_vserver
+	- name: ${1:task_description}
+	  netscaler_lb_vserver:
+	    nitro_user: ${2}
+	    nsip: ${3}
+	    nitro_pass: ${4}
+	    #servicebindings: ${5}
+	    #comment: ${6}
+	    #rtspnat: ${7}
+	    #disabled: ${8:no}
+	    #macmoderetainvlan: ${9}
+	    #dbslb: ${10}
+	    #listenpolicy: ${11}
+	    #ipmask: ${12}
+	    #insertvserveripport: ${13}
+	    #redirectportrewrite: ${14}
+	    #cacheable: ${15}
+	    #clttimeout: ${16}
+	    #authenticationhost: ${17}
+	    #servicetype: ${18}
+	    #mysqlservercapabilities: ${19}
+	    #authentication: ${20}
+	    #vipheader: ${21}
+	    #pushvserver: ${22}
+	    #dataoffset: ${23}
+	    #datalength: ${24}
+	    #healththreshold: ${25}
+	    #td: ${26}
+	    #nitro_timeout: ${27:310}
+	    #newservicerequestincrementinterval: ${28}
+	    #appflowlog: ${29}
+	    #disableprimaryondown: ${30}
+	    #netmask: ${31}
+	    #redirurl: ${32}
+	    #processlocal: ${33}
+	    #minautoscalemembers: ${34}
+	    #name: ${35}
+	    #backuplbmethod: ${36}
+	    #tcpprofilename: ${37}
+	    #downstateflush: ${38}
+	    #httpprofilename: ${39}
+	    #persistmask: ${40}
+	    #timeout: ${41}
+	    #v6persistmasklen: ${42}
+	    #persistavpno: ${43}
+	    #recursionavailable: ${44}
+	    #validate_certs: ${45:yes}
+	    #dnsprofilename: ${46}
+	    #maxautoscalemembers: ${47}
+	    #oracleserverversion: ${48}
+	    #save_config: ${49:True}
+	    #bypassaaaa: ${50}
+	    #somethod: ${51}
+	    #nitro_protocol: ${52:http}
+	    #mysqlprotocolversion: ${53}
+	    #rhistate: ${54}
+	    #pushlabel: ${55}
+	    #port: ${56}
+	    #sopersistencetimeout: ${57}
+	    #authnprofile: ${58}
+	    #persistencebackup: ${59}
+	    #mysqlserverversion: ${60}
+	    #mysqlcharacterset: ${61}
+	    #authn401: ${62}
+	    #state: ${63:present}
+	    #authnvsname: ${64}
+	    #netprofile: ${65}
+	    #pushmulticlients: ${66}
+	    #lbmethod: ${67}
+	    #hashlength: ${68}
+	    #resrule: ${69}
+	    #connfailover: ${70}
+	    #sothreshold: ${71}
+	    #sopersistence: ${72}
+	    #dns64: ${73}
+	    #sobackupaction: ${74}
+	    #skippersistency: ${75}
+	    #ssl_certkey: ${76}
+	    #l2conn: ${77}
+	    #range: ${78}
+	    #v6netmasklen: ${79}
+	    #sessionless: ${80}
+	    #ipv46: ${81}
+	    #persistencetype: ${82}
+	    #tosid: ${83}
+	    #ippattern: ${84}
+	    #dbprofilename: ${85}
+	    #backuppersistencetimeout: ${86}
+	    #newservicerequestunit: ${87}
+	    #m: ${88}
+	    #mssqlserverversion: ${89}
+	    #listenpriority: ${90}
+	    #servicegroupbindings: ${91}
+	    #newservicerequest: ${92}
+	    #push: ${93}
+	    #icmpvsrresponse: ${94}
+	    #cookiename: ${95}
+
+snippet netscaler_save_config
+	- name: ${1:task_description}
+	  netscaler_save_config:
+	    nsip: ${2}
+	    nitro_user: ${3}
+	    nitro_pass: ${4}
+	    #nitro_protocol: ${5:http}
+	    #validate_certs: ${6:yes}
+	    #nitro_timeout: ${7:310}
+
+snippet netscaler_server
+	- name: ${1:task_description}
+	  netscaler_server:
+	    nsip: ${2}
+	    nitro_user: ${3}
+	    nitro_pass: ${4}
+	    #comment: ${5}
+	    #domain: ${6}
+	    #td: ${7}
+	    #name: ${8}
+	    #ipv6address: ${9}
+	    #ipaddress: ${10}
+	    #save_config: ${11:True}
+	    #domainresolveretry: ${12:5}
+	    #disabled: ${13}
+	    #nitro_protocol: ${14:http}
+	    #state: ${15:present}
+	    #translationip: ${16}
+	    #validate_certs: ${17:yes}
+	    #nitro_timeout: ${18:310}
+	    #translationmask: ${19}
+
+snippet netscaler_service
+	- name: ${1:task_description}
+	  netscaler_service:
+	    nitro_user: ${2}
+	    nsip: ${3}
+	    nitro_pass: ${4}
+	    #comment: ${5}
+	    #tcpb: ${6}
+	    #cka: ${7}
+	    #cachetype: ${8}
+	    #ip: ${9}
+	    #servername: ${10}
+	    #save_config: ${11:True}
+	    #nitro_protocol: ${12:http}
+	    #maxreq: ${13}
+	    #monitor_bindings: ${14}
+	    #maxbandwidth: ${15}
+	    #svrtimeout: ${16}
+	    #port: ${17}
+	    #clttimeout: ${18}
+	    #servicetype: ${19}
+	    #cacheable: ${20}
+	    #pathmonitor: ${21}
+	    #maxclient: ${22}
+	    #ipaddress: ${23}
+	    #graceful: ${24}
+	    #state: ${25:present}
+	    #usip: ${26}
+	    #netprofile: ${27}
+	    #rtspsessionidremap: ${28}
+	    #td: ${29}
+	    #nitro_timeout: ${30:310}
+	    #pathmonitorindv: ${31}
+	    #cleartextport: ${32}
+	    #appflowlog: ${33:ENABLED}
+	    #customserverid: ${34:None}
+	    #monthreshold: ${35}
+	    #hashid: ${36}
+	    #serverid: ${37}
+	    #processlocal: ${38:DISABLED}
+	    #accessdown: ${39}
+	    #name: ${40}
+	    #tcpprofilename: ${41}
+	    #sp: ${42}
+	    #downstateflush: ${43:ENABLED}
+	    #cipheader: ${44}
+	    #httpprofilename: ${45}
+	    #cip: ${46}
+	    #healthmonitor: ${47:True}
+	    #useproxyport: ${48}
+	    #sc: ${49}
+	    #dnsprofilename: ${50}
+	    #validate_certs: ${51:yes}
+	    #cmp: ${52}
+
+snippet netscaler_servicegroup
+	- name: ${1:task_description}
+	  netscaler_servicegroup:
+	    nitro_user: ${2}
+	    nsip: ${3}
+	    nitro_pass: ${4}
+	    #comment: ${5}
+	    #tcpb: ${6}
+	    #cachetype: ${7}
+	    #save_config: ${8:True}
+	    #nitro_protocol: ${9:http}
+	    #maxreq: ${10}
+	    #graceful: ${11}
+	    #maxbandwidth: ${12}
+	    #svrtimeout: ${13}
+	    #clttimeout: ${14}
+	    #servicetype: ${15}
+	    #cacheable: ${16}
+	    #autoscale: ${17}
+	    #maxclient: ${18}
+	    #monitorbindings: ${19}
+	    #servicegroupname: ${20}
+	    #state: ${21:present}
+	    #usip: ${22}
+	    #netprofile: ${23}
+	    #rtspsessionidremap: ${24}
+	    #nitro_timeout: ${25:310}
+	    #pathmonitorindv: ${26}
+	    #pathmonitor: ${27}
+	    #appflowlog: ${28}
+	    #servicemembers: ${29}
+	    #monthreshold: ${30}
+	    #memberport: ${31}
+	    #cka: ${32}
+	    #tcpprofilename: ${33}
+	    #sp: ${34}
+	    #downstateflush: ${35}
+	    #cipheader: ${36}
+	    #httpprofilename: ${37}
+	    #cip: ${38}
+	    #healthmonitor: ${39}
+	    #useproxyport: ${40}
+	    #sc: ${41}
+	    #validate_certs: ${42:yes}
+	    #cmp: ${43}
+
+snippet netscaler_ssl_certkey
+	- name: ${1:task_description}
+	  netscaler_ssl_certkey:
+	    nsip: ${2}
+	    nitro_user: ${3}
+	    nitro_pass: ${4}
+	    #certkey: ${5}
+	    #inform: ${6}
+	    #passplain: ${7}
+	    #cert: ${8}
+	    #save_config: ${9:True}
+	    #nitro_protocol: ${10:http}
+	    #state: ${11:present}
+	    #key: ${12}
+	    #notificationperiod: ${13}
+	    #expirymonitor: ${14}
+	    #password: ${15}
+	    #validate_certs: ${16:yes}
+	    #nitro_timeout: ${17:310}
+
 snippet newrelic_deployment
 	- name: ${1:task_description}
 	  newrelic_deployment:
@@ -8458,6 +12047,20 @@ snippet nsupdate
 	    #ttl: ${9:3600}
 	    #type: ${10:A}
 	    #key_secret: ${11}
+
+snippet nuage_vspk
+	- name: ${1:task_description}
+	  nuage_vspk:
+	    auth: ${2:None}
+	    type: ${3:None}
+	    #parent_type: ${4}
+	    #properties: ${5}
+	    #match_filter: ${6}
+	    #parent_id: ${7}
+	    #state: ${8}
+	    #command: ${9}
+	    #id: ${10}
+	    #children: ${11}
 
 snippet nxos_aaa_server
 	- name: ${1:task_description}
@@ -8560,6 +12163,13 @@ snippet nxos_acl_interface
 	    #password: ${13}
 	    #validate_certs: ${14}
 	    #port: ${15:0 (use common port)}
+
+snippet nxos_banner
+	- name: ${1:task_description}
+	  nxos_banner:
+	    banner: ${2:None}
+	    #text: ${3}
+	    #state: ${4:present}
 
 snippet nxos_bgp
 	- name: ${1:task_description}
@@ -8774,22 +12384,26 @@ snippet nxos_config
 	    #force: ${5}
 	    #defaults: ${6}
 	    #after: ${7}
-	    #replace: ${8:line}
-	    #config: ${9}
-	    #use_ssl: ${10}
-	    #password: ${11}
-	    #port: ${12:0 (use common port)}
-	    #before: ${13}
-	    #src: ${14}
-	    #ssh_keyfile: ${15}
-	    #backup: ${16}
-	    #lines: ${17}
-	    #parents: ${18}
-	    #timeout: ${19:10}
-	    #provider: ${20}
-	    #save: ${21}
-	    #validate_certs: ${22}
-	    #match: ${23:line}
+	    #diff_against: ${8:startup}
+	    #replace: ${9:lineo}
+	    #running_config: ${10}
+	    #save_when: ${11:never}
+	    #use_ssl: ${12}
+	    #password: ${13}
+	    #port: ${14:0 (use common port)}
+	    #diff_ignore_lines: ${15}
+	    #src: ${16}
+	    #ssh_keyfile: ${17}
+	    #backup: ${18}
+	    #lines: ${19}
+	    #intended_config: ${20}
+	    #parents: ${21}
+	    #timeout: ${22:10}
+	    #provider: ${23}
+	    #before: ${24}
+	    #save: ${25}
+	    #validate_certs: ${26}
+	    #match: ${27:line}
 
 snippet nxos_evpn_global
 	- name: ${1:task_description}
@@ -9081,12 +12695,26 @@ snippet nxos_ip_interface
 	    #addr: ${7}
 	    #mask: ${8}
 	    #state: ${9:present}
-	    #timeout: ${10:10}
-	    #provider: ${11}
-	    #use_ssl: ${12}
-	    #password: ${13}
-	    #validate_certs: ${14}
-	    #port: ${15:0 (use common port)}
+	    #allow_secondary: ${10}
+	    #tag: ${11}
+	    #timeout: ${12:10}
+	    #provider: ${13}
+	    #use_ssl: ${14}
+	    #password: ${15}
+	    #validate_certs: ${16}
+	    #port: ${17:0 (use common port)}
+
+snippet nxos_logging
+	- name: ${1:task_description}
+	  nxos_logging:
+	    #facility_level: ${2}
+	    #name: ${3}
+	    #facility: ${4}
+	    #dest: ${5}
+	    #dest_level: ${6}
+	    #purge: ${7}
+	    #state: ${8:present}
+	    #aggregate: ${9}
 
 snippet nxos_mtu
 	- name: ${1:task_description}
@@ -9590,15 +13218,6 @@ snippet nxos_system
 	    #validate_certs: ${17}
 	    #port: ${18:0 (use common port)}
 
-snippet nxos_template
-	- name: ${1:task_description}
-	  nxos_template:
-	    #src: ${2}
-	    #force: ${3}
-	    #config: ${4}
-	    #backup: ${5}
-	    #include_defaults: ${6}
-
 snippet nxos_udld
 	- name: ${1:task_description}
 	  nxos_udld:
@@ -9642,18 +13261,18 @@ snippet nxos_user
 	    #username: ${4}
 	    #update_password: ${5:always}
 	    #ssh_keyfile: ${6}
-	    #sshkey: ${7}
+	    #name: ${7}
 	    #state: ${8:present}
-	    #name: ${9}
-	    #purge: ${10}
-	    #role: ${11}
-	    #timeout: ${12:10}
-	    #provider: ${13}
+	    #purge: ${9}
+	    #role: ${10}
+	    #timeout: ${11:10}
+	    #provider: ${12}
+	    #aggregate: ${13}
 	    #use_ssl: ${14}
 	    #password: ${15}
 	    #validate_certs: ${16}
 	    #port: ${17:0 (use common port)}
-	    #users: ${18}
+	    #sshkey: ${18}
 
 snippet nxos_vlan
 	- name: ${1:task_description}
@@ -9663,18 +13282,19 @@ snippet nxos_vlan
 	    #username: ${4}
 	    #vlan_range: ${5}
 	    #ssh_keyfile: ${6}
-	    #name: ${7}
-	    #mapped_vni: ${8}
-	    #state: ${9:present}
-	    #vlan_state: ${10:active}
-	    #admin_state: ${11:up}
-	    #vlan_id: ${12}
-	    #timeout: ${13:10}
-	    #provider: ${14}
-	    #use_ssl: ${15}
-	    #password: ${16}
-	    #validate_certs: ${17}
-	    #port: ${18:0 (use common port)}
+	    #vlan_id: ${7}
+	    #name: ${8}
+	    #mapped_vni: ${9}
+	    #state: ${10:present}
+	    #vlan_state: ${11:active}
+	    #admin_state: ${12:up}
+	    #mode: ${13}
+	    #timeout: ${14:10}
+	    #provider: ${15}
+	    #use_ssl: ${16}
+	    #password: ${17}
+	    #validate_certs: ${18}
+	    #port: ${19:0 (use common port)}
 
 snippet nxos_vpc
 	- name: ${1:task_description}
@@ -9870,22 +13490,19 @@ snippet nxos_vxlan_vtep_vni
 	    interface: ${4}
 	    transport: ${5:cli}
 	    #username: ${6}
-	    #save: ${7}
-	    #ssh_keyfile: ${8}
-	    #suppress_arp: ${9}
-	    #include_defaults: ${10:True}
-	    #ingress_replication: ${11}
-	    #config: ${12}
-	    #state: ${13:present}
-	    #multicast_group: ${14}
-	    #assoc_vrf: ${15}
-	    #timeout: ${16:10}
-	    #provider: ${17}
-	    #use_ssl: ${18}
-	    #password: ${19}
-	    #validate_certs: ${20}
-	    #port: ${21:0 (use common port)}
-	    #peer_list: ${22}
+	    #ssh_keyfile: ${7}
+	    #peer_list: ${8}
+	    #ingress_replication: ${9}
+	    #suppress_arp: ${10}
+	    #state: ${11:present}
+	    #multicast_group: ${12}
+	    #assoc_vrf: ${13}
+	    #timeout: ${14:10}
+	    #provider: ${15}
+	    #use_ssl: ${16}
+	    #password: ${17}
+	    #validate_certs: ${18}
+	    #port: ${19:0 (use common port)}
 
 snippet ohai
 	- name: ${1:task_description}
@@ -9904,6 +13521,14 @@ snippet omapi_host
 	    #ddns: ${9}
 	    #ip: ${10:None}
 	    #port: ${11:7911}
+
+snippet oneview_fc_network
+	- name: ${1:task_description}
+	  oneview_fc_network:
+	    data: ${2}
+	    #config: ${3}
+	    #state: ${4}
+	    #validate_etag: ${5:True}
 
 snippet open_iscsi
 	- name: ${1:task_description}
@@ -9948,35 +13573,42 @@ snippet openssl_csr
 	  openssl_csr:
 	    privatekey_path: ${2}
 	    path: ${3}
-	    #force: ${4}
-	    #subjectAltName: ${5}
-	    #commonName: ${6}
-	    #stateOrProvinceName: ${7}
-	    #countryName: ${8}
-	    #state: ${9:present}
-	    #version: ${10:3}
-	    #emailAddress: ${11}
-	    #digest: ${12:sha256}
-	    #localityName: ${13}
-	    #organizationName: ${14}
-	    #organizationUnitName: ${15}
+	    #privatekey_passphrase: ${4}
+	    #force: ${5}
+	    #extendedKeyUsage: ${6}
+	    #countryName: ${7}
+	    #emailAddress: ${8}
+	    #localityName: ${9}
+	    #digest: ${10:sha256}
+	    #organizationalUnitName: ${11}
+	    #organizationName: ${12}
+	    #subjectAltName: ${13}
+	    #commonName: ${14}
+	    #state: ${15:present}
+	    #stateOrProvinceName: ${16}
+	    #keyUsage: ${17}
+	    #version: ${18:3}
 
 snippet openssl_privatekey
 	- name: ${1:task_description}
 	  openssl_privatekey:
 	    path: ${2}
 	    #state: ${3:present}
-	    #size: ${4:4096}
+	    #cipher: ${4}
 	    #force: ${5}
-	    #type: ${6:RSA}
+	    #passphrase: ${6}
+	    #type: ${7:RSA}
+	    #size: ${8:4096}
 
 snippet openssl_publickey
 	- name: ${1:task_description}
 	  openssl_publickey:
 	    path: ${2}
 	    privatekey_path: ${3}
-	    #state: ${4:present}
-	    #force: ${5}
+	    #privatekey_passphrase: ${4}
+	    #state: ${5:present}
+	    #force: ${6}
+	    #format: ${7:PEM}
 
 snippet openvswitch_bridge
 	- name: ${1:task_description}
@@ -10084,23 +13716,6 @@ snippet ops_facts
 	    #password: ${11}
 	    #config: ${12}
 	    #port: ${13:0 (use common port)}
-
-snippet ops_template
-	- name: ${1:task_description}
-	  ops_template:
-	    src: ${2}
-	    host: ${3}
-	    transport: ${4:ssh}
-	    #username: ${5}
-	    #ssh_keyfile: ${6}
-	    #force: ${7}
-	    #backup: ${8}
-	    #timeout: ${9:10}
-	    #provider: ${10}
-	    #use_ssl: ${11:True}
-	    #password: ${12}
-	    #config: ${13}
-	    #port: ${14:0 (use common port)}
 
 snippet ordnance_config
 	- name: ${1:task_description}
@@ -10230,17 +13845,18 @@ snippet os_image
 	    #key: ${13:None}
 	    #cacert: ${14:None}
 	    #is_public: ${15:yes}
-	    #properties: ${16}
+	    #id: ${16:None}
 	    #cloud: ${17}
 	    #wait: ${18:yes}
 	    #min_disk: ${19:None}
-	    #availability_zone: ${20}
-	    #disk_format: ${21:qcow2}
-	    #state: ${22:present}
-	    #filename: ${23:None}
-	    #cert: ${24:None}
-	    #timeout: ${25:180}
-	    #validate_certs: ${26}
+	    #properties: ${20}
+	    #availability_zone: ${21}
+	    #disk_format: ${22:qcow2}
+	    #state: ${23:present}
+	    #filename: ${24:None}
+	    #cert: ${25:None}
+	    #timeout: ${26:180}
+	    #validate_certs: ${27}
 
 snippet os_image_facts
 	- name: ${1:task_description}
@@ -10988,25 +14604,26 @@ snippet os_user
 	  os_user:
 	    name: ${2}
 	    #auth_type: ${3:password}
-	    #domain: ${4:None}
+	    #update_password: ${4:always}
 	    #region_name: ${5}
 	    #availability_zone: ${6}
-	    #update_password: ${7:always}
-	    #api_timeout: ${8:None}
-	    #enabled: ${9:True}
-	    #timeout: ${10:180}
-	    #auth: ${11}
-	    #cert: ${12:None}
-	    #endpoint_type: ${13:public}
-	    #default_project: ${14:None}
-	    #key: ${15:None}
-	    #cacert: ${16:None}
-	    #state: ${17:present}
-	    #password: ${18:None}
-	    #validate_certs: ${19}
-	    #email: ${20:None}
-	    #cloud: ${21}
-	    #wait: ${22:yes}
+	    #api_timeout: ${7:None}
+	    #domain: ${8:None}
+	    #auth: ${9}
+	    #endpoint_type: ${10:public}
+	    #key: ${11:None}
+	    #cacert: ${12:None}
+	    #password: ${13:None}
+	    #cloud: ${14}
+	    #wait: ${15:yes}
+	    #default_project: ${16:None}
+	    #description: ${17}
+	    #enabled: ${18:True}
+	    #state: ${19:present}
+	    #cert: ${20:None}
+	    #timeout: ${21:180}
+	    #validate_certs: ${22}
+	    #email: ${23:None}
 
 snippet os_user_facts
 	- name: ${1:task_description}
@@ -11076,25 +14693,26 @@ snippet os_volume
 	  os_volume:
 	    display_name: ${2}
 	    #auth_type: ${3:password}
-	    #size: ${4:None}
-	    #state: ${5:present}
-	    #region_name: ${6}
-	    #availability_zone: ${7}
-	    #image: ${8:None}
-	    #api_timeout: ${9:None}
-	    #timeout: ${10:180}
-	    #auth: ${11}
-	    #volume: ${12:None}
-	    #cert: ${13:None}
-	    #endpoint_type: ${14:public}
-	    #volume_type: ${15:None}
-	    #key: ${16:None}
-	    #snapshot_id: ${17:None}
-	    #cacert: ${18:None}
-	    #display_description: ${19:None}
-	    #validate_certs: ${20}
-	    #cloud: ${21}
-	    #wait: ${22:yes}
+	    #region_name: ${4}
+	    #availability_zone: ${5}
+	    #image: ${6:None}
+	    #api_timeout: ${7:None}
+	    #auth: ${8}
+	    #volume: ${9:None}
+	    #endpoint_type: ${10:public}
+	    #display_description: ${11:None}
+	    #key: ${12:None}
+	    #snapshot_id: ${13:None}
+	    #cacert: ${14:None}
+	    #cloud: ${15}
+	    #wait: ${16:yes}
+	    #scheduler_hints: ${17:None}
+	    #state: ${18:present}
+	    #volume_type: ${19:None}
+	    #cert: ${20:None}
+	    #timeout: ${21:180}
+	    #size: ${22:None}
+	    #validate_certs: ${23}
 
 snippet os_zone
 	- name: ${1:task_description}
@@ -11339,14 +14957,15 @@ snippet ovirt_disks
 	    #id: ${15}
 	    #wait: ${16}
 	    #storage_domain: ${17}
-	    #name: ${18}
+	    #openstack_volume_type: ${18}
 	    #bootable: ${19}
 	    #sparsify: ${20}
 	    #poll_interval: ${21:3}
-	    #state: ${22:present}
-	    #shareable: ${23}
-	    #timeout: ${24:180}
-	    #size: ${25}
+	    #name: ${22}
+	    #state: ${23:present}
+	    #shareable: ${24}
+	    #timeout: ${25:180}
+	    #size: ${26}
 
 snippet ovirt_external_providers
 	- name: ${1:task_description}
@@ -11440,6 +15059,16 @@ snippet ovirt_host_pm
 	    #type: ${17}
 	    #order: ${18}
 
+snippet ovirt_host_storage_facts
+	- name: ${1:task_description}
+	  ovirt_host_storage_facts:
+	    auth: ${2}
+	    host: ${3}
+	    #fcp: ${4}
+	    #fetch_nested: ${5}
+	    #iscsi: ${6}
+	    #nested_attributes: ${7}
+
 snippet ovirt_hosts
 	- name: ${1:task_description}
 	  ovirt_hosts:
@@ -11518,18 +15147,19 @@ snippet ovirt_nics
 	- name: ${1:task_description}
 	  ovirt_nics:
 	    name: ${2}
-	    vm: ${3}
-	    auth: ${4}
-	    #profile: ${5}
-	    #network: ${6}
+	    auth: ${3}
+	    #profile: ${4}
+	    #network: ${5}
+	    #state: ${6:present}
 	    #poll_interval: ${7:3}
-	    #state: ${8:present}
+	    #vm: ${8}
 	    #nested_attributes: ${9}
 	    #fetch_nested: ${10}
 	    #timeout: ${11:180}
 	    #mac_address: ${12}
 	    #interface: ${13:virtio}
-	    #wait: ${14}
+	    #template: ${14}
+	    #wait: ${15}
 
 snippet ovirt_nics_facts
 	- name: ${1:task_description}
@@ -11599,6 +15229,15 @@ snippet ovirt_quotas_facts
 	    #nested_attributes: ${5}
 	    #name: ${6}
 
+snippet ovirt_scheduling_policies_facts
+	- name: ${1:task_description}
+	  ovirt_scheduling_policies_facts:
+	    auth: ${2}
+	    id: ${3}
+	    #name: ${4}
+	    #fetch_nested: ${5}
+	    #nested_attributes: ${6}
+
 snippet ovirt_snapshots
 	- name: ${1:task_description}
 	  ovirt_snapshots:
@@ -11624,6 +15263,32 @@ snippet ovirt_snapshots_facts
 	    #nested_attributes: ${6}
 	    #description: ${7}
 
+snippet ovirt_storage_connections
+	- name: ${1:task_description}
+	  ovirt_storage_connections:
+	    auth: ${2}
+	    #username: ${3}
+	    #force: ${4}
+	    #storage: ${5}
+	    #nested_attributes: ${6}
+	    #fetch_nested: ${7}
+	    #address: ${8}
+	    #nfs_timeout: ${9}
+	    #path: ${10}
+	    #password: ${11}
+	    #nfs_version: ${12}
+	    #wait: ${13}
+	    #target: ${14}
+	    #poll_interval: ${15:3}
+	    #nfs_retrans: ${16}
+	    #id: ${17}
+	    #port: ${18}
+	    #state: ${19:present}
+	    #timeout: ${20:180}
+	    #vfs_type: ${21}
+	    #type: ${22}
+	    #mount_options: ${23}
+
 snippet ovirt_storage_domains
 	- name: ${1:task_description}
 	  ovirt_storage_domains:
@@ -11634,19 +15299,20 @@ snippet ovirt_storage_domains
 	    #format: ${6}
 	    #nested_attributes: ${7}
 	    #fetch_nested: ${8}
-	    #data_center: ${9}
-	    #wait: ${10}
-	    #domain_function: ${11:data}
-	    #name: ${12}
-	    #glusterfs: ${13}
-	    #iscsi: ${14}
-	    #posixfs: ${15}
-	    #poll_interval: ${16:3}
-	    #host: ${17}
-	    #state: ${18:present}
-	    #nfs: ${19}
-	    #timeout: ${20:180}
-	    #destroy: ${21}
+	    #localfs: ${9}
+	    #data_center: ${10}
+	    #wait: ${11}
+	    #domain_function: ${12:data}
+	    #name: ${13}
+	    #glusterfs: ${14}
+	    #iscsi: ${15}
+	    #posixfs: ${16}
+	    #poll_interval: ${17:3}
+	    #host: ${18}
+	    #state: ${19:present}
+	    #nfs: ${20}
+	    #timeout: ${21:180}
+	    #destroy: ${22}
 
 snippet ovirt_storage_domains_facts
 	- name: ${1:task_description}
@@ -11779,39 +15445,41 @@ snippet ovirt_vms
 	    #id: ${12}
 	    #cpu_sockets: ${13}
 	    #high_availability: ${14}
-	    #instance_type: ${15}
-	    #nics: ${16}
-	    #sysprep: ${17}
-	    #cpu_cores: ${18}
-	    #state: ${19:present}
-	    #vmware: ${20}
-	    #delete_protected: ${21}
-	    #memory: ${22}
-	    #cd_iso: ${23}
-	    #clone_permissions: ${24}
-	    #type: ${25}
-	    #initrd_path: ${26}
-	    #description: ${27}
-	    #clone: ${28}
-	    #kvm: ${29}
-	    #boot_devices: ${30}
-	    #nested_attributes: ${31}
-	    #host: ${32}
-	    #serial_policy: ${33}
-	    #wait: ${34}
-	    #use_latest_template_version: ${35}
-	    #stateless: ${36}
-	    #operating_system: ${37}
-	    #serial_policy_value: ${38}
-	    #name: ${39}
-	    #kernel_path: ${40}
-	    #cloud_init: ${41}
-	    #disks: ${42}
-	    #poll_interval: ${43:3}
-	    #kernel_params: ${44}
-	    #template: ${45}
-	    #timeout: ${46:180}
-	    #cpu_shares: ${47}
+	    #storage_domain: ${15}
+	    #instance_type: ${16}
+	    #nics: ${17}
+	    #disk_format: ${18:cow}
+	    #sysprep: ${19}
+	    #cpu_cores: ${20}
+	    #state: ${21:present}
+	    #vmware: ${22}
+	    #delete_protected: ${23}
+	    #memory: ${24}
+	    #cd_iso: ${25}
+	    #clone_permissions: ${26}
+	    #type: ${27}
+	    #initrd_path: ${28}
+	    #description: ${29}
+	    #clone: ${30}
+	    #kvm: ${31}
+	    #boot_devices: ${32}
+	    #nested_attributes: ${33}
+	    #host: ${34}
+	    #serial_policy: ${35}
+	    #wait: ${36}
+	    #use_latest_template_version: ${37}
+	    #stateless: ${38}
+	    #operating_system: ${39}
+	    #serial_policy_value: ${40}
+	    #name: ${41}
+	    #kernel_path: ${42}
+	    #cloud_init: ${43}
+	    #disks: ${44}
+	    #poll_interval: ${45:3}
+	    #kernel_params: ${46}
+	    #template: ${47}
+	    #timeout: ${48:180}
+	    #cpu_shares: ${49}
 
 snippet ovirt_vms_facts
 	- name: ${1:task_description}
@@ -12157,7 +15825,7 @@ snippet parted
 	    #number: ${7}
 	    #label: ${8:msdos}
 	    #state: ${9:info}
-	    #part_type: ${10}
+	    #part_type: ${10:primary}
 	    #flags: ${11}
 	    #unit: ${12:KiB}
 
@@ -12165,7 +15833,7 @@ snippet patch
 	- name: ${1:task_description}
 	  patch:
 	    src: ${2}
-	    #strip: ${3:0}
+	    #strip: ${3}
 	    #remote_src: ${4:no}
 	    #dest: ${5}
 	    #binary: ${6:no}
@@ -12184,10 +15852,12 @@ snippet pear
 	  pear:
 	    name: ${2}
 	    #state: ${3:present}
+	    #executable: ${4}
 
 snippet ping
 	- name: ${1:task_description}
 	  ping:
+	    #data: ${2:pong}
 
 snippet pingdom
 	- name: ${1:task_description}
@@ -12208,7 +15878,7 @@ snippet pip
 	    #requirements: ${6}
 	    #name: ${7}
 	    #virtualenv_python: ${8}
-	    #editable: ${9:True}
+	    #editable: ${9}
 	    #umask: ${10}
 	    #executable: ${11}
 	    #extra_args: ${12}
@@ -12494,17 +16164,19 @@ snippet postgresql_db
 	    name: ${2:None}
 	    #ssl_rootcert: ${3}
 	    #ssl_mode: ${4:prefer}
-	    #lc_collate: ${5}
-	    #encoding: ${6}
-	    #login_user: ${7:postgres}
-	    #login_host: ${8}
-	    #lc_ctype: ${9}
-	    #login_unix_socket: ${10}
-	    #state: ${11:present}
-	    #template: ${12}
-	    #login_password: ${13}
-	    #owner: ${14}
-	    #port: ${15:5432}
+	    #encoding: ${5}
+	    #login_user: ${6:postgres}
+	    #login_host: ${7}
+	    #login_unix_socket: ${8}
+	    #login_password: ${9}
+	    #owner: ${10}
+	    #port: ${11:5432}
+	    #target: ${12}
+	    #target_opts: ${13}
+	    #lc_ctype: ${14}
+	    #state: ${15:present}
+	    #template: ${16}
+	    #lc_collate: ${17}
 
 snippet postgresql_ext
 	- name: ${1:task_description}
@@ -12696,9 +16368,10 @@ snippet proxmox
 	    #timeout: ${23:30}
 	    #memory: ${24:512}
 	    #mounts: ${25}
-	    #nameserver: ${26}
-	    #pubkey: ${27}
-	    #onboot: ${28}
+	    #cores: ${26:1}
+	    #nameserver: ${27}
+	    #pubkey: ${28}
+	    #onboot: ${29}
 
 snippet proxmox_kvm
 	- name: ${1:task_description}
@@ -12994,6 +16667,50 @@ snippet puppet
 	    #facts: ${11:None}
 	    #modulepath: ${12:None}
 
+snippet purefa_hg
+	- name: ${1:task_description}
+	  purefa_hg:
+	    api_token: ${2}
+	    hostgroup: ${3}
+	    fa_url: ${4}
+	    #volume: ${5}
+	    #state: ${6:present}
+	    #host: ${7}
+
+snippet purefa_host
+	- name: ${1:task_description}
+	  purefa_host:
+	    host: ${2}
+	    api_token: ${3}
+	    fa_url: ${4}
+	    #protocol: ${5:iscsi}
+	    #volume: ${6}
+	    #state: ${7:present}
+	    #iqn: ${8}
+	    #wwns: ${9}
+
+snippet purefa_pg
+	- name: ${1:task_description}
+	  purefa_pg:
+	    pgroup: ${2}
+	    api_token: ${3}
+	    fa_url: ${4}
+	    #state: ${5:present}
+	    #hostgroup: ${6}
+	    #volume: ${7}
+	    #host: ${8}
+	    #eradicate: ${9}
+
+snippet purefa_volume
+	- name: ${1:task_description}
+	  purefa_volume:
+	    size: ${2}
+	    name: ${3}
+	    api_token: ${4}
+	    fa_url: ${5}
+	    #state: ${6:present}
+	    #eradicate: ${7}
+
 snippet pushbullet
 	- name: ${1:task_description}
 	  pushbullet:
@@ -13190,16 +16907,16 @@ snippet rax_cbs_attachments
 	    state: ${2:present}
 	    server: ${3:None}
 	    volume: ${4:None}
-	    device: ${5:None}
-	    #username: ${6}
-	    #identity_type: ${7:rackspace}
-	    #tenant_id: ${8}
-	    #region: ${9:DFW}
-	    #wait: ${10:no}
-	    #verify_ssl: ${11}
-	    #wait_timeout: ${12:300}
-	    #env: ${13}
-	    #tenant_name: ${14}
+	    #username: ${5}
+	    #identity_type: ${6:rackspace}
+	    #tenant_id: ${7}
+	    #region: ${8:DFW}
+	    #wait: ${9:no}
+	    #verify_ssl: ${10}
+	    #wait_timeout: ${11:300}
+	    #env: ${12}
+	    #tenant_name: ${13}
+	    #device: ${14}
 	    #credentials: ${15}
 	    #api_key: ${16}
 	    #auth_endpoint: ${17:https://identity.api.rackspacecloud.com/v2.0/}
@@ -13720,19 +17437,20 @@ snippet redhat_subscription
 	  redhat_subscription:
 	    #username: ${2}
 	    #server_hostname: ${3:Current value from C(/etc/rhsm/rhsm.conf) is the default}
-	    #password: ${4}
-	    #consumer_type: ${5}
-	    #org_id: ${6}
-	    #consumer_id: ${7}
-	    #environment: ${8}
-	    #force_register: ${9}
-	    #state: ${10:present}
-	    #autosubscribe: ${11}
-	    #activationkey: ${12}
-	    #server_insecure: ${13:Current value from C(/etc/rhsm/rhsm.conf) is the default}
-	    #consumer_name: ${14}
-	    #rhsm_baseurl: ${15:Current value from C(/etc/rhsm/rhsm.conf) is the default}
-	    #pool: ${16:^$}
+	    #pool_ids: ${4}
+	    #consumer_id: ${5}
+	    #activationkey: ${6}
+	    #server_insecure: ${7:Current value from C(/etc/rhsm/rhsm.conf) is the default}
+	    #consumer_name: ${8}
+	    #rhsm_baseurl: ${9:Current value from C(/etc/rhsm/rhsm.conf) is the default}
+	    #pool: ${10:^$}
+	    #password: ${11}
+	    #consumer_type: ${12}
+	    #org_id: ${13}
+	    #environment: ${14}
+	    #force_register: ${15}
+	    #state: ${16:present}
+	    #autosubscribe: ${17}
 
 snippet redis
 	- name: ${1:task_description}
@@ -13783,6 +17501,19 @@ snippet redshift
 	    #preferred_maintenance_window: ${30}
 	    #vpc_security_group_ids: ${31}
 
+snippet redshift_facts
+	- name: ${1:task_description}
+	  redshift_facts:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #cluster_identifier: ${5}
+	    #security_token: ${6}
+	    #ec2_url: ${7}
+	    #region: ${8}
+	    #tags: ${9}
+	    #validate_certs: ${10:yes}
+
 snippet redshift_subnet_group
 	- name: ${1:task_description}
 	  redshift_subnet_group:
@@ -13802,22 +17533,23 @@ snippet replace
 	  replace:
 	    regexp: ${2}
 	    path: ${3}
-	    #selevel: ${4:s0}
-	    #after: ${5}
-	    #replace: ${6}
-	    #owner: ${7}
-	    #follow: ${8:no}
-	    #validate: ${9:None}
-	    #before: ${10}
-	    #group: ${11}
-	    #unsafe_writes: ${12}
-	    #seuser: ${13}
-	    #setype: ${14}
-	    #serole: ${15}
-	    #mode: ${16}
-	    #attributes: ${17:None}
-	    #backup: ${18:no}
-	    #others: ${19}
+	    #encoding: ${4:utf-8}
+	    #selevel: ${5:s0}
+	    #after: ${6}
+	    #replace: ${7}
+	    #owner: ${8}
+	    #follow: ${9:no}
+	    #validate: ${10:None}
+	    #before: ${11}
+	    #group: ${12}
+	    #unsafe_writes: ${13}
+	    #seuser: ${14}
+	    #setype: ${15}
+	    #serole: ${16}
+	    #mode: ${17}
+	    #attributes: ${18:None}
+	    #backup: ${19:no}
+	    #others: ${20}
 
 snippet rhevm
 	- name: ${1:task_description}
@@ -14165,7 +17897,8 @@ snippet script
 	    free_form: ${2:None}
 	    #creates: ${3}
 	    #removes: ${4}
-	    #decrypt: ${5:Yes}
+	    #chdir: ${5}
+	    #decrypt: ${6:Yes}
 
 snippet seboolean
 	- name: ${1:task_description}
@@ -14229,19 +17962,32 @@ snippet sensu_check
 	    #dependencies: ${9}
 	    #occurrences: ${10:1}
 	    #low_flap_threshold: ${11}
-	    #aggregate: ${12}
-	    #path: ${13:/etc/sensu/conf.d/checks.json}
-	    #standalone: ${14}
-	    #backup: ${15}
-	    #handlers: ${16}
-	    #publish: ${17:True}
-	    #custom: ${18}
-	    #source: ${19}
-	    #state: ${20:present}
-	    #high_flap_threshold: ${21}
-	    #timeout: ${22:10}
-	    #subdue_end: ${23}
-	    #refresh: ${24}
+	    #ttl: ${12}
+	    #aggregate: ${13}
+	    #path: ${14:/etc/sensu/conf.d/checks.json}
+	    #standalone: ${15}
+	    #backup: ${16}
+	    #handlers: ${17}
+	    #publish: ${18:True}
+	    #custom: ${19}
+	    #source: ${20}
+	    #state: ${21:present}
+	    #high_flap_threshold: ${22}
+	    #timeout: ${23:10}
+	    #subdue_end: ${24}
+	    #refresh: ${25}
+
+snippet sensu_silence
+	- name: ${1:task_description}
+	  sensu_silence:
+	    state: ${2:present}
+	    subscription: ${3:[]}
+	    #expire_on_resolve: ${4}
+	    #url: ${5:http://127.0.01:4567}
+	    #creator: ${6}
+	    #reason: ${7}
+	    #expire: ${8}
+	    #check: ${9}
 
 snippet sensu_subscription
 	- name: ${1:task_description}
@@ -14264,10 +18010,12 @@ snippet serverless
 	- name: ${1:task_description}
 	  serverless:
 	    service_path: ${2}
-	    #region: ${3:us-east-1}
-	    #functions: ${4}
-	    #state: ${5:present}
-	    #deploy: ${6:True}
+	    #functions: ${3}
+	    #deploy: ${4:True}
+	    #serverless_bin_path: ${5}
+	    #region: ${6:us-east-1}
+	    #stage: ${7}
+	    #state: ${8:present}
 
 snippet service
 	- name: ${1:task_description}
@@ -14285,6 +18033,7 @@ snippet set_fact
 	- name: ${1:task_description}
 	  set_fact:
 	    key_value: ${2:None}
+	    #cacheable: ${3}
 
 snippet set_stats
 	- name: ${1:task_description}
@@ -14439,7 +18188,7 @@ snippet slackpkg
 snippet slurp
 	- name: ${1:task_description}
 	  slurp:
-	    src: ${2:None}
+	    src: ${2}
 
 snippet smartos_image_facts
 	- name: ${1:task_description}
@@ -14604,13 +18353,13 @@ snippet stacki_host
 snippet stat
 	- name: ${1:task_description}
 	  stat:
-	    path: ${2:None}
-	    #get_checksum: ${3:True}
-	    #follow: ${4}
+	    path: ${2}
+	    #get_checksum: ${3:yes}
+	    #follow: ${4:no}
 	    #checksum_algorithm: ${5:sha1}
-	    #get_mime: ${6:True}
-	    #get_md5: ${7:True}
-	    #get_attributes: ${8:True}
+	    #get_mime: ${6:yes}
+	    #get_md5: ${7:yes}
+	    #get_attributes: ${8:yes}
 
 snippet statusio_maintenance
 	- name: ${1:task_description}
@@ -15109,9 +18858,8 @@ snippet tower_user
 	    #auditor: ${10}
 	    #tower_password: ${11}
 	    #tower_config_file: ${12}
-	    #organization: ${13}
-	    #password: ${14}
-	    #tower_verify_ssl: ${15:True}
+	    #password: ${13}
+	    #tower_verify_ssl: ${14:True}
 
 snippet twilio
 	- name: ${1:task_description}
@@ -15278,45 +19026,46 @@ snippet udm_user
 snippet ufw
 	- name: ${1:task_description}
 	  ufw:
-	    #direction: ${2}
-	    #from_port: ${3}
-	    #to_ip: ${4:any}
-	    #to_port: ${5}
-	    #from_ip: ${6:any}
-	    #interface: ${7}
-	    #name: ${8}
-	    #insert: ${9}
-	    #logging: ${10}
-	    #log: ${11}
-	    #proto: ${12}
-	    #route: ${13}
-	    #rule: ${14}
-	    #state: ${15}
-	    #policy: ${16}
-	    #delete: ${17}
+	    #comment: ${2}
+	    #direction: ${3}
+	    #from_port: ${4}
+	    #to_ip: ${5:any}
+	    #to_port: ${6}
+	    #from_ip: ${7:any}
+	    #interface: ${8}
+	    #name: ${9}
+	    #insert: ${10}
+	    #logging: ${11}
+	    #log: ${12}
+	    #proto: ${13}
+	    #route: ${14}
+	    #rule: ${15}
+	    #state: ${16}
+	    #policy: ${17}
+	    #delete: ${18}
 
 snippet unarchive
 	- name: ${1:task_description}
 	  unarchive:
-	    dest: ${2:None}
-	    src: ${3:None}
-	    #seuser: ${4}
-	    #remote_src: ${5:no}
-	    #selevel: ${6:s0}
-	    #decrypt: ${7:Yes}
-	    #exclude: ${8}
-	    #owner: ${9}
-	    #extra_opts: ${10}
-	    #copy: ${11:yes}
-	    #group: ${12}
-	    #unsafe_writes: ${13}
-	    #list_files: ${14:no}
-	    #keep_newer: ${15}
-	    #setype: ${16}
-	    #creates: ${17}
-	    #serole: ${18}
-	    #mode: ${19}
-	    #attributes: ${20:None}
+	    src: ${2}
+	    dest: ${3}
+	    #exclude: ${4}
+	    #keep_newer: ${5:no}
+	    #group: ${6}
+	    #remote_src: ${7:no}
+	    #unsafe_writes: ${8}
+	    #selevel: ${9:s0}
+	    #list_files: ${10:no}
+	    #seuser: ${11}
+	    #decrypt: ${12:Yes}
+	    #serole: ${13}
+	    #creates: ${14}
+	    #setype: ${15}
+	    #mode: ${16}
+	    #extra_opts: ${17}
+	    #owner: ${18}
+	    #attributes: ${19:None}
+	    #copy: ${20:yes}
 	    #validate_certs: ${21:yes}
 
 snippet uptimerobot
@@ -15354,10 +19103,11 @@ snippet urpmi
 	- name: ${1:task_description}
 	  urpmi:
 	    pkg: ${2:None}
-	    #update_cache: ${3}
-	    #state: ${4:present}
-	    #force: ${5:True}
-	    #no-recommends: ${6:True}
+	    #no-recommends: ${3:True}
+	    #force: ${4:True}
+	    #update_cache: ${5}
+	    #root: ${6:/}
+	    #state: ${7:present}
 
 snippet user
 	- name: ${1:task_description}
@@ -15679,29 +19429,31 @@ snippet vmware_guest
 	- name: ${1:task_description}
 	  vmware_guest:
 	    username: ${2}
-	    password: ${3}
-	    name: ${4}
-	    hostname: ${5}
-	    state: ${6}
-	    #resource_pool: ${7:None}
-	    #force: ${8}
-	    #esxi_hostname: ${9}
-	    #datacenter: ${10:ha-datacenter}
-	    #guest_id: ${11}
+	    state: ${3}
+	    password: ${4}
+	    name: ${5}
+	    hostname: ${6}
+	    #resource_pool: ${7}
+	    #snapshot_src: ${8}
+	    #force: ${9:no}
+	    #template: ${10}
+	    #hardware: ${11}
 	    #cluster: ${12}
 	    #name_match: ${13:first}
 	    #customization: ${14}
 	    #networks: ${15}
-	    #wait_for_ip_address: ${16}
-	    #hardware: ${17}
+	    #wait_for_ip_address: ${16:no}
+	    #datacenter: ${17:ha-datacenter}
 	    #disk: ${18}
-	    #is_template: ${19}
-	    #customvalues: ${20}
+	    #customvalues: ${19}
+	    #guest_id: ${20}
 	    #uuid: ${21}
 	    #annotation: ${22}
-	    #template: ${23}
-	    #folder: ${24}
-	    #validate_certs: ${25:True}
+	    #is_template: ${23:no}
+	    #esxi_hostname: ${24}
+	    #linked_clone: ${25:no}
+	    #folder: ${26:/vm}
+	    #validate_certs: ${27:True}
 
 snippet vmware_guest_facts
 	- name: ${1:task_description}
@@ -15710,11 +19462,22 @@ snippet vmware_guest_facts
 	    datacenter: ${3}
 	    hostname: ${4}
 	    password: ${5}
-	    name: ${6}
-	    #uuid: ${7}
-	    #name_match: ${8:first}
-	    #folder: ${9}
-	    #validate_certs: ${10:True}
+	    #uuid: ${6}
+	    #name_match: ${7:first}
+	    #folder: ${8:/vm}
+	    #validate_certs: ${9:True}
+	    #name: ${10}
+
+snippet vmware_guest_find
+	- name: ${1:task_description}
+	  vmware_guest_find:
+	    username: ${2}
+	    datacenter: ${3}
+	    hostname: ${4}
+	    password: ${5}
+	    #name: ${6}
+	    #validate_certs: ${7:True}
+	    #uuid: ${8}
 
 snippet vmware_guest_snapshot
 	- name: ${1:task_description}
@@ -15724,13 +19487,16 @@ snippet vmware_guest_snapshot
 	    hostname: ${4}
 	    state: ${5}
 	    password: ${6}
-	    name: ${7}
-	    #uuid: ${8}
+	    #uuid: ${7}
+	    #quiesce: ${8}
 	    #description: ${9}
-	    #snapshot_name: ${10}
-	    #name_match: ${11:first}
-	    #folder: ${12}
-	    #validate_certs: ${13:True}
+	    #memory_dump: ${10}
+	    #snapshot_name: ${11}
+	    #name_match: ${12:first}
+	    #remove_children: ${13}
+	    #folder: ${14:/vm}
+	    #validate_certs: ${15:True}
+	    #name: ${16}
 
 snippet vmware_host
 	- name: ${1:task_description}
@@ -15850,7 +19616,8 @@ snippet vmware_vm_shell
 	    #vm_shell_env: ${12:None}
 	    #cluster: ${13:None}
 	    #vm_id_type: ${14:vm_name}
-	    #validate_certs: ${15:True}
+	    #folder: ${15:/vm}
+	    #validate_certs: ${16:True}
 
 snippet vmware_vm_vss_dvs_migrate
 	- name: ${1:task_description}
@@ -15915,11 +19682,11 @@ snippet vmware_vswitch
 	  vmware_vswitch:
 	    username: ${2}
 	    hostname: ${3}
-	    nic_name: ${4}
-	    password: ${5}
-	    switch_name: ${6}
-	    #number_of_ports: ${7:128}
-	    #mtu: ${8}
+	    password: ${4}
+	    switch_name: ${5}
+	    #number_of_ports: ${6:128}
+	    #mtu: ${7}
+	    #nic_name: ${8}
 	    #state: ${9:present}
 	    #validate_certs: ${10:True}
 
@@ -15959,6 +19726,13 @@ snippet vsphere_guest
 	    #from_template: ${20}
 	    #snapshot_to_clone: ${21:none}
 
+snippet vyos_banner
+	- name: ${1:task_description}
+	  vyos_banner:
+	    banner: ${2:None}
+	    #text: ${3}
+	    #state: ${4:present}
+
 snippet vyos_command
 	- name: ${1:task_description}
 	  vyos_command:
@@ -15987,6 +19761,76 @@ snippet vyos_facts
 	    #gather_subset: ${2:!config}
 	    #provider: ${3}
 
+snippet vyos_interface
+	- name: ${1:task_description}
+	  vyos_interface:
+	    name: ${2}
+	    #rx_rate: ${3}
+	    #duplex: ${4:auto}
+	    #enabled: ${5}
+	    #mtu: ${6}
+	    #purge: ${7}
+	    #state: ${8:present}
+	    #aggregate: ${9}
+	    #speed: ${10}
+	    #tx_rate: ${11}
+	    #description: ${12}
+
+snippet vyos_l3_interface
+	- name: ${1:task_description}
+	  vyos_l3_interface:
+	    #purge: ${2}
+	    #state: ${3:present}
+	    #name: ${4}
+	    #ipv6: ${5}
+	    #aggregate: ${6}
+	    #ipv4: ${7}
+
+snippet vyos_linkagg
+	- name: ${1:task_description}
+	  vyos_linkagg:
+	    name: ${2}
+	    #purge: ${3}
+	    #state: ${4:present}
+	    #members: ${5}
+	    #aggregate: ${6}
+	    #mode: ${7}
+
+snippet vyos_lldp
+	- name: ${1:task_description}
+	  vyos_lldp:
+	    #state: ${2:present}
+
+snippet vyos_lldp_interface
+	- name: ${1:task_description}
+	  vyos_lldp_interface:
+	    #aggregate: ${2}
+	    #purge: ${3}
+	    #state: ${4:present}
+	    #name: ${5}
+
+snippet vyos_logging
+	- name: ${1:task_description}
+	  vyos_logging:
+	    #purge: ${2}
+	    #aggregate: ${3}
+	    #state: ${4:present}
+	    #name: ${5}
+	    #level: ${6}
+	    #dest: ${7}
+	    #facility: ${8}
+
+snippet vyos_static_route
+	- name: ${1:task_description}
+	  vyos_static_route:
+	    #purge: ${2}
+	    #state: ${3:present}
+	    #next_hop: ${4}
+	    #aggregate: ${5}
+	    #mask: ${6}
+	    #prefix: ${7}
+	    #admin_distance: ${8}
+
 snippet vyos_system
 	- name: ${1:task_description}
 	  vyos_system:
@@ -15997,20 +19841,33 @@ snippet vyos_system
 	    #hostname: ${6}
 	    #domain_name: ${7}
 
+snippet vyos_user
+	- name: ${1:task_description}
+	  vyos_user:
+	    #update_password: ${2:always}
+	    #users: ${3}
+	    #level: ${4}
+	    #purge: ${5}
+	    #state: ${6:present}
+	    #full_name: ${7}
+	    #password: ${8}
+	    #name: ${9}
+
 snippet wait_for
 	- name: ${1:task_description}
 	  wait_for:
-	    #active_connection_states: ${2:[u'ESTABLISHED', u'SYN_SENT', u'SYN_RECV', u'FIN_WAIT1', u'FIN_WAIT2', u'TIME_WAIT']}
+	    #active_connection_states: ${2:[u'ESTABLISHED', u'FIN_WAIT1', u'FIN_WAIT2', u'SYN_RECV', u'SYN_SENT', u'TIME_WAIT']}
 	    #host: ${3:127.0.0.1}
 	    #connect_timeout: ${4:5}
 	    #delay: ${5}
-	    #state: ${6:started}
-	    #sleep: ${7:1}
-	    #timeout: ${8:300}
-	    #exclude_hosts: ${9}
-	    #search_regex: ${10}
-	    #path: ${11}
-	    #port: ${12}
+	    #search_regex: ${6}
+	    #state: ${7:started}
+	    #sleep: ${8:1}
+	    #timeout: ${9:300}
+	    #exclude_hosts: ${10}
+	    #msg: ${11}
+	    #path: ${12}
+	    #port: ${13}
 
 snippet wait_for_connection
 	- name: ${1:task_description}
@@ -16103,17 +19960,18 @@ snippet win_chocolatey
 	- name: ${1:task_description}
 	  win_chocolatey:
 	    name: ${2}
-	    #upgrade: ${3}
-	    #force: ${4}
-	    #ignore_checksums: ${5}
-	    #allow_empty_checksums: ${6}
+	    #upgrade: ${3:no}
+	    #force: ${4:no}
+	    #ignore_checksums: ${5:no}
+	    #allow_empty_checksums: ${6:no}
 	    #install_args: ${7}
 	    #source: ${8}
 	    #state: ${9:present}
 	    #version: ${10}
 	    #params: ${11}
-	    #ignore_dependencies: ${12}
+	    #ignore_dependencies: ${12:no}
 	    #timeout: ${13:2700}
+	    #skip_scripts: ${14:no}
 
 snippet win_command
 	- name: ${1:task_description}
@@ -16131,6 +19989,15 @@ snippet win_copy
 	    #content: ${4}
 	    #remote_src: ${5}
 	    #force: ${6:True}
+
+snippet win_defrag
+	- name: ${1:task_description}
+	  win_defrag:
+	    #priority: ${2:low}
+	    #excluded_volumes: ${3}
+	    #included_volumes: ${4}
+	    #freespace_consolidation: ${5}
+	    #parallel: ${6:no}
 
 snippet win_disk_image
 	- name: ${1:task_description}
@@ -16160,19 +20027,43 @@ snippet win_domain_controller
 	    #dns_domain_name: ${6}
 	    #safe_mode_password: ${7}
 
+snippet win_domain_group
+	- name: ${1:task_description}
+	  win_domain_group:
+	    name: ${2}
+	    #category: ${3}
+	    #protect: ${4}
+	    #display_name: ${5}
+	    #description: ${6}
+	    #domain_username: ${7}
+	    #ignore_protection: ${8:no}
+	    #state: ${9:present}
+	    #domain_password: ${10}
+	    #organizational_unit: ${11}
+	    #attributes: ${12}
+	    #managed_by: ${13}
+	    #scope: ${14}
+
 snippet win_domain_membership
 	- name: ${1:task_description}
 	  win_domain_membership:
 	    domain_admin_user: ${2}
 	    #workgroup_name: ${3}
-	    #state: ${4}
-	    #dns_domain_name: ${5}
-	    #hostname: ${6}
-	    #domain_admin_password: ${7}
+	    #domain_ou_path: ${4}
+	    #state: ${5}
+	    #dns_domain_name: ${6}
+	    #hostname: ${7}
+	    #domain_admin_password: ${8}
 
 snippet win_dotnet_ngen
 	- name: ${1:task_description}
 	  win_dotnet_ngen:
+
+snippet win_dsc
+	- name: ${1:task_description}
+	  win_dsc:
+	    resource_name: ${2}
+	    #module_version: ${3:latest}
 
 snippet win_environment
 	- name: ${1:task_description}
@@ -16219,24 +20110,30 @@ snippet win_find
 	    #hidden: ${12}
 	    #size: ${13}
 
+snippet win_firewall
+	- name: ${1:task_description}
+	  win_firewall:
+	    #state: ${2}
+	    #profiles: ${3:[u'Domain', u'Private', u'Public']}
+
 snippet win_firewall_rule
 	- name: ${1:task_description}
 	  win_firewall_rule:
-	    direction: ${2:None}
-	    name: ${3:None}
-	    state: ${4:present}
-	    action: ${5:None}
-	    #profile: ${6:any}
-	    #remoteport: ${7:any}
-	    #enable: ${8:True}
-	    #protocol: ${9:any}
-	    #service: ${10:any}
-	    #description: ${11}
-	    #localip: ${12:any}
+	    direction: ${2}
+	    name: ${3}
+	    action: ${4}
+	    #remoteport: ${5}
+	    #protocol: ${6:any}
+	    #service: ${7}
+	    #description: ${8}
+	    #enabled: ${9:yes}
+	    #profiles: ${10:domain,private,public}
+	    #localip: ${11:any}
+	    #state: ${12:present}
 	    #program: ${13}
 	    #remoteip: ${14:any}
-	    #force: ${15}
-	    #localport: ${16:any}
+	    #force: ${15:no}
+	    #localport: ${16}
 
 snippet win_get_url
 	- name: ${1:task_description}
@@ -16245,11 +20142,12 @@ snippet win_get_url
 	    dest: ${3:None}
 	    #username: ${4}
 	    #force: ${5:True}
-	    #skip_certificate_validation: ${6}
+	    #skip_certificate_validation: ${6:no}
 	    #proxy_url: ${7}
 	    #proxy_password: ${8}
 	    #proxy_username: ${9}
 	    #password: ${10}
+	    #validate_certs: ${11:yes}
 
 snippet win_group
 	- name: ${1:task_description}
@@ -16257,6 +20155,13 @@ snippet win_group
 	    name: ${2:None}
 	    #state: ${3:present}
 	    #description: ${4}
+
+snippet win_group_membership
+	- name: ${1:task_description}
+	  win_group_membership:
+	    name: ${2}
+	    members: ${3}
+	    #state: ${4:present}
 
 snippet win_iis_virtualdirectory
 	- name: ${1:task_description}
@@ -16270,9 +20175,9 @@ snippet win_iis_virtualdirectory
 snippet win_iis_webapplication
 	- name: ${1:task_description}
 	  win_iis_webapplication:
-	    name: ${2:None}
-	    site: ${3:None}
-	    #state: ${4}
+	    name: ${2}
+	    site: ${3}
+	    #state: ${4:present}
 	    #application_pool: ${5}
 	    #physical_path: ${6}
 
@@ -16331,16 +20236,17 @@ snippet win_msg
 	    #msg: ${2:Hello world!}
 	    #to: ${3:*}
 	    #display_seconds: ${4:10}
-	    #wait: ${5}
+	    #wait: ${5:no}
 
 snippet win_msi
 	- name: ${1:task_description}
 	  win_msi:
 	    path: ${2}
-	    #extra_args: ${3}
-	    #state: ${4:present}
-	    #creates: ${5}
-	    #wait: ${6}
+	    #creates: ${3}
+	    #extra_args: ${4}
+	    #state: ${5:present}
+	    #removes: ${6}
+	    #wait: ${7:no}
 
 snippet win_nssm
 	- name: ${1:task_description}
@@ -16362,7 +20268,7 @@ snippet win_owner
 	  win_owner:
 	    path: ${2}
 	    user: ${3}
-	    #recurse: ${4}
+	    #recurse: ${4:no}
 
 snippet win_package
 	- name: ${1:task_description}
@@ -16405,8 +20311,17 @@ snippet win_psexec
 	    #password: ${12}
 	    #hostnames: ${13}
 	    #timeout: ${14}
-	    #nobanner: ${15:yes}
+	    #nobanner: ${15:no}
 	    #wait: ${16:yes}
+
+snippet win_psmodule
+	- name: ${1:task_description}
+	  win_psmodule:
+	    name: ${2}
+	    #url: ${3}
+	    #allow_clobber: ${4}
+	    #repository: ${5}
+	    #state: ${6:present}
 
 snippet win_reboot
 	- name: ${1:task_description}
@@ -16429,9 +20344,10 @@ snippet win_regedit
 	  win_regedit:
 	    path: ${2}
 	    #state: ${3:present}
-	    #data: ${4}
+	    #delete_key: ${4:yes}
 	    #name: ${5}
 	    #type: ${6:string}
+	    #data: ${7}
 
 snippet win_region
 	- name: ${1:task_description}
@@ -16456,14 +20372,22 @@ snippet win_robocopy
 	    #purge: ${5}
 	    #flags: ${6:None}
 
+snippet win_route
+	- name: ${1:task_description}
+	  win_route:
+	    destination: ${2}
+	    #metric: ${3:1}
+	    #gateway: ${4}
+	    #state: ${5:present}
+
 snippet win_say
 	- name: ${1:task_description}
 	  win_say:
 	    #end_sound_path: ${2}
-	    #msg: ${3:none}
+	    #msg: ${3}
 	    #start_sound_path: ${4}
 	    #voice: ${5:system default voice}
-	    #msg_file: ${6:none}
+	    #msg_file: ${6}
 	    #speech_speed: ${7}
 
 snippet win_scheduled_task
@@ -16473,13 +20397,23 @@ snippet win_scheduled_task
 	    state: ${3}
 	    #executable: ${4}
 	    #description: ${5}
-	    #enabled: ${6:True}
-	    #days_of_week: ${7}
-	    #frequency: ${8}
-	    #arguments: ${9}
-	    #time: ${10}
-	    #path: ${11:\}
-	    #user: ${12}
+	    #runlevel: ${6:limited}
+	    #enabled: ${7:True}
+	    #days_of_week: ${8}
+	    #store_password: ${9:True}
+	    #frequency: ${10}
+	    #arguments: ${11}
+	    #time: ${12}
+	    #path: ${13:\}
+	    #password: ${14}
+	    #user: ${15:DOMAIN\user}
+
+snippet win_security_policy
+	- name: ${1:task_description}
+	  win_security_policy:
+	    section: ${2}
+	    key: ${3}
+	    value: ${4}
 
 snippet win_service
 	- name: ${1:task_description}
@@ -16504,12 +20438,13 @@ snippet win_share
 	    path: ${3}
 	    #deny: ${4}
 	    #full: ${5}
-	    #read: ${6}
-	    #list: ${7}
-	    #state: ${8:present}
-	    #caching_mode: ${9:Manual}
-	    #change: ${10}
-	    #description: ${11}
+	    #encrypt: ${6:no}
+	    #read: ${7}
+	    #list: ${8:no}
+	    #state: ${9:present}
+	    #caching_mode: ${10:Manual}
+	    #change: ${11}
+	    #description: ${12}
 
 snippet win_shell
 	- name: ${1:task_description}
@@ -16565,16 +20500,16 @@ snippet win_template
 snippet win_timezone
 	- name: ${1:task_description}
 	  win_timezone:
-	    timezone: ${2:None}
+	    timezone: ${2}
 
 snippet win_unzip
 	- name: ${1:task_description}
 	  win_unzip:
 	    dest: ${2}
 	    src: ${3}
-	    #recurse: ${4}
-	    #creates: ${5}
-	    #rm: ${6}
+	    #delete_archive: ${4:no}
+	    #recurse: ${5:no}
+	    #creates: ${6}
 
 snippet win_updates
 	- name: ${1:task_description}
@@ -16588,11 +20523,22 @@ snippet win_uri
 	  win_uri:
 	    url: ${2}
 	    #body: ${3}
-	    #headers: ${4}
-	    #dest: ${5}
-	    #content_type: ${6}
-	    #method: ${7:GET}
-	    #use_basic_parsing: ${8:True}
+	    #dest: ${4}
+	    #status_code: ${5:200}
+	    #removes: ${6}
+	    #use_basic_parsing: ${7:yes}
+	    #content_type: ${8}
+	    #password: ${9}
+	    #maximum_redirection: ${10:5}
+	    #method: ${11:GET}
+	    #creates: ${12}
+	    #headers: ${13}
+	    #timeout: ${14:30}
+	    #follow_redirects: ${15:safe}
+	    #return_content: ${16:no}
+	    #validate_certs: ${17:yes}
+	    #client_cert: ${18}
+	    #user: ${19}
 
 snippet win_user
 	- name: ${1:task_description}
@@ -16610,6 +20556,13 @@ snippet win_user
 	    #password_never_expires: ${12}
 	    #account_locked: ${13}
 	    #user_cannot_change_password: ${14}
+
+snippet win_wakeonlan
+	- name: ${1:task_description}
+	  win_wakeonlan:
+	    mac: ${2}
+	    #broadcast: ${3:255.255.255.255}
+	    #port: ${4:7}
 
 snippet win_webpicmd
 	- name: ${1:task_description}
@@ -16832,11 +20785,12 @@ snippet zypper
 	    name: ${2}
 	    #force: ${3:no}
 	    #disable_gpg_check: ${4:no}
-	    #state: ${5:present}
-	    #oldpackage: ${6:no}
-	    #update_cache: ${7:no}
-	    #disable_recommends: ${8:yes}
-	    #type: ${9:package}
+	    #extra_args: ${5}
+	    #state: ${6:present}
+	    #oldpackage: ${7:no}
+	    #update_cache: ${8:no}
+	    #disable_recommends: ${9:yes}
+	    #type: ${10:package}
 
 snippet zypper_repository
 	- name: ${1:task_description}
