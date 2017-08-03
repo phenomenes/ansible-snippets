@@ -48,3 +48,7 @@ module name and press `<tab>` to expand the snippet:
 ```
 
 Press `<tab>` again to move between arguments.
+
+## License
+
+BSD 2-clause "Simplified" License
