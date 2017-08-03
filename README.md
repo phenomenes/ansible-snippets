@@ -1,19 +1,18 @@
-# Ansible snippets
+# ansible-snippets
 
-This repo contains snippets for Ansible.
+Ansible Vim snippets for SnipMate and UltiSnips.
 
 ## Requirements
 
 * [UtilSnips](https://github.com/SirVer/ultisnips) or [SnipMate](https://github.com/garbas/vim-snipmate)
-* [vim-plug](https://github.com/junegunn/vim-plug) (optional)
 
-## Installation
+## Install
 
-To install using [vim-plug](https://github.com/junegunn/vim-plug) add
+To install via [vim-plug](https://github.com/junegunn/vim-plug) add
 `Plug 'phenomenes/ansible-snippets'` to your `~/.vimrc` and `:PlugInstall` or
 `$ vim +PlugInstall +qall`
 
-To install manually clone the repo to your favourite location:
+To manually install, clone this repo to your favourite location:
 
 ```
 $ git clone https://github.com/phenomenes/ansible-snippets.git ~/ansible-snippets
@@ -22,8 +21,8 @@ $ cp -r ~/ansible-snippets/* ~/.vim/
 
 ## Usage
 
-Edit a `.yml` or `.yaml` file, type `play` or any Ansible's module name and use
-`<tab>` to expand the snippet:
+Open a `.yml` or `.yaml` file, in inster mode type `play` or any Ansible's
+module name and press `<tab>` to expand the snippet:
 
 ```
 - hosts: group
@@ -48,9 +47,4 @@ Edit a `.yml` or `.yaml` file, type `play` or any Ansible's module name and use
     ...
 ```
 
-Use `<tab>` again to move between arguments.
-
-## Credits
-
-This snippets were generated with [ansible_snippet_generator](https://github.com/phenomenes/ansible_snippet_generator)
-forked from [bleader/ansible_snippet_generator](https://github.com/bleader/ansible_snippet_generator)
+Press `<tab>` again to move between arguments.
