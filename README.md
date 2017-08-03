@@ -47,7 +47,7 @@ module name and press `<tab>` to expand the snippet:
     ...
 ```
 
-Press `<tab>` again to move between arguments.
+Press `<tab>` again to move to next argument.
 
 ## License
 
