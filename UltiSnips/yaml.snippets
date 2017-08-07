@@ -66,16 +66,6 @@ snippet a10_virtual_server
     #validate_certs: ${11:yes}
 endsnippet
 
-snippet accelerate
-- name: ${1:task_description}
-  accelerate:
-    #timeout: ${2:300}
-    #minutes: ${3:30}
-    #port: ${4:5099}
-    #multi_key: ${5}
-    #ipv6: ${6}
-endsnippet
-
 snippet aci_rest
 - name: ${1:task_description}
   aci_rest:
@@ -4453,111 +4443,6 @@ snippet cisco_spark
     #message_type: ${6:text}
 endsnippet
 
-snippet cl_bond
-- name: ${1:task_description}
-  cl_bond:
-    name: ${2}
-    slaves: ${3}
-    #clag_id: ${4}
-    #lacp_rate: ${5:1}
-    #xmit_hash_policy: ${6:layer3+4}
-    #miimon: ${7:100}
-    #mstpctl_portadminedge: ${8}
-    #mode: ${9:802.3ad}
-    #lacp_bypass_allow: ${10}
-    #lacp_bypass_all_active: ${11}
-    #virtual_mac: ${12}
-    #min_links: ${13:1}
-    #lacp_bypass_period: ${14}
-    #alias_name: ${15}
-    #lacp_bypass_priority: ${16}
-    #addr_method: ${17}
-    #mstpctl_bpduguard: ${18}
-    #location: ${19:[u'/etc/network/interfaces.d']}
-    #mtu: ${20}
-    #pvid: ${21}
-    #ipv4: ${22}
-    #ipv6: ${23}
-    #vids: ${24}
-    #mstpctl_portnetwork: ${25}
-    #virtual_ip: ${26}
-endsnippet
-
-snippet cl_bridge
-- name: ${1:task_description}
-  cl_bridge:
-    name: ${2}
-    ports: ${3}
-    #addr_method: ${4}
-    #virtual_ip: ${5}
-    #vlan_aware: ${6}
-    #mstpctl_treeprio: ${7}
-    #virtual_mac: ${8}
-    #mtu: ${9}
-    #pvid: ${10}
-    #stp: ${11:yes}
-    #location: ${12:[u'/etc/network/interfaces.d']}
-    #ipv6: ${13}
-    #vids: ${14}
-    #alias_name: ${15}
-    #ipv4: ${16}
-endsnippet
-
-snippet cl_img_install
-- name: ${1:task_description}
-  cl_img_install:
-    src: ${2}
-    #version: ${3:None}
-    #switch_slot: ${4:no}
-endsnippet
-
-snippet cl_interface
-- name: ${1:task_description}
-  cl_interface:
-    name: ${2}
-    #clagd_sys_mac: ${3}
-    #ipv6: ${4}
-    #virtual_mac: ${5}
-    #alias_name: ${6}
-    #mstpctl_portadminedge: ${7}
-    #speed: ${8}
-    #virtual_ip: ${9}
-    #addr_method: ${10}
-    #clagd_enable: ${11}
-    #mstpctl_bpduguard: ${12}
-    #clagd_priority: ${13}
-    #mtu: ${14}
-    #pvid: ${15}
-    #location: ${16:[u'/etc/network/interfaces.d']}
-    #clagd_peer_ip: ${17}
-    #vids: ${18}
-    #mstpctl_portnetwork: ${19}
-    #ipv4: ${20}
-endsnippet
-
-snippet cl_interface_policy
-- name: ${1:task_description}
-  cl_interface_policy:
-    allowed: ${2}
-    #location: ${3:/etc/network/interfaces.d/}
-endsnippet
-
-snippet cl_license
-- name: ${1:task_description}
-  cl_license:
-    src: ${2}
-    #force: ${3}
-endsnippet
-
-snippet cl_ports
-- name: ${1:task_description}
-  cl_ports:
-    #speed_4_by_10g: ${2}
-    #speed_10g: ${3}
-    #speed_40g: ${4}
-    #speed_40g_div_4: ${5}
-endsnippet
-
 snippet clc_aa_policy
 - name: ${1:task_description}
   clc_aa_policy:
@@ -6635,66 +6520,6 @@ snippet dnsmadeeasy
     #validate_certs: ${27:yes}
 endsnippet
 
-snippet docker
-- name: ${1:task_description}
-  docker:
-    image: ${2}
-    #publish_all_ports: ${3}
-    #tty: ${4}
-    #log_opt: ${5}
-    #insecure_registry: ${6}
-    #links: ${7}
-    #memory_limit: ${8}
-    #docker_url: ${9:${DOCKER_HOST} or unix://var/run/docker.sock}
-    #labels: ${10}
-    #pid: ${11:None}
-    #docker_api_version: ${12:docker-py default remote API version}
-    #stop_timeout: ${13:10}
-    #tls_client_key: ${14:${DOCKER_CERT_PATH}/key.pem}
-    #privileged: ${15}
-    #env_file: ${16}
-    #read_only: ${17}
-    #use_tls: ${18}
-    #password: ${19}
-    #hostname: ${20}
-    #lxc_conf: ${21}
-    #tls_ca_cert: ${22:${DOCKER_CERT_PATH}/ca.pem}
-    #state: ${23:started}
-    #tls_client_cert: ${24:${DOCKER_CERT_PATH}/cert.pem}
-    #entrypoint: ${25}
-    #env: ${26}
-    #volumes_from: ${27}
-    #net: ${28}
-    #email: ${29}
-    #username: ${30}
-    #docker_user: ${31}
-    #log_driver: ${32:json-file}
-    #expose: ${33}
-    #stdin_open: ${34}
-    #tls_hostname: ${35:Taken from docker_url}
-    #domainname: ${36}
-    #registry: ${37:DockerHub}
-    #volumes: ${38}
-    #detach: ${39:True}
-    #cpu_set: ${40}
-    #pull: ${41:missing}
-    #dns: ${42}
-    #name: ${43}
-    #signal: ${44:KILL}
-    #cap_add: ${45}
-    #restart_policy: ${46}
-    #count: ${47:1}
-    #devices: ${48}
-    #extra_hosts: ${49}
-    #command: ${50}
-    #restart_policy_retry: ${51}
-    #timeout: ${52:60}
-    #cap_drop: ${53}
-    #ports: ${54}
-    #ulimits: ${55}
-    #cpu_shares: ${56}
-endsnippet
-
 snippet docker_container
 - name: ${1:task_description}
   docker_container:
@@ -7123,18 +6948,6 @@ snippet ec2_ami_find
     #virtualization_type: ${19}
 endsnippet
 
-snippet ec2_ami_search
-- name: ${1:task_description}
-  ec2_ami_search:
-    release: ${2}
-    distro: ${3}
-    #stream: ${4:server}
-    #virt: ${5:paravirtual}
-    #region: ${6:us-east-1}
-    #arch: ${7:amd64}
-    #store: ${8:ebs}
-endsnippet
-
 snippet ec2_asg
 - name: ${1:task_description}
   ec2_asg:
@@ -7386,8 +7199,6 @@ endsnippet
 
 snippet ec2_metadata_facts
 - name: ${1:task_description}
-  ec2_metadata_facts:snippet ec2_metadata_facts
-- name: ${1:task_description}
   ec2_metadata_facts:snippet ec2_metric_alarm
 - name: ${1:task_description}
   ec2_metric_alarm:
@@ -7413,19 +7224,6 @@ snippet ec2_metadata_facts
     #insufficient_data_actions: ${21}
     #aws_access_key: ${22}
     #validate_certs: ${23:yes}
-endsnippet
-
-snippet ec2_remote_facts
-- name: ${1:task_description}
-  ec2_remote_facts:
-    #aws_secret_key: ${2}
-    #profile: ${3}
-    #aws_access_key: ${4}
-    #security_token: ${5}
-    #region: ${6}
-    #filters: ${7}
-    #ec2_url: ${8}
-    #validate_certs: ${9:yes}
 endsnippet
 
 snippet ec2_scaling_policy
@@ -7537,30 +7335,6 @@ snippet ec2_vol_facts
     #filters: ${7}
     #ec2_url: ${8}
     #validate_certs: ${9:yes}
-endsnippet
-
-snippet ec2_vpc
-- name: ${1:task_description}
-  ec2_vpc:
-    resource_tags: ${2}
-    state: ${3}
-    #profile: ${4}
-    #subnets: ${5}
-    #internet_gateway: ${6:no}
-    #ec2_url: ${7}
-    #wait_timeout: ${8:300}
-    #dns_hostnames: ${9:yes}
-    #cidr_block: ${10}
-    #wait: ${11:no}
-    #aws_secret_key: ${12}
-    #aws_access_key: ${13}
-    #route_tables: ${14}
-    #dns_support: ${15:yes}
-    #region: ${16}
-    #instance_tenancy: ${17:default}
-    #vpc_id: ${18}
-    #security_token: ${19}
-    #validate_certs: ${20:yes}
 endsnippet
 
 snippet ec2_vpc_dhcp_options
@@ -8221,40 +7995,6 @@ snippet elb_classic_lb
     #stickiness: ${30}
 endsnippet
 
-snippet elb_classic_lb
-- name: ${1:task_description}
-  elb_classic_lb:
-    name: ${2}
-    state: ${3}
-    #profile: ${4}
-    #subnets: ${5:None}
-    #health_check: ${6:None}
-    #tags: ${7}
-    #purge_subnets: ${8}
-    #aws_access_key: ${9}
-    #instance_ids: ${10}
-    #zones: ${11}
-    #idle_timeout: ${12}
-    #wait_timeout: ${13:60}
-    #ec2_url: ${14}
-    #cross_az_load_balancing: ${15:no}
-    #security_group_ids: ${16:None}
-    #purge_zones: ${17}
-    #wait: ${18}
-    #aws_secret_key: ${19}
-    #purge_instance_ids: ${20}
-    #connection_draining_timeout: ${21}
-    #security_token: ${22}
-    #region: ${23}
-    #listeners: ${24}
-    #access_logs: ${25:None}
-    #security_group_names: ${26:None}
-    #purge_listeners: ${27:True}
-    #scheme: ${28:internet-facing}
-    #validate_certs: ${29:yes}
-    #stickiness: ${30}
-endsnippet
-
 snippet elb_classic_lb_facts
 - name: ${1:task_description}
   elb_classic_lb_facts:
@@ -8266,37 +8006,6 @@ snippet elb_classic_lb_facts
     #names: ${7}
     #ec2_url: ${8}
     #validate_certs: ${9:yes}
-endsnippet
-
-snippet elb_classic_lb_facts
-- name: ${1:task_description}
-  elb_classic_lb_facts:
-    #aws_secret_key: ${2}
-    #profile: ${3}
-    #aws_access_key: ${4}
-    #security_token: ${5}
-    #region: ${6}
-    #names: ${7}
-    #ec2_url: ${8}
-    #validate_certs: ${9:yes}
-endsnippet
-
-snippet elb_instance
-- name: ${1:task_description}
-  elb_instance:
-    instance_id: ${2}
-    state: ${3}
-    #aws_secret_key: ${4}
-    #profile: ${5}
-    #aws_access_key: ${6}
-    #security_token: ${7}
-    #region: ${8}
-    #wait_timeout: ${9}
-    #ec2_url: ${10}
-    #wait: ${11:True}
-    #validate_certs: ${12:yes}
-    #enable_availability_zone: ${13:True}
-    #ec2_elbs: ${14:None}
 endsnippet
 
 snippet elb_instance
@@ -13481,25 +13190,6 @@ snippet nxos_logging
     #purge: ${7}
     #state: ${8:present}
     #aggregate: ${9}
-endsnippet
-
-snippet nxos_mtu
-- name: ${1:task_description}
-  nxos_mtu:
-    host: ${2}
-    transport: ${3:cli}
-    #username: ${4}
-    #ssh_keyfile: ${5}
-    #sysmtu: ${6}
-    #state: ${7:present}
-    #mtu: ${8}
-    #timeout: ${9:10}
-    #provider: ${10}
-    #interface: ${11}
-    #use_ssl: ${12}
-    #password: ${13}
-    #validate_certs: ${14}
-    #port: ${15:0 (use common port)}
 endsnippet
 
 snippet nxos_ntp
