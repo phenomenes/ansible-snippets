@@ -301,16 +301,17 @@ snippet aci_epg_to_domain
 	    #ap: ${9}
 	    #encap_mode: ${10:auto}
 	    #use_ssl: ${11:yes}
-	    #netflow: ${12:disabled}
+	    #vm_provider: ${12}
 	    #resolution_immediacy: ${13:lazy}
 	    #tenant: ${14}
 	    #use_proxy: ${15:yes}
 	    #deploy_immediacy: ${16:lazy}
 	    #primary_encap: ${17}
 	    #state: ${18:present}
-	    #timeout: ${19:30}
-	    #epg: ${20}
-	    #validate_certs: ${21:yes}
+	    #netflow: ${19:disabled}
+	    #timeout: ${20:30}
+	    #epg: ${21}
+	    #validate_certs: ${22:yes}
 
 snippet aci_filter
 	- name: ${1:task_description}
@@ -861,14 +862,14 @@ snippet apt
 snippet apt_key
 	- name: ${1:task_description}
 	  apt_key:
-	    #keyserver: ${2:none}
-	    #url: ${3:none}
-	    #data: ${4:none}
-	    #keyring: ${5:none}
+	    #keyserver: ${2}
+	    #url: ${3}
+	    #data: ${4}
+	    #keyring: ${5}
 	    #state: ${6:present}
-	    #file: ${7:none}
+	    #file: ${7}
 	    #validate_certs: ${8:yes}
-	    #id: ${9:none}
+	    #id: ${9}
 
 snippet apt_repository
 	- name: ${1:task_description}
@@ -2686,30 +2687,6 @@ snippet aws_waf_facts
 	    #ec2_url: ${7}
 	    #validate_certs: ${8:yes}
 
-snippet azure
-	- name: ${1:task_description}
-	  azure:
-	    image: ${2:None}
-	    storage_account: ${3}
-	    name: ${4:None}
-	    location: ${5:None}
-	    #role_size: ${6:Small}
-	    #virtual_network_name: ${7}
-	    #wait_timeout_redirects: ${8:300}
-	    #wait_timeout: ${9:600}
-	    #user: ${10}
-	    #auto_updates: ${11:no}
-	    #password: ${12}
-	    #os_type: ${13:linux}
-	    #wait: ${14:no}
-	    #management_cert_path: ${15}
-	    #hostname: ${16}
-	    #ssh_cert_path: ${17}
-	    #state: ${18:present}
-	    #subscription_id: ${19}
-	    #endpoints: ${20:22}
-	    #enable_winrm: ${21:yes}
-
 snippet azure_rm_acs
 	- name: ${1:task_description}
 	  azure_rm_acs:
@@ -2800,21 +2777,17 @@ snippet azure_rm_dnsrecordset
 	    record_type: ${4}
 	    zone_name: ${5}
 	    #profile: ${6}
-	    #weight: ${7}
-	    #records: ${8}
-	    #ad_user: ${9}
-	    #time_to_live: ${10:3600}
-	    #cloud_environment: ${11:AzureCloud}
-	    #record_state: ${12:present}
-	    #priority: ${13}
-	    #secret: ${14}
-	    #record_set_state: ${15:present}
-	    #preference: ${16}
-	    #client_id: ${17}
-	    #subscription_id: ${18}
-	    #password: ${19}
-	    #port: ${20}
-	    #tenant: ${21}
+	    #records: ${7}
+	    #ad_user: ${8}
+	    #time_to_live: ${9:3600}
+	    #cloud_environment: ${10:AzureCloud}
+	    #state: ${11:present}
+	    #secret: ${12}
+	    #client_id: ${13}
+	    #record_mode: ${14:purge}
+	    #subscription_id: ${15}
+	    #password: ${16}
+	    #tenant: ${17}
 
 snippet azure_rm_dnsrecordset_facts
 	- name: ${1:task_description}
@@ -3149,7 +3122,8 @@ snippet azure_rm_storageaccount
 	    #secret: ${15}
 	    #state: ${16:present}
 	    #location: ${17:resource_group location}
-	    #subscription_id: ${18}
+	    #access_tier: ${18:Storage}
+	    #subscription_id: ${19}
 
 snippet azure_rm_storageaccount_facts
 	- name: ${1:task_description}
@@ -3218,15 +3192,15 @@ snippet azure_rm_virtualmachine
 	  azure_rm_virtualmachine:
 	    resource_group: ${2}
 	    image: ${3}
-	    vm_size: ${4}
-	    name: ${5}
-	    #virtual_network_resource_group: ${6}
-	    #ad_user: ${7}
-	    #managed_disk_type: ${8}
-	    #ssh_public_keys: ${9}
-	    #storage_container_name: ${10:vhds}
-	    #allocated: ${11:True}
-	    #ssh_password_enabled: ${12:True}
+	    name: ${4}
+	    #virtual_network_resource_group: ${5}
+	    #ad_user: ${6}
+	    #managed_disk_type: ${7}
+	    #ssh_public_keys: ${8}
+	    #storage_container_name: ${9:vhds}
+	    #allocated: ${10:True}
+	    #ssh_password_enabled: ${11:True}
+	    #vm_size: ${12}
 	    #remove_on_absent: ${13:[u'all']}
 	    #append_tags: ${14:True}
 	    #cloud_environment: ${15:AzureCloud}
@@ -3609,10 +3583,11 @@ snippet bigip_iapp_template
 	    password: ${4}
 	    #force: ${5}
 	    #name: ${6}
-	    #content: ${7}
-	    #state: ${8:present}
-	    #server_port: ${9:443}
-	    #validate_certs: ${10:True}
+	    #partition: ${7:Common}
+	    #content: ${8}
+	    #state: ${9:present}
+	    #server_port: ${10:443}
+	    #validate_certs: ${11:True}
 
 snippet bigip_irule
 	- name: ${1:task_description}
@@ -8793,11 +8768,12 @@ snippet eos_vrf
 	- name: ${1:task_description}
 	  eos_vrf:
 	    name: ${2}
-	    #purge: ${3}
+	    #delay: ${3:10}
 	    #rd: ${4}
 	    #state: ${5:present}
-	    #aggregate: ${6}
-	    #interfaces: ${7}
+	    #purge: ${6}
+	    #aggregate: ${7}
+	    #interfaces: ${8}
 
 snippet execute_lambda
 	- name: ${1:task_description}
@@ -9927,9 +9903,24 @@ snippet imgadm
 	    #type: ${6:imgapi}
 	    #pool: ${7:zones}
 
-snippet include
+snippet import_plays
 	- name: ${1:task_description}
-	  include:
+	  import_plays:
+	    #free-form: ${2}
+
+snippet import_role
+	- name: ${1:task_description}
+	  import_role:
+	    name: ${2}
+	    #allow_duplicates: ${3:True}
+	    #tasks_from: ${4:main}
+	    #vars_from: ${5:main}
+	    #defaults_from: ${6:main}
+	    #private: ${7:None}
+
+snippet import_tasks
+	- name: ${1:task_description}
+	  import_tasks:
 	    #free-form: ${2}
 
 snippet include_role
@@ -9941,6 +9932,11 @@ snippet include_role
 	    #vars_from: ${5:main}
 	    #defaults_from: ${6:main}
 	    #private: ${7:None}
+
+snippet include_tasks
+	- name: ${1:task_description}
+	  include_tasks:
+	    #free-form: ${2}
 
 snippet include_vars
 	- name: ${1:task_description}
@@ -10161,16 +10157,17 @@ snippet ios_interface
 	- name: ${1:task_description}
 	  ios_interface:
 	    name: ${2}
-	    #rx_rate: ${3}
-	    #duplex: ${4:auto}
-	    #enabled: ${5}
-	    #mtu: ${6}
-	    #delay: ${7}
-	    #state: ${8:present}
-	    #aggregate: ${9}
-	    #speed: ${10}
-	    #tx_rate: ${11}
-	    #description: ${12}
+	    #neighbors: ${3}
+	    #rx_rate: ${4}
+	    #duplex: ${5:auto}
+	    #enabled: ${6}
+	    #mtu: ${7}
+	    #delay: ${8:10}
+	    #state: ${9:present}
+	    #aggregate: ${10}
+	    #speed: ${11}
+	    #tx_rate: ${12}
+	    #description: ${13}
 
 snippet ios_logging
 	- name: ${1:task_description}
@@ -10236,7 +10233,7 @@ snippet ios_vrf
 	- name: ${1:task_description}
 	  ios_vrf:
 	    #authorize: ${2}
-	    #delay: ${3}
+	    #delay: ${3:10}
 	    #description: ${4}
 	    #interfaces: ${5}
 	    #auth_pass: ${6:none}
@@ -10295,7 +10292,7 @@ snippet iosxr_interface
 	    #duplex: ${4}
 	    #enabled: ${5}
 	    #mtu: ${6}
-	    #delay: ${7}
+	    #delay: ${7:10}
 	    #state: ${8:present}
 	    #aggregate: ${9}
 	    #speed: ${10}
@@ -10805,7 +10802,7 @@ snippet junos_interface
 	    #duplex: ${4:auto}
 	    #enabled: ${5}
 	    #mtu: ${6}
-	    #delay: ${7}
+	    #delay: ${7:10}
 	    #aggregate: ${8}
 	    #state: ${9:present}
 	    #active: ${10:True}
@@ -10922,7 +10919,7 @@ snippet junos_user
 	    #purge: ${3}
 	    #active: ${4:True}
 	    #state: ${5:present}
-	    #role: ${6:read-only}
+	    #role: ${6}
 	    #full_name: ${7}
 	    #provider: ${8}
 	    #aggregate: ${9}
@@ -11432,10 +11429,12 @@ snippet manageiq_provider
 	    name: ${2}
 	    manageiq_connection: ${3}
 	    type: ${4}
-	    #state: ${5:present}
-	    #zone: ${6:default}
-	    #provider_region: ${7}
-	    #endpoints: ${8}
+	    #zone: ${5:default}
+	    #alerts: ${6}
+	    #metrics: ${7}
+	    #state: ${8:present}
+	    #provider: ${9}
+	    #provider_region: ${10}
 
 snippet manageiq_user
 	- name: ${1:task_description}
@@ -11810,7 +11809,7 @@ snippet net_interface
 	    #duplex: ${4:auto}
 	    #enabled: ${5}
 	    #mtu: ${6}
-	    #delay: ${7}
+	    #delay: ${7:10}
 	    #purge: ${8}
 	    #state: ${9:present}
 	    #aggregate: ${10}
@@ -14459,10 +14458,10 @@ snippet openssl_certificate
 	    #key_usage: ${14}
 	    #invalid_at: ${15}
 	    #acme_accountkey: ${16}
-	    #subject: ${17}
-	    #selfsigned_not_before: ${18}
-	    #subject_alt_name: ${19}
-	    #notBefore: ${20}
+	    #not_before: ${17}
+	    #subject: ${18}
+	    #selfsigned_not_before: ${19}
+	    #subject_alt_name: ${20}
 	    #not_after: ${21}
 	    #signature_algorithms: ${22}
 	    #has_expired: ${23}
@@ -14479,23 +14478,23 @@ snippet openssl_csr
 	    privatekey_path: ${2}
 	    path: ${3}
 	    #privatekey_passphrase: ${4}
-	    #extendedKeyUsage_critical: ${5}
-	    #force: ${6}
-	    #extendedKeyUsage: ${7}
-	    #countryName: ${8}
-	    #emailAddress: ${9}
-	    #localityName: ${10}
-	    #digest: ${11:sha256}
-	    #organizationalUnitName: ${12}
-	    #organizationName: ${13}
-	    #subjectAltName: ${14}
-	    #commonName: ${15}
-	    #state: ${16:present}
-	    #stateOrProvinceName: ${17}
-	    #subjectAltName_critical: ${18}
-	    #keyUsage: ${19}
+	    #state_or_province_name: ${5}
+	    #extended_key_usage_critical: ${6}
+	    #force: ${7}
+	    #subject_alt_name: ${8}
+	    #subject_alt_name_critical: ${9}
+	    #key_usage: ${10}
+	    #common_name: ${11}
+	    #email_address: ${12}
+	    #digest: ${13:sha256}
+	    #key_usage_critical: ${14}
+	    #extended_key_usage: ${15}
+	    #organizational_unit_name: ${16}
+	    #locality_name: ${17}
+	    #organization_name: ${18}
+	    #state: ${19:present}
 	    #version: ${20:3}
-	    #keyUsage_critical: ${21}
+	    #country_name: ${21}
 
 snippet openssl_privatekey
 	- name: ${1:task_description}
@@ -15134,7 +15133,7 @@ snippet os_quota
 	    #security_group_rule: ${21:None}
 	    #state: ${22:present}
 	    #injected_files: ${23:None}
-	    #rbac_policy: ${24:None}
+	    #gigabytes_lvm: ${24:None}
 	    #subnetpool: ${25:None}
 	    #injected_path_size: ${26:None}
 	    #region_name: ${27}
@@ -15142,21 +15141,23 @@ snippet os_quota
 	    #backup_gigabytes: ${29:None}
 	    #api_timeout: ${30:None}
 	    #auth: ${31}
-	    #endpoint_type: ${32:public}
-	    #key_pairs: ${33:None}
-	    #key: ${34:None}
-	    #cores: ${35:None}
-	    #cacert: ${36:None}
-	    #volumes: ${37:None}
-	    #properties: ${38:None}
-	    #wait: ${39:yes}
-	    #cert: ${40:None}
-	    #timeout: ${41:180}
-	    #gigabytes_lvm: ${42:None}
-	    #security_group: ${43:None}
-	    #router: ${44:None}
-	    #validate_certs: ${45}
-	    #injected_file_size: ${46:None}
+	    #rbac_policy: ${32:None}
+	    #endpoint_type: ${33:public}
+	    #key_pairs: ${34:None}
+	    #key: ${35:None}
+	    #router: ${36:None}
+	    #cacert: ${37:None}
+	    #volumes: ${38:None}
+	    #properties: ${39:None}
+	    #pool: ${40:None}
+	    #wait: ${41:yes}
+	    #cert: ${42:None}
+	    #timeout: ${43:180}
+	    #security_group: ${44:None}
+	    #cores: ${45:None}
+	    #validate_certs: ${46}
+	    #loadbalancer: ${47:None}
+	    #injected_file_size: ${48:None}
 
 snippet os_recordset
 	- name: ${1:task_description}
@@ -17203,16 +17204,17 @@ snippet postgresql_user
 	    #login_host: ${6:localhost}
 	    #expires: ${7}
 	    #db: ${8}
-	    #login_unix_socket: ${9}
-	    #login_password: ${10}
-	    #password: ${11}
-	    #port: ${12:5432}
-	    #fail_on_user: ${13:yes}
-	    #priv: ${14}
-	    #no_password_changes: ${15:no}
-	    #state: ${16:present}
-	    #encrypted: ${17}
-	    #role_attr_flags: ${18}
+	    #conn_limit: ${9}
+	    #login_unix_socket: ${10}
+	    #login_password: ${11}
+	    #password: ${12}
+	    #port: ${13:5432}
+	    #fail_on_user: ${14:yes}
+	    #priv: ${15}
+	    #no_password_changes: ${16:no}
+	    #state: ${17:present}
+	    #encrypted: ${18}
+	    #role_attr_flags: ${19}
 
 snippet profitbricks
 	- name: ${1:task_description}
@@ -19135,22 +19137,22 @@ snippet sl_vm
 	    memory: ${4:None}
 	    #domain: ${5}
 	    #tags: ${6}
-	    #dedicated: ${7}
-	    #private: ${8}
-	    #image_id: ${9}
-	    #nic_speed: ${10:10}
-	    #private_vlan: ${11}
-	    #datacenter: ${12}
-	    #public_vlan: ${13}
-	    #wait: ${14:True}
-	    #hourly: ${15:True}
-	    #ssh_keys: ${16}
-	    #hostname: ${17}
-	    #os_code: ${18}
-	    #instance_id: ${19}
-	    #local_disk: ${20:True}
-	    #state: ${21:present}
-	    #wait_timeout: ${22:600}
+	    #instance_id: ${7}
+	    #dedicated: ${8}
+	    #private: ${9}
+	    #image_id: ${10}
+	    #nic_speed: ${11:10}
+	    #private_vlan: ${12}
+	    #datacenter: ${13}
+	    #public_vlan: ${14}
+	    #wait: ${15:True}
+	    #hourly: ${16:True}
+	    #ssh_keys: ${17}
+	    #hostname: ${18}
+	    #os_code: ${19}
+	    #wait_time: ${20:600}
+	    #local_disk: ${21:True}
+	    #state: ${22:present}
 	    #post_uri: ${23}
 
 snippet slack
@@ -20819,10 +20821,11 @@ snippet vyos_interface
 	    #duplex: ${3:auto}
 	    #enabled: ${4}
 	    #mtu: ${5}
-	    #state: ${6:present}
-	    #aggregate: ${7}
-	    #speed: ${8}
-	    #description: ${9}
+	    #delay: ${6:10}
+	    #state: ${7:present}
+	    #aggregate: ${8}
+	    #speed: ${9}
+	    #description: ${10}
 
 snippet vyos_l3_interface
 	- name: ${1:task_description}
@@ -20984,13 +20987,13 @@ snippet webfaction_site
 snippet win_acl
 	- name: ${1:task_description}
 	  win_acl:
-	    user: ${2:none}
-	    rights: ${3:none}
+	    user: ${2}
+	    rights: ${3}
 	    path: ${4}
-	    type: ${5:none}
+	    type: ${5}
 	    #propagation: ${6:None}
 	    #state: ${7:present}
-	    #inherit: ${8:For Leaf File, None; For Directory, ContainerInherit, ObjectInherit;}
+	    #inherit: ${8:For Leaf File, 'None'; For Directory, 'ContainerInherit, ObjectInherit';}
 
 snippet win_acl_inheritance
 	- name: ${1:task_description}
