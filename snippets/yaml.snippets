@@ -7609,6 +7609,68 @@ snippet ec2_eip
 	    #release_on_disassociation: ${14}
 	    #device_id: ${15}
 
+snippet ec2_elb
+	- name: ${1:task_description}
+	  ec2_elb:
+	    instance_id: ${2}
+	    state: ${3}
+	    #aws_secret_key: ${4}
+	    #profile: ${5}
+	    #aws_access_key: ${6}
+	    #security_token: ${7}
+	    #region: ${8}
+	    #wait_timeout: ${9}
+	    #ec2_url: ${10}
+	    #wait: ${11:True}
+	    #validate_certs: ${12:yes}
+	    #enable_availability_zone: ${13:True}
+	    #ec2_elbs: ${14:None}
+
+snippet ec2_elb_facts
+	- name: ${1:task_description}
+	  ec2_elb_facts:
+	    #aws_secret_key: ${2}
+	    #profile: ${3}
+	    #aws_access_key: ${4}
+	    #security_token: ${5}
+	    #region: ${6}
+	    #names: ${7}
+	    #ec2_url: ${8}
+	    #validate_certs: ${9:yes}
+
+snippet ec2_elb_lb
+	- name: ${1:task_description}
+	  ec2_elb_lb:
+	    name: ${2}
+	    state: ${3}
+	    #profile: ${4}
+	    #subnets: ${5:None}
+	    #health_check: ${6:None}
+	    #tags: ${7}
+	    #purge_subnets: ${8}
+	    #aws_access_key: ${9}
+	    #instance_ids: ${10}
+	    #zones: ${11}
+	    #idle_timeout: ${12}
+	    #wait_timeout: ${13:60}
+	    #ec2_url: ${14}
+	    #cross_az_load_balancing: ${15:no}
+	    #security_group_ids: ${16:None}
+	    #purge_zones: ${17}
+	    #wait: ${18}
+	    #aws_secret_key: ${19}
+	    #purge_instance_ids: ${20}
+	    #connection_draining_timeout: ${21}
+	    #security_token: ${22}
+	    #region: ${23}
+	    #listeners: ${24}
+	    #access_logs: ${25:None}
+	    #security_group_names: ${26:None}
+	    #purge_listeners: ${27:True}
+	    #scheme: ${28:internet-facing}
+	    #validate_certs: ${29:yes}
+	    #stickiness: ${30}
+
 snippet ec2_eni
 	- name: ${1:task_description}
 	  ec2_eni:
@@ -8494,7 +8556,7 @@ snippet elasticsearch_plugin
 	    #version: ${7:None}
 	    #timeout: ${8:1m}
 	    #plugin_dir: ${9:/usr/share/elasticsearch/plugins/}
-	    #plugin_bin: ${10:/usr/share/elasticsearch/bin/plugin}
+	    #plugin_bin: ${10:None}
 
 snippet elb_application_lb
 	- name: ${1:task_description}
@@ -9903,9 +9965,9 @@ snippet imgadm
 	    #type: ${6:imgapi}
 	    #pool: ${7:zones}
 
-snippet import_plays
+snippet import_playbook
 	- name: ${1:task_description}
-	  import_plays:
+	  import_playbook:
 	    #free-form: ${2}
 
 snippet import_role
@@ -19561,7 +19623,7 @@ snippet telegram
 snippet telnet
 	- name: ${1:task_description}
 	  telnet:
-	    commands: ${2}
+	    command: ${2}
 	    #pause: ${3:1}
 	    #host: ${4:remote_addr}
 	    #prompts: ${5:[u'$']}
