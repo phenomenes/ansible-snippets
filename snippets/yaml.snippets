@@ -10240,7 +10240,7 @@ snippet ios_logging
 	    #level: ${5}
 	    #dest: ${6}
 	    #facility: ${7}
-	    #size: ${8}
+	    #size: ${8:4096}
 
 snippet ios_ping
 	- name: ${1:task_description}
@@ -21264,13 +21264,13 @@ snippet win_find
 	    #file_type: ${3:file}
 	    #checksum_algorithm: ${4:sha1}
 	    #age: ${5}
-	    #recurse: ${6}
+	    #recurse: ${6:no}
 	    #age_stamp: ${7:mtime}
 	    #patterns: ${8}
-	    #get_checksum: ${9:True}
-	    #use_regex: ${10}
-	    #follow: ${11}
-	    #hidden: ${12}
+	    #get_checksum: ${9:yes}
+	    #use_regex: ${10:no}
+	    #follow: ${11:no}
+	    #hidden: ${12:no}
 	    #size: ${13}
 
 snippet win_firewall
