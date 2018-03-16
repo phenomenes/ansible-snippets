@@ -9427,7 +9427,7 @@ snippet fetch
     dest: ${2:None}
     src: ${3:None}
     #validate_checksum: ${4:yes}
-    #fail_on_missing: ${5:yes}
+    #fail_on_missing: ${5:no}
     #flat: ${6}
 endsnippet
 
@@ -13863,25 +13863,24 @@ snippet nxos_bgp
     #suppress_fib_pending: ${30}
     #local_as: ${31}
     #event_history_periodic: ${32}
-    #timer_bestpath_limit_always: ${33}
-    #disable_policy_batching_ipv4_prefix_list: ${34}
-    #vrf: ${35}
-    #event_history_cli: ${36}
-    #log_neighbor_changes: ${37}
-    #password: ${38}
-    #event_history_events: ${39}
-    #event_history_detail: ${40}
-    #ssh_keyfile: ${41}
-    #graceful_restart: ${42}
-    #flush_routes: ${43}
-    #enforce_first_as: ${44}
-    #bestpath_med_non_deterministic: ${45}
-    #reconnect_interval: ${46}
-    #router_id: ${47}
-    #timeout: ${48:10}
-    #graceful_restart_timers_restart: ${49}
-    #validate_certs: ${50}
-    #bestpath_compare_routerid: ${51}
+    #disable_policy_batching_ipv4_prefix_list: ${33}
+    #vrf: ${34}
+    #event_history_cli: ${35}
+    #log_neighbor_changes: ${36}
+    #password: ${37}
+    #event_history_events: ${38}
+    #event_history_detail: ${39}
+    #ssh_keyfile: ${40}
+    #graceful_restart: ${41}
+    #flush_routes: ${42}
+    #enforce_first_as: ${43}
+    #bestpath_med_non_deterministic: ${44}
+    #reconnect_interval: ${45}
+    #router_id: ${46}
+    #timeout: ${47:10}
+    #graceful_restart_timers_restart: ${48}
+    #validate_certs: ${49}
+    #bestpath_compare_routerid: ${50}
 endsnippet
 
 snippet nxos_bgp_af
@@ -15171,7 +15170,7 @@ snippet nxos_vxlan_vtep
     interface: ${3}
     transport: ${4:cli}
     #username: ${5}
-    #shutdown: ${6}
+    #shutdown: ${6:True}
     #ssh_keyfile: ${7}
     #description: ${8}
     #source_interface_hold_down_time: ${9}
