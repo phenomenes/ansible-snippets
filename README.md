@@ -8,20 +8,30 @@ Ansible Vim snippets for SnipMate and UltiSnips.
 
 ## Install
 
-To install via [vim-plug](https://github.com/junegunn/vim-plug) add
-`Plug 'phenomenes/ansible-snippets'` to your `~/.vimrc` and `:PlugInstall` or
-`$ vim +PlugInstall +qall`
-
-To manually install, clone this repo to your favourite location:
+To install via [vim-plug](https://github.com/junegunn/vim-plug) add the
+following to your `~/.vimrc`
 
 ```
-$ git clone https://github.com/phenomenes/ansible-snippets.git ~/ansible-snippets
-$ cp -r ~/ansible-snippets/* ~/.vim/
+Plug 'phenomenes/ansible-snippets'
+```
+
+This repo follows [ansible](https://github.com/ansible/ansible)'s `devel`
+branch, if you wish to install a previous version you need to specify the tag
+
+```
+Plug 'phenomenes/ansible-snippets', { 'tag': 'v2.4.0' }
+```
+
+To install manually clone this repo to your `~/.vim`
+
+```
+cd ~/.vim/
+git clone -b v2.4.0 https://github.com/phenomenes/ansible-snippets.git ~/ansible-snippets
 ```
 
 ## Usage
 
-Open a `.yml` or `.yaml` file, in inster mode type `play` or any Ansible's
+Open a `.yml` or `.yaml` file, in insert mode type `play` or any Ansible's
 module name and press `<tab>` to expand the snippet:
 
 ```
@@ -47,7 +57,7 @@ module name and press `<tab>` to expand the snippet:
     ...
 ```
 
-Press `<tab>` again to move to next argument.
+Press `<tab>` again to move to the next argument.
 
 ## License
 
