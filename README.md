@@ -22,7 +22,7 @@ branch, if you wish to install a previous version you need to specify the tag
 Plug 'phenomenes/ansible-snippets', { 'tag': 'v2.4.0' }
 ```
 
-To install manually clone this repo to your `~/.vim`
+Alternatively you can install it manually by clone the repo to your `~/.vim`
 
 ```
 cd ~/.vim/
