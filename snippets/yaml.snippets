@@ -1325,6 +1325,7 @@ snippet acl
 	    #etype: ${9}
 	    #entry: ${10}
 	    #permissions: ${11}
+	    #use_nfsv4_acls: ${12}
 
 snippet acme_account
 	- name: ${1:task_description}
@@ -12273,7 +12274,7 @@ snippet docker_swarm_service
 	    #api_version: ${23:auto}
 	    #update_delay: ${24:10}
 	    #log_driver: ${25:json-file}
-	    #endpoint_mode: ${26:vip}
+	    #endpoint_mode: ${26}
 	    #replicas: ${27:-1}
 	    #args: ${28}
 	    #limit_memory: ${29}
