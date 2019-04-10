@@ -12842,8 +12842,8 @@ snippet docker_swarm
 - name: ${1:task_description}
   docker_swarm:
     state: ${2:present}
-    #rotate_worker_token: ${3:no}
-    #force: ${4:no}
+    #rotate_worker_token: ${3}
+    #force: ${4}
     #snapshot_interval: ${5}
     #node_cert_expiry: ${6}
     #election_tick: ${7}
@@ -12868,7 +12868,7 @@ snippet docker_swarm
     #timeout: ${26:60}
     #listen_addr: ${27:0.0.0.0:2377}
     #keep_old_snapshots: ${28}
-    #rotate_manager_token: ${29:no}
+    #rotate_manager_token: ${29}
     #key_path: ${30}
     #autolock_managers: ${31}
     #debug: ${32}
@@ -18953,7 +18953,7 @@ snippet jenkins_plugin
     #url: ${6:http://localhost:8080}
     #force_basic_auth: ${7}
     #url_username: ${8}
-    #updates_url: ${9:https://updates.jenkins-ci.org}
+    #updates_url: ${9:https://updates.jenkins.io}
     #http_agent: ${10:ansible-httpget}
     #with_dependencies: ${11:yes}
     #state: ${12:present}
@@ -31588,33 +31588,33 @@ snippet tower_credential
   tower_credential:
     kind: ${2}
     name: ${3}
-    #authorize: ${4:no}
-    #username: ${5}
-    #domain: ${6}
-    #description: ${7}
-    #tower_host: ${8}
-    #vault_password: ${9}
-    #team: ${10}
-    #tower_config_file: ${11}
-    #host: ${12}
-    #user: ${13}
-    #become_password: ${14}
-    #tower_password: ${15}
-    #tower_username: ${16}
-    #become_username: ${17}
-    #password: ${18}
-    #tenant: ${19}
-    #subscription: ${20}
-    #become_method: ${21}
-    #security_token: ${22}
-    #tower_verify_ssl: ${23:yes}
-    #secret: ${24}
-    #project: ${25}
-    #state: ${26:present}
-    #client: ${27}
-    #ssh_key_data: ${28}
-    #ssh_key_unlock: ${29}
-    #organization: ${30}
+    organization: ${4}
+    #authorize: ${5:no}
+    #username: ${6}
+    #domain: ${7}
+    #description: ${8}
+    #tower_host: ${9}
+    #vault_password: ${10}
+    #team: ${11}
+    #tower_config_file: ${12}
+    #host: ${13}
+    #user: ${14}
+    #become_password: ${15}
+    #tower_password: ${16}
+    #tower_username: ${17}
+    #become_username: ${18}
+    #password: ${19}
+    #tenant: ${20}
+    #subscription: ${21}
+    #become_method: ${22}
+    #security_token: ${23}
+    #tower_verify_ssl: ${24:yes}
+    #secret: ${25}
+    #project: ${26}
+    #state: ${27:present}
+    #client: ${28}
+    #ssh_key_data: ${29}
+    #ssh_key_unlock: ${30}
     #authorize_password: ${31}
 endsnippet
 
