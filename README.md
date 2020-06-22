@@ -8,26 +8,36 @@ Ansible Vim snippets for SnipMate and UltiSnips.
 
 ## Install
 
-To install via [vim-plug](https://github.com/junegunn/vim-plug) add the
-following to your `~/.vimrc`
+Depending on what plugin manager you are using, copy the appropiate lines and
+use the plugin's install command:
 
-```
+* [Vim-plug](https://github.com/junegunn/vim-plug)
+
+```vim
 Plug 'phenomenes/ansible-snippets'
 ```
 
+* [Vundle](https://github.com/gmarik/vundle)
+
+```vim
+Plugin 'phenomenes/ansible-snippets'
+```
+
+* [NeoBundle](https://github.com/Shougo/neobundle.vim)
+
+```vim
+NeoBundle 'phenomenes/ansible-snippets'
+```
+
+* [Pathogen](https://github.com/tpope/vim-pathogen)
+
+```shell
+git clone https://github.com/phenomenes/ansible-snippets.git ~/.vim/bundle/terraform-snippets
+```
+
 This repo follows [ansible](https://github.com/ansible/ansible)'s `devel`
-branch, if you wish to install a previous version you need to specify the tag
-
-```
-Plug 'phenomenes/ansible-snippets', { 'tag': 'v2.4.0' }
-```
-
-Alternatively you can install it manually by cloning the repo to your `~/.vim`
-
-```
-cd ~/.vim/
-git clone -b v2.4.0 https://github.com/phenomenes/ansible-snippets.git ~/ansible-snippets
-```
+branch, if you wish to install a different version you need to specify the
+corresponding tag.
 
 ## Usage
 
